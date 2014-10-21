@@ -9,6 +9,6 @@
 * ○人が承認すればmergeする
 * PullRequestのmergeは河辺が行う
 * **rebaseはしないこと**
- -  ```git
+ -  ```
 `git merge --no-ff branch`を利用する
 ```
