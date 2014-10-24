@@ -9,11 +9,18 @@
 /* Begin PBXBuildFile section */
 		4A74F31419F6690D00DA5C82 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A74F31319F6690D00DA5C82 /* main.m */; };
 		4A74F31719F6690D00DA5C82 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A74F31619F6690D00DA5C82 /* AppDelegate.m */; };
-		4A74F31A19F6690D00DA5C82 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A74F31919F6690D00DA5C82 /* ViewController.m */; };
 		4A74F31D19F6690D00DA5C82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A74F31B19F6690D00DA5C82 /* Main.storyboard */; };
 		4A74F31F19F6690D00DA5C82 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A74F31E19F6690D00DA5C82 /* Images.xcassets */; };
 		4A74F32219F6690D00DA5C82 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A74F32019F6690D00DA5C82 /* LaunchScreen.xib */; };
 		4A74F32E19F6690D00DA5C82 /* tourism_appTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A74F32D19F6690D00DA5C82 /* tourism_appTests.m */; };
+		4ADE376019FA109200FE524F /* TopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE375F19FA109200FE524F /* TopViewController.m */; };
+		4ADE376319FA1A5A00FE524F /* CourseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE376219FA1A5A00FE524F /* CourseTableViewController.m */; };
+		4ADE376619FA1B7900FE524F /* CourseMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE376519FA1B7900FE524F /* CourseMapViewController.m */; };
+		4ADE376919FA1BC400FE524F /* CourseDetailMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE376819FA1BC400FE524F /* CourseDetailMapViewController.m */; };
+		4ADE376C19FA1C0A00FE524F /* CourseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE376B19FA1C0A00FE524F /* CourseDetailViewController.m */; };
+		4ADE376F19FA1C5D00FE524F /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE376E19FA1C5D00FE524F /* CategoryViewController.m */; };
+		4ADE377219FA1CC200FE524F /* SpotDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE377119FA1CC200FE524F /* SpotDetailViewController.m */; };
+		4ADE377519FA1D1C00FE524F /* HealthWalkingMapDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE377419FA1D1C00FE524F /* HealthWalkingMapDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +39,28 @@
 		4A74F31319F6690D00DA5C82 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4A74F31519F6690D00DA5C82 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4A74F31619F6690D00DA5C82 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		4A74F31819F6690D00DA5C82 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		4A74F31919F6690D00DA5C82 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4A74F31C19F6690D00DA5C82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4A74F31E19F6690D00DA5C82 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4A74F32119F6690D00DA5C82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		4A74F32719F6690D00DA5C82 /* tourism-appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "tourism-appTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A74F32C19F6690D00DA5C82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A74F32D19F6690D00DA5C82 /* tourism_appTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = tourism_appTests.m; sourceTree = "<group>"; };
+		4ADE375E19FA109200FE524F /* TopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopViewController.h; sourceTree = "<group>"; };
+		4ADE375F19FA109200FE524F /* TopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopViewController.m; sourceTree = "<group>"; };
+		4ADE376119FA1A5A00FE524F /* CourseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseTableViewController.h; sourceTree = "<group>"; };
+		4ADE376219FA1A5A00FE524F /* CourseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseTableViewController.m; sourceTree = "<group>"; };
+		4ADE376419FA1B7900FE524F /* CourseMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseMapViewController.h; sourceTree = "<group>"; };
+		4ADE376519FA1B7900FE524F /* CourseMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseMapViewController.m; sourceTree = "<group>"; };
+		4ADE376719FA1BC400FE524F /* CourseDetailMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseDetailMapViewController.h; sourceTree = "<group>"; };
+		4ADE376819FA1BC400FE524F /* CourseDetailMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseDetailMapViewController.m; sourceTree = "<group>"; };
+		4ADE376A19FA1C0A00FE524F /* CourseDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseDetailViewController.h; sourceTree = "<group>"; };
+		4ADE376B19FA1C0A00FE524F /* CourseDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseDetailViewController.m; sourceTree = "<group>"; };
+		4ADE376D19FA1C5D00FE524F /* CategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryViewController.h; sourceTree = "<group>"; };
+		4ADE376E19FA1C5D00FE524F /* CategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryViewController.m; sourceTree = "<group>"; };
+		4ADE377019FA1CC200FE524F /* SpotDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpotDetailViewController.h; sourceTree = "<group>"; };
+		4ADE377119FA1CC200FE524F /* SpotDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpotDetailViewController.m; sourceTree = "<group>"; };
+		4ADE377319FA1D1C00FE524F /* HealthWalkingMapDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthWalkingMapDetailViewController.h; sourceTree = "<group>"; };
+		4ADE377419FA1D1C00FE524F /* HealthWalkingMapDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthWalkingMapDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,11 +102,25 @@
 		4A74F31019F6690D00DA5C82 /* tourism-app */ = {
 			isa = PBXGroup;
 			children = (
+				4A74F31B19F6690D00DA5C82 /* Main.storyboard */,
 				4A74F31519F6690D00DA5C82 /* AppDelegate.h */,
 				4A74F31619F6690D00DA5C82 /* AppDelegate.m */,
-				4A74F31819F6690D00DA5C82 /* ViewController.h */,
-				4A74F31919F6690D00DA5C82 /* ViewController.m */,
-				4A74F31B19F6690D00DA5C82 /* Main.storyboard */,
+				4ADE375E19FA109200FE524F /* TopViewController.h */,
+				4ADE375F19FA109200FE524F /* TopViewController.m */,
+				4ADE376119FA1A5A00FE524F /* CourseTableViewController.h */,
+				4ADE376219FA1A5A00FE524F /* CourseTableViewController.m */,
+				4ADE376D19FA1C5D00FE524F /* CategoryViewController.h */,
+				4ADE376E19FA1C5D00FE524F /* CategoryViewController.m */,
+				4ADE376419FA1B7900FE524F /* CourseMapViewController.h */,
+				4ADE376519FA1B7900FE524F /* CourseMapViewController.m */,
+				4ADE376719FA1BC400FE524F /* CourseDetailMapViewController.h */,
+				4ADE376819FA1BC400FE524F /* CourseDetailMapViewController.m */,
+				4ADE376A19FA1C0A00FE524F /* CourseDetailViewController.h */,
+				4ADE376B19FA1C0A00FE524F /* CourseDetailViewController.m */,
+				4ADE377019FA1CC200FE524F /* SpotDetailViewController.h */,
+				4ADE377119FA1CC200FE524F /* SpotDetailViewController.m */,
+				4ADE377319FA1D1C00FE524F /* HealthWalkingMapDetailViewController.h */,
+				4ADE377419FA1D1C00FE524F /* HealthWalkingMapDetailViewController.m */,
 				4A74F31E19F6690D00DA5C82 /* Images.xcassets */,
 				4A74F32019F6690D00DA5C82 /* LaunchScreen.xib */,
 				4A74F31119F6690D00DA5C82 /* Supporting Files */,
@@ -219,9 +254,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A74F31A19F6690D00DA5C82 /* ViewController.m in Sources */,
+				4ADE376319FA1A5A00FE524F /* CourseTableViewController.m in Sources */,
+				4ADE376019FA109200FE524F /* TopViewController.m in Sources */,
+				4ADE376C19FA1C0A00FE524F /* CourseDetailViewController.m in Sources */,
+				4ADE377219FA1CC200FE524F /* SpotDetailViewController.m in Sources */,
+				4ADE376619FA1B7900FE524F /* CourseMapViewController.m in Sources */,
+				4ADE376F19FA1C5D00FE524F /* CategoryViewController.m in Sources */,
 				4A74F31719F6690D00DA5C82 /* AppDelegate.m in Sources */,
+				4ADE377519FA1D1C00FE524F /* HealthWalkingMapDetailViewController.m in Sources */,
 				4A74F31419F6690D00DA5C82 /* main.m in Sources */,
+				4ADE376919FA1BC400FE524F /* CourseDetailMapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +456,7 @@
 				4A74F33319F6690D00DA5C82 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4A74F33419F6690D00DA5C82 /* Build configuration list for PBXNativeTarget "tourism-appTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +465,7 @@
 				4A74F33619F6690D00DA5C82 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
