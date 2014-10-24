@@ -21,12 +21,18 @@
                                 <state key="normal" title="マップ">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="ePf-2z-ZI6" kind="modal" id="FGM-Kt-MGe"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ox2-Eo-nUL">
                                 <rect key="frame" x="263" y="285" width="75" height="30"/>
                                 <state key="normal" title="コース一覧">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="oIO-Kj-QD2" kind="modal" id="RFD-59-7ef"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -53,7 +59,11 @@
                                 <items>
                                     <navigationItem title="コース一覧" id="8Ri-gV-sJY">
                                         <barButtonItem key="leftBarButtonItem" title="戻る" id="wiu-9x-WBk"/>
-                                        <barButtonItem key="rightBarButtonItem" title="カテゴリ" id="7Le-B6-PaM"/>
+                                        <barButtonItem key="rightBarButtonItem" title="カテゴリ" id="7Le-B6-PaM">
+                                            <connections>
+                                                <segue destination="Hif-Ol-KyY" kind="modal" id="Swc-vL-Qtl"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -72,6 +82,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="3hR-5Z-WLf"/>
+                    <connections>
+                        <segue destination="MWC-Uy-Y2q" kind="modal" id="NHc-ck-j4F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IQS-RR-aez" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -110,6 +124,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="K5D-Ch-izU"/>
+                    <connections>
+                        <segue destination="MWC-Uy-Y2q" kind="modal" id="vi7-3m-iwG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a1g-10-z8r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -141,7 +159,11 @@
                                 <items>
                                     <barButtonItem title="Item" id="cCA-Vn-VCI"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="3VU-Ay-qqO"/>
-                                    <barButtonItem title="健康ウォーキングマップを見る" id="etP-vb-MUq"/>
+                                    <barButtonItem title="健康ウォーキングマップを見る" id="etP-vb-MUq">
+                                        <connections>
+                                            <segue destination="wpK-Ri-VO3" kind="modal" id="8vl-bp-cHQ"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="9sN-Ip-vg9"/>
                                 </items>
                             </toolbar>
@@ -151,6 +173,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="wcf-DD-ijF" kind="modal" id="RRe-8e-6rn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QFo-us-QyW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -258,6 +283,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="W4b-i2-zI2" kind="modal" id="hwF-Yj-bvm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6T0-yn-QZt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -297,4 +325,7 @@
             <point key="canvasLocation" x="1985" y="150"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="vi7-3m-iwG"/>
+    </inferredMetricsTieBreakers>
 </document>

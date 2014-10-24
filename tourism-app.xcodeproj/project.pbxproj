@@ -21,6 +21,8 @@
 		4ADE376F19FA1C5D00FE524F /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE376E19FA1C5D00FE524F /* CategoryViewController.m */; };
 		4ADE377219FA1CC200FE524F /* SpotDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE377119FA1CC200FE524F /* SpotDetailViewController.m */; };
 		4ADE377519FA1D1C00FE524F /* HealthWalkingMapDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE377419FA1D1C00FE524F /* HealthWalkingMapDetailViewController.m */; };
+		4ADE377719FA41C900FE524F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ADE377619FA41C900FE524F /* CoreLocation.framework */; };
+		4ADE377919FA41DA00FE524F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ADE377819FA41DA00FE524F /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		4ADE377119FA1CC200FE524F /* SpotDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpotDetailViewController.m; sourceTree = "<group>"; };
 		4ADE377319FA1D1C00FE524F /* HealthWalkingMapDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthWalkingMapDetailViewController.h; sourceTree = "<group>"; };
 		4ADE377419FA1D1C00FE524F /* HealthWalkingMapDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthWalkingMapDetailViewController.m; sourceTree = "<group>"; };
+		4ADE377619FA41C900FE524F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		4ADE377819FA41DA00FE524F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4ADE377919FA41DA00FE524F /* MapKit.framework in Frameworks */,
+				4ADE377719FA41C900FE524F /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +90,8 @@
 		4A74F30519F6690D00DA5C82 = {
 			isa = PBXGroup;
 			children = (
+				4ADE377819FA41DA00FE524F /* MapKit.framework */,
+				4ADE377619FA41C900FE524F /* CoreLocation.framework */,
 				4A74F31019F6690D00DA5C82 /* tourism-app */,
 				4A74F32A19F6690D00DA5C82 /* tourism-appTests */,
 				4A74F30F19F6690D00DA5C82 /* Products */,
