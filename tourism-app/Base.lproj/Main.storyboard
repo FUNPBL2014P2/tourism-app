@@ -59,7 +59,11 @@
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <items>
                                     <navigationItem title="コース一覧" id="8Ri-gV-sJY">
-                                        <barButtonItem key="leftBarButtonItem" title="戻る" id="wiu-9x-WBk"/>
+                                        <barButtonItem key="leftBarButtonItem" title="戻る" id="wiu-9x-WBk">
+                                            <connections>
+                                                <action selector="dismissSelf:" destination="oIO-Kj-QD2" id="toU-mC-JHW"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="カテゴリ" id="7Le-B6-PaM">
                                             <connections>
                                                 <segue destination="Hif-Ol-KyY" kind="modal" id="Swc-vL-Qtl"/>
@@ -118,15 +122,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wGW-Gd-HRX">
-                                <rect key="frame" x="0.0" y="64" width="600" height="492"/>
-                            </mapView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gc6-w4-drZ">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <items>
                                     <navigationItem id="AtC-Qr-o31">
-                                        <barButtonItem key="leftBarButtonItem" title="戻る" id="PQf-cm-xpY"/>
+                                        <barButtonItem key="leftBarButtonItem" title="戻る" id="PQf-cm-xpY">
+                                            <connections>
+                                                <action selector="dismissSelf:" destination="ePf-2z-ZI6" id="Yp7-U8-zCB"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -136,6 +141,9 @@
                                     <barButtonItem title="Item" id="VN2-2J-cHf"/>
                                 </items>
                             </toolbar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wGW-Gd-HRX">
+                                <rect key="frame" x="0.0" y="64" width="600" height="492"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -179,7 +187,11 @@
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <items>
                                     <navigationItem title="Title" id="Ngp-ca-33i">
-                                        <barButtonItem key="leftBarButtonItem" title="戻る" id="gLi-6P-GDh"/>
+                                        <barButtonItem key="leftBarButtonItem" title="戻る" id="gLi-6P-GDh">
+                                            <connections>
+                                                <action selector="dismissSelf:" destination="W4b-i2-zI2" id="Evi-hG-hno"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -241,7 +253,11 @@
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <items>
                                     <navigationItem title="Title" id="3LA-Gz-Pvb">
-                                        <barButtonItem key="leftBarButtonItem" title="戻る" id="pdO-S4-VDA"/>
+                                        <barButtonItem key="leftBarButtonItem" title="戻る" id="pdO-S4-VDA">
+                                            <connections>
+                                                <action selector="dismissSelf:" destination="wcf-DD-ijF" id="xvD-BV-FT1"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -288,7 +304,11 @@
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <items>
                                     <navigationItem id="BCj-q1-oCn">
-                                        <barButtonItem key="leftBarButtonItem" title="戻る" id="8zJ-ZK-0wj"/>
+                                        <barButtonItem key="leftBarButtonItem" title="戻る" id="8zJ-ZK-0wj">
+                                            <connections>
+                                                <action selector="dismissSelf:" destination="wpK-Ri-VO3" id="96K-b3-Ytg"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -339,7 +359,11 @@
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <items>
                                     <navigationItem title="Title" id="hye-yR-fNN">
-                                        <barButtonItem key="leftBarButtonItem" title="戻る" id="l3l-Jm-kHR"/>
+                                        <barButtonItem key="leftBarButtonItem" title="戻る" id="l3l-Jm-kHR">
+                                            <connections>
+                                                <action selector="dismissSelf:" destination="MWC-Uy-Y2q" id="lPX-RU-tD1"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -381,7 +405,11 @@
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <items>
                                     <navigationItem title="カテゴリ" id="gpq-1l-Cc5">
-                                        <barButtonItem key="leftBarButtonItem" title="戻る" id="bcM-6P-BHT"/>
+                                        <barButtonItem key="leftBarButtonItem" title="戻る" id="bcM-6P-BHT">
+                                            <connections>
+                                                <action selector="dismissSelf:" destination="Hif-Ol-KyY" id="tIR-uJ-KBX"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>

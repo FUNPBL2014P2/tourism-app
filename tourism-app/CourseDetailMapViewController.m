@@ -19,6 +19,11 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
+//戻るボタンのアクション
+- (IBAction)dismissSelf:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
