@@ -17,6 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    course_table_model = [[CourseTableModel alloc]init];
 }
 
 //戻るボタンのアクション

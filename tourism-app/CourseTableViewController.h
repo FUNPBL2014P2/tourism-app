@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CourseTableModel.h"
 
-@interface CourseTableViewController : UIViewController
+@interface CourseTableViewController : UIViewController {
+    CourseTableModel *course_table_model;
+}
 
 @end
