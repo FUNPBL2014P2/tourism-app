@@ -24,14 +24,27 @@
     course_table_model = [[CourseTableModel alloc]init];
 }
 
+/**
+ @return Cellの高さ
+ */
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 130;
 }
 
+/**
+ ロード時に呼び出される
+ 
+ @return セクションに含まれるCellの数
+ */
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [course_table_model->course_table_data count];
 }
 
+/**
+ ロード時に呼び出される
+ 
+ @return セルの内容
+ */
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier =@"Cell";
     
@@ -47,7 +60,7 @@
     return cell;
 }
 
-//戻るボタンのアクション
+///戻るボタンのアクション
 - (IBAction)dismissSelf:(id)sender {
     [self dismissViewControllerAnimated:YES completion:NULL];
 }

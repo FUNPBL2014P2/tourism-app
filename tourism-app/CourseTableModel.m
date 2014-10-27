@@ -12,6 +12,11 @@
 @implementation CourseTableModel
 NSString *getCourseDatasSql = @"SELECT * FROM courses;";
 
+/**
+ init（NSObject）を上書きする(コンストラクタ)
+ 
+ Courseインスタンスを生成し、配列にコース情報が格納されたCourseインスタンスを格納する処理
+ */
 - (id)init{
     self = [super init];
     
