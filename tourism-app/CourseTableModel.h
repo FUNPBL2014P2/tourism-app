@@ -12,6 +12,7 @@
 
 @interface CourseTableModel : NSObject {
     FMDatabase *database;
+    @public
     NSMutableArray *course_table_data;
 }
 

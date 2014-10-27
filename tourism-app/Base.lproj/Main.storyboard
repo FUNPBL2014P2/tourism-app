@@ -103,6 +103,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="3hR-5Z-WLf"/>
                     <connections>
+                        <outlet property="myTableView" destination="xr9-G1-tOx" id="syU-cR-RrR"/>
                         <segue destination="MWC-Uy-Y2q" kind="modal" id="NHc-ck-j4F"/>
                     </connections>
                 </viewController>
@@ -437,6 +438,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="vi7-3m-iwG"/>
+        <segue reference="NHc-ck-j4F"/>
     </inferredMetricsTieBreakers>
 </document>
