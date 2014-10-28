@@ -56,6 +56,9 @@
     Course *course = [course_table_model->course_table_data objectAtIndex:indexPath.row];
     cell.textLabel.text = course.course_name;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"所要時間:%d分 距離:%.1fkm 男性消費カロリー:%dkcal 女性消費カロリー:%dkcal", course.time, course.distance, course.male_calories, course.female_calories];
+    cell.detailTextLabel.numberOfLines = 0; //改行可
+    cell.imageView.image = [UIImage imageNamed:course.course_image_name];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
 }

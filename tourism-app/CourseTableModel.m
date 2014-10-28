@@ -76,6 +76,7 @@ NSString *getCourseDatasSql = @"SELECT * FROM courses;";
             course.male_calories = [results intForColumn:@"male_calories"];
             course.female_calories = [results intForColumn:@"female_calories"];
             course.course_url = [results stringForColumn:@"course_url"];
+            course.course_image_name = [results stringForColumn:@"course_image_name"];
             [course_table_data addObject:course];
         }
         
