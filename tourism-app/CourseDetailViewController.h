@@ -10,4 +10,8 @@
 
 @interface CourseDetailViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UINavigationBar *myNavigationBar;
+@property (weak, nonatomic) IBOutlet UIImageView *myImageView;
+@property (weak, nonatomic) IBOutlet UITableView *myTableView;
+
 @end
