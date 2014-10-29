@@ -12,23 +12,23 @@
 @interface Course : NSObject {
     int courseid;
     NSString *course_name;
-    float distance;
+    double distance;
     int steps;
     int time;
     int male_calories;
     int female_calories;
     NSString *course_url;
+    NSString *course_image_name;
 }
 
 @property(nonatomic,assign)int courseid;
 @property(nonatomic,retain)NSString *course_name;
-@property(nonatomic,assign)float distance;
+@property(nonatomic,assign)double distance;
 @property(nonatomic,assign)int steps;
 @property(nonatomic,assign)int time;
 @property(nonatomic,assign)int male_calories;
 @property(nonatomic,assign)int female_calories;
 @property(nonatomic,retain)NSString *course_url;
-
-
+@property(nonatomic,retain)NSString *course_image_name;
 
 @end

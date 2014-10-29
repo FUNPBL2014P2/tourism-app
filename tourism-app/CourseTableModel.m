@@ -12,6 +12,11 @@
 @implementation CourseTableModel
 NSString *getCourseDatasSql = @"SELECT * FROM courses;";
 
+/**
+ init（NSObject）を上書きする(コンストラクタ)
+ 
+ Courseインスタンスを生成し、配列にコース情報が格納されたCourseインスタンスを格納する処理
+ */
 - (id)init{
     self = [super init];
     
@@ -65,12 +70,13 @@ NSString *getCourseDatasSql = @"SELECT * FROM courses;";
             Course *course = [[Course alloc]init];
             course.courseid = [results intForColumn:@"courseid"];
             course.course_name = [results stringForColumn:@"course_name"];
-            course.distance = [results intForColumn:@"distance"];
+            course.distance = [results doubleForColumn:@"distance"];
             course.steps = [results intForColumn:@"steps"];
             course.time = [results intForColumn:@"time"];
             course.male_calories = [results intForColumn:@"male_calories"];
             course.female_calories = [results intForColumn:@"female_calories"];
             course.course_url = [results stringForColumn:@"course_url"];
+            course.course_image_name = [results stringForColumn:@"course_image_name"];
             [course_table_data addObject:course];
         }
         

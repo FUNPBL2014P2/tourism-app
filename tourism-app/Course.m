@@ -19,5 +19,6 @@
 @synthesize male_calories;
 @synthesize female_calories;
 @synthesize course_url;
+@synthesize course_image_name;
 
 @end
