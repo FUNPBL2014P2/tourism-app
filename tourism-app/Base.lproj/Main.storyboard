@@ -138,9 +138,7 @@
                             </navigationBar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="56g-jY-6or">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
-                                <items>
-                                    <barButtonItem title="Item" id="VN2-2J-cHf"/>
-                                </items>
+                                <items/>
                             </toolbar>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wGW-Gd-HRX">
                                 <rect key="frame" x="0.0" y="64" width="600" height="492"/>
@@ -164,6 +162,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="K5D-Ch-izU"/>
                     <connections>
+                        <outlet property="myMapView" destination="wGW-Gd-HRX" id="bYf-o8-E4T"/>
+                        <outlet property="myToolBar" destination="56g-jY-6or" id="WPN-vq-WhI"/>
                         <segue destination="MWC-Uy-Y2q" kind="modal" id="vi7-3m-iwG"/>
                     </connections>
                 </viewController>
@@ -431,6 +431,9 @@
                             <constraint firstItem="bTJ-ba-1qr" firstAttribute="leading" secondItem="fvF-2A-DWg" secondAttribute="leadingMargin" constant="-16" id="ngv-Yx-idl"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="myTableView" destination="Eg6-Gv-TZe" id="mz6-FU-AcU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4mi-CW-OYn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -438,6 +441,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="NHc-ck-j4F"/>
+        <segue reference="vi7-3m-iwG"/>
     </inferredMetricsTieBreakers>
 </document>
