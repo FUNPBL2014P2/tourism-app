@@ -382,6 +382,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="myImageView" destination="njf-lZ-pbP" id="wf6-vn-smR"/>
+                        <outlet property="myNavigationBar" destination="paO-Dl-hWg" id="Xnd-d9-ciD"/>
+                        <outlet property="myTableView" destination="2Gw-RD-lml" id="BME-c4-Bq4"/>
                         <segue destination="W4b-i2-zI2" kind="modal" id="hwF-Yj-bvm"/>
                     </connections>
                 </viewController>
