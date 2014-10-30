@@ -170,4 +170,16 @@ NSString *getCourseDatasSql = @"select distinct * FROM courses left outer join r
     return self;
 }
 
+- (Course *) getDataWithName:(NSString *)name {
+    //コース名が見つかればそのコースのインスタンスを返す
+    for(int i = 0;i < [course_table_data count];i++) {
+        Course *course = [course_table_data objectAtIndex:i];
+        if([course.course_name isEqual:name])
+            return course;
+    }
+    
+    //コース名が見つからなかった場合
+    return nil;
+}
+
 @end

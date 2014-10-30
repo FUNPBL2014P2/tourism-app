@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Course.h"
+#import "CourseModel.h"
 
 @interface CourseDetailViewController : UIViewController {
     NSString *course_name; //コース一覧画面から受け取ったコース名
