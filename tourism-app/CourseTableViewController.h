@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CourseTableModel.h"
+#import "CourseModel.h"
 
 @interface CourseTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
-    CourseTableModel *course_table_model;
+    CourseModel *course_table_model;
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *myTableView;
