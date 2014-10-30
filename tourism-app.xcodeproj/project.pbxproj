@@ -29,14 +29,14 @@
 		4A85967719FFB67C0097379A /* sumiyoshityoukaikan.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A85966719FFB67C0097379A /* sumiyoshityoukaikan.png */; };
 		4A85967819FFB67C0097379A /* tomoeohashi.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A85966819FFB67C0097379A /* tomoeohashi.png */; };
 		4A85967919FFB67C0097379A /* yajigashiratyoukaikan.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A85966919FFB67C0097379A /* yajigashiratyoukaikan.png */; };
-		4A85967B19FFB7920097379A /* walking_map.db in Resources */ = {isa = PBXBuildFile; fileRef = 4A85967A19FFB7920097379A /* walking_map.db */; };
-		4A85967C19FFB7920097379A /* walking_map.db in Resources */ = {isa = PBXBuildFile; fileRef = 4A85967A19FFB7920097379A /* walking_map.db */; };
 		4A8596841A00CBD10097379A /* autumn.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A85967E1A00CBD10097379A /* autumn.png */; };
 		4A8596851A00CBD10097379A /* park.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A85967F1A00CBD10097379A /* park.png */; };
 		4A8596861A00CBD10097379A /* sea.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A8596801A00CBD10097379A /* sea.png */; };
 		4A8596871A00CBD10097379A /* spring.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A8596811A00CBD10097379A /* spring.png */; };
 		4A8596881A00CBD10097379A /* summer.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A8596821A00CBD10097379A /* summer.png */; };
 		4A8596891A00CBD10097379A /* winter.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A8596831A00CBD10097379A /* winter.png */; };
+		4A8596901A0205350097379A /* walking_map.db in Resources */ = {isa = PBXBuildFile; fileRef = 4A85968F1A0205350097379A /* walking_map.db */; };
+		4A8596911A0205350097379A /* walking_map.db in Resources */ = {isa = PBXBuildFile; fileRef = 4A85968F1A0205350097379A /* walking_map.db */; };
 		4ADE376019FA109200FE524F /* TopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE375F19FA109200FE524F /* TopViewController.m */; };
 		4ADE376319FA1A5A00FE524F /* CourseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE376219FA1A5A00FE524F /* CourseTableViewController.m */; };
 		4ADE376619FA1B7900FE524F /* CourseMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE376519FA1B7900FE524F /* CourseMapViewController.m */; };
@@ -95,13 +95,13 @@
 		4A85966719FFB67C0097379A /* sumiyoshityoukaikan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sumiyoshityoukaikan.png; sourceTree = "<group>"; };
 		4A85966819FFB67C0097379A /* tomoeohashi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tomoeohashi.png; sourceTree = "<group>"; };
 		4A85966919FFB67C0097379A /* yajigashiratyoukaikan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yajigashiratyoukaikan.png; sourceTree = "<group>"; };
-		4A85967A19FFB7920097379A /* walking_map.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = walking_map.db; sourceTree = "<group>"; };
 		4A85967E1A00CBD10097379A /* autumn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = autumn.png; sourceTree = "<group>"; };
 		4A85967F1A00CBD10097379A /* park.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = park.png; sourceTree = "<group>"; };
 		4A8596801A00CBD10097379A /* sea.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sea.png; sourceTree = "<group>"; };
 		4A8596811A00CBD10097379A /* spring.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spring.png; sourceTree = "<group>"; };
 		4A8596821A00CBD10097379A /* summer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = summer.png; sourceTree = "<group>"; };
 		4A8596831A00CBD10097379A /* winter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = winter.png; sourceTree = "<group>"; };
+		4A85968F1A0205350097379A /* walking_map.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = walking_map.db; sourceTree = "<group>"; };
 		4ADE375E19FA109200FE524F /* TopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopViewController.h; sourceTree = "<group>"; };
 		4ADE375F19FA109200FE524F /* TopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopViewController.m; sourceTree = "<group>"; };
 		4ADE376119FA1A5A00FE524F /* CourseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseTableViewController.h; sourceTree = "<group>"; };
@@ -183,7 +183,7 @@
 		4A74F31019F6690D00DA5C82 /* tourism-app */ = {
 			isa = PBXGroup;
 			children = (
-				4A85967A19FFB7920097379A /* walking_map.db */,
+				4A85968F1A0205350097379A /* walking_map.db */,
 				4A85967D1A00CBD10097379A /* categories */,
 				4A85965919FFB67C0097379A /* spot_images */,
 				4ADE377A19FA728200FE524F /* fmdb */,
@@ -397,7 +397,7 @@
 				4A74F31D19F6690D00DA5C82 /* Main.storyboard in Resources */,
 				4A74F32219F6690D00DA5C82 /* LaunchScreen.xib in Resources */,
 				4A74F31F19F6690D00DA5C82 /* Images.xcassets in Resources */,
-				4A85967B19FFB7920097379A /* walking_map.db in Resources */,
+				4A8596901A0205350097379A /* walking_map.db in Resources */,
 				4A85966E19FFB67C0097379A /* hokkaidouoshimagoudoutyousya.png in Resources */,
 				4A85967519FFB67C0097379A /* sakuragaokadori.png in Resources */,
 				4A8596881A00CBD10097379A /* summer.png in Resources */,
@@ -410,7 +410,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A85967C19FFB7920097379A /* walking_map.db in Resources */,
+				4A8596911A0205350097379A /* walking_map.db in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
