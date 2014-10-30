@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CourseDetailViewController : UIViewController
+@interface CourseDetailViewController : UIViewController {
+    NSString *course_name; //コース一覧画面から受け取ったコース名
+}
 
-@property (weak, nonatomic) IBOutlet UINavigationBar *myNavigationBar;
+@property (weak, nonatomic) IBOutlet UINavigationItem *myNavigationItem;
 @property (weak, nonatomic) IBOutlet UIImageView *myImageView;
 @property (weak, nonatomic) IBOutlet UITableView *myTableView;
+
+@property (nonatomic)NSString *course_name; //コース一覧画面から受け取ったコース名
 
 @end

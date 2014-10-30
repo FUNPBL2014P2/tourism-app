@@ -14,9 +14,16 @@
 
 @implementation CourseDetailViewController
 
+@synthesize course_name;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    self.myNavigationItem.title = course_name;
+    
+    //コース一覧画面で選択されたコース名
+    NSLog(@"%@", course_name);
 }
 
 //戻るボタンのアクション

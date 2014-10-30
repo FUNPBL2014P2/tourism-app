@@ -11,8 +11,11 @@
 
 @interface CourseTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     CourseModel *course_table_model;
+    NSString *course_name; //コース詳細画面に受け渡すコース名
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *myTableView;
+
+@property (nonatomic)NSString *course_name; //コース詳細画面に受け渡すコース名
 
 @end

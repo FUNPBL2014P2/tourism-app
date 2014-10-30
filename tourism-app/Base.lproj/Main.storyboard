@@ -104,7 +104,7 @@
                     <navigationItem key="navigationItem" id="3hR-5Z-WLf"/>
                     <connections>
                         <outlet property="myTableView" destination="xr9-G1-tOx" id="syU-cR-RrR"/>
-                        <segue destination="MWC-Uy-Y2q" kind="modal" id="NHc-ck-j4F"/>
+                        <segue destination="MWC-Uy-Y2q" kind="modal" identifier="detail" id="NHc-ck-j4F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IQS-RR-aez" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -383,7 +383,7 @@
                     </view>
                     <connections>
                         <outlet property="myImageView" destination="njf-lZ-pbP" id="wf6-vn-smR"/>
-                        <outlet property="myNavigationBar" destination="paO-Dl-hWg" id="Xnd-d9-ciD"/>
+                        <outlet property="myNavigationItem" destination="hye-yR-fNN" id="OGu-Og-myq"/>
                         <outlet property="myTableView" destination="2Gw-RD-lml" id="BME-c4-Bq4"/>
                         <segue destination="W4b-i2-zI2" kind="modal" id="hwF-Yj-bvm"/>
                     </connections>
@@ -444,6 +444,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="vi7-3m-iwG"/>
+        <segue reference="NHc-ck-j4F"/>
     </inferredMetricsTieBreakers>
 </document>
