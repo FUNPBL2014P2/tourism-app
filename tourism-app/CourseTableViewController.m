@@ -21,7 +21,7 @@
     self.myTableView.dataSource = self;
     self.myTableView.delegate = self;
     
-    course_table_model = [[CourseTableModel alloc]init];
+    course_table_model = [[CourseModel alloc]init];
 }
 
 /**

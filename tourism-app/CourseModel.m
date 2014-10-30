@@ -1,15 +1,16 @@
 //
-//  CourseTableModel.m
+//  CourseModel.m
 //  tourism-app
 //
-//  Created by 河辺雅史 on 2014/10/25.
+//  Created by 河辺雅史 on 2014/10/30.
 //  Copyright (c) 2014年 myname. All rights reserved.
 //
 
-#import "CourseTableModel.h"
+#import "CourseModel.h"
 #import "FMDatabase.h"
 
-@implementation CourseTableModel
+@implementation CourseModel
+
 NSString *getCourseDatasSql = @"select distinct * FROM courses left outer join routes ON courses.courseid = routes.coursesid left outer join spots ON courses.courseid = spots.courseid left outer join nearest_stops ON courses.courseid = nearest_stops.coursesid left outer join tags ON courses.courseid = tags.courseid;";
 
 /**
@@ -109,6 +110,7 @@ NSString *getCourseDatasSql = @"select distinct * FROM courses left outer join r
                 
                 //スポット情報格納
                 [check_contain_spotid addObject:[NSNumber numberWithInt:[results intForColumn:@"spotid"]]];
+                [course.spotid addObject:[NSNumber numberWithInt:[results intForColumn:@"spotid"]]];
                 [course.spot_name addObject:[results stringForColumn:@"spot_name"]];
                 [course.spot_detail addObject:[results stringForColumn:@"spot_detail"]];
                 [course.spot_latitude addObject:[NSNumber numberWithDouble:[results doubleForColumn:@"nearest_stop_latitude"]]];
@@ -138,6 +140,7 @@ NSString *getCourseDatasSql = @"select distinct * FROM courses left outer join r
                 //CourseインスタンスのスポットIDに、既に同じスポットIDが格納されているか確認するための配列に同じスポットIDが格納されていない場合、
                 //そのCourseインスタンスのスポット情報を格納する配列に、スポット情報を格納する
                 if(![check_contain_spotid containsObject:[NSNumber numberWithInt:[results intForColumn:@"spotid"]]]){
+                    [course.spotid addObject:[NSNumber numberWithInt:[results intForColumn:@"spotid"]]];
                     [course.spot_name addObject:[results stringForColumn:@"spot_name"]];
                     [course.spot_detail addObject:[results stringForColumn:@"spot_detail"]];
                     [course.spot_latitude addObject:[NSNumber numberWithDouble:[results doubleForColumn:@"nearest_stop_latitude"]]];
@@ -154,7 +157,7 @@ NSString *getCourseDatasSql = @"select distinct * FROM courses left outer join r
                     if(![check_contain_tagid containsObject:[NSNumber numberWithInt:[results intForColumn:@"tagid"]]]){
                         [course.tagid addObject:[NSNumber numberWithInt:[results intForColumn:@"tagid"]]];
                         [course.tag_name addObject:[results stringForColumn:@"tag_name"]];
-                    
+                        
                         [check_contain_tagid addObject:[NSNumber numberWithInt:[results intForColumn:@"tagid"]]];
                     }
                 }
