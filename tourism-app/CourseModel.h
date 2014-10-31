@@ -17,5 +17,6 @@
 }
 
 - (id)init;
+- (Course *) getDataWithName:(NSString *)name;
 
 @end

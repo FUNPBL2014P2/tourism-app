@@ -14,6 +14,8 @@
 
 @implementation CourseTableViewController
 
+@synthesize course_name;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -61,6 +63,33 @@
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
+}
+
+/**
+ セルタップ時に呼び出される
+ */
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    //ハイライトを外す
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    for(int i = 0;i < [course_table_model->course_table_data count];i++){
+        if(indexPath.row == i){
+            Course *course = [course_table_model->course_table_data objectAtIndex:i];
+            course_name = course.course_name;
+            [self performSegueWithIdentifier:@"detail" sender:self];
+        }
+    }
+}
+
+/**
+ Segueが実行されると、実行直前に自動的に呼び出される
+ */
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    CourseTableViewController *nextViewController = (CourseTableViewController*)[segue destinationViewController];
+    
+    if ([[segue identifier] isEqualToString:@"detail"]){
+        nextViewController.course_name = course_name;
+    }
 }
 
 ///戻るボタンのアクション
