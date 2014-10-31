@@ -186,6 +186,17 @@ Course *course;
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
+/**
+ Viewの表示が完了後に呼び出される
+ 画面に表示されるたびに呼び出される
+ */
+- (void)viewDidAppear:(BOOL)animated {
+    //スクロールバーの点滅
+    [self.myTableView flashScrollIndicators];
+    //表示後の処理
+    [super viewDidAppear:animated];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
