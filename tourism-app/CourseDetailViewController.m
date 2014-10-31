@@ -74,6 +74,9 @@ Course *course;
     cell.accessoryType = UITableViewCellAccessoryNone;
     //セルを押したとき青くならなくする
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    //UITableViewのCellの値がスクロールするごとに重なったり壊れるなどの問題を防ぐために
+    //最初に全てのcell.imageView.imageをnilに設定する
+    cell.imageView.image = nil;
 
     //UITableViewのCellの値がスクロールするごとに重なったり壊れる,UITableViewでCell再描画時に文字が重なる
     //などの問題を防ぐために、CellのsubViewを消去する
@@ -133,6 +136,7 @@ Course *course;
     for(int i = 0;i < [course.spot_name count];i++){
         if(indexPath.row == 7 + i){
             cell.textLabel.text = [course.spot_name objectAtIndex:i];
+            cell.imageView.image = [UIImage imageNamed:[course.spot_image_name objectAtIndex:i]];
         }
     }
     
