@@ -170,6 +170,16 @@ Course *course;
     [self performSegueWithIdentifier:@"walkingmap" sender:self];
 }
 
+/**
+ Segueが実行されると、実行直前に自動的に呼び出される
+ */
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    CourseDetailViewController *nextViewController = (CourseDetailViewController*)[segue destinationViewController];
+    
+    if ([[segue identifier] isEqualToString:@"walkingmap"]){
+        nextViewController.course_name = course_name;
+    }
+}
 
 ///戻るボタンのアクション
 - (IBAction)dismissSelf:(id)sender {
