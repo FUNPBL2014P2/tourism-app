@@ -330,6 +330,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="5ZK-E2-aG2" secondAttribute="trailing" constant="-16" id="zef-LR-SnU"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="dux-9T-OHV"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PQS-Le-0Ih" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -350,7 +351,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="2Gw-RD-lml">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <imageView key="tableFooterView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="njf-lZ-pbP">
+                                <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="njf-lZ-pbP">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="248"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
@@ -385,7 +386,8 @@
                         <outlet property="myImageView" destination="njf-lZ-pbP" id="wf6-vn-smR"/>
                         <outlet property="myNavigationItem" destination="hye-yR-fNN" id="OGu-Og-myq"/>
                         <outlet property="myTableView" destination="2Gw-RD-lml" id="BME-c4-Bq4"/>
-                        <segue destination="W4b-i2-zI2" kind="modal" id="hwF-Yj-bvm"/>
+                        <segue destination="W4b-i2-zI2" kind="modal" identifier="detailmap" id="hwF-Yj-bvm"/>
+                        <segue destination="wpK-Ri-VO3" kind="modal" identifier="walkingmap" id="m2A-yz-i2n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6T0-yn-QZt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -445,5 +447,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="NHc-ck-j4F"/>
+        <segue reference="m2A-yz-i2n"/>
     </inferredMetricsTieBreakers>
 </document>

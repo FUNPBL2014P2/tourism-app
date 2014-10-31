@@ -65,6 +65,9 @@
     return cell;
 }
 
+/**
+ セルタップ時に呼び出される
+ */
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     //ハイライトを外す
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -78,6 +81,9 @@
     }
 }
 
+/**
+ Segueが実行されると、実行直前に自動的に呼び出される
+ */
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     CourseTableViewController *nextViewController = (CourseTableViewController*)[segue destinationViewController];
     
