@@ -10,4 +10,6 @@
 
 @interface HealthWalkingMapDetailViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIWebView *myWebView;
+
 @end
