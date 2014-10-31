@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface CourseDetailMapViewController : UIViewController
+
+@property (weak, nonatomic) IBOutlet MKMapView *myMapView;
+@property (weak, nonatomic) IBOutlet UIToolbar *myToolBar;
 
 @end
