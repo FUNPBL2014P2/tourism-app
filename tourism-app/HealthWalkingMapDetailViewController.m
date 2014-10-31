@@ -34,6 +34,8 @@ Course *course;
     NSURLRequest* myRequest = [NSURLRequest requestWithURL: walkingmapURL];
     [self.myWebView loadRequest:myRequest];
     
+    self.myWebView.scalesPageToFit = YES;
+    
     //コース一覧画面で選択されたコース名
     NSLog(@"%@", course_name);
 }
