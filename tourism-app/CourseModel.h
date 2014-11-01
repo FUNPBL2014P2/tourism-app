@@ -18,5 +18,8 @@
 
 - (id)init;
 - (Course *) getDataWithName:(NSString *)name;
+- (void) getSortedbyDistanceMutableArray:(NSMutableArray *)course_table_datas;
+- (void) getSortedbyCaloryMutableArray:(NSMutableArray *)course_table_datas;
+- (void) getSortedbyTimeMutableArray:(NSMutableArray *)course_table_datas;
 
 @end
