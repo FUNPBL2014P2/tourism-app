@@ -24,6 +24,9 @@
     self.myTableView.delegate = self;
     
     course_table_model = [[CourseModel alloc]init];
+    
+    //SegmentedContrlの初期状態が「距離順」なので、距離を降順でソート
+    [course_table_model getSortedbyDistanceMutableArray:course_table_model->course_table_data];
 }
 
 /**
@@ -32,13 +35,16 @@
 - (IBAction)mySegmentedControlAction:(id)sender {
     if(self.mySegmentedControl.selectedSegmentIndex == 0){
         NSLog(@"距離順");
-        [course_table_model getSortedbyDistanceMutableArray:course_table_model->course_table_data]; //距離を降順でソート
+        //距離を降順でソート
+        [course_table_model getSortedbyDistanceMutableArray:course_table_model->course_table_data];
     }else if(self.mySegmentedControl.selectedSegmentIndex == 1){
         NSLog(@"カロリー順");
-        [course_table_model getSortedbyCaloryMutableArray:course_table_model->course_table_data]; //消費カロリー(男性消費カロリー)を降順でソート
+        //消費カロリー(男性消費カロリー)を降順でソート
+        [course_table_model getSortedbyCaloryMutableArray:course_table_model->course_table_data];
     }else if(self.mySegmentedControl.selectedSegmentIndex == 2){
         NSLog(@"時間順");
-        [course_table_model getSortedbyTimeMutableArray:course_table_model->course_table_data]; //所要時間を降順でソート
+        //所要時間を降順でソート
+        [course_table_model getSortedbyTimeMutableArray:course_table_model->course_table_data];
     }
     
     //TableViewの更新
