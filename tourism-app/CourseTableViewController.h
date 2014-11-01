@@ -14,6 +14,8 @@
     NSString *course_name; //コース詳細画面に受け渡すコース名
 }
 
+@property (weak, nonatomic) IBOutlet UISegmentedControl *mySegmentedControl;
+- (IBAction)mySegmentedControlAction:(id)sender;
 @property (weak, nonatomic) IBOutlet UITableView *myTableView;
 
 @property (nonatomic)NSString *course_name; //コース詳細画面に受け渡すコース名

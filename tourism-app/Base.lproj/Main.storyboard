@@ -79,6 +79,9 @@
                                     <segment title="カロリー順"/>
                                     <segment title="時間順"/>
                                 </segments>
+                                <connections>
+                                    <action selector="mySegmentedControlAction:" destination="oIO-Kj-QD2" eventType="valueChanged" id="2Nb-4s-QX4"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="xr9-G1-tOx">
                                 <rect key="frame" x="0.0" y="94" width="600" height="506"/>
@@ -103,6 +106,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="3hR-5Z-WLf"/>
                     <connections>
+                        <outlet property="mySegmentedControl" destination="oqQ-OB-S9O" id="ghs-Gs-IZd"/>
                         <outlet property="myTableView" destination="xr9-G1-tOx" id="syU-cR-RrR"/>
                         <segue destination="MWC-Uy-Y2q" kind="modal" identifier="detail" id="NHc-ck-j4F"/>
                     </connections>

@@ -170,6 +170,11 @@ NSString *getCourseDatasSql = @"select distinct * FROM courses left outer join r
     return self;
 }
 
+/**
+ コース名を引数に、そのコース名のコース情報が格納されたCourseクラスのインスタンスを返す
+ 
+ @return Courseクラスのインスタンス
+ */
 - (Course *) getDataWithName:(NSString *)name {
     //コース名が見つかればそのコースのインスタンスを返す
     for(int i = 0;i < [course_table_data count];i++) {
@@ -180,6 +185,51 @@ NSString *getCourseDatasSql = @"select distinct * FROM courses left outer join r
     
     //コース名が見つからなかった場合
     return nil;
+}
+
+/**
+ Courseクラスのインスタンスが格納された配列を引数に、距離を降順でソートする
+ */
+- (void) getSortedbyDistanceMutableArray:(NSMutableArray *)course_table_datas {
+    for (int i = 0; i < [course_table_datas count] - 1; i++) {
+        for (int j = (int)[course_table_datas count] - 1; j > i; j--) {
+            Course *course1 = [course_table_datas objectAtIndex:j - 1];
+            Course *course2 = [course_table_datas objectAtIndex:j];
+            if (course1.distance > course2.distance) {
+                [course_table_datas exchangeObjectAtIndex:j withObjectAtIndex:j - 1];
+            }
+        }
+    }
+}
+
+/**
+ Courseクラスのインスタンスが格納された配列を引数に、消費カロリー(男性消費カロリー)を降順でソートする
+ */
+- (void) getSortedbyCaloryMutableArray:(NSMutableArray *)course_table_datas {
+    for (int i = 0; i < [course_table_datas count] - 1; i++) {
+        for (int j = (int)[course_table_datas count] - 1; j > i; j--) {
+            Course *course1 = [course_table_datas objectAtIndex:j - 1];
+            Course *course2 = [course_table_datas objectAtIndex:j];
+            if (course1.male_calories > course2.male_calories) {
+                [course_table_datas exchangeObjectAtIndex:j withObjectAtIndex:j - 1];
+            }
+        }
+    }
+}
+
+/**
+ Courseクラスのインスタンスが格納された配列を引数に、所要時間を降順でソートする
+ */
+- (void) getSortedbyTimeMutableArray:(NSMutableArray *)course_table_datas {
+    for (int i = 0; i < [course_table_datas count] - 1; i++) {
+        for (int j = (int)[course_table_datas count] - 1; j > i; j--) {
+            Course *course1 = [course_table_datas objectAtIndex:j - 1];
+            Course *course2 = [course_table_datas objectAtIndex:j];
+            if (course1.time > course2.time) {
+                [course_table_datas exchangeObjectAtIndex:j withObjectAtIndex:j - 1];
+            }
+        }
+    }
 }
 
 @end
