@@ -12,6 +12,7 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+//カテゴリ画面にチェックマークがついているか、ついていないか判別するフラグ
 @property (nonatomic)BOOL isSpringChecked;
 @property (nonatomic)BOOL isSummerChecked;
 @property (nonatomic)BOOL isAutumnChecked;

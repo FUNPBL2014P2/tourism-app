@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "FMDatabase.h"
 #import "Course.h"
+#import "AppDelegate.h"
 
 @interface CourseModel : NSObject {
     FMDatabase *database;
@@ -21,5 +22,6 @@
 - (void) getSortedbyDistanceMutableArray:(NSMutableArray *)course_table_datas;
 - (void) getSortedbyCaloryMutableArray:(NSMutableArray *)course_table_datas;
 - (void) getSortedbyTimeMutableArray:(NSMutableArray *)course_table_datas;
+- (void) getSearchedbyCategoryMutableArray:(NSMutableArray *)course_table_datas;
 
 @end
