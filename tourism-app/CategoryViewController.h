@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
 
 @interface CategoryViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
