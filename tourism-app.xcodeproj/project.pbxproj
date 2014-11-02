@@ -35,12 +35,11 @@
 		4A8596871A00CBD10097379A /* spring.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A8596811A00CBD10097379A /* spring.png */; };
 		4A8596881A00CBD10097379A /* summer.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A8596821A00CBD10097379A /* summer.png */; };
 		4A8596891A00CBD10097379A /* winter.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A8596831A00CBD10097379A /* winter.png */; };
-		4A8596901A0205350097379A /* walking_map.db in Resources */ = {isa = PBXBuildFile; fileRef = 4A85968F1A0205350097379A /* walking_map.db */; };
-		4A8596911A0205350097379A /* walking_map.db in Resources */ = {isa = PBXBuildFile; fileRef = 4A85968F1A0205350097379A /* walking_map.db */; };
 		4A8596941A025EE50097379A /* CourseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8596931A025EE50097379A /* CourseModel.m */; };
 		4A8596951A025EE50097379A /* CourseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8596931A025EE50097379A /* CourseModel.m */; };
 		4A8596991A0318D90097379A /* see_walkingmap.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A8596971A0318D90097379A /* see_walkingmap.png */; };
 		4A85969A1A0318D90097379A /* walk_course.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A8596981A0318D90097379A /* walk_course.png */; };
+		4A8596A21A0642340097379A /* walking_map.db in Resources */ = {isa = PBXBuildFile; fileRef = 4A8596A11A0642340097379A /* walking_map.db */; };
 		4ADE376019FA109200FE524F /* TopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE375F19FA109200FE524F /* TopViewController.m */; };
 		4ADE376319FA1A5A00FE524F /* CourseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE376219FA1A5A00FE524F /* CourseTableViewController.m */; };
 		4ADE376619FA1B7900FE524F /* CourseMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE376519FA1B7900FE524F /* CourseMapViewController.m */; };
@@ -104,11 +103,11 @@
 		4A8596811A00CBD10097379A /* spring.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spring.png; sourceTree = "<group>"; };
 		4A8596821A00CBD10097379A /* summer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = summer.png; sourceTree = "<group>"; };
 		4A8596831A00CBD10097379A /* winter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = winter.png; sourceTree = "<group>"; };
-		4A85968F1A0205350097379A /* walking_map.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = walking_map.db; sourceTree = "<group>"; };
 		4A8596921A025EE50097379A /* CourseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseModel.h; sourceTree = "<group>"; };
 		4A8596931A025EE50097379A /* CourseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseModel.m; sourceTree = "<group>"; };
 		4A8596971A0318D90097379A /* see_walkingmap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = see_walkingmap.png; sourceTree = "<group>"; };
 		4A8596981A0318D90097379A /* walk_course.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = walk_course.png; sourceTree = "<group>"; };
+		4A8596A11A0642340097379A /* walking_map.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = walking_map.db; sourceTree = "<group>"; };
 		4ADE375E19FA109200FE524F /* TopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopViewController.h; sourceTree = "<group>"; };
 		4ADE375F19FA109200FE524F /* TopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopViewController.m; sourceTree = "<group>"; };
 		4ADE376119FA1A5A00FE524F /* CourseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseTableViewController.h; sourceTree = "<group>"; };
@@ -188,7 +187,7 @@
 		4A74F31019F6690D00DA5C82 /* tourism-app */ = {
 			isa = PBXGroup;
 			children = (
-				4A85968F1A0205350097379A /* walking_map.db */,
+				4A8596A11A0642340097379A /* walking_map.db */,
 				4A8596961A0318D90097379A /* button_images */,
 				4A85967D1A00CBD10097379A /* categories */,
 				4A85965919FFB67C0097379A /* spot_images */,
@@ -414,9 +413,9 @@
 				4A74F32219F6690D00DA5C82 /* LaunchScreen.xib in Resources */,
 				4A8596991A0318D90097379A /* see_walkingmap.png in Resources */,
 				4A74F31F19F6690D00DA5C82 /* Images.xcassets in Resources */,
-				4A8596901A0205350097379A /* walking_map.db in Resources */,
 				4A85966E19FFB67C0097379A /* hokkaidouoshimagoudoutyousya.png in Resources */,
 				4A85967519FFB67C0097379A /* sakuragaokadori.png in Resources */,
+				4A8596A21A0642340097379A /* walking_map.db in Resources */,
 				4A8596881A00CBD10097379A /* summer.png in Resources */,
 				4A8596861A00CBD10097379A /* sea.png in Resources */,
 				4A85966A19FFB67C0097379A /* hakodateasaichi.png in Resources */,
@@ -427,7 +426,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A8596911A0205350097379A /* walking_map.db in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -22,11 +22,21 @@
     
     self.myTableView.dataSource = self;
     self.myTableView.delegate = self;
-    
+}
+
+/**
+ Viewが表示される直前に呼び出される
+ タブ等の切り替え等により、画面に表示されるたびに呼び出される
+ */
+- (void)viewWillAppear:(BOOL)animated {
     course_table_model = [[CourseModel alloc]init];
     
     //SegmentedContrlの初期状態が「距離順」なので、距離を降順でソート
     [course_table_model getSortedbyDistanceMutableArray:course_table_model->course_table_data];
+    //カテゴリ画面でチェックマークがついている項目に対応するコースを検索
+    [course_table_model getSearchedbyCategoryMutableArray:course_table_model->course_table_data];
+    
+    [self.myTableView reloadData];
 }
 
 /**
