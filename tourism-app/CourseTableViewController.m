@@ -16,6 +16,8 @@
 
 @synthesize course_name;
 
+BOOL isSorted;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -47,14 +49,17 @@
         NSLog(@"距離順");
         //距離を降順でソート
         [course_table_model getSortedbyDistanceMutableArray:course_table_model->course_table_data];
+        isSorted = YES;
     }else if(self.mySegmentedControl.selectedSegmentIndex == 1){
         NSLog(@"カロリー順");
         //消費カロリー(男性消費カロリー)を降順でソート
         [course_table_model getSortedbyCaloryMutableArray:course_table_model->course_table_data];
+        isSorted = YES;
     }else if(self.mySegmentedControl.selectedSegmentIndex == 2){
         NSLog(@"時間順");
         //所要時間を降順でソート
         [course_table_model getSortedbyTimeMutableArray:course_table_model->course_table_data];
+        isSorted = YES;
     }
     
     //TableViewの更新
@@ -88,6 +93,64 @@
     UITableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if(cell == nil){
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+    }
+    
+    //タグアイコンの設定
+    UIImage *spring_image = [UIImage imageNamed:@"spring_waku.png"];
+    UIImageView *spring_tag = [[UIImageView alloc]initWithImage:spring_image];
+    spring_tag.frame = CGRectMake(148, 65, 15, 15);
+    
+    UIImage *summer_image = [UIImage imageNamed:@"summer_waku.png"];
+    UIImageView *summer_tag = [[UIImageView alloc]initWithImage:summer_image];
+    summer_tag.frame = CGRectMake(168, 65, 15, 15);
+    
+    UIImage *autumn_image = [UIImage imageNamed:@"autumn_waku.png"];
+    UIImageView *autumn_tag = [[UIImageView alloc]initWithImage:autumn_image];
+    autumn_tag.frame = CGRectMake(188, 65, 15, 15);
+    
+    UIImage *winter_image = [UIImage imageNamed:@"winter_waku.png"];
+    UIImageView *winter_tag = [[UIImageView alloc]initWithImage:winter_image];
+    winter_tag.frame = CGRectMake(208, 65, 15, 15);
+    
+    UIImage *park_image = [UIImage imageNamed:@"park_waku.png"];
+    UIImageView *park_tag = [[UIImageView alloc]initWithImage:park_image];
+    park_tag.frame = CGRectMake(228, 65, 15, 15);
+    
+    UIImage *sea_image = [UIImage imageNamed:@"sea_waku.png"];
+    UIImageView *sea_tag = [[UIImageView alloc]initWithImage:sea_image];
+    sea_tag.frame = CGRectMake(248, 65, 15, 15);
+    
+    
+    //UITableViewのCellの値がスクロールするごとに重なったり壊れる,UITableViewでCell再描画時に文字が重なる
+    //などの問題を防ぐために、CellのsubViewを消去する
+    //タグアイコンを表示する前に、以前のsubviewsを削除する
+    for (UIView *subview in [cell.contentView subviews]) {
+        [subview removeFromSuperview];
+    }
+    
+    //タグアイコンの表示
+    for(int i = 0;i < [course_table_model->course_table_data count];i++){
+        Course *tag_course = [course_table_model->course_table_data objectAtIndex:i];
+        if(indexPath.row == i){
+            if([tag_course.tag_name containsObject:@"春"]){
+                [cell.contentView addSubview:spring_tag];
+            }
+            if([tag_course.tag_name containsObject:@"夏"]){
+                [cell.contentView addSubview:summer_tag];
+            }
+            if([tag_course.tag_name containsObject:@"秋"]){
+                [cell.contentView addSubview:autumn_tag];
+            }
+            if([tag_course.tag_name containsObject:@"冬"]){
+                [cell.contentView addSubview:winter_tag];
+            }
+            if([tag_course.tag_name containsObject:@"公園"]){
+                [cell.contentView addSubview:park_tag];
+            }
+            if([tag_course.tag_name containsObject:@"海"]){
+                [cell.contentView addSubview:sea_tag];
+            }
+        }
     }
     
     Course *course = [course_table_model->course_table_data objectAtIndex:indexPath.row];
