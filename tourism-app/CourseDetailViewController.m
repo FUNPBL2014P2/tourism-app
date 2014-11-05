@@ -130,45 +130,52 @@ Course *course;
         UIImage *spring_image = [UIImage imageNamed:@"spring_waku.png"];
         UIImageView *spring_tag = [[UIImageView alloc]initWithImage:spring_image];
         spring_tag.frame = CGRectMake(20, 20, 40, 40);
+        [cell.contentView addSubview:spring_tag];
         
         UIImage *summer_image = [UIImage imageNamed:@"summer_waku.png"];
         UIImageView *summer_tag = [[UIImageView alloc]initWithImage:summer_image];
         summer_tag.frame = CGRectMake(65, 20, 40, 40);
-        
+        [cell.contentView addSubview:summer_tag];
+
         UIImage *autumn_image = [UIImage imageNamed:@"autumn_waku.png"];
         UIImageView *autumn_tag = [[UIImageView alloc]initWithImage:autumn_image];
         autumn_tag.frame = CGRectMake(110, 20, 40, 40);
-        
+        [cell.contentView addSubview:autumn_tag];
+
         UIImage *winter_image = [UIImage imageNamed:@"winter_waku.png"];
         UIImageView *winter_tag = [[UIImageView alloc]initWithImage:winter_image];
         winter_tag.frame = CGRectMake(155, 20, 40, 40);
-        
+        [cell.contentView addSubview:winter_tag];
+
         UIImage *park_image = [UIImage imageNamed:@"park_waku.png"];
         UIImageView *park_tag = [[UIImageView alloc]initWithImage:park_image];
         park_tag.frame = CGRectMake(200, 20, 40, 40);
-        
+        [cell.contentView addSubview:park_tag];
+
         UIImage *sea_image = [UIImage imageNamed:@"sea_waku.png"];
         UIImageView *sea_tag = [[UIImageView alloc]initWithImage:sea_image];
         sea_tag.frame = CGRectMake(245, 20, 40, 40);
+        [cell.contentView addSubview:sea_tag];
+
         
         //タグアイコンの表示
-        if([course.tag_name containsObject:@"春"]){
-            [cell.contentView addSubview:spring_tag];
+        if(![course.tag_name containsObject:@"春"]){
+            spring_tag.alpha = 0.2;
         }
-        if([course.tag_name containsObject:@"夏"]){
-            [cell.contentView addSubview:summer_tag];
+        if(![course.tag_name containsObject:@"夏"]){
+            summer_tag.alpha = 0.2;
         }
-        if([course.tag_name containsObject:@"秋"]){
-            [cell.contentView addSubview:autumn_tag];
+        if(![course.tag_name containsObject:@"秋"]){
+            autumn_tag.alpha = 0.2;
         }
-        if([course.tag_name containsObject:@"冬"]){
-            [cell.contentView addSubview:winter_tag];
+        if(![course.tag_name containsObject:@"冬"]){
+            winter_tag.alpha = 0.2;
         }
-        if([course.tag_name containsObject:@"公園"]){
-            [cell.contentView addSubview:park_tag];
+        if(![course.tag_name containsObject:@"公園"]){
+            park_tag.alpha = 0.2;
         }
-        if([course.tag_name containsObject:@"海"]){
-            [cell.contentView addSubview:sea_tag];
+        if(![course.tag_name containsObject:@"海"]){
+            sea_tag.alpha = 0.2;
         }
     }else if(indexPath.row == 7 + [course.spot_name count]){
         cell.textLabel.text = @"Powered by 健康ウォーキングマップ";
