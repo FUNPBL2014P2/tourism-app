@@ -9,10 +9,18 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import "CourseModel.h"
 
-@interface CourseDetailMapViewController : UIViewController
+@interface CourseDetailMapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate> {
+    
+    CourseModel *_course_map_model;
+    NSString *_course_name; //コース詳細画面に受け渡すコース名
+    
+}
 
 @property (weak, nonatomic) IBOutlet MKMapView *myMapView;
 @property (weak, nonatomic) IBOutlet UIToolbar *myToolBar;
+@property (nonatomic)NSString *course_name;
+@property CourseModel *course_map_model;
 
 @end
