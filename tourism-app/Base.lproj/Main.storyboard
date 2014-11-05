@@ -168,7 +168,7 @@
                     <connections>
                         <outlet property="myMapView" destination="wGW-Gd-HRX" id="bYf-o8-E4T"/>
                         <outlet property="myToolBar" destination="56g-jY-6or" id="WPN-vq-WhI"/>
-                        <segue destination="MWC-Uy-Y2q" kind="modal" id="vi7-3m-iwG"/>
+                        <segue destination="MWC-Uy-Y2q" kind="modal" identifier="MapToDetail" id="vi7-3m-iwG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a1g-10-z8r" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -454,7 +454,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="NHc-ck-j4F"/>
+        <segue reference="vi7-3m-iwG"/>
         <segue reference="m2A-yz-i2n"/>
     </inferredMetricsTieBreakers>
 </document>

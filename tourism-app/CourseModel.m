@@ -8,6 +8,7 @@
 
 #import "CourseModel.h"
 #import "FMDatabase.h"
+#import "CustomAnnotation.h"
 
 @implementation CourseModel
 
@@ -311,6 +312,29 @@ AppDelegate *appDelegate;
             }
         }
     }
+}
+
+/**
+ スタート位置のCustomAnnotationがはいった配列を返すメソッド
+ */
+- (NSMutableArray *) getStartAnnotation {
+    
+    NSMutableArray *pins = [NSMutableArray array];
+    CustomAnnotation *startAnnotation;
+    
+    for(int i = 0;i < [course_table_data count]; i++){
+        Course *course = [course_table_data objectAtIndex:i];
+        for(int j = 0;j < [course.attribute count]; j++){
+            if([[course.attribute objectAtIndex:j] isEqual:@"checkpoint"]){
+                CLLocationCoordinate2D pin_point = CLLocationCoordinate2DMake([[course.route_latitude objectAtIndex:j] doubleValue]
+                                                                              ,[[course.route_longitude objectAtIndex:j] doubleValue]);
+                startAnnotation = [[CustomAnnotation alloc] initWithCoordinate:pin_point];
+                startAnnotation.title = course.course_name;
+                [pins addObject:startAnnotation];
+            }
+        }
+    }
+    return pins;
 }
 
 @end

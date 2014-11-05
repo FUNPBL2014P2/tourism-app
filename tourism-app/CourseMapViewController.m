@@ -18,7 +18,9 @@
 
 @implementation CourseMapViewController
 
-@synthesize myMapView, myToolBar;
+@synthesize course_name, course_map_model, myMapView, myToolBar;
+
+#pragma mark - UIViewController lifecicle event methods
 
 /**
  初回ロードされた時のみ呼び出される
@@ -50,6 +52,21 @@
     [self toolBarCustom];
     [_myButton addTarget:self action:@selector(myButtonTapped) forControlEvents:UIControlEventTouchUpInside];
     
+    //ここからviewとmodelをつなぐ処理
+    course_map_model = [[CourseModel alloc] init];
+    
+    //getStartAnnotationメソッドはスタート位置のCustomAnnotationがはいった配列を返すメソッド
+    for (int i = 0; i < [[course_map_model getStartAnnotation] count]; i++)
+        [myMapView addAnnotation:[[course_map_model getStartAnnotation] objectAtIndex:i]];
+    
+}
+
+/**
+ メモリ不足時に呼び出される
+ */
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - View
@@ -96,6 +113,35 @@
  */
 - (void)mapView:(MKMapView *)mapView didChangeUserTrackingMode:(MKUserTrackingMode)mode animated:(BOOL)animated {
     [self updateUserTrackingModeBtn:mode];
+}
+
+/**
+ アノテーションが追加されるときに呼出されるメソッド
+ アノテーションの詳細設定はここで行う
+ 
+ @return アノテーションの見た目や大きさなどの詳細設定
+ */
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id)annotation {
+    
+    //現在地にもアノテーションが適応されるため、それをさける処理
+    if ([annotation isKindOfClass:[MKUserLocation class]]) {
+        return nil;
+    }
+    
+    //メモリ節約のため再利用可能なアノテーションビューがあれば、そのビューを取得し、必要ならばアノテーションの内容に合わせてデータの流し込みなどを行います。
+    static NSString *identifier = @"PlaceAnnotation";
+    MKAnnotationView *annotationView = (MKAnnotationView *)[myMapView dequeueReusableAnnotationViewWithIdentifier:identifier];
+    
+    if (!annotationView) {
+        annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
+    }
+    
+    annotationView.canShowCallout = YES;
+    annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    annotationView.image = [UIImage imageNamed:@"start_pin.png"];
+    annotationView.bounds = CGRectMake(0, 0, 60, 60);
+    annotationView.centerOffset = CGPointMake(22, -32); // アイコンの中心を設定する
+    return annotationView;
 }
 
 #pragma mark - event
@@ -168,15 +214,34 @@
     [_myButton setBackgroundImage:[UIImage imageNamed:background] forState:UIControlStateNormal]; // 背景
 }
 
+/**
+ 　アノテーションボタンが押されたとき呼ばれるメソッド
+ */
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
+    
+    // locationManager(CLLocationManagerのインスタンス）のGPS計測を停止させる
+    [_locationManager stopUpdatingLocation];
+    // MapViewの現在位置表示機能を停止させる。コレを忘れるとMapViewを開放してもGPSが使用しっぱなしになる
+    [myMapView setShowsUserLocation:NO];
+    course_name = view.annotation.title;
+    [self performSegueWithIdentifier:@"MapToDetail" sender:self];
+}
+
+/**
+ Segueが実行されると、実行直前に自動的に呼び出される
+ */
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    CourseMapViewController *nextViewController = (CourseMapViewController*)[segue destinationViewController];
+    
+    if ([[segue identifier] isEqualToString:@"MapToDetail"]){
+        nextViewController.course_name = course_name;
+    }
+}
 
 //戻るボタンのアクション
 - (IBAction)dismissSelf:(id)sender {
     [self dismissViewControllerAnimated:YES completion:NULL];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

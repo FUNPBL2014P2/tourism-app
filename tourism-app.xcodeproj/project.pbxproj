@@ -68,6 +68,8 @@
 		9C1D31AC1A0A165D0098053D /* follow_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C1D31AB1A0A165D0098053D /* follow_icon.png */; };
 		9C1D31AE1A0A16640098053D /* followheading_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C1D31AD1A0A16640098053D /* followheading_icon.png */; };
 		9C1D31B01A0A166B0098053D /* none_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C1D31AF1A0A166B0098053D /* none_icon.png */; };
+		9C1D31B31A0A30820098053D /* CustomAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1D31B21A0A30820098053D /* CustomAnnotation.m */; };
+		9C1D31B61A0A341F0098053D /* start_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C1D31B51A0A341F0098053D /* start_pin.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,6 +164,9 @@
 		9C1D31AB1A0A165D0098053D /* follow_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = follow_icon.png; sourceTree = "<group>"; };
 		9C1D31AD1A0A16640098053D /* followheading_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = followheading_icon.png; sourceTree = "<group>"; };
 		9C1D31AF1A0A166B0098053D /* none_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = none_icon.png; sourceTree = "<group>"; };
+		9C1D31B11A0A30820098053D /* CustomAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAnnotation.h; sourceTree = "<group>"; };
+		9C1D31B21A0A30820098053D /* CustomAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAnnotation.m; sourceTree = "<group>"; };
+		9C1D31B51A0A341F0098053D /* start_pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = start_pin.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				4A8596A11A0642340097379A /* walking_map.db */,
+				9C1D31B41A0A34130098053D /* pin_images */,
 				4A039EAB1A09045B005543CE /* categories_waku */,
 				4A8596961A0318D90097379A /* button_images */,
 				4A85967D1A00CBD10097379A /* categories */,
@@ -240,6 +246,8 @@
 				4A8596931A025EE50097379A /* CourseModel.m */,
 				4ADE376119FA1A5A00FE524F /* CourseTableViewController.h */,
 				4ADE376219FA1A5A00FE524F /* CourseTableViewController.m */,
+				9C1D31B11A0A30820098053D /* CustomAnnotation.h */,
+				9C1D31B21A0A30820098053D /* CustomAnnotation.m */,
 				4ADE376D19FA1C5D00FE524F /* CategoryViewController.h */,
 				4ADE376E19FA1C5D00FE524F /* CategoryViewController.m */,
 				4ADE376419FA1B7900FE524F /* CourseMapViewController.h */,
@@ -353,6 +361,14 @@
 			path = fmdb;
 			sourceTree = "<group>";
 		};
+		9C1D31B41A0A34130098053D /* pin_images */ = {
+			isa = PBXGroup;
+			children = (
+				9C1D31B51A0A341F0098053D /* start_pin.png */,
+			);
+			path = pin_images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -461,6 +477,7 @@
 				9C1D31AE1A0A16640098053D /* followheading_icon.png in Resources */,
 				4A74F31D19F6690D00DA5C82 /* Main.storyboard in Resources */,
 				4A74F32219F6690D00DA5C82 /* LaunchScreen.xib in Resources */,
+				9C1D31B61A0A341F0098053D /* start_pin.png in Resources */,
 				9C1D31AA1A0A16520098053D /* background.png in Resources */,
 				4A8596991A0318D90097379A /* see_walkingmap.png in Resources */,
 				4A74F31F19F6690D00DA5C82 /* Images.xcassets in Resources */,
@@ -498,6 +515,7 @@
 				4ADE376C19FA1C0A00FE524F /* CourseDetailViewController.m in Sources */,
 				4ADE377219FA1CC200FE524F /* SpotDetailViewController.m in Sources */,
 				4ADE376619FA1B7900FE524F /* CourseMapViewController.m in Sources */,
+				9C1D31B31A0A30820098053D /* CustomAnnotation.m in Sources */,
 				4ADE376F19FA1C5D00FE524F /* CategoryViewController.m in Sources */,
 				4A74F31719F6690D00DA5C82 /* AppDelegate.m in Sources */,
 				4ADE378A19FA728200FE524F /* FMResultSet.m in Sources */,
