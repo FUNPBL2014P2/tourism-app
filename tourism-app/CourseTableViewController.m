@@ -131,24 +131,31 @@ BOOL isSorted;
     //タグアイコンの表示
     for(int i = 0;i < [course_table_model->course_table_data count];i++){
         Course *tag_course = [course_table_model->course_table_data objectAtIndex:i];
+        [cell.contentView addSubview:spring_tag];
+        [cell.contentView addSubview:summer_tag];
+        [cell.contentView addSubview:autumn_tag];
+        [cell.contentView addSubview:winter_tag];
+        [cell.contentView addSubview:park_tag];
+        [cell.contentView addSubview:sea_tag];
+
         if(indexPath.row == i){
-            if([tag_course.tag_name containsObject:@"春"]){
-                [cell.contentView addSubview:spring_tag];
+            if(![tag_course.tag_name containsObject:@"春"]){
+                spring_tag.alpha = 0.2;
             }
-            if([tag_course.tag_name containsObject:@"夏"]){
-                [cell.contentView addSubview:summer_tag];
+            if(![tag_course.tag_name containsObject:@"夏"]){
+                summer_tag.alpha = 0.2;
             }
-            if([tag_course.tag_name containsObject:@"秋"]){
-                [cell.contentView addSubview:autumn_tag];
+            if(![tag_course.tag_name containsObject:@"秋"]){
+                autumn_tag.alpha = 0.2;
             }
-            if([tag_course.tag_name containsObject:@"冬"]){
-                [cell.contentView addSubview:winter_tag];
+            if(![tag_course.tag_name containsObject:@"冬"]){
+                winter_tag.alpha = 0.2;
             }
-            if([tag_course.tag_name containsObject:@"公園"]){
-                [cell.contentView addSubview:park_tag];
+            if(![tag_course.tag_name containsObject:@"公園"]){
+                park_tag.alpha = 0.2;
             }
-            if([tag_course.tag_name containsObject:@"海"]){
-                [cell.contentView addSubview:sea_tag];
+            if(![tag_course.tag_name containsObject:@"海"]){
+                sea_tag.alpha = 0.2;
             }
         }
     }
