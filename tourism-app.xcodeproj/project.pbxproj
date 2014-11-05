@@ -69,7 +69,7 @@
 		9C1D31AE1A0A16640098053D /* followheading_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C1D31AD1A0A16640098053D /* followheading_icon.png */; };
 		9C1D31B01A0A166B0098053D /* none_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C1D31AF1A0A166B0098053D /* none_icon.png */; };
 		9C1D31B31A0A30820098053D /* CustomAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1D31B21A0A30820098053D /* CustomAnnotation.m */; };
-		9C1D31B61A0A341F0098053D /* start_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C1D31B51A0A341F0098053D /* start_pin.png */; };
+		9C1D31B81A0A9A660098053D /* start_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C1D31B71A0A9A660098053D /* start_pin.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -166,7 +166,7 @@
 		9C1D31AF1A0A166B0098053D /* none_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = none_icon.png; sourceTree = "<group>"; };
 		9C1D31B11A0A30820098053D /* CustomAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAnnotation.h; sourceTree = "<group>"; };
 		9C1D31B21A0A30820098053D /* CustomAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAnnotation.m; sourceTree = "<group>"; };
-		9C1D31B51A0A341F0098053D /* start_pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = start_pin.png; sourceTree = "<group>"; };
+		9C1D31B71A0A9A660098053D /* start_pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = start_pin.png; path = ../start_pin.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -364,7 +364,7 @@
 		9C1D31B41A0A34130098053D /* pin_images */ = {
 			isa = PBXGroup;
 			children = (
-				9C1D31B51A0A341F0098053D /* start_pin.png */,
+				9C1D31B71A0A9A660098053D /* start_pin.png */,
 			);
 			path = pin_images;
 			sourceTree = "<group>";
@@ -477,7 +477,7 @@
 				9C1D31AE1A0A16640098053D /* followheading_icon.png in Resources */,
 				4A74F31D19F6690D00DA5C82 /* Main.storyboard in Resources */,
 				4A74F32219F6690D00DA5C82 /* LaunchScreen.xib in Resources */,
-				9C1D31B61A0A341F0098053D /* start_pin.png in Resources */,
+				9C1D31B81A0A9A660098053D /* start_pin.png in Resources */,
 				9C1D31AA1A0A16520098053D /* background.png in Resources */,
 				4A8596991A0318D90097379A /* see_walkingmap.png in Resources */,
 				4A74F31F19F6690D00DA5C82 /* Images.xcassets in Resources */,

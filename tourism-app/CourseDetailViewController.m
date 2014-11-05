@@ -226,7 +226,7 @@ Course *course;
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     CourseDetailViewController *nextViewController = (CourseDetailViewController*)[segue destinationViewController];
     
-    if ([[segue identifier] isEqualToString:@"walkingmap"]){
+    if ([[segue identifier] isEqualToString:@"walkingmap"]||[[segue identifier] isEqualToString:@"detailmap"]){
         nextViewController.course_name = course_name;
     }
 }

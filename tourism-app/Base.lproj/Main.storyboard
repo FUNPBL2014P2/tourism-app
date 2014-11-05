@@ -234,6 +234,7 @@
                     </view>
                     <connections>
                         <outlet property="myMapView" destination="eQH-Qf-60Y" id="SqM-tg-9Ge"/>
+                        <outlet property="myNavigationItem" destination="Ngp-ca-33i" id="U7e-zY-FyO"/>
                         <outlet property="myToolBar" destination="Gzo-L1-ODY" id="LDG-A6-Fr2"/>
                         <segue destination="wcf-DD-ijF" kind="modal" id="RRe-8e-6rn"/>
                     </connections>
@@ -455,6 +456,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="vi7-3m-iwG"/>
-        <segue reference="m2A-yz-i2n"/>
+        <segue reference="8vl-bp-cHQ"/>
     </inferredMetricsTieBreakers>
 </document>

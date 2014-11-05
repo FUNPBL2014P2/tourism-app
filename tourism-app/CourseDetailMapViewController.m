@@ -19,7 +19,7 @@
 
 @implementation CourseDetailMapViewController
 
-@synthesize course_name, course_map_model, myMapView, myToolBar;
+@synthesize course_name, course_map_model, myMapView, myToolBar, myNavigationItem;
 
 #pragma mark - UIViewController lifecicle event methods
 
@@ -52,6 +52,18 @@
     //ツールバーの詳細設定はtoolBarCustomメソッドで記述
     [self toolBarCustom];
     [self.myButton addTarget:self action:@selector(myButtonTapped) forControlEvents:UIControlEventTouchUpInside];
+    
+    myNavigationItem.title = course_name;
+    
+    //ここからviewとmodelをつなぐ処理
+    course_map_model = [[CourseModel alloc] init];
+  
+    //getStartAnnotationメソッドはスタート位置のCustomAnnotationがはいった配列を返すメソッド
+    NSMutableArray *pins = [[course_map_model getSpotWithName:course_name] mutableCopy];
+
+    for (int i = 0; i < [pins count]; i++) {
+        [myMapView addAnnotation:[pins objectAtIndex:i]];
+    }
 
 }
 
@@ -100,6 +112,36 @@
 - (void)mapView:(MKMapView *)mapView didChangeUserTrackingMode:(MKUserTrackingMode)mode animated:(BOOL)animated {
     [self updateUserTrackingModeBtn:mode];
 }
+
+/**
+ アノテーションが追加されるときに呼出されるメソッド
+ アノテーションの詳細設定はここで行う
+ 
+ @return アノテーションの見た目や大きさなどの詳細設定
+ */
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id)annotation {
+    
+    //現在地にもアノテーションが適応されるため、それをさける処理
+    if ([annotation isKindOfClass:[MKUserLocation class]]) {
+        return nil;
+    }
+    
+    //メモリ節約のため再利用可能なアノテーションビューがあれば、そのビューを取得し、必要ならばアノテーションの内容に合わせてデータの流し込みなどを行います。
+    static NSString *identifier = @"PlaceAnnotation";
+    MKAnnotationView *annotationView = (MKAnnotationView *)[myMapView dequeueReusableAnnotationViewWithIdentifier:identifier];
+    
+    if (!annotationView) {
+        annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
+    }
+    
+    annotationView.canShowCallout = YES;
+    annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    annotationView.image = [UIImage imageNamed:@"start_pin.png"];
+    annotationView.bounds = CGRectMake(0, 0, 60, 60);
+    annotationView.centerOffset = CGPointMake(22, -32); // アイコンの中心を設定する
+    return annotationView;
+}
+
 
 #pragma mark - event
 

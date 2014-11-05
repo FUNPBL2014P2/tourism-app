@@ -22,5 +22,6 @@
 @property (weak, nonatomic) IBOutlet UIToolbar *myToolBar;
 @property (nonatomic)NSString *course_name;
 @property CourseModel *course_map_model;
+@property (weak, nonatomic) IBOutlet UINavigationItem *myNavigationItem;
 
 @end
