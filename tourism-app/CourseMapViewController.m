@@ -31,37 +31,39 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     myMapView.delegate = self;
-    _locationManager.delegate = self;
+    self.locationManager.delegate = self;
     
     myMapView.showsUserLocation = YES;
     [myMapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
     
-    _locationManager = [[CLLocationManager alloc] init];
+    self.locationManager = [[CLLocationManager alloc] init];
     
     //iOS8以上とiOS7未満では位置情報の取得方法が変更されたため、両対応にするため処理を分けている
     //requestWhenInUseAuthorizationはiOS8にしかないメソッド
-    if ([_locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
         
-        [_locationManager requestWhenInUseAuthorization];
+        [self.locationManager requestWhenInUseAuthorization];
     } else {
         
-        [_locationManager startUpdatingLocation];
+        [self.locationManager startUpdatingLocation];
     }
     
     //ツールバーの詳細設定はtoolBarCustomメソッドで記述
     [self toolBarCustom];
-    [_myButton addTarget:self action:@selector(myButtonTapped) forControlEvents:UIControlEventTouchUpInside];
+    [self.myButton addTarget:self action:@selector(myButtonTapped) forControlEvents:UIControlEventTouchUpInside];
     
     //ここからviewとmodelをつなぐ処理
     course_map_model = [[CourseModel alloc] init];
     
     //getStartAnnotationメソッドはスタート位置のCustomAnnotationがはいった配列を返すメソッド
-    for (int i = 0; i < [[course_map_model getStartAnnotation] count]; i++)
+    for (int i = 0; i < [[course_map_model getStartAnnotation] count]; i++) {
         [myMapView addAnnotation:[[course_map_model getStartAnnotation] objectAtIndex:i]];
+    }
     
     //getAllCourseLineメソッドは全コースのMKPolylineが入った配列を返すメソッド
-    for(int i = 0; i < [[course_map_model getAllCourseLine] count]; i++)
+    for(int i = 0; i < [[course_map_model getAllCourseLine] count]; i++) {
         [myMapView addOverlay:[[course_map_model getAllCourseLine] objectAtIndex:i]];
+    }
     
 }
 
@@ -82,17 +84,17 @@
     
     //UIButtonのiconのみにアニメーションをかけるため、iconとbackgroundを分けて大きさを設定している
     //transformでiconの大きさを設定することができる
-    _myButton = [[UIButton alloc] initWithFrame:CGRectMake(0,0,33,33)];
-    _myButton.imageView.transform = CGAffineTransformMakeScale(0.23, 0.23);
-    _myButton.adjustsImageWhenHighlighted = NO;
+    self.myButton = [[UIButton alloc] initWithFrame:CGRectMake(0,0,33,33)];
+    self.myButton.imageView.transform = CGAffineTransformMakeScale(0.23, 0.23);
+    self.myButton.adjustsImageWhenHighlighted = NO;
     
     //アニメーションをかけるための設定
-    _myButton.imageView.clipsToBounds = NO;
-    _myButton.imageView.contentMode = UIViewContentModeCenter;
+    self.myButton.imageView.clipsToBounds = NO;
+    self.myButton.imageView.contentMode = UIViewContentModeCenter;
     
     //UIBarButtonItemではボタンを画像にする設定に限界があるため
     //より細かい設定のできるUIButtonをCustomViewとして設定することで、UIBarButtonItemを実装している
-    UIBarButtonItem *customBarItem = [[UIBarButtonItem alloc]initWithCustomView:_myButton];
+    UIBarButtonItem *customBarItem = [[UIBarButtonItem alloc]initWithCustomView:self.myButton];
     NSArray *barButtons = [NSArray arrayWithObjects:customBarItem, nil];
     [myToolBar setItems:barButtons];
     [self updateUserTrackingModeBtn:MKUserTrackingModeFollow];
@@ -108,7 +110,7 @@
     
     if (status == kCLAuthorizationStatusAuthorizedAlways ||
         status == kCLAuthorizationStatusAuthorizedWhenInUse) {
-        [_locationManager startUpdatingLocation];
+        [self.locationManager startUpdatingLocation];
     }
 }
 
@@ -188,19 +190,19 @@
             break;
         case MKUserTrackingModeFollow:
             mode = MKUserTrackingModeFollowWithHeading;
-            _myButton.imageView.transform = CGAffineTransformMakeScale(0.001, 0.001);
+            self.myButton.imageView.transform = CGAffineTransformMakeScale(0.001, 0.001);
             break;
         case MKUserTrackingModeFollowWithHeading:
             mode = MKUserTrackingModeNone;
-            _myButton.imageView.transform = CGAffineTransformMakeScale(0.001, 0.001);
+            self.myButton.imageView.transform = CGAffineTransformMakeScale(0.001, 0.001);
             break;
     }
     
-    _myButton.imageView.transform = CGAffineTransformMakeScale(0.23, 0.23);
+    self.myButton.imageView.transform = CGAffineTransformMakeScale(0.23, 0.23);
     [UIView commitAnimations];
     
     [self updateUserTrackingModeBtn:mode];
-    [self.myMapView setUserTrackingMode:mode animated:YES];
+    [myMapView setUserTrackingMode:mode animated:YES];
     
 }
 
@@ -228,8 +230,8 @@
             break;
     }
     
-    [_myButton setImage:[UIImage imageNamed:icon] forState:UIControlStateNormal]; // アイコン
-    [_myButton setBackgroundImage:[UIImage imageNamed:background] forState:UIControlStateNormal]; // 背景
+    [self.myButton setImage:[UIImage imageNamed:icon] forState:UIControlStateNormal]; // アイコン
+    [self.myButton setBackgroundImage:[UIImage imageNamed:background] forState:UIControlStateNormal]; // 背景
 }
 
 /**
@@ -238,7 +240,7 @@
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
     
     // locationManager(CLLocationManagerのインスタンス）のGPS計測を停止させる
-    [_locationManager stopUpdatingLocation];
+    [self.locationManager stopUpdatingLocation];
     // MapViewの現在位置表示機能を停止させる。コレを忘れるとMapViewを開放してもGPSが使用しっぱなしになる
     [myMapView setShowsUserLocation:NO];
     course_name = view.annotation.title;
@@ -257,11 +259,13 @@
     }
 }
 
-//戻るボタンのアクション
+/**
+ 戻るボタンが押されたとき呼ばれるメソッド
+ */
 - (IBAction)dismissSelf:(id)sender {
     
     // locationManager(CLLocationManagerのインスタンス）のGPS計測を停止させる
-    [_locationManager stopUpdatingLocation];
+    [self.locationManager stopUpdatingLocation];
     // MapViewの現在位置表示機能を停止させる。コレを忘れるとMapViewを開放してもGPSが使用しっぱなしになる
     [myMapView setShowsUserLocation:NO];
     [self dismissViewControllerAnimated:YES completion:NULL];
