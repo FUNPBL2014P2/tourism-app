@@ -126,7 +126,50 @@ Course *course;
     }else if(indexPath.row == 5){
         cell.textLabel.text = [NSString stringWithFormat:@"歩数:%d歩", course.steps];
     }else if(indexPath.row == 6){
-        cell.textLabel.text = @"タグ画像を入れる";
+        //タグアイコンの設定
+        UIImage *spring_image = [UIImage imageNamed:@"spring_waku.png"];
+        UIImageView *spring_tag = [[UIImageView alloc]initWithImage:spring_image];
+        spring_tag.frame = CGRectMake(20, 20, 40, 40);
+        
+        UIImage *summer_image = [UIImage imageNamed:@"summer_waku.png"];
+        UIImageView *summer_tag = [[UIImageView alloc]initWithImage:summer_image];
+        summer_tag.frame = CGRectMake(65, 20, 40, 40);
+        
+        UIImage *autumn_image = [UIImage imageNamed:@"autumn_waku.png"];
+        UIImageView *autumn_tag = [[UIImageView alloc]initWithImage:autumn_image];
+        autumn_tag.frame = CGRectMake(110, 20, 40, 40);
+        
+        UIImage *winter_image = [UIImage imageNamed:@"winter_waku.png"];
+        UIImageView *winter_tag = [[UIImageView alloc]initWithImage:winter_image];
+        winter_tag.frame = CGRectMake(155, 20, 40, 40);
+        
+        UIImage *park_image = [UIImage imageNamed:@"park_waku.png"];
+        UIImageView *park_tag = [[UIImageView alloc]initWithImage:park_image];
+        park_tag.frame = CGRectMake(200, 20, 40, 40);
+        
+        UIImage *sea_image = [UIImage imageNamed:@"sea_waku.png"];
+        UIImageView *sea_tag = [[UIImageView alloc]initWithImage:sea_image];
+        sea_tag.frame = CGRectMake(245, 20, 40, 40);
+        
+        //タグアイコンの表示
+        if([course.tag_name containsObject:@"春"]){
+            [cell.contentView addSubview:spring_tag];
+        }
+        if([course.tag_name containsObject:@"夏"]){
+            [cell.contentView addSubview:summer_tag];
+        }
+        if([course.tag_name containsObject:@"秋"]){
+            [cell.contentView addSubview:autumn_tag];
+        }
+        if([course.tag_name containsObject:@"冬"]){
+            [cell.contentView addSubview:winter_tag];
+        }
+        if([course.tag_name containsObject:@"公園"]){
+            [cell.contentView addSubview:park_tag];
+        }
+        if([course.tag_name containsObject:@"海"]){
+            [cell.contentView addSubview:sea_tag];
+        }
     }else if(indexPath.row == 7 + [course.spot_name count]){
         cell.textLabel.text = @"Powered by 健康ウォーキングマップ";
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
