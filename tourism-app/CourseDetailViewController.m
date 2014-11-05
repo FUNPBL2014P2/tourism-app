@@ -126,7 +126,7 @@ Course *course;
     }else if(indexPath.row == 5){
         cell.textLabel.text = [NSString stringWithFormat:@"歩数:%d歩", course.steps];
     }else if(indexPath.row == 6){
-        //タグアイコンの設定
+        //タグアイコンの表示
         UIImage *spring_image = [UIImage imageNamed:@"spring_waku.png"];
         UIImageView *spring_tag = [[UIImageView alloc]initWithImage:spring_image];
         spring_tag.frame = CGRectMake(20, 20, 40, 40);
@@ -158,7 +158,7 @@ Course *course;
         [cell.contentView addSubview:sea_tag];
 
         
-        //タグアイコンの表示
+        //タグアイコンの透明度の設定
         if(![course.tag_name containsObject:@"春"]){
             spring_tag.alpha = 0.2;
         }
