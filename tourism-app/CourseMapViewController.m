@@ -10,6 +10,8 @@
 
 @interface CourseMapViewController ()
 
+///ツールバーのボタン
+@property UIButton *myButton;
 @property (nonatomic, retain) CLLocationManager *locationManager;
 
 @end
@@ -44,8 +46,36 @@
         [_locationManager startUpdatingLocation];
     }
     
+    //ツールバーの詳細設定はtoolBarCustomメソッドで記述
+    [self toolBarCustom];
+    [_myButton addTarget:self action:@selector(myButtonTapped) forControlEvents:UIControlEventTouchUpInside];
+    
 }
 
+#pragma mark - View
+
+/**
+ toolBarCustomのviewの実装
+ */
+- (void)toolBarCustom {
+    
+    //UIButtonのiconのみにアニメーションをかけるため、iconとbackgroundを分けて大きさを設定している
+    //transformでiconの大きさを設定することができる
+    _myButton = [[UIButton alloc] initWithFrame:CGRectMake(0,0,33,33)];
+    _myButton.imageView.transform = CGAffineTransformMakeScale(0.23, 0.23);
+    _myButton.adjustsImageWhenHighlighted = NO;
+    
+    //アニメーションをかけるための設定
+    _myButton.imageView.clipsToBounds = NO;
+    _myButton.imageView.contentMode = UIViewContentModeCenter;
+    
+    //UIBarButtonItemではボタンを画像にする設定に限界があるため
+    //より細かい設定のできるUIButtonをCustomViewとして設定することで、UIBarButtonItemを実装している
+    UIBarButtonItem *customBarItem = [[UIBarButtonItem alloc]initWithCustomView:_myButton];
+    NSArray *barButtons = [NSArray arrayWithObjects:customBarItem, nil];
+    [myToolBar setItems:barButtons];
+    [self updateUserTrackingModeBtn:MKUserTrackingModeFollow];
+}
 
 #pragma mark - delegate
 
@@ -59,6 +89,83 @@
         status == kCLAuthorizationStatusAuthorizedWhenInUse) {
         [_locationManager startUpdatingLocation];
     }
+}
+
+/**
+ マップをスワイプしたとき、ボタンの画像を変える処理
+ */
+- (void)mapView:(MKMapView *)mapView didChangeUserTrackingMode:(MKUserTrackingMode)mode animated:(BOOL)animated {
+    [self updateUserTrackingModeBtn:mode];
+}
+
+#pragma mark - event
+
+/**
+ myButtonが押されたときに呼出されるメソッド
+ */
+- (void)myButtonTapped{
+    
+    //アニメーションの設定
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.4];
+    [UIView setAnimationDelay:0];
+    [UIView setAnimationRepeatCount:1.0];
+    [UIView setAnimationCurve:UIViewAnimationCurveLinear];
+    
+    MKUserTrackingMode mode;
+    
+    //transformに小さいサイズから大きいサイズを設定することで
+    //アニメーションによりボタンに動きを与える
+    //またスイッチ文で、MKUserTrackingModeを切り替え
+    switch (myMapView.userTrackingMode) {
+        case MKUserTrackingModeNone:
+        default:
+            mode = MKUserTrackingModeFollow;
+            break;
+        case MKUserTrackingModeFollow:
+            mode = MKUserTrackingModeFollowWithHeading;
+            _myButton.imageView.transform = CGAffineTransformMakeScale(0.001, 0.001);
+            break;
+        case MKUserTrackingModeFollowWithHeading:
+            mode = MKUserTrackingModeNone;
+            _myButton.imageView.transform = CGAffineTransformMakeScale(0.001, 0.001);
+            break;
+    }
+    
+    _myButton.imageView.transform = CGAffineTransformMakeScale(0.23, 0.23);
+    [UIView commitAnimations];
+    
+    [self updateUserTrackingModeBtn:mode];
+    [self.myMapView setUserTrackingMode:mode animated:YES];
+    
+}
+
+/**
+ myButtonの画像を、MKUserTrackingModeにより切り替えるメソッド
+ */
+- (void)updateUserTrackingModeBtn:(MKUserTrackingMode)mode {
+    
+    NSString *icon = nil;
+    NSString *background = nil;
+    
+    switch (mode) {
+        case MKUserTrackingModeNone:
+        default:
+            icon = @"none_icon";
+            background = nil;
+            break;
+        case MKUserTrackingModeFollow:
+            icon = @"follow_icon.png";
+            background = @"background.png";
+            break;
+        case MKUserTrackingModeFollowWithHeading:
+            icon = @"followheading_icon.png";
+            background = @"background.png";
+            break;
+    }
+    
+    [_myButton setImage:[UIImage imageNamed:icon] forState:UIControlStateNormal]; // アイコン
+    [_myButton setBackgroundImage:[UIImage imageNamed:background] forState:UIControlStateNormal]; // 背景
 }
 
 

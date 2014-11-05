@@ -63,6 +63,11 @@
 		4ADE378A19FA728200FE524F /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE378519FA728200FE524F /* FMResultSet.m */; };
 		4ADE378C19FA72CD00FE524F /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ADE378B19FA72CD00FE524F /* libsqlite3.0.dylib */; };
 		4ADE37A819FBD36300FE524F /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE37A419FBD36300FE524F /* Course.m */; };
+		9C1D31A81A0A164A0098053D /* boolbaritem.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C1D31A71A0A164A0098053D /* boolbaritem.png */; };
+		9C1D31AA1A0A16520098053D /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C1D31A91A0A16520098053D /* background.png */; };
+		9C1D31AC1A0A165D0098053D /* follow_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C1D31AB1A0A165D0098053D /* follow_icon.png */; };
+		9C1D31AE1A0A16640098053D /* followheading_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C1D31AD1A0A16640098053D /* followheading_icon.png */; };
+		9C1D31B01A0A166B0098053D /* none_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C1D31AF1A0A166B0098053D /* none_icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -152,6 +157,11 @@
 		4ADE378B19FA72CD00FE524F /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		4ADE37A419FBD36300FE524F /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
 		4ADE37A519FBD36300FE524F /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
+		9C1D31A71A0A164A0098053D /* boolbaritem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boolbaritem.png; sourceTree = "<group>"; };
+		9C1D31A91A0A16520098053D /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		9C1D31AB1A0A165D0098053D /* follow_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = follow_icon.png; sourceTree = "<group>"; };
+		9C1D31AD1A0A16640098053D /* followheading_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = followheading_icon.png; sourceTree = "<group>"; };
+		9C1D31AF1A0A166B0098053D /* none_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = none_icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -316,6 +326,11 @@
 			children = (
 				4A8596971A0318D90097379A /* see_walkingmap.png */,
 				4A8596981A0318D90097379A /* walk_course.png */,
+				9C1D31A71A0A164A0098053D /* boolbaritem.png */,
+				9C1D31A91A0A16520098053D /* background.png */,
+				9C1D31AB1A0A165D0098053D /* follow_icon.png */,
+				9C1D31AD1A0A16640098053D /* followheading_icon.png */,
+				9C1D31AF1A0A166B0098053D /* none_icon.png */,
 			);
 			path = button_images;
 			sourceTree = "<group>";
@@ -419,6 +434,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A8596891A00CBD10097379A /* winter.png in Resources */,
+				9C1D31B01A0A166B0098053D /* none_icon.png in Resources */,
 				4A8596871A00CBD10097379A /* spring.png in Resources */,
 				4A85967619FFB67C0097379A /* sakuragaokadori2.png in Resources */,
 				4A85967219FFB67C0097379A /* kouyaji.png in Resources */,
@@ -434,14 +450,18 @@
 				4A8596841A00CBD10097379A /* autumn.png in Resources */,
 				4A85967919FFB67C0097379A /* yajigashiratyoukaikan.png in Resources */,
 				4A85966B19FFB67C0097379A /* hakodatechihoukisyoudai.png in Resources */,
+				9C1D31AC1A0A165D0098053D /* follow_icon.png in Resources */,
 				4A85967119FFB67C0097379A /* kashiwanosyougakkou2.png in Resources */,
 				4A8596851A00CBD10097379A /* park.png in Resources */,
 				4A85967019FFB67C0097379A /* kashiwanosyougakkou.png in Resources */,
 				4A85967719FFB67C0097379A /* sumiyoshityoukaikan.png in Resources */,
 				4A85966C19FFB67C0097379A /* hakodatehachimangu.png in Resources */,
+				9C1D31A81A0A164A0098053D /* boolbaritem.png in Resources */,
 				4A039EB31A09045B005543CE /* park_waku.png in Resources */,
+				9C1D31AE1A0A16640098053D /* followheading_icon.png in Resources */,
 				4A74F31D19F6690D00DA5C82 /* Main.storyboard in Resources */,
 				4A74F32219F6690D00DA5C82 /* LaunchScreen.xib in Resources */,
+				9C1D31AA1A0A16520098053D /* background.png in Resources */,
 				4A8596991A0318D90097379A /* see_walkingmap.png in Resources */,
 				4A74F31F19F6690D00DA5C82 /* Images.xcassets in Resources */,
 				4A85966E19FFB67C0097379A /* hokkaidouoshimagoudoutyousya.png in Resources */,
