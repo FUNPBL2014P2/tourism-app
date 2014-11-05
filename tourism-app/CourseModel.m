@@ -337,4 +337,24 @@ AppDelegate *appDelegate;
     return pins;
 }
 
+/**
+ 全コースのMKPolylineが入った配列を返すメソッド
+ */
+- (NSMutableArray *) getAllCourseLine {
+    
+    NSMutableArray *lines = [NSMutableArray array];
+    
+    for(int i = 0;i < [course_table_data count]; i++){
+        Course *course = [course_table_data objectAtIndex:i];
+        CLLocationCoordinate2D root_points[[course.routeid count]];
+        for(int j = 0;j < [course.routeid count]; j++){
+            root_points[j] = CLLocationCoordinate2DMake([[course.route_latitude objectAtIndex:j] doubleValue], [[course.route_longitude objectAtIndex:j] doubleValue]);
+        }
+        MKPolyline *course_line = [MKPolyline polylineWithCoordinates:root_points count:[course.routeid count]];
+        [lines addObject:course_line];
+    }
+    return lines;
+}
+
+
 @end

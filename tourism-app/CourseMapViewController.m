@@ -59,6 +59,10 @@
     for (int i = 0; i < [[course_map_model getStartAnnotation] count]; i++)
         [myMapView addAnnotation:[[course_map_model getStartAnnotation] objectAtIndex:i]];
     
+    //getAllCourseLineメソッドは全コースのMKPolylineが入った配列を返すメソッド
+    for(int i = 0; i < [[course_map_model getAllCourseLine] count]; i++)
+        [myMapView addOverlay:[[course_map_model getAllCourseLine] objectAtIndex:i]];
+    
 }
 
 /**
@@ -142,6 +146,20 @@
     annotationView.bounds = CGRectMake(0, 0, 60, 60);
     annotationView.centerOffset = CGPointMake(22, -32); // アイコンの中心を設定する
     return annotationView;
+}
+
+/**
+ オーバーレイが追加されるときに呼出されるメソッド
+ オーバーレイの詳細設定はここで行う
+ 
+ @return オーバーレイの色や太さなどの詳細設定
+ */
+- (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id<MKOverlay>)overlay {
+    
+    MKPolylineView *lineView = [[MKPolylineView alloc] initWithOverlay:overlay];
+    lineView.strokeColor = [UIColor redColor];
+    lineView.lineWidth = 5.0;
+    return lineView;
 }
 
 #pragma mark - event
@@ -241,6 +259,11 @@
 
 //戻るボタンのアクション
 - (IBAction)dismissSelf:(id)sender {
+    
+    // locationManager(CLLocationManagerのインスタンス）のGPS計測を停止させる
+    [_locationManager stopUpdatingLocation];
+    // MapViewの現在位置表示機能を停止させる。コレを忘れるとMapViewを開放してもGPSが使用しっぱなしになる
+    [myMapView setShowsUserLocation:NO];
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
