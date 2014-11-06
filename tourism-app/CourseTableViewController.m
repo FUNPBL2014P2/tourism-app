@@ -15,8 +15,93 @@
 @implementation CourseTableViewController
 
 @synthesize course_name;
+@synthesize isSpringChecked;
+@synthesize isSummerChecked;
+@synthesize isAutumnChecked;
+@synthesize isWinterChecked;
+@synthesize isParkChecked;
+@synthesize isSeaChecked;
 
 BOOL isSorted;
+
+/**
+ Courseクラスのインスタンスが格納された配列を引数に、カテゴリ画面でチェックマークがついている項目に対応するコースを検索する
+ */
+- (void) getSearchedbyCategoryMutableArray:(NSMutableArray *)course_table_datas {
+    for(int i = 0;i < [course_table_datas count];i++){
+        int count = (int)[course_table_datas count]; //既にi番目のCourseインスタンスが削除されているか確認するための変数
+        Course *course = [course_table_datas objectAtIndex:i];
+        
+        //「春のおすすめ」にチェックマークがついていて、Courseインスタンスのタグ情報が格納された配列に
+        //「春」が含まれていない場合、Courseインスタンスを格納している配列からそのCourseインスタンスを削除する
+        if(isSpringChecked){
+            if(![course.tag_name containsObject:@"春"]){
+                [course_table_datas removeObjectAtIndex:i];
+                i--; //削除後for文に移ると、1つ飛ばして参照されるため、i--;
+            }
+        }
+        
+        //まだi番目のCourseインスタンスが削除されてなく、
+        //「夏のおすすめ」にチェックマークがついていて、Courseインスタンスのタグ情報が格納された配列に
+        //「夏」が含まれていない場合、Courseインスタンスを格納している配列からそのCourseインスタンスを削除する
+        if(count == [course_table_datas count]){
+            if(isSummerChecked){
+                if(![course.tag_name containsObject:@"夏"]){
+                    [course_table_datas removeObjectAtIndex:i];
+                    i--;
+                }
+            }
+        }
+        
+        //まだi番目のCourseインスタンスが削除されてなく、
+        //「秋のおすすめ」にチェックマークがついていて、Courseインスタンスのタグ情報が格納された配列に
+        //「秋」が含まれていない場合、Courseインスタンスを格納している配列からそのCourseインスタンスを削除する
+        if(count == [course_table_datas count]){
+            if(isAutumnChecked){
+                if(![course.tag_name containsObject:@"秋"]){
+                    [course_table_datas removeObjectAtIndex:i];
+                    i--;
+                }
+            }
+        }
+        
+        //まだi番目のCourseインスタンスが削除されてなく、
+        //「冬のおすすめ」にチェックマークがついていて、Courseインスタンスのタグ情報が格納された配列に
+        //「冬」が含まれていない場合、Courseインスタンスを格納している配列からそのCourseインスタンスを削除する
+        if(count == [course_table_datas count]){
+            if(isWinterChecked){
+                if(![course.tag_name containsObject:@"冬"]){
+                    [course_table_datas removeObjectAtIndex:i];
+                    i--;
+                }
+            }
+        }
+        
+        //まだi番目のCourseインスタンスが削除されてなく、
+        //「公園」にチェックマークがついていて、Courseインスタンスのタグ情報が格納された配列に
+        //「公園」が含まれていない場合、Courseインスタンスを格納している配列からそのCourseインスタンスを削除する
+        if(count == [course_table_datas count]){
+            if(isParkChecked){
+                if(![course.tag_name containsObject:@"公園"]){
+                    [course_table_datas removeObjectAtIndex:i];
+                    i--;
+                }
+            }
+        }
+        
+        //まだi番目のCourseインスタンスが削除されてなく、
+        //「海」にチェックマークがついていて、Courseインスタンスのタグ情報が格納された配列に
+        //「海」が含まれていない場合、Courseインスタンスを格納している配列からそのCourseインスタンスを削除する
+        if(count == [course_table_datas count]){
+            if(isSeaChecked){
+                if(![course.tag_name containsObject:@"海"]){
+                    [course_table_datas removeObjectAtIndex:i];
+                    i--;
+                }
+            }
+        }
+    }
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -36,7 +121,7 @@ BOOL isSorted;
     //SegmentedContrlの初期状態が「距離順」なので、距離を降順でソート
     [course_table_model getSortedbyDistanceMutableArray:course_table_model->course_table_data];
     //カテゴリ画面でチェックマークがついている項目に対応するコースを検索
-    [course_table_model getSearchedbyCategoryMutableArray:course_table_model->course_table_data];
+    [self getSearchedbyCategoryMutableArray:course_table_model->course_table_data];
     
     [self.myTableView reloadData];
 }
@@ -190,10 +275,17 @@ BOOL isSorted;
  Segueが実行されると、実行直前に自動的に呼び出される
  */
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    CourseTableViewController *nextViewController = (CourseTableViewController*)[segue destinationViewController];
+    CourseTableViewController *nextViewController = (CourseTableViewController *)[segue destinationViewController];
     
     if ([[segue identifier] isEqualToString:@"detail"]){
         nextViewController.course_name = course_name;
+    }else if ([[segue identifier] isEqualToString:@"tableTocategory"]){
+        nextViewController.isSpringChecked = isSpringChecked;
+        nextViewController.isSummerChecked = isSummerChecked;
+        nextViewController.isAutumnChecked = isAutumnChecked;
+        nextViewController.isWinterChecked = isWinterChecked;
+        nextViewController.isParkChecked = isParkChecked;
+        nextViewController.isSeaChecked = isSeaChecked;
     }
 }
 

@@ -12,6 +12,14 @@
 @interface CourseTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     CourseModel *course_table_model;
     NSString *course_name; //コース詳細画面に受け渡すコース名
+    
+    //カテゴリ画面にチェックマークがついているか、ついていないか判別するフラグ
+    BOOL isSpringChecked;
+    BOOL isSummerChecked;
+    BOOL isAutumnChecked;
+    BOOL isWinterChecked;
+    BOOL isParkChecked;
+    BOOL isSeaChecked;
 }
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *mySegmentedControl;
@@ -19,5 +27,13 @@
 @property (weak, nonatomic) IBOutlet UITableView *myTableView;
 
 @property (nonatomic)NSString *course_name; //コース詳細画面に受け渡すコース名
+
+//カテゴリ画面にチェックマークがついているか、ついていないか判別するフラグ
+@property (nonatomic)BOOL isSpringChecked;
+@property (nonatomic)BOOL isSummerChecked;
+@property (nonatomic)BOOL isAutumnChecked;
+@property (nonatomic)BOOL isWinterChecked;
+@property (nonatomic)BOOL isParkChecked;
+@property (nonatomic)BOOL isSeaChecked;
 
 @end
