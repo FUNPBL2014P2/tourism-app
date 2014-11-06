@@ -14,13 +14,15 @@
 @interface CourseDetailMapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate> {
     
     CourseModel *_course_map_model;
-    NSString *_course_name; //コース詳細画面に受け渡すコース名
+    NSString *_course_name; //ウォーキングマップ画面に受け渡すコース名
+    NSString *_spot_name; //スポット詳細画面に受け渡すコース名
     
 }
 
 @property (weak, nonatomic) IBOutlet MKMapView *myMapView;
 @property (weak, nonatomic) IBOutlet UIToolbar *myToolBar;
 @property (nonatomic)NSString *course_name;
+@property (nonatomic)NSString *spot_name;
 @property CourseModel *course_map_model;
 @property (weak, nonatomic) IBOutlet UINavigationItem *myNavigationItem;
 

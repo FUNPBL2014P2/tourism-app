@@ -14,6 +14,8 @@
 
 @implementation SpotDetailViewController
 
+@synthesize spot_name;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.

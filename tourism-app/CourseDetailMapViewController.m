@@ -20,7 +20,7 @@
 
 @implementation CourseDetailMapViewController
 
-@synthesize course_name, course_map_model, myMapView, myToolBar, myNavigationItem;
+@synthesize course_name,spot_name, course_map_model, myMapView, myToolBar, myNavigationItem;
 
 #pragma mark - UIViewController lifecicle event methods
 
@@ -74,7 +74,7 @@
         NSLog(@"%@",[start_pins objectAtIndex:i]);
         [myMapView addAnnotation:[start_pins objectAtIndex:i]];
     }
-
+    
     
     //getCourseLineWithNameメソッドはスポット位置のCustomAnnotationがはいった配列を返すメソッド
     [myMapView addOverlay:[course_map_model getCourseLineWithName:course_name]];
@@ -107,7 +107,21 @@
     //UIBarButtonItemではボタンを画像にする設定に限界があるため
     //より細かい設定のできるUIButtonをCustomViewとして設定することで、UIBarButtonItemを実装している
     UIBarButtonItem *customBarItem = [[UIBarButtonItem alloc]initWithCustomView:self.myButton];
-    NSArray *barButtons = [NSArray arrayWithObjects:customBarItem, nil];
+    UIBarButtonItem *healthBarItem= [[UIBarButtonItem alloc] initWithTitle:@"健康ウォーキングマップを見る"
+                                                                      style:UIBarButtonItemStylePlain
+                                                                     target:self
+                                                                     action:@selector(onTapTest:)];
+    
+    // 固定間隔のスペーサーを作成する
+    UIBarButtonItem *fixedSpacer1 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+                                                                                  target:nil
+                                                                                  action:nil];
+   
+    UIBarButtonItem *fixedSpacer2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+                                                                                  target:nil
+                                                                                  action:nil ];
+  
+    NSArray *barButtons = [NSArray arrayWithObjects:customBarItem,fixedSpacer1 ,healthBarItem ,fixedSpacer2 ,nil];
     [myToolBar setItems:barButtons];
     [self updateUserTrackingModeBtn:MKUserTrackingModeFollow];
 }
@@ -160,7 +174,7 @@
         annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
         annotationView.annotation = annotation;
         return annotationView;
-
+        
     }else if([((CustomAnnotation*)annotation).frag isEqualToString:@"start"]) {
         
         static NSString *identifier = @"startAnnotation";
@@ -263,9 +277,53 @@
     [self.myButton setBackgroundImage:[UIImage imageNamed:background] forState:UIControlStateNormal]; // 背景
 }
 
+/**
+ healthBarItemを押したときに呼ばれるメソッド
+ */
+- ( void )onTapTest:( id )inSender {
+    
+[self performSegueWithIdentifier:@"MapToHealth" sender:self];
+    
+}
+
+/**
+ 　アノテーションボタンが押されたとき呼ばれるメソッド
+ */
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
+    
+    // locationManager(CLLocationManagerのインスタンス）のGPS計測を停止させる
+    [self.locationManager stopUpdatingLocation];
+    // MapViewの現在位置表示機能を停止させる。コレを忘れるとMapViewを開放してもGPSが使用しっぱなしになる
+    [myMapView setShowsUserLocation:NO];
+    spot_name = view.annotation.title;
+    NSLog(@"%@", spot_name);
+    [self performSegueWithIdentifier:@"MapToSpot" sender:self];
+}
+
+
+/**
+ Segueが実行されると、実行直前に自動的に呼び出される
+ */
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    CourseDetailMapViewController *nextViewController = (CourseDetailMapViewController*)[segue destinationViewController];
+    
+    if ([[segue identifier] isEqualToString:@"MapToHealth"]){
+        nextViewController.course_name = course_name;
+    }else if ([[segue identifier] isEqualToString:@"MapToSpot"]){
+        nextViewController.spot_name = spot_name;
+    }
+}
+
+
 //戻るボタンのアクション
 - (IBAction)dismissSelf:(id)sender {
+    // locationManager(CLLocationManagerのインスタンス）のGPS計測を停止させる
+    [self.locationManager stopUpdatingLocation];
+    // MapViewの現在位置表示機能を停止させる。コレを忘れるとMapViewを開放してもGPSが使用しっぱなしになる
+    [myMapView setShowsUserLocation:NO];
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
+- (IBAction)myButton:(id)sender {
+}
 @end

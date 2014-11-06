@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SpotDetailViewController : UIViewController
+@interface SpotDetailViewController : UIViewController {
+    NSString *_spot_name;
+}
 
+@property NSString *spot_name;
 @end
