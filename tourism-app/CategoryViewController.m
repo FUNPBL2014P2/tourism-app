@@ -14,9 +14,15 @@
 
 @implementation CategoryViewController
 
+@synthesize isSpringChecked;
+@synthesize isSummerChecked;
+@synthesize isAutumnChecked;
+@synthesize isWinterChecked;
+@synthesize isParkChecked;
+@synthesize isSeaChecked;
+
 NSArray *categories;
 NSArray *category_images;
-AppDelegate *appDelegate;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -27,8 +33,6 @@ AppDelegate *appDelegate;
     
     categories = [NSArray arrayWithObjects:@"春のおすすめ", @"夏のおすすめ", @"秋のおすすめ", @"冬のおすすめ", @"公園", @"海", nil];
     category_images = [NSArray arrayWithObjects:@"spring.png", @"summer.png", @"autumn.png", @"winter.png", @"park.png", @"sea.png", nil];
-    
-    appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 }
 
 /**
@@ -66,37 +70,37 @@ AppDelegate *appDelegate;
     //春,夏,秋,冬,公園,海それぞれが選択されているか確認し、選択されている場合はチェックマークを付ける
     //選択されていない場合はチェックマークをつけない
     if(indexPath.row == 0){
-        if(appDelegate.isSpringChecked){
+        if(isSpringChecked){
             cell.accessoryType = UITableViewCellAccessoryCheckmark;
         }else{
             cell.accessoryType = UITableViewCellAccessoryNone;
         }
     }else if(indexPath.row == 1){
-        if(appDelegate.isSummerChecked){
+        if(isSummerChecked){
             cell.accessoryType = UITableViewCellAccessoryCheckmark;
         }else{
             cell.accessoryType = UITableViewCellAccessoryNone;
         }
     }else if(indexPath.row == 2){
-        if(appDelegate.isAutumnChecked){
+        if(isAutumnChecked){
             cell.accessoryType = UITableViewCellAccessoryCheckmark;
         }else{
             cell.accessoryType = UITableViewCellAccessoryNone;
         }
     }else if(indexPath.row == 3){
-        if(appDelegate.isWinterChecked){
+        if(isWinterChecked){
             cell.accessoryType = UITableViewCellAccessoryCheckmark;
         }else{
             cell.accessoryType = UITableViewCellAccessoryNone;
         }
     }else if(indexPath.row == 4){
-        if(appDelegate.isParkChecked){
+        if(isParkChecked){
             cell.accessoryType = UITableViewCellAccessoryCheckmark;
         }else{
             cell.accessoryType = UITableViewCellAccessoryNone;
         }
     }else if(indexPath.row == 5){
-        if(appDelegate.isSeaChecked){
+        if(isSeaChecked){
             cell.accessoryType = UITableViewCellAccessoryCheckmark;
         }else{
             cell.accessoryType = UITableViewCellAccessoryNone;
@@ -119,41 +123,57 @@ AppDelegate *appDelegate;
     //春,夏,秋,冬,公園,海それぞれで選択されているか確認し、チェックマークがついたときにはフラグをYESに、
     //チェックマークがついていないときにはフラグをNOにする
     if(indexPath.row == 0){
-        if(appDelegate.isSpringChecked){
-            appDelegate.isSpringChecked = NO;
+        if(isSpringChecked){
+            isSpringChecked = NO;
         }else{
-            appDelegate.isSpringChecked = YES;
+            isSpringChecked = YES;
         }
     }if(indexPath.row == 1){
-        if(appDelegate.isSummerChecked){
-            appDelegate.isSummerChecked = NO;
+        if(isSummerChecked){
+            isSummerChecked = NO;
         }else{
-            appDelegate.isSummerChecked = YES;
+            isSummerChecked = YES;
         }
     }if(indexPath.row == 2){
-        if(appDelegate.isAutumnChecked){
-            appDelegate.isAutumnChecked = NO;
+        if(isAutumnChecked){
+            isAutumnChecked = NO;
         }else{
-            appDelegate.isAutumnChecked = YES;
+            isAutumnChecked = YES;
         }
     }if(indexPath.row == 3){
-        if(appDelegate.isWinterChecked){
-            appDelegate.isWinterChecked = NO;
+        if(isWinterChecked){
+            isWinterChecked = NO;
         }else{
-            appDelegate.isWinterChecked = YES;
+            isWinterChecked = YES;
         }
     }if(indexPath.row == 4){
-        if(appDelegate.isParkChecked){
-            appDelegate.isParkChecked = NO;
+        if(isParkChecked){
+            isParkChecked = NO;
         }else{
-            appDelegate.isParkChecked = YES;
+            isParkChecked = YES;
         }
     }if(indexPath.row == 5){
-        if(appDelegate.isSeaChecked){
-            appDelegate.isSeaChecked = NO;
+        if(isSeaChecked){
+            isSeaChecked = NO;
         }else{
-            appDelegate.isSeaChecked = YES;
+            isSeaChecked = YES;
         }
+    }
+}
+
+/**
+ Segueが実行されると、実行直前に自動的に呼び出される
+ */
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    CategoryViewController *nextViewController = (CategoryViewController *)[segue destinationViewController];
+    
+    if ([[segue identifier] isEqualToString:@"categoryTotable"]){
+        nextViewController.isSpringChecked = isSpringChecked;
+        nextViewController.isSummerChecked = isSummerChecked;
+        nextViewController.isAutumnChecked = isAutumnChecked;
+        nextViewController.isWinterChecked = isWinterChecked;
+        nextViewController.isParkChecked = isParkChecked;
+        nextViewController.isSeaChecked = isSeaChecked;
     }
 }
 

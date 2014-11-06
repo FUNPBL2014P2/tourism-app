@@ -66,7 +66,7 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="カテゴリ" id="7Le-B6-PaM">
                                             <connections>
-                                                <segue destination="Hif-Ol-KyY" kind="modal" id="Swc-vL-Qtl"/>
+                                                <segue destination="Hif-Ol-KyY" kind="modal" identifier="tableTocategory" id="Swc-vL-Qtl"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -424,6 +424,11 @@
                                                 <action selector="dismissSelf:" destination="Hif-Ol-KyY" id="tIR-uJ-KBX"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="完了" id="3xJ-V9-CVn">
+                                            <connections>
+                                                <segue destination="oIO-Kj-QD2" kind="modal" identifier="categoryTotable" id="eNN-Id-veV"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -456,5 +461,8 @@
     <inferredMetricsTieBreakers>
         <segue reference="vi7-3m-iwG"/>
         <segue reference="VYS-yA-MRz"/>
+        <segue reference="m2A-yz-i2n"/>
+        <segue reference="vi7-3m-iwG"/>
+        <segue reference="eNN-Id-veV"/>
     </inferredMetricsTieBreakers>
 </document>

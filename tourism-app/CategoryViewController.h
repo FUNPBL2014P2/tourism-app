@@ -7,10 +7,25 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AppDelegate.h"
 
-@interface CategoryViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface CategoryViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
+    //カテゴリ画面にチェックマークがついているか、ついていないか判別するフラグ
+    BOOL isSpringChecked;
+    BOOL isSummerChecked;
+    BOOL isAutumnChecked;
+    BOOL isWinterChecked;
+    BOOL isParkChecked;
+    BOOL isSeaChecked;
+}
 
 @property (weak, nonatomic) IBOutlet UITableView *myTableView;
+
+//カテゴリ画面にチェックマークがついているか、ついていないか判別するフラグ
+@property (nonatomic)BOOL isSpringChecked;
+@property (nonatomic)BOOL isSummerChecked;
+@property (nonatomic)BOOL isAutumnChecked;
+@property (nonatomic)BOOL isWinterChecked;
+@property (nonatomic)BOOL isParkChecked;
+@property (nonatomic)BOOL isSeaChecked;
 
 @end

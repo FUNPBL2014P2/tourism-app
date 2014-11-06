@@ -23,7 +23,6 @@
 - (void) getSortedbyDistanceMutableArray:(NSMutableArray *)course_table_datas;
 - (void) getSortedbyCaloryMutableArray:(NSMutableArray *)course_table_datas;
 - (void) getSortedbyTimeMutableArray:(NSMutableArray *)course_table_datas;
-- (void) getSearchedbyCategoryMutableArray:(NSMutableArray *)course_table_datas;
 - (NSMutableArray *) getStartAnnotation;
 - (NSMutableArray *) getAllCourseLine;
 - (NSMutableArray *) getSpotWithName:(NSString *)name;
