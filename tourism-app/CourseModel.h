@@ -10,6 +10,7 @@
 #import "FMDatabase.h"
 #import "Course.h"
 #import "AppDelegate.h"
+#import "CustomAnnotation.h"
 
 @interface CourseModel : NSObject {
     FMDatabase *database;
@@ -26,5 +27,7 @@
 - (NSMutableArray *) getStartAnnotation;
 - (NSMutableArray *) getAllCourseLine;
 - (NSMutableArray *) getSpotWithName:(NSString *)name;
+- (MKPolyline *) getCourseLineWithName:(NSString *)name;
+- (NSMutableArray *) getStartAnnotationWithName:(NSString *)name;
 
 @end

@@ -8,6 +8,7 @@
 
 #import "CourseDetailMapViewController.h"
 
+
 @interface CourseDetailMapViewController ()
 
 ///ツールバーのボタン
@@ -35,7 +36,8 @@
     self.locationManager.delegate = self;
     
     myMapView.showsUserLocation = YES;
-    [myMapView setUserTrackingMode:MKUserTrackingModeNone animated:YES];
+    [myMapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
+    [self updateUserTrackingModeBtn:MKUserTrackingModeNone];
     
     self.locationManager = [[CLLocationManager alloc] init];
     
@@ -57,14 +59,32 @@
     
     //ここからviewとmodelをつなぐ処理
     course_map_model = [[CourseModel alloc] init];
-  
-    //getStartAnnotationメソッドはスタート位置のCustomAnnotationがはいった配列を返すメソッド
-    NSMutableArray *pins = [[course_map_model getSpotWithName:course_name] mutableCopy];
-
-    for (int i = 0; i < [pins count]; i++) {
-        [myMapView addAnnotation:[pins objectAtIndex:i]];
+    
+    //getSpotWithNameメソッドはスポット位置のCustomAnnotationがはいった配列を返すメソッド
+    NSMutableArray *spot_pins = [[course_map_model getSpotWithName:course_name] mutableCopy];
+    
+    for (int i = 0; i < [spot_pins count]; i++) {
+        [myMapView addAnnotation:[spot_pins objectAtIndex:i]];
+    }
+    
+    //getStartAnnotationWithNameメソッドはコースのスタートのCustomAnnotationがはいった配列を返すメソッド
+    NSMutableArray *start_pins =  [[course_map_model getStartAnnotationWithName:course_name] mutableCopy];
+    
+    for (int i = 0; i < [start_pins count]; i++) {
+        NSLog(@"%@",[start_pins objectAtIndex:i]);
+        [myMapView addAnnotation:[start_pins objectAtIndex:i]];
     }
 
+    
+    //getCourseLineWithNameメソッドはスポット位置のCustomAnnotationがはいった配列を返すメソッド
+    [myMapView addOverlay:[course_map_model getCourseLineWithName:course_name]];
+    
+    
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - View
@@ -126,22 +146,52 @@
         return nil;
     }
     
-    //メモリ節約のため再利用可能なアノテーションビューがあれば、そのビューを取得し、必要ならばアノテーションの内容に合わせてデータの流し込みなどを行います。
-    static NSString *identifier = @"PlaceAnnotation";
-    MKAnnotationView *annotationView = (MKAnnotationView *)[myMapView dequeueReusableAnnotationViewWithIdentifier:identifier];
-    
-    if (!annotationView) {
-        annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
+    if([((CustomAnnotation*)annotation).frag isEqualToString:@"spot"]) {
+        
+        //メモリ節約のため再利用可能なアノテーションビューがあれば、そのビューを取得し、必要ならばアノテーションの内容に合わせてデータの流し込みなどを行います。
+        //またスタートピンとスポットピンでは再利用するアノテーションが違うので、identifierをそれぞれ別に用意しています。
+        static NSString *identifier = @"spotAnnotation";
+        MKPinAnnotationView *annotationView = (MKPinAnnotationView *)[myMapView dequeueReusableAnnotationViewWithIdentifier:identifier];
+        
+        if (!annotationView) {
+            annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
+        }
+        annotationView.canShowCallout = YES;
+        annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        annotationView.annotation = annotation;
+        return annotationView;
+
+    }else if([((CustomAnnotation*)annotation).frag isEqualToString:@"start"]) {
+        
+        static NSString *identifier = @"startAnnotation";
+        MKAnnotationView *annotationView = (MKAnnotationView *)[myMapView dequeueReusableAnnotationViewWithIdentifier:identifier];
+        
+        if (!annotationView) {
+            annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
+        }
+        
+        annotationView.canShowCallout = YES;
+        annotationView.image = [UIImage imageNamed:@"start_pin.png"];
+        annotationView.bounds = CGRectMake(0, 0, 50, 50);
+        annotationView.centerOffset = CGPointMake(18, -25); // アイコンの中心を設定する
+        return annotationView;
     }
-    
-    annotationView.canShowCallout = YES;
-    annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-    annotationView.image = [UIImage imageNamed:@"start_pin.png"];
-    annotationView.bounds = CGRectMake(0, 0, 60, 60);
-    annotationView.centerOffset = CGPointMake(22, -32); // アイコンの中心を設定する
-    return annotationView;
+    return nil;
 }
 
+/**
+ オーバーレイが追加されるときに呼出されるメソッド
+ オーバーレイの詳細設定はここで行う
+ 
+ @return オーバーレイの色や太さなどの詳細設定
+ */
+- (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id<MKOverlay>)overlay {
+    
+    MKPolylineView *lineView = [[MKPolylineView alloc] initWithOverlay:overlay];
+    lineView.strokeColor = [UIColor redColor];
+    lineView.lineWidth = 5.0;
+    return lineView;
+}
 
 #pragma mark - event
 
@@ -216,11 +266,6 @@
 //戻るボタンのアクション
 - (IBAction)dismissSelf:(id)sender {
     [self dismissViewControllerAnimated:YES completion:NULL];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

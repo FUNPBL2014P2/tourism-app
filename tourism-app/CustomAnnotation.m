@@ -10,7 +10,7 @@
 
 @implementation CustomAnnotation
 
-@synthesize coordinate, title;
+@synthesize coordinate, title, frag;
 
 - (id) initWithCoordinate:(CLLocationCoordinate2D)annotation_point {
     coordinate = annotation_point;

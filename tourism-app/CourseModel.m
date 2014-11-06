@@ -8,7 +8,6 @@
 
 #import "CourseModel.h"
 #import "FMDatabase.h"
-#import "CustomAnnotation.h"
 
 @implementation CourseModel
 
@@ -329,7 +328,7 @@ AppDelegate *appDelegate;
                 CLLocationCoordinate2D pin_point = CLLocationCoordinate2DMake([[course.route_latitude objectAtIndex:j] doubleValue]
                                                                               ,[[course.route_longitude objectAtIndex:j] doubleValue]);
                 startAnnotation = [[CustomAnnotation alloc] initWithCoordinate:pin_point];
-                startAnnotation.title = course.course_name;                
+                startAnnotation.title = course.course_name;
                 [pins addObject:startAnnotation];
             }
         }
@@ -369,7 +368,6 @@ AppDelegate *appDelegate;
     CustomAnnotation *spotAnnotation;
     
     for(int i = 0;i < [course_table_data count];i++) {
-        
         Course *course = [course_table_data objectAtIndex:i];
         NSLog(@"%lu", (unsigned long)[course_table_data count]);
         if([course.course_name isEqual:name]) {
@@ -378,14 +376,70 @@ AppDelegate *appDelegate;
                                                                               [[course.spot_longitude objectAtIndex:j] doubleValue]);
                 spotAnnotation = [[CustomAnnotation alloc] initWithCoordinate:pin_point];
                 spotAnnotation.title = [course.spot_name objectAtIndex:j];
-              
+                spotAnnotation.frag = @"spot";
+                
                 [pins addObject:spotAnnotation];
             }
         }
     }
     return pins;
 }
+
+/**
+ 選択されたコース名を引数に、そのコースのMKPolylineインスタンスを返すメソッド
+ 
+ @param name 選択されたコース名を引数とする
+ @return コースのMKPolylineインスタンスを返す
+ */
+- (MKPolyline *) getCourseLineWithName:(NSString *)name {
     
+    MKPolyline *course_line;
+    
+    for(int i = 0;i < [course_table_data count];i++) {
+        Course *course = [course_table_data objectAtIndex:i];
+        NSLog(@"%lu", (unsigned long)[course_table_data count]);
+        if([course.course_name isEqual:name]) {
+            CLLocationCoordinate2D route_points[[course.routeid count]];
+            for(int j = 0;j < [course.routeid count]; j++){
+                route_points[j] = CLLocationCoordinate2DMake([[course.route_latitude objectAtIndex:j] doubleValue],
+                                                             [[course.route_longitude objectAtIndex:j] doubleValue]);
+            }
+            course_line = [MKPolyline polylineWithCoordinates:route_points count:[course.routeid count]];
+        }
+    }
+    return course_line;
+}
+
+/**
+ 選択されたコース名を引数に、そのコーススタートのCustomAnnotationインスタンスが入った配列を返すメソッド
+ 
+ @warningコースにスタートが一つであれば、直接CustomAnnotationを返すメソッドに書き換えた方がよい
+ 
+ @param name 選択されたコース名を引数とする
+ @return コースのMKPolylineインスタンスを返す
+ */
+- (NSMutableArray *) getStartAnnotationWithName:(NSString *)name {
+    
+    NSMutableArray *pins = [NSMutableArray array];
+    CustomAnnotation *startAnnotation;
+    
+    for(int i = 0;i < [course_table_data count]; i++){
+        Course *course = [course_table_data objectAtIndex:i];
+        if([course.course_name isEqual:name]) {
+            for(int j = 0;j < [course.attribute count]; j++){
+                if([[course.attribute objectAtIndex:j] isEqual:@"checkpoint"]){
+                    CLLocationCoordinate2D pin_point = CLLocationCoordinate2DMake([[course.route_latitude objectAtIndex:j] doubleValue]
+                                                                                  ,[[course.route_longitude objectAtIndex:j] doubleValue]);
+                    startAnnotation = [[CustomAnnotation alloc] initWithCoordinate:pin_point];
+                    startAnnotation.title = course.course_name;
+                    startAnnotation.frag = @"start";
+                    [pins addObject:startAnnotation];
+                }
+            }
+        }
+    }
+    return pins;
+}
 
 
 @end
