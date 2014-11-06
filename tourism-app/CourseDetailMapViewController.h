@@ -13,9 +13,9 @@
 
 @interface CourseDetailMapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate> {
     
-    CourseModel *_course_map_model;
-    NSString *_course_name; //ウォーキングマップ画面に受け渡すコース名
-    NSString *_spot_name; //スポット詳細画面に受け渡すコース名
+    CourseModel *course_map_model;
+    NSString *course_name; //ウォーキングマップ画面に受け渡すコース名
+    NSString *spot_name; //スポット詳細画面に受け渡すコース名
     
 }
 
