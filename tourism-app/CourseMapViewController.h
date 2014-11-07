@@ -12,14 +12,13 @@
 #import "CourseModel.h"
 
 @interface CourseMapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate> {
-    
     CourseModel *course_map_model;
     NSString *course_name; //コース詳細画面に受け渡すコース名
-    
 }
 
 @property (weak, nonatomic) IBOutlet MKMapView *myMapView;
 @property (weak, nonatomic) IBOutlet UIToolbar *myToolBar;
+
 @property (nonatomic)NSString *course_name;
 @property CourseModel *course_map_model;
 

@@ -13,7 +13,7 @@
 @end
 
 @implementation SpotDetailViewController
-
+@synthesize course_name;
 @synthesize spot_name;
 
 - (void)viewDidLoad {

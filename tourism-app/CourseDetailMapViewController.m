@@ -15,12 +15,16 @@
 @property UIButton *myButton;
 @property (nonatomic, retain) CLLocationManager *locationManager;
 
-
 @end
 
 @implementation CourseDetailMapViewController
 
-@synthesize course_name,spot_name, course_map_model, myMapView, myToolBar, myNavigationItem;
+@synthesize course_name;
+@synthesize spot_name;
+@synthesize course_map_model;
+@synthesize myMapView;
+@synthesize myToolBar;
+@synthesize myNavigationItem;
 
 #pragma mark - UIViewController lifecicle event methods
 
@@ -43,11 +47,9 @@
     
     //iOS8以上とiOS7未満では位置情報の取得方法が変更されたため、両対応にするため処理を分けている
     //requestWhenInUseAuthorizationはiOS8にしかないメソッド
-    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
-        
+    if([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
         [self.locationManager requestWhenInUseAuthorization];
-    } else {
-        
+    }else{
         [self.locationManager startUpdatingLocation];
     }
     
@@ -89,9 +91,6 @@
     region.span.latitudeDelta = 0.01;
     region.span.longitudeDelta = 0.01;
     [myMapView setRegion:region animated:NO];
-    
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -105,7 +104,6 @@
  toolBarCustomのviewの実装
  */
 - (void)toolBarCustom {
-    
     //UIButtonのiconのみにアニメーションをかけるため、iconとbackgroundを分けて大きさを設定している
     //transformでiconの大きさを設定することができる
     self.myButton = [[UIButton alloc] initWithFrame:CGRectMake(0,0,33,33)];
@@ -122,7 +120,7 @@
     //より細かい設定のできるUIButtonをCustomViewとして設定することで、UIBarButtonItemを実装している
     UIBarButtonItem *customBarItem = [[UIBarButtonItem alloc]initWithCustomView:self.myButton];
     UIBarButtonItem *healthBarItem= [[UIBarButtonItem alloc] initWithTitle:@"健康ウォーキングマップを見る"
-                                                                      style:UIBarButtonItemStylePlain
+                                                                     style:UIBarButtonItemStylePlain
                                                                      target:self
                                                                      action:@selector(onTapTest:)];
     
@@ -146,7 +144,6 @@
  iOS8の場合、位置情報取得が可能であればここで位置情報を取得を開始する
  */
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
-    
     if (status == kCLAuthorizationStatusAuthorizedAlways ||
         status == kCLAuthorizationStatusAuthorizedWhenInUse) {
         [self.locationManager startUpdatingLocation];
@@ -167,14 +164,12 @@
  @return アノテーションの見た目や大きさなどの詳細設定
  */
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id)annotation {
-    
     //現在地にもアノテーションが適応されるため、それをさける処理
     if ([annotation isKindOfClass:[MKUserLocation class]]) {
         return nil;
     }
     
     if([((CustomAnnotation*)annotation).frag isEqualToString:@"spot"]) {
-        
         //メモリ節約のため再利用可能なアノテーションビューがあれば、そのビューを取得し、必要ならばアノテーションの内容に合わせてデータの流し込みなどを行います。
         //またスタートピンとスポットピンでは再利用するアノテーションが違うので、identifierをそれぞれ別に用意しています。
         static NSString *identifier = @"spotAnnotation";
@@ -183,13 +178,13 @@
         if (!annotationView) {
             annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
         }
+        
         annotationView.canShowCallout = YES;
         annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
         annotationView.annotation = annotation;
+       
         return annotationView;
-        
     }else if([((CustomAnnotation*)annotation).frag isEqualToString:@"start"]) {
-        
         static NSString *identifier = @"startAnnotation";
         MKAnnotationView *annotationView = (MKAnnotationView *)[myMapView dequeueReusableAnnotationViewWithIdentifier:identifier];
         
@@ -201,8 +196,10 @@
         annotationView.image = [UIImage imageNamed:@"start_pin.png"];
         annotationView.bounds = CGRectMake(0, 0, 50, 50);
         annotationView.centerOffset = CGPointMake(18, -25); // アイコンの中心を設定する
+        
         return annotationView;
     }
+    
     return nil;
 }
 
@@ -213,10 +210,10 @@
  @return オーバーレイの色や太さなどの詳細設定
  */
 - (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id<MKOverlay>)overlay {
-    
     MKPolylineView *lineView = [[MKPolylineView alloc] initWithOverlay:overlay];
     lineView.strokeColor = [UIColor redColor];
     lineView.lineWidth = 5.0;
+    
     return lineView;
 }
 
@@ -226,7 +223,6 @@
  myButtonが押されたときに呼出されるメソッド
  */
 - (void)myButtonTapped{
-    
     //アニメーションの設定
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:0.4];
@@ -259,14 +255,12 @@
     
     [self updateUserTrackingModeBtn:mode];
     [myMapView setUserTrackingMode:mode animated:YES];
-    
 }
 
 /**
  myButtonの画像を、MKUserTrackingModeにより切り替えるメソッド
  */
 - (void)updateUserTrackingModeBtn:(MKUserTrackingMode)mode {
-    
     NSString *icon = nil;
     NSString *background = nil;
     
@@ -293,17 +287,14 @@
 /**
  healthBarItemを押したときに呼ばれるメソッド
  */
-- ( void )onTapTest:( id )inSender {
-    
+- (void)onTapTest:(id)inSender {
 [self performSegueWithIdentifier:@"MapToHealth" sender:self];
-    
 }
 
 /**
  　アノテーションボタンが押されたとき呼ばれるメソッド
  */
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
-    
     // locationManager(CLLocationManagerのインスタンス）のGPS計測を停止させる
     [self.locationManager stopUpdatingLocation];
     // MapViewの現在位置表示機能を停止させる。コレを忘れるとMapViewを開放してもGPSが使用しっぱなしになる
@@ -311,7 +302,6 @@
     spot_name = view.annotation.title;
     [self performSegueWithIdentifier:@"MapToSpot" sender:self];
 }
-
 
 /**
  Segueが実行されると、実行直前に自動的に呼び出される
@@ -325,10 +315,10 @@
         nextViewController.course_name = course_name;
         nextViewController.spot_name = spot_name;
     }
-        NSLog(@"%@", course_name);
-        NSLog(@"%@", spot_name);
+    
+    NSLog(@"%@", course_name);
+    NSLog(@"%@", spot_name);
 }
-
 
 //戻るボタンのアクション
 - (IBAction)dismissSelf:(id)sender {
