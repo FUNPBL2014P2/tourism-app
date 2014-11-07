@@ -270,7 +270,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="DCk-E7-BGl">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <imageView key="tableFooterView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="fBn-1V-qH9">
+                                <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="fBn-1V-qH9">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="236"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
@@ -288,6 +288,11 @@
                             <constraint firstItem="d94-aI-Yw7" firstAttribute="top" secondItem="ujr-2s-c3P" secondAttribute="bottom" id="ix8-IF-tNl"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="myImageView" destination="fBn-1V-qH9" id="N2I-it-hoY"/>
+                        <outlet property="myNavigationItem" destination="3LA-Gz-Pvb" id="rgm-Ev-zbq"/>
+                        <outlet property="myTableView" destination="DCk-E7-BGl" id="O8Z-Po-Aai"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yft-Aw-FcK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -459,10 +464,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="vi7-3m-iwG"/>
-        <segue reference="VYS-yA-MRz"/>
-        <segue reference="m2A-yz-i2n"/>
-        <segue reference="vi7-3m-iwG"/>
         <segue reference="eNN-Id-veV"/>
+        <segue reference="vi7-3m-iwG"/>
+        <segue reference="m2A-yz-i2n"/>
     </inferredMetricsTieBreakers>
 </document>

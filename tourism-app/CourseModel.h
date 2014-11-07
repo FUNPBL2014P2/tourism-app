@@ -28,5 +28,7 @@
 - (NSMutableArray *) getSpotWithName:(NSString *)name;
 - (MKPolyline *) getCourseLineWithName:(NSString *)name;
 - (NSMutableArray *) getStartAnnotationWithName:(NSString *)name;
+- (NSString *) getSpotDetailTextWithName:(NSString *)course_name spot_name:(NSString *)spot_name;
+- (NSString *) getSpotImageWithName:(NSString *)course_name spot_name:(NSString *)spot_name;
 
 @end
