@@ -296,7 +296,6 @@
     // MapViewの現在位置表示機能を停止させる。コレを忘れるとMapViewを開放してもGPSが使用しっぱなしになる
     [myMapView setShowsUserLocation:NO];
     spot_name = view.annotation.title;
-    NSLog(@"%@", spot_name);
     [self performSegueWithIdentifier:@"MapToSpot" sender:self];
 }
 
@@ -310,8 +309,11 @@
     if ([[segue identifier] isEqualToString:@"MapToHealth"]){
         nextViewController.course_name = course_name;
     }else if ([[segue identifier] isEqualToString:@"MapToSpot"]){
+        nextViewController.course_name = course_name;
         nextViewController.spot_name = spot_name;
     }
+        NSLog(@"%@", course_name);
+        NSLog(@"%@", spot_name);
 }
 
 
@@ -324,6 +326,4 @@
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
-- (IBAction)myButton:(id)sender {
-}
 @end
