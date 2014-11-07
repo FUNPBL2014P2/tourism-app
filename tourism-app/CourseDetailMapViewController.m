@@ -36,7 +36,7 @@
     self.locationManager.delegate = self;
     
     myMapView.showsUserLocation = YES;
-    [myMapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
+    [myMapView setUserTrackingMode:MKUserTrackingModeNone animated:YES];
     [self updateUserTrackingModeBtn:MKUserTrackingModeNone];
     
     self.locationManager = [[CLLocationManager alloc] init];
@@ -75,9 +75,21 @@
         [myMapView addAnnotation:[start_pins objectAtIndex:i]];
     }
     
-    
     //getCourseLineWithNameメソッドはスポット位置のCustomAnnotationがはいった配列を返すメソッド
     [myMapView addOverlay:[course_map_model getCourseLineWithName:course_name]];
+    
+    CLLocationCoordinate2D center;
+    center.latitude = ((CustomAnnotation *)[start_pins objectAtIndex:0]).coordinate.latitude; // 経度
+    center.longitude = ((CustomAnnotation *)[start_pins objectAtIndex:0]).coordinate.longitude; // 緯度
+    [myMapView setCenterCoordinate:center animated:NO];
+    
+    // 縮尺を指定
+    MKCoordinateRegion region = myMapView.region;
+    region.center = center;
+    region.span.latitudeDelta = 0.01;
+    region.span.longitudeDelta = 0.01;
+    [myMapView setRegion:region animated:NO];
+    
     
     
 }
