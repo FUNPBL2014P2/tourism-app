@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SpotDetailViewController : UIViewController
+@interface SpotDetailViewController : UIViewController {
+    NSString *course_name;
+    NSString *spot_name;
+}
+
+@property NSString *course_name;//コース詳細マップ画面から引き渡されるコース名
+@property NSString *spot_name;//コース詳細マップ画面から引き渡されるスポット名
 
 @end

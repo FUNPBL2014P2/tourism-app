@@ -13,8 +13,8 @@
 
 @interface CourseMapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate> {
     
-    CourseModel *_course_map_model;
-    NSString *_course_name; //コース詳細画面に受け渡すコース名
+    CourseModel *course_map_model;
+    NSString *course_name; //コース詳細画面に受け渡すコース名
     
 }
 

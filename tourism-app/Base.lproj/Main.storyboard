@@ -200,21 +200,19 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gzo-L1-ODY">
-                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
-                                <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="3VU-Ay-qqO"/>
-                                    <barButtonItem title="健康ウォーキングマップを見る" id="etP-vb-MUq">
-                                        <connections>
-                                            <segue destination="wpK-Ri-VO3" kind="modal" id="8vl-bp-cHQ"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="9sN-Ip-vg9"/>
-                                </items>
-                            </toolbar>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="eQH-Qf-60Y">
                                 <rect key="frame" x="0.0" y="64" width="600" height="492"/>
                             </mapView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gzo-L1-ODY">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem id="etP-vb-MUq">
+                                        <connections>
+                                            <action selector="myButton:" destination="W4b-i2-zI2" id="ZlJ-kV-Ai3"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -234,8 +232,10 @@
                     </view>
                     <connections>
                         <outlet property="myMapView" destination="eQH-Qf-60Y" id="SqM-tg-9Ge"/>
+                        <outlet property="myNavigationItem" destination="Ngp-ca-33i" id="U7e-zY-FyO"/>
                         <outlet property="myToolBar" destination="Gzo-L1-ODY" id="LDG-A6-Fr2"/>
-                        <segue destination="wcf-DD-ijF" kind="modal" id="RRe-8e-6rn"/>
+                        <segue destination="wcf-DD-ijF" kind="modal" identifier="MapToSpot" id="RRe-8e-6rn"/>
+                        <segue destination="wpK-Ri-VO3" kind="modal" identifier="MapToHealth" id="VYS-yA-MRz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QFo-us-QyW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -459,6 +459,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="vi7-3m-iwG"/>
+        <segue reference="VYS-yA-MRz"/>
         <segue reference="m2A-yz-i2n"/>
         <segue reference="vi7-3m-iwG"/>
         <segue reference="eNN-Id-veV"/>

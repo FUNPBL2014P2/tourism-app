@@ -7,6 +7,7 @@
 //
 
 #import "CourseMapViewController.h"
+#import "CustomAnnotation.h"
 
 @interface CourseMapViewController ()
 
@@ -54,15 +55,19 @@
     
     //ここからviewとmodelをつなぐ処理
     course_map_model = [[CourseModel alloc] init];
-    
+       
     //getStartAnnotationメソッドはスタート位置のCustomAnnotationがはいった配列を返すメソッド
-    for (int i = 0; i < [[course_map_model getStartAnnotation] count]; i++) {
-        [myMapView addAnnotation:[[course_map_model getStartAnnotation] objectAtIndex:i]];
+    NSMutableArray *pins = [[course_map_model getStartAnnotation] mutableCopy];
+    
+    for (int i = 0; i < [pins count]; i++) {
+        [myMapView addAnnotation:[pins objectAtIndex:i]];
     }
     
     //getAllCourseLineメソッドは全コースのMKPolylineが入った配列を返すメソッド
-    for(int i = 0; i < [[course_map_model getAllCourseLine] count]; i++) {
-        [myMapView addOverlay:[[course_map_model getAllCourseLine] objectAtIndex:i]];
+    NSMutableArray *lines = [[course_map_model getAllCourseLine] mutableCopy];
+     
+    for(int i = 0; i < [lines count]; i++) {
+        [myMapView addOverlay:[lines objectAtIndex:i]];
     }
     
 }
@@ -145,8 +150,8 @@
     annotationView.canShowCallout = YES;
     annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     annotationView.image = [UIImage imageNamed:@"start_pin.png"];
-    annotationView.bounds = CGRectMake(0, 0, 60, 60);
-    annotationView.centerOffset = CGPointMake(22, -32); // アイコンの中心を設定する
+    annotationView.bounds = CGRectMake(0, 0, 50, 50);
+    annotationView.centerOffset = CGPointMake(18, -25); // アイコンの中心を設定する
     return annotationView;
 }
 
