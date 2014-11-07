@@ -116,6 +116,8 @@
     self.myButton.imageView.clipsToBounds = NO;
     self.myButton.imageView.contentMode = UIViewContentModeCenter;
     
+    [self.myButton setImage:[UIImage imageNamed:@"none_icon.png"] forState:UIControlStateNormal];
+    
     //UIBarButtonItemではボタンを画像にする設定に限界があるため
     //より細かい設定のできるUIButtonをCustomViewとして設定することで、UIBarButtonItemを実装している
     UIBarButtonItem *customBarItem = [[UIBarButtonItem alloc]initWithCustomView:self.myButton];
@@ -135,7 +137,6 @@
   
     NSArray *barButtons = [NSArray arrayWithObjects:customBarItem,fixedSpacer1 ,healthBarItem ,fixedSpacer2 ,nil];
     [myToolBar setItems:barButtons];
-    [self updateUserTrackingModeBtn:MKUserTrackingModeFollow];
 }
 
 #pragma mark - delegate
