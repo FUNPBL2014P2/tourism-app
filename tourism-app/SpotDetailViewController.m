@@ -61,6 +61,8 @@ NSString *spot_detail;
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
 
+    //セルを押したとき青くならなくする
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.textLabel.numberOfLines = 0; //改行可
     cell.textLabel.text = spot_detail;
     
