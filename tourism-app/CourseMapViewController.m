@@ -19,7 +19,10 @@
 
 @implementation CourseMapViewController
 
-@synthesize course_name, course_map_model, myMapView, myToolBar;
+@synthesize course_name;
+@synthesize course_map_model;
+@synthesize myMapView;
+@synthesize myToolBar;
 
 #pragma mark - UIViewController lifecicle event methods
 
@@ -42,10 +45,8 @@
     //iOS8以上とiOS7未満では位置情報の取得方法が変更されたため、両対応にするため処理を分けている
     //requestWhenInUseAuthorizationはiOS8にしかないメソッド
     if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
-        
         [self.locationManager requestWhenInUseAuthorization];
-    } else {
-        
+    }else{
         [self.locationManager startUpdatingLocation];
     }
     
@@ -69,7 +70,6 @@
     for(int i = 0; i < [lines count]; i++) {
         [myMapView addOverlay:[lines objectAtIndex:i]];
     }
-    
 }
 
 /**
@@ -86,7 +86,6 @@
  toolBarCustomのviewの実装
  */
 - (void)toolBarCustom {
-    
     //UIButtonのiconのみにアニメーションをかけるため、iconとbackgroundを分けて大きさを設定している
     //transformでiconの大きさを設定することができる
     self.myButton = [[UIButton alloc] initWithFrame:CGRectMake(0,0,33,33)];
@@ -112,7 +111,6 @@
  iOS8の場合、位置情報取得が可能であればここで位置情報を取得を開始する
  */
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
-    
     if (status == kCLAuthorizationStatusAuthorizedAlways ||
         status == kCLAuthorizationStatusAuthorizedWhenInUse) {
         [self.locationManager startUpdatingLocation];
@@ -133,7 +131,6 @@
  @return アノテーションの見た目や大きさなどの詳細設定
  */
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id)annotation {
-    
     //現在地にもアノテーションが適応されるため、それをさける処理
     if ([annotation isKindOfClass:[MKUserLocation class]]) {
         return nil;
@@ -152,6 +149,7 @@
     annotationView.image = [UIImage imageNamed:@"start_pin.png"];
     annotationView.bounds = CGRectMake(0, 0, 50, 50);
     annotationView.centerOffset = CGPointMake(18, -25); // アイコンの中心を設定する
+    
     return annotationView;
 }
 
@@ -162,10 +160,10 @@
  @return オーバーレイの色や太さなどの詳細設定
  */
 - (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id<MKOverlay>)overlay {
-    
     MKPolylineView *lineView = [[MKPolylineView alloc] initWithOverlay:overlay];
     lineView.strokeColor = [UIColor redColor];
     lineView.lineWidth = 5.0;
+    
     return lineView;
 }
 
@@ -174,8 +172,7 @@
 /**
  myButtonが押されたときに呼出されるメソッド
  */
-- (void)myButtonTapped{
-    
+- (void)myButtonTapped {
     //アニメーションの設定
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:0.4];
@@ -208,14 +205,12 @@
     
     [self updateUserTrackingModeBtn:mode];
     [myMapView setUserTrackingMode:mode animated:YES];
-    
 }
 
 /**
  myButtonの画像を、MKUserTrackingModeにより切り替えるメソッド
  */
 - (void)updateUserTrackingModeBtn:(MKUserTrackingMode)mode {
-    
     NSString *icon = nil;
     NSString *background = nil;
     
@@ -243,7 +238,6 @@
  　アノテーションボタンが押されたとき呼ばれるメソッド
  */
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
-    
     // locationManager(CLLocationManagerのインスタンス）のGPS計測を停止させる
     [self.locationManager stopUpdatingLocation];
     // MapViewの現在位置表示機能を停止させる。コレを忘れるとMapViewを開放してもGPSが使用しっぱなしになる
@@ -256,7 +250,6 @@
  Segueが実行されると、実行直前に自動的に呼び出される
  */
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
     CourseMapViewController *nextViewController = (CourseMapViewController*)[segue destinationViewController];
     
     if ([[segue identifier] isEqualToString:@"MapToDetail"]){
@@ -268,7 +261,6 @@
  戻るボタンが押されたとき呼ばれるメソッド
  */
 - (IBAction)dismissSelf:(id)sender {
-    
     // locationManager(CLLocationManagerのインスタンス）のGPS計測を停止させる
     [self.locationManager stopUpdatingLocation];
     // MapViewの現在位置表示機能を停止させる。コレを忘れるとMapViewを開放してもGPSが使用しっぱなしになる

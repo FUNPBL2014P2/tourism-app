@@ -7,13 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CourseModel.h"
+#import "Course.h"
 
-@interface SpotDetailViewController : UIViewController {
+@interface SpotDetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     NSString *course_name;
     NSString *spot_name;
 }
 
-@property NSString *course_name;//コース詳細マップ画面から引き渡されるコース名
-@property NSString *spot_name;//コース詳細マップ画面から引き渡されるスポット名
+@property (weak, nonatomic) IBOutlet UINavigationItem *myNavigationItem;
+@property (weak, nonatomic) IBOutlet UITableView *myTableView;
+@property (weak, nonatomic) IBOutlet UIImageView *myImageView;
+
+@property NSString *course_name; //コース詳細マップ画面から引き渡されるコース名
+@property NSString *spot_name; //コース詳細マップ画面から引き渡されるスポット名
 
 @end

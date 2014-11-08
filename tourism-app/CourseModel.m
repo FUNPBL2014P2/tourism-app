@@ -175,6 +175,7 @@ AppDelegate *appDelegate;
 /**
  コース名を引数に、そのコース名のコース情報が格納されたCourseクラスのインスタンスを返す
  
+ @param  name コース名
  @return Courseクラスのインスタンス
  */
 - (Course *) getDataWithName:(NSString *)name {
@@ -191,6 +192,8 @@ AppDelegate *appDelegate;
 
 /**
  Courseクラスのインスタンスが格納された配列を引数に、距離を降順でソートする
+ 
+ @param course_table_datas Courseインスタンスが格納されている配列を引数とする
  */
 - (void) getSortedbyDistanceMutableArray:(NSMutableArray *)course_table_datas {
     for (int i = 0; i < [course_table_datas count] - 1; i++) {
@@ -206,6 +209,8 @@ AppDelegate *appDelegate;
 
 /**
  Courseクラスのインスタンスが格納された配列を引数に、消費カロリー(男性消費カロリー)を降順でソートする
+ 
+ @param course_table_datas Courseインスタンスが格納されている配列を引数とする
  */
 - (void) getSortedbyCaloryMutableArray:(NSMutableArray *)course_table_datas {
     for (int i = 0; i < [course_table_datas count] - 1; i++) {
@@ -221,6 +226,8 @@ AppDelegate *appDelegate;
 
 /**
  Courseクラスのインスタンスが格納された配列を引数に、所要時間を降順でソートする
+ 
+ @param course_table_datas Courseインスタンスが格納されている配列を引数とする
  */
 - (void) getSortedbyTimeMutableArray:(NSMutableArray *)course_table_datas {
     for (int i = 0; i < [course_table_datas count] - 1; i++) {
@@ -334,7 +341,7 @@ AppDelegate *appDelegate;
 /**
  選択されたコース名を引数に、そのコーススタートのCustomAnnotationインスタンスが入った配列を返すメソッド
  
- @warningコースにスタートが一つであれば、直接CustomAnnotationを返すメソッドに書き換えた方がよい
+ @warning コースにスタートが一つであれば、直接CustomAnnotationを返すメソッドに書き換えた方がよい
  
  @param name 選択されたコース名を引数とする
  @return コースのMKPolylineインスタンスを返す
@@ -362,5 +369,44 @@ AppDelegate *appDelegate;
     return pins;
 }
 
+/**
+ コース名、スポット名を引数に、引数であるコース名のコースの、引数であるスポット名のスポットの詳細文を取得する処理
+ 
+ @return スポットの詳細文
+ */
+- (NSString *) getSpotDetailTextWithName:(NSString *)course_name spot_name:(NSString *)spot_name {
+    int spotname_index = 0;
+    Course *course = [self getDataWithName:course_name];
+    
+    for(int i = 0;i < [course.spot_name count];i++){
+        NSString *spot = [course.spot_name objectAtIndex:i];
+        if([spot isEqualToString:spot_name]){
+            spotname_index = i;
+        }
+    }
+    
+    return [course.spot_detail objectAtIndex:spotname_index];
+}
+
+/**
+ コース名、スポット名を引数に、引数であるコース名のコースの、引数であるスポット名のスポットの画像ファイル名を取得する処理
+ 
+ @param course_name コース名
+ @param spot_name スポット名
+ @return スポットの画像ファイル名
+ */
+- (NSString *) getSpotImageWithName:(NSString *)course_name spot_name:(NSString *)spot_name {
+    int spotname_index = 0;
+    Course *course = [self getDataWithName:course_name];
+    
+    for(int i = 0;i < [course.spot_name count];i++){
+        NSString *spot = [course.spot_name objectAtIndex:i];
+        if([spot isEqualToString:spot_name]){
+            spotname_index = i;
+        }
+    }
+    
+    return [course.spot_image_name objectAtIndex:spotname_index];
+}
 
 @end
