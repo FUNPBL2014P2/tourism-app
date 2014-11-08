@@ -19,6 +19,14 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
+/**
+ Unwind Segueのアクションメソッド
+ この画面に遷移することを可能にする
+ */
+- (IBAction)firstViewReturnActionForSegue:(UIStoryboardSegue *)segue {
+    NSLog(@"First view return action invoked.");
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
