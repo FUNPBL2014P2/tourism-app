@@ -62,6 +62,7 @@
                                         <barButtonItem key="leftBarButtonItem" title="戻る" id="wiu-9x-WBk">
                                             <connections>
                                                 <action selector="dismissSelf:" destination="oIO-Kj-QD2" id="toU-mC-JHW"/>
+                                                <segue destination="wNS-Ig-mJY" kind="unwind" unwindAction="firstViewReturnActionForSegue:" id="whL-bo-2I3"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="カテゴリ" id="7Le-B6-PaM">
@@ -112,6 +113,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IQS-RR-aez" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="wNS-Ig-mJY" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1006" y="-284"/>
         </scene>
@@ -464,8 +466,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="NHc-ck-j4F"/>
         <segue reference="eNN-Id-veV"/>
-        <segue reference="vi7-3m-iwG"/>
         <segue reference="m2A-yz-i2n"/>
     </inferredMetricsTieBreakers>
 </document>
