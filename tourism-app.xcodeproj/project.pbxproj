@@ -13,6 +13,72 @@
 		4A039EB51A09045B005543CE /* spring_waku.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A039EAF1A09045B005543CE /* spring_waku.png */; };
 		4A039EB61A09045B005543CE /* summer_waku.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A039EB01A09045B005543CE /* summer_waku.png */; };
 		4A039EB71A09045B005543CE /* winter_waku.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A039EB11A09045B005543CE /* winter_waku.png */; };
+		4A039F141A0F73F7005543CE /* CourseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE376219FA1A5A00FE524F /* CourseTableViewController.m */; };
+		4A039F151A0F73F7005543CE /* TopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE375F19FA109200FE524F /* TopViewController.m */; };
+		4A039F161A0F73F7005543CE /* CourseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8596931A025EE50097379A /* CourseModel.m */; };
+		4A039F171A0F73F7005543CE /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE378019FA728200FE524F /* FMDatabasePool.m */; };
+		4A039F181A0F73F7005543CE /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE378219FA728200FE524F /* FMDatabaseQueue.m */; };
+		4A039F191A0F73F7005543CE /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE37A419FBD36300FE524F /* Course.m */; };
+		4A039F1A1A0F73F7005543CE /* CourseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE376B19FA1C0A00FE524F /* CourseDetailViewController.m */; };
+		4A039F1B1A0F73F7005543CE /* SpotDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE377119FA1CC200FE524F /* SpotDetailViewController.m */; };
+		4A039F1C1A0F73F7005543CE /* CourseMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE376519FA1B7900FE524F /* CourseMapViewController.m */; };
+		4A039F1D1A0F73F7005543CE /* CustomAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1D31B21A0A30820098053D /* CustomAnnotation.m */; };
+		4A039F1E1A0F73F7005543CE /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE376E19FA1C5D00FE524F /* CategoryViewController.m */; };
+		4A039F1F1A0F73F7005543CE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A74F31619F6690D00DA5C82 /* AppDelegate.m */; };
+		4A039F201A0F73F7005543CE /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE378519FA728200FE524F /* FMResultSet.m */; };
+		4A039F211A0F73F7005543CE /* HealthWalkingMapDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE377419FA1D1C00FE524F /* HealthWalkingMapDetailViewController.m */; };
+		4A039F221A0F73F7005543CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A74F31319F6690D00DA5C82 /* main.m */; };
+		4A039F231A0F73F7005543CE /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE377C19FA728200FE524F /* FMDatabase.m */; };
+		4A039F241A0F73F7005543CE /* CourseDetailMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE376819FA1BC400FE524F /* CourseDetailMapViewController.m */; };
+		4A039F251A0F73F7005543CE /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE377E19FA728200FE524F /* FMDatabaseAdditions.m */; };
+		4A039F271A0F73F7005543CE /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ADE378B19FA72CD00FE524F /* libsqlite3.0.dylib */; };
+		4A039F281A0F73F7005543CE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ADE377819FA41DA00FE524F /* MapKit.framework */; };
+		4A039F291A0F73F7005543CE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ADE377619FA41C900FE524F /* CoreLocation.framework */; };
+		4A039F2B1A0F73F7005543CE /* winter.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A8596831A00CBD10097379A /* winter.png */; };
+		4A039F2C1A0F73F7005543CE /* none_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C1D31AF1A0A166B0098053D /* none_icon.png */; };
+		4A039F2D1A0F73F7005543CE /* spring.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A8596811A00CBD10097379A /* spring.png */; };
+		4A039F2E1A0F73F7005543CE /* sakuragaokadori2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A85966619FFB67C0097379A /* sakuragaokadori2.png */; };
+		4A039F2F1A0F73F7005543CE /* kouyaji.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A85966219FFB67C0097379A /* kouyaji.png */; };
+		4A039F301A0F73F7005543CE /* sea_waku.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A039EAE1A09045B005543CE /* sea_waku.png */; };
+		4A039F311A0F73F7005543CE /* autumn_waku.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A039EAC1A09045B005543CE /* autumn_waku.png */; };
+		4A039F321A0F73F7005543CE /* midorimachidori.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A85966419FFB67C0097379A /* midorimachidori.png */; };
+		4A039F331A0F73F7005543CE /* tomoeohashi.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A85966819FFB67C0097379A /* tomoeohashi.png */; };
+		4A039F341A0F73F7005543CE /* kashiwagityoukaikan.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A85965F19FFB67C0097379A /* kashiwagityoukaikan.png */; };
+		4A039F351A0F73F7005543CE /* hakodatetankidaigakuhuzokuyouchien.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A85965D19FFB67C0097379A /* hakodatetankidaigakuhuzokuyouchien.png */; };
+		4A039F361A0F73F7005543CE /* memoriarushippumashumaru.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A85966319FFB67C0097379A /* memoriarushippumashumaru.png */; };
+		4A039F371A0F73F7005543CE /* walk_course.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A8596981A0318D90097379A /* walk_course.png */; };
+		4A039F381A0F73F7005543CE /* spring_waku.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A039EAF1A09045B005543CE /* spring_waku.png */; };
+		4A039F391A0F73F7005543CE /* autumn.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A85967E1A00CBD10097379A /* autumn.png */; };
+		4A039F3A1A0F73F7005543CE /* yajigashiratyoukaikan.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A85966919FFB67C0097379A /* yajigashiratyoukaikan.png */; };
+		4A039F3B1A0F73F7005543CE /* hakodatechihoukisyoudai.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A85965B19FFB67C0097379A /* hakodatechihoukisyoudai.png */; };
+		4A039F3C1A0F73F7005543CE /* follow_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C1D31AB1A0A165D0098053D /* follow_icon.png */; };
+		4A039F3D1A0F73F7005543CE /* kashiwanosyougakkou2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A85966119FFB67C0097379A /* kashiwanosyougakkou2.png */; };
+		4A039F3E1A0F73F7005543CE /* park.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A85967F1A00CBD10097379A /* park.png */; };
+		4A039F3F1A0F73F7005543CE /* kashiwanosyougakkou.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A85966019FFB67C0097379A /* kashiwanosyougakkou.png */; };
+		4A039F401A0F73F7005543CE /* sumiyoshityoukaikan.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A85966719FFB67C0097379A /* sumiyoshityoukaikan.png */; };
+		4A039F411A0F73F7005543CE /* hakodatehachimangu.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A85965C19FFB67C0097379A /* hakodatehachimangu.png */; };
+		4A039F421A0F73F7005543CE /* boolbaritem.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C1D31A71A0A164A0098053D /* boolbaritem.png */; };
+		4A039F431A0F73F7005543CE /* park_waku.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A039EAD1A09045B005543CE /* park_waku.png */; };
+		4A039F441A0F73F7005543CE /* followheading_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C1D31AD1A0A16640098053D /* followheading_icon.png */; };
+		4A039F451A0F73F7005543CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A74F31B19F6690D00DA5C82 /* Main.storyboard */; };
+		4A039F461A0F73F7005543CE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A74F32019F6690D00DA5C82 /* LaunchScreen.xib */; };
+		4A039F471A0F73F7005543CE /* start_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C1D31B71A0A9A660098053D /* start_pin.png */; };
+		4A039F481A0F73F7005543CE /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C1D31A91A0A16520098053D /* background.png */; };
+		4A039F491A0F73F7005543CE /* see_walkingmap.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A8596971A0318D90097379A /* see_walkingmap.png */; };
+		4A039F4A1A0F73F7005543CE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A74F31E19F6690D00DA5C82 /* Images.xcassets */; };
+		4A039F4B1A0F73F7005543CE /* hokkaidouoshimagoudoutyousya.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A85965E19FFB67C0097379A /* hokkaidouoshimagoudoutyousya.png */; };
+		4A039F4C1A0F73F7005543CE /* sakuragaokadori.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A85966519FFB67C0097379A /* sakuragaokadori.png */; };
+		4A039F4D1A0F73F7005543CE /* walking_map.db in Resources */ = {isa = PBXBuildFile; fileRef = 4A8596A11A0642340097379A /* walking_map.db */; };
+		4A039F4E1A0F73F7005543CE /* summer.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A8596821A00CBD10097379A /* summer.png */; };
+		4A039F4F1A0F73F7005543CE /* sea.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A8596801A00CBD10097379A /* sea.png */; };
+		4A039F501A0F73F7005543CE /* hakodateasaichi.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A85965A19FFB67C0097379A /* hakodateasaichi.png */; };
+		4A039F511A0F73F7005543CE /* winter_waku.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A039EB11A09045B005543CE /* winter_waku.png */; };
+		4A039F521A0F73F7005543CE /* summer_waku.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A039EB01A09045B005543CE /* summer_waku.png */; };
+		4A039F591A0F7433005543CE /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A039F581A0F7433005543CE /* libstdc++.6.0.9.dylib */; };
+		4A039F5B1A0F7447005543CE /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A039F5A1A0F7447005543CE /* libsqlite3.dylib */; };
+		4A039F5D1A0F744D005543CE /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A039F5C1A0F744D005543CE /* CFNetwork.framework */; };
+		4A039F5F1A0F7457005543CE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A039F5E1A0F7457005543CE /* QuartzCore.framework */; };
+		4A039F611A0F7478005543CE /* libMonkeyTalk-2.0.9.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A039F601A0F7478005543CE /* libMonkeyTalk-2.0.9.a */; };
 		4A74F31419F6690D00DA5C82 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A74F31319F6690D00DA5C82 /* main.m */; };
 		4A74F31719F6690D00DA5C82 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A74F31619F6690D00DA5C82 /* AppDelegate.m */; };
 		4A74F31D19F6690D00DA5C82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A74F31B19F6690D00DA5C82 /* Main.storyboard */; };
@@ -89,6 +155,13 @@
 		4A039EAF1A09045B005543CE /* spring_waku.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spring_waku.png; sourceTree = "<group>"; };
 		4A039EB01A09045B005543CE /* summer_waku.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = summer_waku.png; sourceTree = "<group>"; };
 		4A039EB11A09045B005543CE /* winter_waku.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = winter_waku.png; sourceTree = "<group>"; };
+		4A039F561A0F73F7005543CE /* tourism-app copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tourism-app copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A039F571A0F73F7005543CE /* tourism-app copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "tourism-app copy-Info.plist"; path = "/Users/Kawabe/tourism-app/tourism-app copy-Info.plist"; sourceTree = "<absolute>"; };
+		4A039F581A0F7433005543CE /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
+		4A039F5A1A0F7447005543CE /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		4A039F5C1A0F744D005543CE /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		4A039F5E1A0F7457005543CE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		4A039F601A0F7478005543CE /* libMonkeyTalk-2.0.9.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libMonkeyTalk-2.0.9.a"; path = "../Downloads/monkeytalk/agents/ios/libMonkeyTalk-2.0.9.a"; sourceTree = "<group>"; };
 		4A74F30E19F6690D00DA5C82 /* tourism-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tourism-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A74F31219F6690D00DA5C82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A74F31319F6690D00DA5C82 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -170,6 +243,21 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4A039F261A0F73F7005543CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A039F611A0F7478005543CE /* libMonkeyTalk-2.0.9.a in Frameworks */,
+				4A039F5F1A0F7457005543CE /* QuartzCore.framework in Frameworks */,
+				4A039F5D1A0F744D005543CE /* CFNetwork.framework in Frameworks */,
+				4A039F5B1A0F7447005543CE /* libsqlite3.dylib in Frameworks */,
+				4A039F591A0F7433005543CE /* libstdc++.6.0.9.dylib in Frameworks */,
+				4A039F271A0F73F7005543CE /* libsqlite3.0.dylib in Frameworks */,
+				4A039F281A0F73F7005543CE /* MapKit.framework in Frameworks */,
+				4A039F291A0F73F7005543CE /* CoreLocation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4A74F30B19F6690D00DA5C82 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -207,12 +295,11 @@
 		4A74F30519F6690D00DA5C82 = {
 			isa = PBXGroup;
 			children = (
-				4ADE378B19FA72CD00FE524F /* libsqlite3.0.dylib */,
-				4ADE377819FA41DA00FE524F /* MapKit.framework */,
-				4ADE377619FA41C900FE524F /* CoreLocation.framework */,
+				4AF54D681A0F7BEC005DB924 /* Frameworks */,
 				4A74F31019F6690D00DA5C82 /* tourism-app */,
 				4A74F32A19F6690D00DA5C82 /* tourism-appTests */,
 				4A74F30F19F6690D00DA5C82 /* Products */,
+				4A039F571A0F73F7005543CE /* tourism-app copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -221,6 +308,7 @@
 			children = (
 				4A74F30E19F6690D00DA5C82 /* tourism-app.app */,
 				4A74F32719F6690D00DA5C82 /* tourism-appTests.xctest */,
+				4A039F561A0F73F7005543CE /* tourism-app copy.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -361,6 +449,21 @@
 			path = fmdb;
 			sourceTree = "<group>";
 		};
+		4AF54D681A0F7BEC005DB924 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4A039F601A0F7478005543CE /* libMonkeyTalk-2.0.9.a */,
+				4A039F5E1A0F7457005543CE /* QuartzCore.framework */,
+				4A039F5C1A0F744D005543CE /* CFNetwork.framework */,
+				4A039F5A1A0F7447005543CE /* libsqlite3.dylib */,
+				4A039F581A0F7433005543CE /* libstdc++.6.0.9.dylib */,
+				4ADE378B19FA72CD00FE524F /* libsqlite3.0.dylib */,
+				4ADE377819FA41DA00FE524F /* MapKit.framework */,
+				4ADE377619FA41C900FE524F /* CoreLocation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9C1D31B41A0A34130098053D /* pin_images */ = {
 			isa = PBXGroup;
 			children = (
@@ -372,6 +475,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		4A039F121A0F73F7005543CE /* tourism-appWithMonkeyTalk */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A039F531A0F73F7005543CE /* Build configuration list for PBXNativeTarget "tourism-appWithMonkeyTalk" */;
+			buildPhases = (
+				4A039F131A0F73F7005543CE /* Sources */,
+				4A039F261A0F73F7005543CE /* Frameworks */,
+				4A039F2A1A0F73F7005543CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "tourism-appWithMonkeyTalk";
+			productName = "tourism-app";
+			productReference = 4A039F561A0F73F7005543CE /* tourism-app copy.app */;
+			productType = "com.apple.product-type.application";
+		};
 		4A74F30D19F6690D00DA5C82 /* tourism-app */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4A74F33119F6690D00DA5C82 /* Build configuration list for PBXNativeTarget "tourism-app" */;
@@ -440,11 +560,59 @@
 			targets = (
 				4A74F30D19F6690D00DA5C82 /* tourism-app */,
 				4A74F32619F6690D00DA5C82 /* tourism-appTests */,
+				4A039F121A0F73F7005543CE /* tourism-appWithMonkeyTalk */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4A039F2A1A0F73F7005543CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A039F2B1A0F73F7005543CE /* winter.png in Resources */,
+				4A039F2C1A0F73F7005543CE /* none_icon.png in Resources */,
+				4A039F2D1A0F73F7005543CE /* spring.png in Resources */,
+				4A039F2E1A0F73F7005543CE /* sakuragaokadori2.png in Resources */,
+				4A039F2F1A0F73F7005543CE /* kouyaji.png in Resources */,
+				4A039F301A0F73F7005543CE /* sea_waku.png in Resources */,
+				4A039F311A0F73F7005543CE /* autumn_waku.png in Resources */,
+				4A039F321A0F73F7005543CE /* midorimachidori.png in Resources */,
+				4A039F331A0F73F7005543CE /* tomoeohashi.png in Resources */,
+				4A039F341A0F73F7005543CE /* kashiwagityoukaikan.png in Resources */,
+				4A039F351A0F73F7005543CE /* hakodatetankidaigakuhuzokuyouchien.png in Resources */,
+				4A039F361A0F73F7005543CE /* memoriarushippumashumaru.png in Resources */,
+				4A039F371A0F73F7005543CE /* walk_course.png in Resources */,
+				4A039F381A0F73F7005543CE /* spring_waku.png in Resources */,
+				4A039F391A0F73F7005543CE /* autumn.png in Resources */,
+				4A039F3A1A0F73F7005543CE /* yajigashiratyoukaikan.png in Resources */,
+				4A039F3B1A0F73F7005543CE /* hakodatechihoukisyoudai.png in Resources */,
+				4A039F3C1A0F73F7005543CE /* follow_icon.png in Resources */,
+				4A039F3D1A0F73F7005543CE /* kashiwanosyougakkou2.png in Resources */,
+				4A039F3E1A0F73F7005543CE /* park.png in Resources */,
+				4A039F3F1A0F73F7005543CE /* kashiwanosyougakkou.png in Resources */,
+				4A039F401A0F73F7005543CE /* sumiyoshityoukaikan.png in Resources */,
+				4A039F411A0F73F7005543CE /* hakodatehachimangu.png in Resources */,
+				4A039F421A0F73F7005543CE /* boolbaritem.png in Resources */,
+				4A039F431A0F73F7005543CE /* park_waku.png in Resources */,
+				4A039F441A0F73F7005543CE /* followheading_icon.png in Resources */,
+				4A039F451A0F73F7005543CE /* Main.storyboard in Resources */,
+				4A039F461A0F73F7005543CE /* LaunchScreen.xib in Resources */,
+				4A039F471A0F73F7005543CE /* start_pin.png in Resources */,
+				4A039F481A0F73F7005543CE /* background.png in Resources */,
+				4A039F491A0F73F7005543CE /* see_walkingmap.png in Resources */,
+				4A039F4A1A0F73F7005543CE /* Images.xcassets in Resources */,
+				4A039F4B1A0F73F7005543CE /* hokkaidouoshimagoudoutyousya.png in Resources */,
+				4A039F4C1A0F73F7005543CE /* sakuragaokadori.png in Resources */,
+				4A039F4D1A0F73F7005543CE /* walking_map.db in Resources */,
+				4A039F4E1A0F73F7005543CE /* summer.png in Resources */,
+				4A039F4F1A0F73F7005543CE /* sea.png in Resources */,
+				4A039F501A0F73F7005543CE /* hakodateasaichi.png in Resources */,
+				4A039F511A0F73F7005543CE /* winter_waku.png in Resources */,
+				4A039F521A0F73F7005543CE /* summer_waku.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4A74F30C19F6690D00DA5C82 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -502,6 +670,31 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4A039F131A0F73F7005543CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A039F141A0F73F7005543CE /* CourseTableViewController.m in Sources */,
+				4A039F151A0F73F7005543CE /* TopViewController.m in Sources */,
+				4A039F161A0F73F7005543CE /* CourseModel.m in Sources */,
+				4A039F171A0F73F7005543CE /* FMDatabasePool.m in Sources */,
+				4A039F181A0F73F7005543CE /* FMDatabaseQueue.m in Sources */,
+				4A039F191A0F73F7005543CE /* Course.m in Sources */,
+				4A039F1A1A0F73F7005543CE /* CourseDetailViewController.m in Sources */,
+				4A039F1B1A0F73F7005543CE /* SpotDetailViewController.m in Sources */,
+				4A039F1C1A0F73F7005543CE /* CourseMapViewController.m in Sources */,
+				4A039F1D1A0F73F7005543CE /* CustomAnnotation.m in Sources */,
+				4A039F1E1A0F73F7005543CE /* CategoryViewController.m in Sources */,
+				4A039F1F1A0F73F7005543CE /* AppDelegate.m in Sources */,
+				4A039F201A0F73F7005543CE /* FMResultSet.m in Sources */,
+				4A039F211A0F73F7005543CE /* HealthWalkingMapDetailViewController.m in Sources */,
+				4A039F221A0F73F7005543CE /* main.m in Sources */,
+				4A039F231A0F73F7005543CE /* FMDatabase.m in Sources */,
+				4A039F241A0F73F7005543CE /* CourseDetailMapViewController.m in Sources */,
+				4A039F251A0F73F7005543CE /* FMDatabaseAdditions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4A74F30A19F6690D00DA5C82 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -566,6 +759,38 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		4A039F541A0F73F7005543CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "tourism-app copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Kawabe/Downloads/monkeytalk/agents/ios,
+				);
+				OTHER_LDFLAGS = "-all_load";
+				PRODUCT_NAME = "tourism-app copy";
+			};
+			name = Debug;
+		};
+		4A039F551A0F73F7005543CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "tourism-app copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Kawabe/Downloads/monkeytalk/agents/ios,
+				);
+				OTHER_LDFLAGS = "-all_load";
+				PRODUCT_NAME = "tourism-app copy";
+			};
+			name = Release;
+		};
 		4A74F32F19F6690D00DA5C82 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -703,6 +928,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4A039F531A0F73F7005543CE /* Build configuration list for PBXNativeTarget "tourism-appWithMonkeyTalk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A039F541A0F73F7005543CE /* Debug */,
+				4A039F551A0F73F7005543CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4A74F30919F6690D00DA5C82 /* Build configuration list for PBXProject "tourism-app" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
