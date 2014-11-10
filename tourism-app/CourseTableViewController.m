@@ -22,7 +22,7 @@
 @synthesize isParkChecked;
 @synthesize isSeaChecked;
 
-BOOL isSorted;
+NSString *sortedType;
 
 /**
  Courseクラスのインスタンスが格納された配列を引数に、カテゴリ画面でチェックマークがついている項目に対応するコースを検索する
@@ -120,6 +120,17 @@ BOOL isSorted;
     
     //SegmentedContrlの初期状態が「距離順」なので、距離を降順でソート
     [course_table_model getSortedbyDistanceMutableArray:course_table_model->course_table_data];
+    
+    //他の画面で「戻る」を選択し、本画面に戻ってきた場合でもSegmented Controlに
+    //対応するソート結果を保持するために、sortedType毎にソートする
+    if([sortedType isEqualToString:@"distance"]){
+        [course_table_model getSortedbyDistanceMutableArray:course_table_model->course_table_data];
+    }else if([sortedType isEqualToString:@"calorie"]){
+        [course_table_model getSortedbyCaloryMutableArray:course_table_model->course_table_data];
+    }else if([sortedType isEqualToString:@"time"]){
+        [course_table_model getSortedbyTimeMutableArray:course_table_model->course_table_data];
+    }
+
     //カテゴリ画面でチェックマークがついている項目に対応するコースを検索
     [self getSearchedbyCategoryMutableArray:course_table_model->course_table_data];
     
@@ -134,17 +145,17 @@ BOOL isSorted;
         NSLog(@"距離順");
         //距離を降順でソート
         [course_table_model getSortedbyDistanceMutableArray:course_table_model->course_table_data];
-        isSorted = YES;
+        sortedType = @"distance";
     }else if(self.mySegmentedControl.selectedSegmentIndex == 1){
         NSLog(@"カロリー順");
         //消費カロリー(男性消費カロリー)を降順でソート
         [course_table_model getSortedbyCaloryMutableArray:course_table_model->course_table_data];
-        isSorted = YES;
+        sortedType = @"calorie";
     }else if(self.mySegmentedControl.selectedSegmentIndex == 2){
         NSLog(@"時間順");
         //所要時間を降順でソート
         [course_table_model getSortedbyTimeMutableArray:course_table_model->course_table_data];
-        isSorted = YES;
+        sortedType = @"time";
     }
     
     //TableViewの更新
