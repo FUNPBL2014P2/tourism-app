@@ -45,7 +45,32 @@ NSString *spot_detail;
  @return セクションに含まれるCellの数
  */
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return 2;
+}
+
+/**
+ @return Cellに表示するテキストの高さの値
+ */
+- (CGFloat)getDescriptionCellHeight:(NSString *)cellText{
+    UIFont *nameLabelFont = [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline];
+    CGFloat PADDING_OUTER = 110;
+    CGRect totalRect = [cellText boundingRectWithSize:CGSizeMake(self.myTableView.frame.size.width, CGFLOAT_MAX)
+                                              options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading)
+                                           attributes:[NSDictionary dictionaryWithObject:nameLabelFont forKey:NSFontAttributeName]
+                                              context:nil];
+    
+    return totalRect.size.height + PADDING_OUTER;
+}
+
+/**
+ @return Cellの高さ
+ */
+-(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if(indexPath.row == 1){
+        return [self getDescriptionCellHeight:spot_detail];
+    }
+    
+    return 0;
 }
 
 /**
@@ -64,7 +89,10 @@ NSString *spot_detail;
     //セルを押したとき青くならなくする
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.textLabel.numberOfLines = 0; //改行可
-    cell.textLabel.text = spot_detail;
+    
+    if(indexPath.row == 1){
+        cell.textLabel.text = spot_detail;
+    }
     
     return cell;
 }
