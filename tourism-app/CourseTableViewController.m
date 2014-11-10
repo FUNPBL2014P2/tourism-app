@@ -143,19 +143,25 @@ NSString *sortedType;
 - (IBAction)mySegmentedControlAction:(id)sender {
     if(self.mySegmentedControl.selectedSegmentIndex == 0){
         NSLog(@"距離順");
-        //距離を降順でソート
-        [course_table_model getSortedbyDistanceMutableArray:course_table_model->course_table_data];
-        sortedType = @"distance";
+        //カテゴリ検索によりCourseクラスのインスタンスが格納された配列が空ではない場合、距離を降順でソート
+        if([course_table_model->course_table_data count] != 0){
+            [course_table_model getSortedbyDistanceMutableArray:course_table_model->course_table_data];
+            sortedType = @"distance";
+        }
     }else if(self.mySegmentedControl.selectedSegmentIndex == 1){
         NSLog(@"カロリー順");
-        //消費カロリー(男性消費カロリー)を降順でソート
-        [course_table_model getSortedbyCaloryMutableArray:course_table_model->course_table_data];
-        sortedType = @"calorie";
+        //カテゴリ検索によりCourseクラスのインスタンスが格納された配列が空ではない場合、消費カロリー(男性消費カロリー)を降順でソート
+        if([course_table_model->course_table_data count] != 0){
+            [course_table_model getSortedbyCaloryMutableArray:course_table_model->course_table_data];
+            sortedType = @"calorie";
+        }
     }else if(self.mySegmentedControl.selectedSegmentIndex == 2){
         NSLog(@"時間順");
-        //所要時間を降順でソート
-        [course_table_model getSortedbyTimeMutableArray:course_table_model->course_table_data];
-        sortedType = @"time";
+        //カテゴリ検索によりCourseクラスのインスタンスが格納された配列が空ではない場合、所要時間を降順でソート
+        if([course_table_model->course_table_data count] != 0){
+            [course_table_model getSortedbyTimeMutableArray:course_table_model->course_table_data];
+            sortedType = @"time";
+        }
     }
     
     //TableViewの更新
