@@ -23,4 +23,6 @@
 @property (nonatomic)NSString *course_name;
 @property CourseModel *course_map_model;
 
+- (void)stopLocationService;
+
 @end
