@@ -200,27 +200,27 @@ NSString *sortedType;
     //タグアイコンの設定
     UIImage *spring_image = [UIImage imageNamed:@"spring_waku.png"];
     UIImageView *spring_tag = [[UIImageView alloc]initWithImage:spring_image];
-    spring_tag.frame = CGRectMake(148, 65, 15, 15);
+    spring_tag.frame = CGRectMake(142, 62, 15, 15);
     
     UIImage *summer_image = [UIImage imageNamed:@"summer_waku.png"];
     UIImageView *summer_tag = [[UIImageView alloc]initWithImage:summer_image];
-    summer_tag.frame = CGRectMake(168, 65, 15, 15);
+    summer_tag.frame = CGRectMake(162, 62, 15, 15);
     
     UIImage *autumn_image = [UIImage imageNamed:@"autumn_waku.png"];
     UIImageView *autumn_tag = [[UIImageView alloc]initWithImage:autumn_image];
-    autumn_tag.frame = CGRectMake(188, 65, 15, 15);
+    autumn_tag.frame = CGRectMake(182, 62, 15, 15);
     
     UIImage *winter_image = [UIImage imageNamed:@"winter_waku.png"];
     UIImageView *winter_tag = [[UIImageView alloc]initWithImage:winter_image];
-    winter_tag.frame = CGRectMake(208, 65, 15, 15);
+    winter_tag.frame = CGRectMake(202, 62, 15, 15);
     
     UIImage *park_image = [UIImage imageNamed:@"park_waku.png"];
     UIImageView *park_tag = [[UIImageView alloc]initWithImage:park_image];
-    park_tag.frame = CGRectMake(228, 65, 15, 15);
+    park_tag.frame = CGRectMake(222, 62, 15, 15);
     
     UIImage *sea_image = [UIImage imageNamed:@"sea_waku.png"];
     UIImageView *sea_tag = [[UIImageView alloc]initWithImage:sea_image];
-    sea_tag.frame = CGRectMake(248, 65, 15, 15);
+    sea_tag.frame = CGRectMake(242, 62, 15, 15);
     
     
     //UITableViewのCellの値がスクロールするごとに重なったり壊れる,UITableViewでCell再描画時に文字が重なる
@@ -264,7 +264,9 @@ NSString *sortedType;
     
     Course *course = [course_table_model->course_table_data objectAtIndex:indexPath.row];
     cell.textLabel.text = course.course_name;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"所要時間:%d分 距離:%.1fkm 男性消費カロリー:%dkcal 女性消費カロリー:%dkcal", course.time, course.distance, course.male_calories, course.female_calories];
+    //cell.detailTextLabel.text = [NSString stringWithFormat:@"所要時間:%d分 距離:%.1fkm 男性消費カロリー:%dkcal 女性消費カロリー:%dkcal \n", course.time, course.distance, course.male_calories, course.female_calories];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"所用時間:%d分 距離:%.1fkm \n平均消費カロリー:%.1dcal \n", course.time, course.distance, (course.male_calories + course.female_calories) / 2];
+
     cell.detailTextLabel.numberOfLines = 0; //改行可
     cell.imageView.image = [UIImage imageNamed:course.course_image_name];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
