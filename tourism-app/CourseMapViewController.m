@@ -13,7 +13,6 @@
 
 ///ツールバーのボタン
 @property UIButton *myButton;
-@property (nonatomic, retain) CLLocationManager *locationManager;
 
 @end
 
@@ -23,16 +22,19 @@
 @synthesize course_map_model;
 @synthesize myMapView;
 @synthesize myToolBar;
+@synthesize locationManager;
 
 #pragma mark - UIViewController lifecicle event methods
 
 /**
  初回ロードされた時のみ呼び出される
- - viewの詳細設定については、メソッドを分けて記述すること
+ - 詳細設定については、メソッドを分けて記述すること
  */
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    self.locationManager = [[CLLocationManager alloc] init];
     
     myMapView.delegate = self;
     self.locationManager.delegate = self;
@@ -40,15 +42,10 @@
     myMapView.showsUserLocation = YES;
     [myMapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
     
-    self.locationManager = [[CLLocationManager alloc] init];
+    //iOS8以上とiOS7未満では位置情報の取得方法が変更された
+    //ここではiOS7未満での位置情報の取得開始
+    [self.locationManager startUpdatingLocation];
     
-    //iOS8以上とiOS7未満では位置情報の取得方法が変更されたため、両対応にするため処理を分けている
-    //requestWhenInUseAuthorizationはiOS8にしかないメソッド
-    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
-        [self.locationManager requestWhenInUseAuthorization];
-    }else{
-        [self.locationManager startUpdatingLocation];
-    }
     
     //ツールバーの詳細設定はtoolBarCustomメソッドで記述
     [self toolBarCustom];
@@ -56,7 +53,7 @@
     
     //ここからviewとmodelをつなぐ処理
     course_map_model = [[CourseModel alloc] init];
-       
+    
     //getStartAnnotationメソッドはスタート位置のCustomAnnotationがはいった配列を返すメソッド
     NSMutableArray *pins = [[course_map_model getStartAnnotation] mutableCopy];
     
@@ -66,7 +63,7 @@
     
     //getAllCourseLineメソッドは全コースのMKPolylineが入った配列を返すメソッド
     NSMutableArray *lines = [[course_map_model getAllCourseLine] mutableCopy];
-     
+    
     for(int i = 0; i < [lines count]; i++) {
         [myMapView addOverlay:[lines objectAtIndex:i]];
     }
@@ -80,10 +77,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - View
+#pragma mark - private method
 
 /**
- toolBarCustomのviewの実装
+ toolBarCustomのviewの実装するメソッド
  */
 - (void)toolBarCustom {
     //UIButtonのiconのみにアニメーションをかけるため、iconとbackgroundを分けて大きさを設定している
@@ -104,17 +101,155 @@
     [self updateUserTrackingModeBtn:MKUserTrackingModeFollow];
 }
 
+/**
+ 位置情報サービスを停止するメソッド
+ */
+- (void)stopLocationService
+{
+    [self.locationManager stopUpdatingLocation];
+    self.locationManager.delegate = nil;
+    self.locationManager = nil;
+}
+
 #pragma mark - delegate
+
+// 位置情報サービスへのアクセスが許可されていればこのデリゲートメソッドが定期的に実行される(リリース時に消す)
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    NSLog(@"%@", locations);
+}
 
 /**
  位置情報取得の設定がかわると呼び出される
  iOS8の場合、位置情報取得が可能であればここで位置情報を取得を開始する
  */
-- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
-    if (status == kCLAuthorizationStatusAuthorizedAlways ||
-        status == kCLAuthorizationStatusAuthorizedWhenInUse) {
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
+{
+    
+    if (status == kCLAuthorizationStatusNotDetermined) {
+        
+        //iOS８での位置情報取得開始
+        if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+            
+            [self.locationManager requestWhenInUseAuthorization];
+        }
+    } else if (status == kCLAuthorizationStatusAuthorizedAlways || status == kCLAuthorizationStatusAuthorizedWhenInUse) {
+        
+        // 位置情報測位の許可状態が「常に許可」または「使用中のみ」の場合、
+        // 測位を開始する（iOS バージョンが 8 以上の場合のみ該当する）
+        // ※iOS8 以上の場合、位置情報測位が許可されていない状態で
+        // startUpdatingLocation メソッドを呼び出しても、何も行われない。
         [self.locationManager startUpdatingLocation];
+    } else if (status == kCLAuthorizationStatusRestricted) {
+        
+        if (![UIAlertController class]) {
+            
+            [self stopLocationService];
+            
+            UIAlertView *alertView = [[UIAlertView alloc]
+                                      initWithTitle:@"エラー"
+                                      message:@"位置情報の取得に失敗しました。"
+                                      delegate:self
+                                      cancelButtonTitle:@"OK"
+                                      otherButtonTitles:nil];
+            [alertView show];
+        }
+    } else if (status == kCLAuthorizationStatusDenied) {
+        
+        [self stopLocationService];
+        
+        //iOS8とそれ以前ではアラートに使うクラスが違うため、条件分岐を用いている
+        if ([UIAlertController class]) {
+            
+            UIAlertController *alertController =
+            [UIAlertController alertControllerWithTitle:@"はこウォーカーで位置情報を取得するには位置情報サービスをオンにしてください。"
+                                                message:nil
+                                         preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction *setAction =
+            [UIAlertAction actionWithTitle:@"設定"
+                                     style:UIAlertActionStyleDefault
+                                   handler:^(UIAlertAction *action){
+                                       
+                                       NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+                                       [[UIApplication sharedApplication] openURL:url];
+                                   }];
+            
+            UIAlertAction *cancelAction =
+            [UIAlertAction actionWithTitle:@"キャンセル"
+                                     style:UIAlertActionStyleCancel
+                                   handler:nil];
+            [alertController addAction:setAction];
+            [alertController addAction:cancelAction];
+            
+            [self presentViewController:alertController animated:YES completion:nil];
+            
+        } else {
+            
+            UIAlertView *alertView = [[UIAlertView alloc]
+                                      initWithTitle:@"位置情報の取得に失敗しました。"
+                                      message:nil
+                                      delegate:self
+                                      cancelButtonTitle:@"OK"
+                                      otherButtonTitles:nil];
+            [alertView show];
+        }
+    } else {
+        
+        
+        [self stopLocationService];
+        
+        if ([UIAlertController class]) {
+            
+            UIAlertController *alertController =
+            [UIAlertController alertControllerWithTitle:@"位置情報の取得に失敗しました。"
+                                                message:nil
+                                         preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction *okAction =
+            [UIAlertAction actionWithTitle:@"OK"
+                                     style:UIAlertActionStyleCancel
+                                   handler:nil];
+            [alertController addAction:okAction];
+            
+            [self presentViewController:alertController animated:YES completion:nil];
+            
+        } else {
+            
+            UIAlertView *alertView =
+            [[UIAlertView alloc] initWithTitle:@"位置情報の取得に失敗しました。"
+                                       message:nil
+                                      delegate:self
+                             cancelButtonTitle:@"OK"
+                             otherButtonTitles:nil];
+            [alertView show];
+        }
+        
+        
     }
+}
+
+/**
+ UIAlertViewのボタンが押されたときに呼ばれるデリゲートメソッド
+ 二回アラートを出すために実装している
+ */
+-(void)alertView:(UIAlertView*)alertView
+clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    switch (buttonIndex) {
+        case 0:{
+            //１番目のボタンが押されたときの処理を記述する
+            UIAlertView *alertView = [[UIAlertView alloc]
+                                      initWithTitle:@"iOSの設定 > プライバシー > 位置情報サービスから、このアプリの位置情報の利用を許可してください"
+                                      message:nil
+                                      delegate:nil
+                                      cancelButtonTitle:@"OK"
+                                      otherButtonTitles:nil];
+            [alertView show];
+        }
+            break;
+    }
+    
 }
 
 /**
@@ -238,8 +373,8 @@
  　アノテーションボタンが押されたとき呼ばれるメソッド
  */
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
-    // locationManager(CLLocationManagerのインスタンス）のGPS計測を停止させる
-    [self.locationManager stopUpdatingLocation];
+    
+    [self stopLocationService];
     // MapViewの現在位置表示機能を停止させる。コレを忘れるとMapViewを開放してもGPSが使用しっぱなしになる
     [myMapView setShowsUserLocation:NO];
     course_name = view.annotation.title;
@@ -261,8 +396,8 @@
  戻るボタンが押されたとき呼ばれるメソッド
  */
 - (IBAction)dismissSelf:(id)sender {
-    // locationManager(CLLocationManagerのインスタンス）のGPS計測を停止させる
-    [self.locationManager stopUpdatingLocation];
+    
+    [self stopLocationService];
     // MapViewの現在位置表示機能を停止させる。コレを忘れるとMapViewを開放してもGPSが使用しっぱなしになる
     [myMapView setShowsUserLocation:NO];
     [self dismissViewControllerAnimated:YES completion:NULL];
