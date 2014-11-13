@@ -11,7 +11,7 @@
 
 @implementation CourseModel
 
-NSString *getCourseDatasSql = @"select distinct * FROM courses left outer join routes ON courses.courseid = routes.coursesid left outer join spots ON courses.courseid = spots.courseid left outer join nearest_stops ON courses.courseid = nearest_stops.coursesid left outer join tags ON courses.courseid = tags.courseid;";
+NSString *getCourseDatasSql = @"select distinct * FROM courses left outer join routes ON courses.courseid = routes.courseid left outer join spots ON courses.courseid = spots.courseid left outer join nearest_stops ON courses.courseid = nearest_stops.courseid left outer join tags ON courses.courseid = tags.courseid;";
 AppDelegate *appDelegate;
 
 /**
