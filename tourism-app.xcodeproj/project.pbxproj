@@ -186,6 +186,9 @@
 		4ADE378A19FA728200FE524F /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE378519FA728200FE524F /* FMResultSet.m */; };
 		4ADE378C19FA72CD00FE524F /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ADE378B19FA72CD00FE524F /* libsqlite3.0.dylib */; };
 		4ADE37A819FBD36300FE524F /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE37A419FBD36300FE524F /* Course.m */; };
+		9C08ABBF1A1528DF0096A6D6 /* buss.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08ABBD1A1528DF0096A6D6 /* buss.png */; };
+		9C08ABC01A1528DF0096A6D6 /* train.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08ABBE1A1528DF0096A6D6 /* train.png */; };
+		9C08ABC21A1528E50096A6D6 /* shiden.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08ABC11A1528E50096A6D6 /* shiden.png */; };
 		9C1D31A81A0A164A0098053D /* boolbaritem.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C1D31A71A0A164A0098053D /* boolbaritem.png */; };
 		9C1D31AA1A0A16520098053D /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C1D31A91A0A16520098053D /* background.png */; };
 		9C1D31AC1A0A165D0098053D /* follow_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C1D31AB1A0A165D0098053D /* follow_icon.png */; };
@@ -405,6 +408,9 @@
 		4ADE378B19FA72CD00FE524F /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		4ADE37A419FBD36300FE524F /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
 		4ADE37A519FBD36300FE524F /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
+		9C08ABBD1A1528DF0096A6D6 /* buss.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buss.png; path = ../../../../buss.png; sourceTree = "<group>"; };
+		9C08ABBE1A1528DF0096A6D6 /* train.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = train.png; path = ../../../../train.png; sourceTree = "<group>"; };
+		9C08ABC11A1528E50096A6D6 /* shiden.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = shiden.png; path = ../../../../shiden.png; sourceTree = "<group>"; };
 		9C1D31A71A0A164A0098053D /* boolbaritem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boolbaritem.png; sourceTree = "<group>"; };
 		9C1D31A91A0A16520098053D /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		9C1D31AB1A0A165D0098053D /* follow_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = follow_icon.png; sourceTree = "<group>"; };
@@ -1110,6 +1116,9 @@
 			isa = PBXGroup;
 			children = (
 				9C1D31B71A0A9A660098053D /* start_pin.png */,
+				9C08ABBD1A1528DF0096A6D6 /* buss.png */,
+				9C08ABBE1A1528DF0096A6D6 /* train.png */,
+				9C08ABC11A1528E50096A6D6 /* shiden.png */,
 			);
 			path = pin_images;
 			sourceTree = "<group>";
@@ -1294,6 +1303,8 @@
 				4ADC44D91A1396F3003629A1 /* hondouridaisangoujidoukan.png in Resources */,
 				4ADC449D1A1396F3003629A1 /* shieihanazonodanchi.png in Resources */,
 				4ADC44A61A1396F3003629A1 /* bouyoudanchijichikaikan.png in Resources */,
+				9C08ABC21A1528E50096A6D6 /* shiden.png in Resources */,
+				9C08ABBF1A1528DF0096A6D6 /* buss.png in Resources */,
 				4ADC44971A1396F3003629A1 /* asahiokasyogakkou.png in Resources */,
 				4ADC44CB1A1396F3003629A1 /* hakodatechihoukisyoudai.png in Resources */,
 				4ADC449F1A1396F3003629A1 /* samegawa.png in Resources */,
@@ -1354,6 +1365,7 @@
 				4ADC44921A1396F3003629A1 /* hakodateasaichi.png in Resources */,
 				4ADC44AD1A1396F3003629A1 /* esanwonozomu.png in Resources */,
 				4ADC44D11A1396F3003629A1 /* hakodateshirituhakodateyouchienheienkinenhi.png in Resources */,
+				9C08ABC01A1528DF0096A6D6 /* train.png in Resources */,
 				4ADC44AE1A1396F3003629A1 /* ishizakihachimanjinja.png in Resources */,
 				4ADC44F81A1396F3003629A1 /* nogijinja.png in Resources */,
 				4ADC448E1A1396F3003629A1 /* manenbashikouen.png in Resources */,
