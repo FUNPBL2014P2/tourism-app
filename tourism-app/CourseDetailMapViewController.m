@@ -7,6 +7,7 @@
 //
 
 #import "CourseDetailMapViewController.h"
+#import "CustomAnnotation.h"
 
 
 @interface CourseDetailMapViewController ()
@@ -75,6 +76,24 @@
     //getCourseLineWithNameメソッドはスポット位置のCustomAnnotationがはいった配列を返すメソッド
     [myMapView addOverlay:[course_map_model getCourseLineWithName:course_name]];
     
+    //spotpinを立てる処理
+    CLLocationCoordinate2D stop_point = CLLocationCoordinate2DMake([course_map_model getDataWithName:course_name].nearest_stop_latitude,
+                                                                   [course_map_model getDataWithName:course_name].nearest_stop_longitude);
+    CustomAnnotation *spotAnnotation = [[CustomAnnotation alloc] initWithCoordinate:stop_point];
+    spotAnnotation.title = [course_map_model getDataWithName:course_name].nearest_stop_name;
+    if([[course_map_model getDataWithName:course_name].nearest_stop_type isEqualToString:@"buss"]){
+        
+        spotAnnotation.subtitle = @"最寄りのバス停";
+    }else if ([[course_map_model getDataWithName:course_name].nearest_stop_type isEqualToString:@"shiden"]){
+        
+        spotAnnotation.subtitle = @"最寄りの電停";
+    }else{
+        
+        spotAnnotation.subtitle = @"最寄りのJR駅";
+    }
+    spotAnnotation.frag = @"stop";
+    [myMapView addAnnotation:spotAnnotation];
+
     CLLocationCoordinate2D center;
     center.latitude = ((CustomAnnotation *)[start_pins objectAtIndex:0]).coordinate.latitude; // 経度
     center.longitude = ((CustomAnnotation *)[start_pins objectAtIndex:0]).coordinate.longitude; // 緯度
@@ -116,18 +135,18 @@
     UIBarButtonItem *customBarItem = [[UIBarButtonItem alloc]initWithCustomView:self.myButton];
     UIBarButtonItem *healthBarItem= [[UIBarButtonItem alloc] initWithTitle:@"健康ウォーキングマップを見る"
                                                                      style:UIBarButtonItemStylePlain
-                                                                     target:self
-                                                                     action:@selector(onTapTest:)];
+                                                                    target:self
+                                                                    action:@selector(onTapTest:)];
     
     // 固定間隔のスペーサーを作成する
     UIBarButtonItem *fixedSpacer1 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
                                                                                   target:nil
                                                                                   action:nil];
-   
+    
     UIBarButtonItem *fixedSpacer2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
                                                                                   target:nil
                                                                                   action:nil ];
-  
+    
     NSArray *barButtons = [NSArray arrayWithObjects:customBarItem,fixedSpacer1 ,healthBarItem ,fixedSpacer2 ,nil];
     [myToolBar setItems:barButtons];
     [self updateUserTrackingModeBtn:MKUserTrackingModeNone];
@@ -177,9 +196,10 @@
         annotationView.canShowCallout = YES;
         annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
         annotationView.annotation = annotation;
-       
+        
         return annotationView;
     }else if([((CustomAnnotation*)annotation).frag isEqualToString:@"start"]) {
+        
         static NSString *identifier = @"startAnnotation";
         MKAnnotationView *annotationView = (MKAnnotationView *)[myMapView dequeueReusableAnnotationViewWithIdentifier:identifier];
         
@@ -189,6 +209,28 @@
         
         annotationView.canShowCallout = YES;
         annotationView.image = [UIImage imageNamed:@"start_pin.png"];
+        annotationView.bounds = CGRectMake(0, 0, 50, 50);
+        annotationView.centerOffset = CGPointMake(20, -25); // アイコンの中心を設定する
+        
+        return annotationView;
+    }else if([((CustomAnnotation*)annotation).frag isEqualToString:@"stop"]) {
+        
+        static NSString *identifier = @"stoptAnnotation";
+        MKAnnotationView *annotationView = (MKAnnotationView *)[myMapView dequeueReusableAnnotationViewWithIdentifier:identifier];
+        
+        if (!annotationView) {
+            annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
+        }
+        if([[course_map_model getDataWithName:course_name].nearest_stop_type isEqualToString:@"buss"]){
+             annotationView.image = [UIImage imageNamed:@"buss.png"];
+        }else if ([[course_map_model getDataWithName:course_name].nearest_stop_type isEqualToString:@"shiden"]){
+             annotationView.image = [UIImage imageNamed:@"shiden.png"];
+        }else{
+             annotationView.image = [UIImage imageNamed:@"train.png"];
+        }
+        
+        
+        annotationView.canShowCallout = YES;
         annotationView.bounds = CGRectMake(0, 0, 50, 50);
         annotationView.centerOffset = CGPointMake(18, -25); // アイコンの中心を設定する
         
@@ -283,7 +325,7 @@
  healthBarItemを押したときに呼ばれるメソッド
  */
 - (void)onTapTest:(id)inSender {
-[self performSegueWithIdentifier:@"MapToHealth" sender:self];
+    [self performSegueWithIdentifier:@"MapToHealth" sender:self];
 }
 
 /**

@@ -127,32 +127,32 @@ Course *course;
         cell.textLabel.text = [NSString stringWithFormat:@"歩数:%d歩", course.steps];
     }else if(indexPath.row == 6){
         //タグアイコンの表示
-        UIImage *spring_image = [UIImage imageNamed:@"spring_waku.png"];
+        UIImage *spring_image = [UIImage imageNamed:@"spring.png"];
         UIImageView *spring_tag = [[UIImageView alloc]initWithImage:spring_image];
         spring_tag.frame = CGRectMake(20, 20, 40, 40);
         [cell.contentView addSubview:spring_tag];
         
-        UIImage *summer_image = [UIImage imageNamed:@"summer_waku.png"];
+        UIImage *summer_image = [UIImage imageNamed:@"summer.png"];
         UIImageView *summer_tag = [[UIImageView alloc]initWithImage:summer_image];
         summer_tag.frame = CGRectMake(65, 20, 40, 40);
         [cell.contentView addSubview:summer_tag];
         
-        UIImage *autumn_image = [UIImage imageNamed:@"autumn_waku.png"];
+        UIImage *autumn_image = [UIImage imageNamed:@"autumn.png"];
         UIImageView *autumn_tag = [[UIImageView alloc]initWithImage:autumn_image];
         autumn_tag.frame = CGRectMake(110, 20, 40, 40);
         [cell.contentView addSubview:autumn_tag];
         
-        UIImage *winter_image = [UIImage imageNamed:@"winter_waku.png"];
+        UIImage *winter_image = [UIImage imageNamed:@"winter.png"];
         UIImageView *winter_tag = [[UIImageView alloc]initWithImage:winter_image];
         winter_tag.frame = CGRectMake(155, 20, 40, 40);
         [cell.contentView addSubview:winter_tag];
         
-        UIImage *park_image = [UIImage imageNamed:@"park_waku.png"];
+        UIImage *park_image = [UIImage imageNamed:@"park.png"];
         UIImageView *park_tag = [[UIImageView alloc]initWithImage:park_image];
         park_tag.frame = CGRectMake(200, 20, 40, 40);
         [cell.contentView addSubview:park_tag];
         
-        UIImage *sea_image = [UIImage imageNamed:@"sea_waku.png"];
+        UIImage *sea_image = [UIImage imageNamed:@"sea.png"];
         UIImageView *sea_tag = [[UIImageView alloc]initWithImage:sea_image];
         sea_tag.frame = CGRectMake(245, 20, 40, 40);
         [cell.contentView addSubview:sea_tag];

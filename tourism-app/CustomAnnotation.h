@@ -12,11 +12,13 @@
 @interface CustomAnnotation : NSObject <MKAnnotation>{
     CLLocationCoordinate2D coordinate;
     NSString *title;
+    NSString *subtitle;
     NSString *frag;
 }
 
 @property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
 @property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *subtitle;
 @property (nonatomic, copy) NSString *frag;
 
 - (id) initWithCoordinate:(CLLocationCoordinate2D) annotation_point;

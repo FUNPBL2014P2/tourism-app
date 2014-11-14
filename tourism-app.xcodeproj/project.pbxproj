@@ -19,12 +19,6 @@
 		4A74F31F19F6690D00DA5C82 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A74F31E19F6690D00DA5C82 /* Images.xcassets */; };
 		4A74F32219F6690D00DA5C82 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A74F32019F6690D00DA5C82 /* LaunchScreen.xib */; };
 		4A74F32E19F6690D00DA5C82 /* tourism_appTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A74F32D19F6690D00DA5C82 /* tourism_appTests.m */; };
-		4A8596841A00CBD10097379A /* autumn.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A85967E1A00CBD10097379A /* autumn.png */; };
-		4A8596851A00CBD10097379A /* park.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A85967F1A00CBD10097379A /* park.png */; };
-		4A8596861A00CBD10097379A /* sea.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A8596801A00CBD10097379A /* sea.png */; };
-		4A8596871A00CBD10097379A /* spring.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A8596811A00CBD10097379A /* spring.png */; };
-		4A8596881A00CBD10097379A /* summer.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A8596821A00CBD10097379A /* summer.png */; };
-		4A8596891A00CBD10097379A /* winter.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A8596831A00CBD10097379A /* winter.png */; };
 		4A8596941A025EE50097379A /* CourseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8596931A025EE50097379A /* CourseModel.m */; };
 		4A8596951A025EE50097379A /* CourseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8596931A025EE50097379A /* CourseModel.m */; };
 		4A8596991A0318D90097379A /* see_walkingmap.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A8596971A0318D90097379A /* see_walkingmap.png */; };
@@ -187,13 +181,22 @@
 		4ADE378C19FA72CD00FE524F /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ADE378B19FA72CD00FE524F /* libsqlite3.0.dylib */; };
 		4ADE37A819FBD36300FE524F /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE37A419FBD36300FE524F /* Course.m */; };
 		9C08ABBC1A1463DC0096A6D6 /* CourseDetailMapView+Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C08ABBB1A1463DC0096A6D6 /* CourseDetailMapView+Alert.m */; };
+		9C08AC091A15EBF20096A6D6 /* shiden.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08AC081A15EBF20096A6D6 /* shiden.png */; };
+		9C08AC0B1A15EBFC0096A6D6 /* train.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08AC0A1A15EBFC0096A6D6 /* train.png */; };
+		9C08AC0D1A15EC040096A6D6 /* buss.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08AC0C1A15EC040096A6D6 /* buss.png */; };
+		9C08AC111A15ED490096A6D6 /* start_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08AC101A15ED490096A6D6 /* start_pin.png */; };
+		9C08AC131A15EF920096A6D6 /* summer.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08AC121A15EF920096A6D6 /* summer.png */; };
+		9C08AC151A15EF980096A6D6 /* spring.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08AC141A15EF980096A6D6 /* spring.png */; };
+		9C08AC171A15EFA00096A6D6 /* autumn.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08AC161A15EFA00096A6D6 /* autumn.png */; };
+		9C08AC191A15EFA50096A6D6 /* winter.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08AC181A15EFA50096A6D6 /* winter.png */; };
+		9C08AC1B1A15EFAE0096A6D6 /* park.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08AC1A1A15EFAE0096A6D6 /* park.png */; };
+		9C08AC1D1A15EFB40096A6D6 /* sea.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08AC1C1A15EFB40096A6D6 /* sea.png */; };
 		9C1D31A81A0A164A0098053D /* boolbaritem.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C1D31A71A0A164A0098053D /* boolbaritem.png */; };
 		9C1D31AA1A0A16520098053D /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C1D31A91A0A16520098053D /* background.png */; };
 		9C1D31AC1A0A165D0098053D /* follow_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C1D31AB1A0A165D0098053D /* follow_icon.png */; };
 		9C1D31AE1A0A16640098053D /* followheading_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C1D31AD1A0A16640098053D /* followheading_icon.png */; };
 		9C1D31B01A0A166B0098053D /* none_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C1D31AF1A0A166B0098053D /* none_icon.png */; };
 		9C1D31B31A0A30820098053D /* CustomAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1D31B21A0A30820098053D /* CustomAnnotation.m */; };
-		9C1D31B81A0A9A660098053D /* start_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C1D31B71A0A9A660098053D /* start_pin.png */; };
 		9CB20ADA1A131F8900A5F1A8 /* CourseMapView+Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB20AD91A131F8900A5F1A8 /* CourseMapView+Alert.m */; };
 /* End PBXBuildFile section */
 
@@ -225,12 +228,6 @@
 		4A74F32719F6690D00DA5C82 /* tourism-appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "tourism-appTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A74F32C19F6690D00DA5C82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A74F32D19F6690D00DA5C82 /* tourism_appTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = tourism_appTests.m; sourceTree = "<group>"; };
-		4A85967E1A00CBD10097379A /* autumn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = autumn.png; sourceTree = "<group>"; };
-		4A85967F1A00CBD10097379A /* park.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = park.png; sourceTree = "<group>"; };
-		4A8596801A00CBD10097379A /* sea.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sea.png; sourceTree = "<group>"; };
-		4A8596811A00CBD10097379A /* spring.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spring.png; sourceTree = "<group>"; };
-		4A8596821A00CBD10097379A /* summer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = summer.png; sourceTree = "<group>"; };
-		4A8596831A00CBD10097379A /* winter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = winter.png; sourceTree = "<group>"; };
 		4A8596921A025EE50097379A /* CourseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseModel.h; sourceTree = "<group>"; };
 		4A8596931A025EE50097379A /* CourseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseModel.m; sourceTree = "<group>"; };
 		4A8596971A0318D90097379A /* see_walkingmap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = see_walkingmap.png; sourceTree = "<group>"; };
@@ -409,6 +406,16 @@
 		4ADE37A519FBD36300FE524F /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
 		9C08ABBA1A1463DC0096A6D6 /* CourseDetailMapView+Alert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CourseDetailMapView+Alert.h"; sourceTree = "<group>"; };
 		9C08ABBB1A1463DC0096A6D6 /* CourseDetailMapView+Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CourseDetailMapView+Alert.m"; sourceTree = "<group>"; };
+		9C08AC081A15EBF20096A6D6 /* shiden.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shiden.png; sourceTree = "<group>"; };
+		9C08AC0A1A15EBFC0096A6D6 /* train.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = train.png; sourceTree = "<group>"; };
+		9C08AC0C1A15EC040096A6D6 /* buss.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buss.png; sourceTree = "<group>"; };
+		9C08AC101A15ED490096A6D6 /* start_pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = start_pin.png; sourceTree = "<group>"; };
+		9C08AC121A15EF920096A6D6 /* summer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = summer.png; path = ../summer.png; sourceTree = "<group>"; };
+		9C08AC141A15EF980096A6D6 /* spring.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spring.png; path = ../spring.png; sourceTree = "<group>"; };
+		9C08AC161A15EFA00096A6D6 /* autumn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = autumn.png; path = ../autumn.png; sourceTree = "<group>"; };
+		9C08AC181A15EFA50096A6D6 /* winter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = winter.png; path = ../winter.png; sourceTree = "<group>"; };
+		9C08AC1A1A15EFAE0096A6D6 /* park.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = park.png; path = ../park.png; sourceTree = "<group>"; };
+		9C08AC1C1A15EFB40096A6D6 /* sea.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sea.png; path = ../sea.png; sourceTree = "<group>"; };
 		9C1D31A71A0A164A0098053D /* boolbaritem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boolbaritem.png; sourceTree = "<group>"; };
 		9C1D31A91A0A16520098053D /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		9C1D31AB1A0A165D0098053D /* follow_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = follow_icon.png; sourceTree = "<group>"; };
@@ -416,7 +423,6 @@
 		9C1D31AF1A0A166B0098053D /* none_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = none_icon.png; sourceTree = "<group>"; };
 		9C1D31B11A0A30820098053D /* CustomAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAnnotation.h; sourceTree = "<group>"; };
 		9C1D31B21A0A30820098053D /* CustomAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAnnotation.m; sourceTree = "<group>"; };
-		9C1D31B71A0A9A660098053D /* start_pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = start_pin.png; path = ../start_pin.png; sourceTree = "<group>"; };
 		9CB20AD81A131F8900A5F1A8 /* CourseMapView+Alert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CourseMapView+Alert.h"; sourceTree = "<group>"; };
 		9CB20AD91A131F8900A5F1A8 /* CourseMapView+Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CourseMapView+Alert.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -481,8 +487,8 @@
 			isa = PBXGroup;
 			children = (
 				4ADC43B31A135B93003629A1 /* walking_map.db */,
+				9C08AC071A15EB640096A6D6 /* pin_image */,
 				4ADC43B51A1396F2003629A1 /* spot_image */,
-				9C1D31B41A0A34130098053D /* pin_images */,
 				4A039EAB1A09045B005543CE /* categories_waku */,
 				4A8596961A0318D90097379A /* button_images */,
 				4A85967D1A00CBD10097379A /* categories */,
@@ -552,12 +558,12 @@
 		4A85967D1A00CBD10097379A /* categories */ = {
 			isa = PBXGroup;
 			children = (
-				4A85967E1A00CBD10097379A /* autumn.png */,
-				4A85967F1A00CBD10097379A /* park.png */,
-				4A8596801A00CBD10097379A /* sea.png */,
-				4A8596811A00CBD10097379A /* spring.png */,
-				4A8596821A00CBD10097379A /* summer.png */,
-				4A8596831A00CBD10097379A /* winter.png */,
+				9C08AC141A15EF980096A6D6 /* spring.png */,
+				9C08AC121A15EF920096A6D6 /* summer.png */,
+				9C08AC161A15EFA00096A6D6 /* autumn.png */,
+				9C08AC181A15EFA50096A6D6 /* winter.png */,
+				9C08AC1A1A15EFAE0096A6D6 /* park.png */,
+				9C08AC1C1A15EFB40096A6D6 /* sea.png */,
 			);
 			path = categories;
 			sourceTree = "<group>";
@@ -1116,12 +1122,15 @@
 			path = fmdb;
 			sourceTree = "<group>";
 		};
-		9C1D31B41A0A34130098053D /* pin_images */ = {
+		9C08AC071A15EB640096A6D6 /* pin_image */ = {
 			isa = PBXGroup;
 			children = (
-				9C1D31B71A0A9A660098053D /* start_pin.png */,
+				9C08AC0C1A15EC040096A6D6 /* buss.png */,
+				9C08AC0A1A15EBFC0096A6D6 /* train.png */,
+				9C08AC101A15ED490096A6D6 /* start_pin.png */,
+				9C08AC081A15EBF20096A6D6 /* shiden.png */,
 			);
-			path = pin_images;
+			name = pin_image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1215,7 +1224,10 @@
 				4ADC44991A1396F3003629A1 /* koukuryokuchishinoritatehureaihiroba.png in Resources */,
 				4ADC44C31A1396F3003629A1 /* hakodateshikikyoukouryusenta.png in Resources */,
 				4ADC44811A1396F3003629A1 /* kametdakawakasenshiki.png in Resources */,
+				9C08AC1B1A15EFAE0096A6D6 /* park.png in Resources */,
 				4ADC44C71A1396F3003629A1 /* tomiokaityoumekaikan.png in Resources */,
+				9C08AC0D1A15EC040096A6D6 /* buss.png in Resources */,
+				9C08AC091A15EBF20096A6D6 /* shiden.png in Resources */,
 				4ADC44E31A1396F3003629A1 /* todohokesougousenta.png in Resources */,
 				4ADC44E91A1396F3003629A1 /* osatsubedouro.png in Resources */,
 				4ADC44B41A1396F3003629A1 /* kyuhakodatekukoukaidou.png in Resources */,
@@ -1232,7 +1244,6 @@
 				4ADC44F71A1396F3003629A1 /* hakodatekeirinjou.png in Resources */,
 				4ADC44C91A1396F3003629A1 /* kamedakouminkan.png in Resources */,
 				4ADC44E41A1396F3003629A1 /* tyoudhibiti.png in Resources */,
-				4A8596891A00CBD10097379A /* winter.png in Resources */,
 				4ADC44D71A1396F3003629A1 /* hondorikouen.png in Resources */,
 				4ADC44A31A1396F3003629A1 /* ryokuendouri.png in Resources */,
 				4ADC44D51A1396F3003629A1 /* hinanbasyo.png in Resources */,
@@ -1247,7 +1258,6 @@
 				4ADC44E21A1396F3003629A1 /* todohokechugakkou.png in Resources */,
 				4ADC44901A1396F3003629A1 /* hakodateshiishikaikan.png in Resources */,
 				4ADC44EB1A1396F3003629A1 /* toiundoujou.png in Resources */,
-				4A8596871A00CBD10097379A /* spring.png in Resources */,
 				4ADC44EF1A1396F3003629A1 /* aoyagichoudentei.png in Resources */,
 				4ADC44B51A1396F3003629A1 /* motoizaka.png in Resources */,
 				4ADC44B01A1396F3003629A1 /* bokujogamieruhukei.png in Resources */,
@@ -1266,11 +1276,11 @@
 				4A039EB51A09045B005543CE /* spring_waku.png in Resources */,
 				4ADC44EE1A1396F3003629A1 /* tenjinchoukaikan.png in Resources */,
 				4ADC44CA1A1396F3003629A1 /* kamedaseisyounensenta.png in Resources */,
-				4A8596841A00CBD10097379A /* autumn.png in Resources */,
 				4ADC44A11A1396F3003629A1 /* sakurabashi.png in Resources */,
 				4ADC44B71A1396F3003629A1 /* hakodateyamawonozomu.png in Resources */,
 				4ADC44EC1A1396F3003629A1 /* hakodatekenekijodaichousoutijouato.png in Resources */,
 				4ADC44A01A1396F3003629A1 /* onaribashi.png in Resources */,
+				9C08AC131A15EF920096A6D6 /* summer.png in Resources */,
 				4ADC448F1A1396F3003629A1 /* manenbashisyougakkou.png in Resources */,
 				4ADC44F51A1396F3003629A1 /* kamedahachimangu.png in Resources */,
 				4ADC44861A1396F3003629A1 /* sakuragaokadori.png in Resources */,
@@ -1279,7 +1289,6 @@
 				4ADC44C81A1396F3003629A1 /* goryoukakueki.png in Resources */,
 				4ADC44761A1396F3003629A1 /* tayayoujikouen.png in Resources */,
 				4ADC44CC1A1396F3003629A1 /* hokkaidouoshimagoudouchousya.png in Resources */,
-				4A8596851A00CBD10097379A /* park.png in Resources */,
 				4ADC44DC1A1396F3003629A1 /* hondouridaiyonkouen.png in Resources */,
 				4ADC44951A1396F3003629A1 /* asahiokachugakkou.png in Resources */,
 				4ADC44731A1396F3003629A1 /* yachigashirachoukaikan.png in Resources */,
@@ -1302,6 +1311,7 @@
 				4ADC44871A1396F3003629A1 /* hokaidoudaigakusuisangakubu.png in Resources */,
 				4ADC44AC1A1396F3003629A1 /* takokouen.png in Resources */,
 				4ADC44D91A1396F3003629A1 /* hondouridaisangoujidoukan.png in Resources */,
+				9C08AC171A15EFA00096A6D6 /* autumn.png in Resources */,
 				4ADC449D1A1396F3003629A1 /* shieihanazonodanchi.png in Resources */,
 				4ADC44A61A1396F3003629A1 /* bouyoudanchijichikaikan.png in Resources */,
 				4ADC44971A1396F3003629A1 /* asahiokasyogakkou.png in Resources */,
@@ -1315,7 +1325,6 @@
 				4ADC449E1A1396F3003629A1 /* kokurituhakodateshiryokusyougaisenta.png in Resources */,
 				4ADC44801A1396F3003629A1 /* ishikawatakubokusyoukouen.png in Resources */,
 				4ADC44781A1396F3003629A1 /* midorimachidori.png in Resources */,
-				9C1D31B81A0A9A660098053D /* start_pin.png in Resources */,
 				9C1D31AA1A0A16520098053D /* background.png in Resources */,
 				4ADC44F41A1396F3003629A1 /* hokaidokyouikudaigakuhakdatekou.png in Resources */,
 				4ADC44BD1A1396F3003629A1 /* sasanagaredamu.png in Resources */,
@@ -1330,9 +1339,7 @@
 				4ADC44B11A1396F3003629A1 /* ishizakijinushijinja.png in Resources */,
 				4ADC44941A1396F3003629A1 /* tomoeohashi.png in Resources */,
 				4ADC44721A1396F3003629A1 /* sumiyoshichoukaikan.png in Resources */,
-				4A8596881A00CBD10097379A /* summer.png in Resources */,
 				4ADC44E11A1396F3003629A1 /* natowaesan.png in Resources */,
-				4A8596861A00CBD10097379A /* sea.png in Resources */,
 				4ADC447D1A1396F3003629A1 /* matobachoukaikan.png in Resources */,
 				4ADC44F21A1396F3003629A1 /* hakodatekouen.png in Resources */,
 				4ADC44961A1396F3003629A1 /* asahiokakouen.png in Resources */,
@@ -1345,6 +1352,7 @@
 				4ADC44891A1396F3003629A1 /* minatochoukaikan.png in Resources */,
 				4ADC44DE1A1396F3003629A1 /* yamanotezyusangaikukouen.png in Resources */,
 				4ADC44741A1396F3003629A1 /* hokaidouhakodatemougakou.png in Resources */,
+				9C08AC191A15EFA50096A6D6 /* winter.png in Resources */,
 				4ADC44C01A1396F3003629A1 /* tanshinsyougakkou.png in Resources */,
 				4ADC44DA1A1396F3003629A1 /* houdourichuoukaikan.png in Resources */,
 				4ADC44831A1396F3003629A1 /* hakodatetankidaigakuhuzokuyouchien.png in Resources */,
@@ -1352,6 +1360,7 @@
 				4ADC44D61A1396F3003629A1 /* tomiokatyosantyomeryokuchikouen.png in Resources */,
 				4ADC44791A1396F3003629A1 /* sakuragaokadori.png in Resources */,
 				4ADC44A81A1396F3003629A1 /* kadan.png in Resources */,
+				9C08AC1D1A15EFB40096A6D6 /* sea.png in Resources */,
 				4ADC44CF1A1396F3003629A1 /* yamanotechokaikan.png in Resources */,
 				4ADC44931A1396F3003629A1 /* memoriarushippumashumaru.png in Resources */,
 				4ADC44ED1A1396F3003629A1 /* kouryuji.png in Resources */,
@@ -1359,11 +1368,14 @@
 				4ADC44F61A1396F3003629A1 /* miyamaechoukaikan.png in Resources */,
 				4ADC44E51A1396F3003629A1 /* hakodatesitoikyoudokan.png in Resources */,
 				4A039EB61A09045B005543CE /* summer_waku.png in Resources */,
+				9C08AC111A15ED490096A6D6 /* start_pin.png in Resources */,
 				4ADC44DB1A1396F3003629A1 /* hinbarigaokachokaisyukaizyo.png in Resources */,
 				4ADC44AB1A1396F3003629A1 /* hiyoshigaokasyogakkou.png in Resources */,
 				4ADC44921A1396F3003629A1 /* hakodateasaichi.png in Resources */,
 				4ADC44AD1A1396F3003629A1 /* esanwonozomu.png in Resources */,
+				9C08AC151A15EF980096A6D6 /* spring.png in Resources */,
 				4ADC44D11A1396F3003629A1 /* hakodateshirituhakodateyouchienheienkinenhi.png in Resources */,
+				9C08AC0B1A15EBFC0096A6D6 /* train.png in Resources */,
 				4ADC44AE1A1396F3003629A1 /* ishizakihachimanjinja.png in Resources */,
 				4ADC44F81A1396F3003629A1 /* nogijinja.png in Resources */,
 				4ADC448E1A1396F3003629A1 /* manenbashikouen.png in Resources */,
@@ -1529,7 +1541,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "tourism-app/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1540,7 +1552,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "tourism-app/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

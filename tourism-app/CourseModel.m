@@ -101,6 +101,7 @@ AppDelegate *appDelegate;
                 course.nearest_stop_name = [results stringForColumn:@"nearest_stop_name"];
                 course.nearest_stop_latitude = [results doubleForColumn:@"nearest_stop_latitude"];
                 course.nearest_stop_longitude = [results doubleForColumn:@"nearest_stop_longitude"];
+                course.nearest_stop_type = [results stringForColumn:@"nearest_stop_type"];
                 
                 //ルート情報格納
                 [check_contain_routeid addObject:[NSNumber numberWithInt:[results intForColumn:@"routeid"]]];

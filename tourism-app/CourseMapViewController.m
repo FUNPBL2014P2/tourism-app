@@ -145,7 +145,7 @@
     annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     annotationView.image = [UIImage imageNamed:@"start_pin.png"];
     annotationView.bounds = CGRectMake(0, 0, 50, 50);
-    annotationView.centerOffset = CGPointMake(18, -25); // アイコンの中心を設定する
+    annotationView.centerOffset = CGPointMake(20, -25); // アイコンの中心を設定する
     
     return annotationView;
 }

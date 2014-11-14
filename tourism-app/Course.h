@@ -24,6 +24,7 @@
     NSString *nearest_stop_name;
     double nearest_stop_latitude;
     double nearest_stop_longitude;
+    NSString *nearest_stop_type;
     
     NSMutableArray *routeid;
     NSMutableArray *route_order;
@@ -56,6 +57,7 @@
 @property(nonatomic,retain)NSString *nearest_stop_name;
 @property(nonatomic,assign)double nearest_stop_latitude;
 @property(nonatomic,assign)double nearest_stop_longitude;
+@property(nonatomic,retain)NSString *nearest_stop_type;
 
 @property(nonatomic,retain)NSMutableArray *routeid;
 @property(nonatomic,retain)NSMutableArray *route_order;

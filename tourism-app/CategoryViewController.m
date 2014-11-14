@@ -64,8 +64,17 @@ NSArray *category_images;
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
+    //cellイメージの大きさを画像ではなくコードで調整できるようにした処理
+    UIImage *cellImage = [UIImage imageNamed:[category_images objectAtIndex:indexPath.row]];
+
+    CGSize thumb = CGSizeMake(60, 60);
+    UIGraphicsBeginImageContextWithOptions(thumb, NO, 0.0);
+    [cellImage drawInRect:CGRectMake(0, 0, thumb.width, thumb.height)];
+    cellImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
     cell.textLabel.text = [categories objectAtIndex:indexPath.row];
-    cell.imageView.image = [UIImage imageNamed:[category_images objectAtIndex:indexPath.row]];
+    cell.imageView.image = cellImage;
     
     //春,夏,秋,冬,公園,海それぞれが選択されているか確認し、選択されている場合はチェックマークを付ける
     //選択されていない場合はチェックマークをつけない

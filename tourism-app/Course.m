@@ -25,6 +25,7 @@
 @synthesize nearest_stop_name;
 @synthesize nearest_stop_latitude;
 @synthesize nearest_stop_longitude;
+@synthesize nearest_stop_type;
 
 @synthesize routeid;
 @synthesize route_order;
