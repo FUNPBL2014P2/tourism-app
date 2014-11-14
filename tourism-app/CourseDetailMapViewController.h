@@ -20,9 +20,12 @@
 @property (weak, nonatomic) IBOutlet MKMapView *myMapView;
 @property (weak, nonatomic) IBOutlet UIToolbar *myToolBar;
 @property (weak, nonatomic) IBOutlet UINavigationItem *myNavigationItem;
+@property (nonatomic, retain) CLLocationManager *locationManager;
 
 @property (nonatomic)NSString *course_name;
 @property (nonatomic)NSString *spot_name;
 @property CourseModel *course_map_model;
+
+- (void)stopLocationService;
 
 @end

@@ -186,6 +186,7 @@
 		4ADE378A19FA728200FE524F /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE378519FA728200FE524F /* FMResultSet.m */; };
 		4ADE378C19FA72CD00FE524F /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ADE378B19FA72CD00FE524F /* libsqlite3.0.dylib */; };
 		4ADE37A819FBD36300FE524F /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE37A419FBD36300FE524F /* Course.m */; };
+		9C08ABBC1A1463DC0096A6D6 /* CourseDetailMapView+Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C08ABBB1A1463DC0096A6D6 /* CourseDetailMapView+Alert.m */; };
 		9C1D31A81A0A164A0098053D /* boolbaritem.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C1D31A71A0A164A0098053D /* boolbaritem.png */; };
 		9C1D31AA1A0A16520098053D /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C1D31A91A0A16520098053D /* background.png */; };
 		9C1D31AC1A0A165D0098053D /* follow_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C1D31AB1A0A165D0098053D /* follow_icon.png */; };
@@ -193,6 +194,7 @@
 		9C1D31B01A0A166B0098053D /* none_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C1D31AF1A0A166B0098053D /* none_icon.png */; };
 		9C1D31B31A0A30820098053D /* CustomAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1D31B21A0A30820098053D /* CustomAnnotation.m */; };
 		9C1D31B81A0A9A660098053D /* start_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C1D31B71A0A9A660098053D /* start_pin.png */; };
+		9CB20ADA1A131F8900A5F1A8 /* CourseMapView+Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB20AD91A131F8900A5F1A8 /* CourseMapView+Alert.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -405,6 +407,8 @@
 		4ADE378B19FA72CD00FE524F /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		4ADE37A419FBD36300FE524F /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
 		4ADE37A519FBD36300FE524F /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
+		9C08ABBA1A1463DC0096A6D6 /* CourseDetailMapView+Alert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CourseDetailMapView+Alert.h"; sourceTree = "<group>"; };
+		9C08ABBB1A1463DC0096A6D6 /* CourseDetailMapView+Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CourseDetailMapView+Alert.m"; sourceTree = "<group>"; };
 		9C1D31A71A0A164A0098053D /* boolbaritem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boolbaritem.png; sourceTree = "<group>"; };
 		9C1D31A91A0A16520098053D /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		9C1D31AB1A0A165D0098053D /* follow_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = follow_icon.png; sourceTree = "<group>"; };
@@ -413,6 +417,8 @@
 		9C1D31B11A0A30820098053D /* CustomAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAnnotation.h; sourceTree = "<group>"; };
 		9C1D31B21A0A30820098053D /* CustomAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAnnotation.m; sourceTree = "<group>"; };
 		9C1D31B71A0A9A660098053D /* start_pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = start_pin.png; path = ../start_pin.png; sourceTree = "<group>"; };
+		9CB20AD81A131F8900A5F1A8 /* CourseMapView+Alert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CourseMapView+Alert.h"; sourceTree = "<group>"; };
+		9CB20AD91A131F8900A5F1A8 /* CourseMapView+Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CourseMapView+Alert.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -498,10 +504,14 @@
 				4ADE376E19FA1C5D00FE524F /* CategoryViewController.m */,
 				4ADE376419FA1B7900FE524F /* CourseMapViewController.h */,
 				4ADE376519FA1B7900FE524F /* CourseMapViewController.m */,
+				9CB20AD81A131F8900A5F1A8 /* CourseMapView+Alert.h */,
+				9CB20AD91A131F8900A5F1A8 /* CourseMapView+Alert.m */,
 				4ADE376A19FA1C0A00FE524F /* CourseDetailViewController.h */,
 				4ADE376B19FA1C0A00FE524F /* CourseDetailViewController.m */,
 				4ADE376719FA1BC400FE524F /* CourseDetailMapViewController.h */,
 				4ADE376819FA1BC400FE524F /* CourseDetailMapViewController.m */,
+				9C08ABBA1A1463DC0096A6D6 /* CourseDetailMapView+Alert.h */,
+				9C08ABBB1A1463DC0096A6D6 /* CourseDetailMapView+Alert.m */,
 				4ADE377019FA1CC200FE524F /* SpotDetailViewController.h */,
 				4ADE377119FA1CC200FE524F /* SpotDetailViewController.m */,
 				4ADE377319FA1D1C00FE524F /* HealthWalkingMapDetailViewController.h */,
@@ -1382,7 +1392,9 @@
 				4ADE37A819FBD36300FE524F /* Course.m in Sources */,
 				4ADE376C19FA1C0A00FE524F /* CourseDetailViewController.m in Sources */,
 				4ADE377219FA1CC200FE524F /* SpotDetailViewController.m in Sources */,
+				9CB20ADA1A131F8900A5F1A8 /* CourseMapView+Alert.m in Sources */,
 				4ADE376619FA1B7900FE524F /* CourseMapViewController.m in Sources */,
+				9C08ABBC1A1463DC0096A6D6 /* CourseDetailMapView+Alert.m in Sources */,
 				9C1D31B31A0A30820098053D /* CustomAnnotation.m in Sources */,
 				4ADE376F19FA1C5D00FE524F /* CategoryViewController.m in Sources */,
 				4A74F31719F6690D00DA5C82 /* AppDelegate.m in Sources */,
@@ -1517,7 +1529,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "tourism-app/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1528,7 +1540,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "tourism-app/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
