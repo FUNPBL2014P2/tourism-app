@@ -77,7 +77,7 @@ Course *course;
     //UITableViewのCellの値がスクロールするごとに重なったり壊れるなどの問題を防ぐために
     //最初に全てのcell.imageView.imageをnilに設定する
     cell.imageView.image = nil;
-
+    
     //UITableViewのCellの値がスクロールするごとに重なったり壊れる,UITableViewでCell再描画時に文字が重なる
     //などの問題を防ぐために、CellのsubViewを消去する
     for (UIView *subview in [cell.contentView subviews]) {
@@ -104,15 +104,15 @@ Course *course;
         //UITableViewのCellの値がスクロールするごとに重なったり壊れる,UITableViewでCell再描画時に文字が重なる問題を防ぐために、
         //cell.textLabel.textに空文字を代入する
         cell.textLabel.text = @"";
-
+        
         UIButton *walkingmapUIButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [walkingmapUIButton setFrame:CGRectMake(0, 0, 213.0, 37.0)];
         [walkingmapUIButton setCenter:CGPointMake(self.view.frame.size.width/2, 70.0/2.0)];
         [walkingmapUIButton setImage:[UIImage imageNamed:@"see_walkingmap.png"] forState:UIControlStateNormal];
         [walkingmapUIButton setImage:[UIImage imageNamed:@"see_walkingmap.png"] forState:UIControlStateSelected];
         [walkingmapUIButton addTarget:self
-                         action:@selector(walkingmapUIButtonDidPush:)
-               forControlEvents:UIControlEventTouchUpInside];
+                               action:@selector(walkingmapUIButtonDidPush:)
+                     forControlEvents:UIControlEventTouchUpInside];
         
         [cell setSelectionStyle: (UITableViewCellSelectionStyle)UITableViewCellEditingStyleNone];
         [cell.contentView addSubview:walkingmapUIButton];
@@ -121,7 +121,7 @@ Course *course;
     }else if(indexPath.row == 3){
         cell.textLabel.text = [NSString stringWithFormat:@"移動距離:%.1fkm", course.distance];
     }else if(indexPath.row == 4){
-        cell.textLabel.text = [NSString stringWithFormat:@"男性消費カロリー:%dkcal, 女性消費カロリー:%dkcal", course.male_calories, course.female_calories];
+        cell.textLabel.text = [NSString stringWithFormat:@"男性消費カロリー:%dkcal\n女性消費カロリー:%dkcal", course.male_calories, course.female_calories];
         cell.textLabel.numberOfLines = 0; //改行可
     }else if(indexPath.row == 5){
         cell.textLabel.text = [NSString stringWithFormat:@"歩数:%d歩", course.steps];
@@ -136,27 +136,27 @@ Course *course;
         UIImageView *summer_tag = [[UIImageView alloc]initWithImage:summer_image];
         summer_tag.frame = CGRectMake(65, 20, 40, 40);
         [cell.contentView addSubview:summer_tag];
-
+        
         UIImage *autumn_image = [UIImage imageNamed:@"autumn_waku.png"];
         UIImageView *autumn_tag = [[UIImageView alloc]initWithImage:autumn_image];
         autumn_tag.frame = CGRectMake(110, 20, 40, 40);
         [cell.contentView addSubview:autumn_tag];
-
+        
         UIImage *winter_image = [UIImage imageNamed:@"winter_waku.png"];
         UIImageView *winter_tag = [[UIImageView alloc]initWithImage:winter_image];
         winter_tag.frame = CGRectMake(155, 20, 40, 40);
         [cell.contentView addSubview:winter_tag];
-
+        
         UIImage *park_image = [UIImage imageNamed:@"park_waku.png"];
         UIImageView *park_tag = [[UIImageView alloc]initWithImage:park_image];
         park_tag.frame = CGRectMake(200, 20, 40, 40);
         [cell.contentView addSubview:park_tag];
-
+        
         UIImage *sea_image = [UIImage imageNamed:@"sea_waku.png"];
         UIImageView *sea_tag = [[UIImageView alloc]initWithImage:sea_image];
         sea_tag.frame = CGRectMake(245, 20, 40, 40);
         [cell.contentView addSubview:sea_tag];
-
+        
         
         //タグアイコンの透明度の設定
         if(![course.tag_name containsObject:@"春"]){
@@ -185,8 +185,17 @@ Course *course;
     
     for(int i = 0;i < [course.spot_name count];i++){
         if(indexPath.row == 7 + i){
-            cell.textLabel.text = [course.spot_name objectAtIndex:i];
-            cell.imageView.image = [UIImage imageNamed:[course.spot_image_name objectAtIndex:i]];
+            //cell.textLabel.text = [course.spot_name objectAtIndex:i];
+            //コース名をCellのViewに追加する
+            UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake(cell.textLabel.frame.origin.x + 130, cell.textLabel.frame.origin.y - 20, cell.frame.size.width - 160, 120)];
+            textLabel.text = [course.spot_name objectAtIndex:i];
+            [cell.contentView addSubview:textLabel];
+            
+            //スポットの画像をCellのViewに追加する
+            UIImage *image = [UIImage imageNamed:[course.spot_image_name objectAtIndex:i]];
+            UIImageView *imageView = [[UIImageView alloc]initWithImage:image];
+            imageView.frame = CGRectMake(10, 0, 110.0f, 79.0f);
+            [cell.contentView addSubview:imageView];
         }
     }
     
