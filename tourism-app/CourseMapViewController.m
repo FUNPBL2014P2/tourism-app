@@ -13,7 +13,6 @@
 
 ///ツールバーのボタン
 @property UIButton *myButton;
-@property (nonatomic, retain) CLLocationManager *locationManager;
 
 @end
 
@@ -23,16 +22,19 @@
 @synthesize course_map_model;
 @synthesize myMapView;
 @synthesize myToolBar;
+@synthesize locationManager;
 
 #pragma mark - UIViewController lifecicle event methods
 
 /**
  初回ロードされた時のみ呼び出される
- - viewの詳細設定については、メソッドを分けて記述すること
+ - 詳細設定については、メソッドを分けて記述すること
  */
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    self.locationManager = [[CLLocationManager alloc] init];
     
     myMapView.delegate = self;
     self.locationManager.delegate = self;
@@ -40,15 +42,9 @@
     myMapView.showsUserLocation = YES;
     [myMapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
     
-    self.locationManager = [[CLLocationManager alloc] init];
-    
-    //iOS8以上とiOS7未満では位置情報の取得方法が変更されたため、両対応にするため処理を分けている
-    //requestWhenInUseAuthorizationはiOS8にしかないメソッド
-    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
-        [self.locationManager requestWhenInUseAuthorization];
-    }else{
-        [self.locationManager startUpdatingLocation];
-    }
+    //iOS8以上とiOS7未満では位置情報の取得方法が変更された
+    //ここではiOS7未満での位置情報の取得開始
+    [self.locationManager startUpdatingLocation];
     
     //ツールバーの詳細設定はtoolBarCustomメソッドで記述
     [self toolBarCustom];
@@ -56,7 +52,7 @@
     
     //ここからviewとmodelをつなぐ処理
     course_map_model = [[CourseModel alloc] init];
-       
+    
     //getStartAnnotationメソッドはスタート位置のCustomAnnotationがはいった配列を返すメソッド
     NSMutableArray *pins = [[course_map_model getStartAnnotation] mutableCopy];
     
@@ -66,7 +62,7 @@
     
     //getAllCourseLineメソッドは全コースのMKPolylineが入った配列を返すメソッド
     NSMutableArray *lines = [[course_map_model getAllCourseLine] mutableCopy];
-     
+    
     for(int i = 0; i < [lines count]; i++) {
         [myMapView addOverlay:[lines objectAtIndex:i]];
     }
@@ -80,12 +76,13 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - View
+#pragma mark - private method
 
 /**
- toolBarCustomのviewの実装
+ toolBarCustomのviewの実装するメソッド
  */
 - (void)toolBarCustom {
+    
     //UIButtonのiconのみにアニメーションをかけるため、iconとbackgroundを分けて大きさを設定している
     //transformでiconの大きさを設定することができる
     self.myButton = [[UIButton alloc] initWithFrame:CGRectMake(0,0,33,33)];
@@ -104,23 +101,23 @@
     [self updateUserTrackingModeBtn:MKUserTrackingModeFollow];
 }
 
-#pragma mark - delegate
-
 /**
- 位置情報取得の設定がかわると呼び出される
- iOS8の場合、位置情報取得が可能であればここで位置情報を取得を開始する
+ 位置情報サービスを停止するメソッド
  */
-- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
-    if (status == kCLAuthorizationStatusAuthorizedAlways ||
-        status == kCLAuthorizationStatusAuthorizedWhenInUse) {
-        [self.locationManager startUpdatingLocation];
-    }
+- (void)stopLocationService
+{
+    [self.locationManager stopUpdatingLocation];
+    self.locationManager.delegate = nil;
+    self.locationManager = nil;
 }
+
+#pragma mark - delegate
 
 /**
  マップをスワイプしたとき、ボタンの画像を変える処理
  */
 - (void)mapView:(MKMapView *)mapView didChangeUserTrackingMode:(MKUserTrackingMode)mode animated:(BOOL)animated {
+    
     [self updateUserTrackingModeBtn:mode];
 }
 
@@ -238,8 +235,8 @@
  　アノテーションボタンが押されたとき呼ばれるメソッド
  */
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
-    // locationManager(CLLocationManagerのインスタンス）のGPS計測を停止させる
-    [self.locationManager stopUpdatingLocation];
+    
+    [self stopLocationService];
     // MapViewの現在位置表示機能を停止させる。コレを忘れるとMapViewを開放してもGPSが使用しっぱなしになる
     [myMapView setShowsUserLocation:NO];
     course_name = view.annotation.title;
@@ -261,8 +258,8 @@
  戻るボタンが押されたとき呼ばれるメソッド
  */
 - (IBAction)dismissSelf:(id)sender {
-    // locationManager(CLLocationManagerのインスタンス）のGPS計測を停止させる
-    [self.locationManager stopUpdatingLocation];
+    
+    [self stopLocationService];
     // MapViewの現在位置表示機能を停止させる。コレを忘れるとMapViewを開放してもGPSが使用しっぱなしになる
     [myMapView setShowsUserLocation:NO];
     [self dismissViewControllerAnimated:YES completion:NULL];

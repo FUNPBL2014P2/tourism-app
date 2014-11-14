@@ -200,27 +200,27 @@ NSString *sortedType;
     //タグアイコンの設定
     UIImage *spring_image = [UIImage imageNamed:@"spring.png"];
     UIImageView *spring_tag = [[UIImageView alloc]initWithImage:spring_image];
-    spring_tag.frame = CGRectMake(142, 62, 15, 15);
+    spring_tag.frame = CGRectMake(131, 62, 15, 15);
     
     UIImage *summer_image = [UIImage imageNamed:@"summer.png"];
     UIImageView *summer_tag = [[UIImageView alloc]initWithImage:summer_image];
-    summer_tag.frame = CGRectMake(162, 62, 15, 15);
+    summer_tag.frame = CGRectMake(151, 62, 15, 15);
     
     UIImage *autumn_image = [UIImage imageNamed:@"autumn.png"];
     UIImageView *autumn_tag = [[UIImageView alloc]initWithImage:autumn_image];
-    autumn_tag.frame = CGRectMake(182, 62, 15, 15);
+    autumn_tag.frame = CGRectMake(171, 62, 15, 15);
     
     UIImage *winter_image = [UIImage imageNamed:@"winter.png"];
     UIImageView *winter_tag = [[UIImageView alloc]initWithImage:winter_image];
-    winter_tag.frame = CGRectMake(202, 62, 15, 15);
+    winter_tag.frame = CGRectMake(191, 62, 15, 15);
     
     UIImage *park_image = [UIImage imageNamed:@"park.png"];
     UIImageView *park_tag = [[UIImageView alloc]initWithImage:park_image];
-    park_tag.frame = CGRectMake(222, 62, 15, 15);
+    park_tag.frame = CGRectMake(211, 62, 15, 15);
     
     UIImage *sea_image = [UIImage imageNamed:@"sea.png"];
     UIImageView *sea_tag = [[UIImageView alloc]initWithImage:sea_image];
-    sea_tag.frame = CGRectMake(242, 62, 15, 15);
+    sea_tag.frame = CGRectMake(231, 62, 15, 15);
     
     
     //UITableViewのCellの値がスクロールするごとに重なったり壊れる,UITableViewでCell再描画時に文字が重なる
@@ -229,6 +229,33 @@ NSString *sortedType;
     for (UIView *subview in [cell.contentView subviews]) {
         [subview removeFromSuperview];
     }
+    
+    Course *course = [course_table_model->course_table_data objectAtIndex:indexPath.row];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+    //コース名をCellのViewに追加する
+    UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake(cell.textLabel.frame.origin.x + 130, cell.textLabel.frame.origin.y - 40, cell.frame.size.width - 160, 120)];
+    textLabel.text = course.course_name;
+    [cell.contentView addSubview:textLabel];
+    
+    //コース詳細の1行目をCellのViewに追加する
+    UILabel *detailTextLabel = [[UILabel alloc] initWithFrame:CGRectMake(130, -25, cell.frame.size.width, 130)];
+    detailTextLabel.font = [UIFont systemFontOfSize:12];
+    detailTextLabel.text = [NSString stringWithFormat:@"所用時間:%d分 距離:%.1fkm", course.time, course.distance];
+    [cell.contentView addSubview:detailTextLabel];
+    
+    //コース詳細の2行目をCellのViewに追加する
+    UILabel *detailTextLabelCal = [[UILabel alloc] initWithFrame:CGRectMake(130, -11, cell.frame.size.width, 130)];
+    detailTextLabelCal.font = [UIFont systemFontOfSize:12];
+    detailTextLabelCal.text = [NSString stringWithFormat:@"平均消費カロリー:%.1dcal", (course.male_calories + course.female_calories) / 2];
+    [cell.contentView addSubview:detailTextLabelCal];
+    
+    //コースの画像をCellのViewに追加する
+    UIImage *image = [UIImage imageNamed:course.course_image_name];
+    UIImageView *imageView = [[UIImageView alloc]initWithImage:image];
+    imageView.frame = CGRectMake(10, 0, 110.0f, 79.0f);
+    [cell.contentView addSubview:imageView];
+    
     
     //タグアイコンの表示
     for(int i = 0;i < [course_table_model->course_table_data count];i++){
@@ -239,7 +266,7 @@ NSString *sortedType;
         [cell.contentView addSubview:winter_tag];
         [cell.contentView addSubview:park_tag];
         [cell.contentView addSubview:sea_tag];
-
+        
         if(indexPath.row == i){
             if(![tag_course.tag_name containsObject:@"春"]){
                 spring_tag.alpha = 0.2;
@@ -261,15 +288,6 @@ NSString *sortedType;
             }
         }
     }
-    
-    Course *course = [course_table_model->course_table_data objectAtIndex:indexPath.row];
-    cell.textLabel.text = course.course_name;
-    //cell.detailTextLabel.text = [NSString stringWithFormat:@"所要時間:%d分 距離:%.1fkm 男性消費カロリー:%dkcal 女性消費カロリー:%dkcal \n", course.time, course.distance, course.male_calories, course.female_calories];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"所用時間:%d分 距離:%.1fkm \n平均消費カロリー:%.1dcal \n", course.time, course.distance, (course.male_calories + course.female_calories) / 2];
-
-    cell.detailTextLabel.numberOfLines = 0; //改行可
-    cell.imageView.image = [UIImage imageNamed:course.course_image_name];
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
 }

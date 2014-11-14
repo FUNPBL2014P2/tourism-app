@@ -14,12 +14,12 @@
 
 ///ツールバーのボタン
 @property UIButton *myButton;
-@property (nonatomic, retain) CLLocationManager *locationManager;
 
 @end
 
 @implementation CourseDetailMapViewController
 
+@synthesize locationManager;
 @synthesize course_name;
 @synthesize spot_name;
 @synthesize course_map_model;
@@ -37,22 +37,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    self.locationManager = [[CLLocationManager alloc] init];
+    
     myMapView.delegate = self;
     self.locationManager.delegate = self;
     
     myMapView.showsUserLocation = YES;
     [myMapView setUserTrackingMode:MKUserTrackingModeNone animated:YES];
-    [self updateUserTrackingModeBtn:MKUserTrackingModeNone];
     
-    self.locationManager = [[CLLocationManager alloc] init];
-    
-    //iOS8以上とiOS7未満では位置情報の取得方法が変更されたため、両対応にするため処理を分けている
-    //requestWhenInUseAuthorizationはiOS8にしかないメソッド
-    if([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
-        [self.locationManager requestWhenInUseAuthorization];
-    }else{
-        [self.locationManager startUpdatingLocation];
-    }
+    //iOS8以上とiOS7未満では位置情報の取得方法が変更された
+    //ここではiOS7未満での位置情報の取得開始
+    [self.locationManager startUpdatingLocation];
     
     //ツールバーの詳細設定はtoolBarCustomメソッドで記述
     [self toolBarCustom];
@@ -154,20 +149,20 @@
     
     NSArray *barButtons = [NSArray arrayWithObjects:customBarItem,fixedSpacer1 ,healthBarItem ,fixedSpacer2 ,nil];
     [myToolBar setItems:barButtons];
+    [self updateUserTrackingModeBtn:MKUserTrackingModeNone];
+}
+
+/**
+ 位置情報サービスを停止するメソッド
+ */
+- (void)stopLocationService
+{
+    [self.locationManager stopUpdatingLocation];
+    self.locationManager.delegate = nil;
+    self.locationManager = nil;
 }
 
 #pragma mark - delegate
-
-/**
- 位置情報取得の設定がかわると呼び出される
- iOS8の場合、位置情報取得が可能であればここで位置情報を取得を開始する
- */
-- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
-    if (status == kCLAuthorizationStatusAuthorizedAlways ||
-        status == kCLAuthorizationStatusAuthorizedWhenInUse) {
-        [self.locationManager startUpdatingLocation];
-    }
-}
 
 /**
  マップをスワイプしたとき、ボタンの画像を変える処理
