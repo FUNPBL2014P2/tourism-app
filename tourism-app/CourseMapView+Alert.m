@@ -57,7 +57,7 @@
         if ([UIAlertController class]) {
             
             UIAlertController *alertController =
-            [UIAlertController alertControllerWithTitle:@"はこウォーカーで位置情報を取得するには位置情報サービスをオンにしてください。"
+            [UIAlertController alertControllerWithTitle:@"はこウォークで位置情報を取得するには位置情報サービスをオンにしてください。"
                                                 message:nil
                                          preferredStyle:UIAlertControllerStyleAlert];
             
