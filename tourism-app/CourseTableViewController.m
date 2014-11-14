@@ -198,27 +198,27 @@ NSString *sortedType;
     }
     
     //タグアイコンの設定
-    UIImage *spring_image = [UIImage imageNamed:@"spring_waku.png"];
+    UIImage *spring_image = [UIImage imageNamed:@"spring.png"];
     UIImageView *spring_tag = [[UIImageView alloc]initWithImage:spring_image];
     spring_tag.frame = CGRectMake(142, 62, 15, 15);
     
-    UIImage *summer_image = [UIImage imageNamed:@"summer_waku.png"];
+    UIImage *summer_image = [UIImage imageNamed:@"summer.png"];
     UIImageView *summer_tag = [[UIImageView alloc]initWithImage:summer_image];
     summer_tag.frame = CGRectMake(162, 62, 15, 15);
     
-    UIImage *autumn_image = [UIImage imageNamed:@"autumn_waku.png"];
+    UIImage *autumn_image = [UIImage imageNamed:@"autumn.png"];
     UIImageView *autumn_tag = [[UIImageView alloc]initWithImage:autumn_image];
     autumn_tag.frame = CGRectMake(182, 62, 15, 15);
     
-    UIImage *winter_image = [UIImage imageNamed:@"winter_waku.png"];
+    UIImage *winter_image = [UIImage imageNamed:@"winter.png"];
     UIImageView *winter_tag = [[UIImageView alloc]initWithImage:winter_image];
     winter_tag.frame = CGRectMake(202, 62, 15, 15);
     
-    UIImage *park_image = [UIImage imageNamed:@"park_waku.png"];
+    UIImage *park_image = [UIImage imageNamed:@"park.png"];
     UIImageView *park_tag = [[UIImageView alloc]initWithImage:park_image];
     park_tag.frame = CGRectMake(222, 62, 15, 15);
     
-    UIImage *sea_image = [UIImage imageNamed:@"sea_waku.png"];
+    UIImage *sea_image = [UIImage imageNamed:@"sea.png"];
     UIImageView *sea_tag = [[UIImageView alloc]initWithImage:sea_image];
     sea_tag.frame = CGRectMake(242, 62, 15, 15);
     
