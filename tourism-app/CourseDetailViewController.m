@@ -65,9 +65,7 @@ Course *course;
     static NSString *CellIdentifier =@"Cell";
     
     UITableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if(cell == nil){
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-    }
+    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     
     //UITableViewのCellの値がスクロールするごとに重なったり壊れるなどの問題を防ぐために
     //最初に全てのcell.accessoryTypeをNoneに設定する
@@ -77,12 +75,6 @@ Course *course;
     //UITableViewのCellの値がスクロールするごとに重なったり壊れるなどの問題を防ぐために
     //最初に全てのcell.imageView.imageをnilに設定する
     cell.imageView.image = nil;
-    
-    //UITableViewのCellの値がスクロールするごとに重なったり壊れる,UITableViewでCell再描画時に文字が重なる
-    //などの問題を防ぐために、CellのsubViewを消去する
-    for (UIView *subview in [cell.contentView subviews]) {
-        [subview removeFromSuperview];
-    }
     
     if(indexPath.row == 0){
         //UITableViewのCellの値がスクロールするごとに重なったり壊れる,UITableViewでCell再描画時に文字が重なる問題を防ぐために、
