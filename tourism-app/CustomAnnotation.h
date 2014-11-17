@@ -13,7 +13,7 @@
     CLLocationCoordinate2D coordinate;
     NSString *title;
     NSString *subtitle;
-    NSString *frag;
+    NSString *frag;//スタートピン、スポットピン、などどのアノテーションなのかを示すフラグ
 }
 
 @property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
