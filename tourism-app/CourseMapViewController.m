@@ -254,15 +254,13 @@
     }
 }
 
-/**
- 戻るボタンが押されたとき呼ばれるメソッド
- */
-- (IBAction)dismissSelf:(id)sender {
-    
+///戻るボタンのアクション
+- (IBAction)myNavigationBuckButtonAction:(id)sender {
     [self stopLocationService];
     // MapViewの現在位置表示機能を停止させる。コレを忘れるとMapViewを開放してもGPSが使用しっぱなしになる
     [myMapView setShowsUserLocation:NO];
-    [self dismissViewControllerAnimated:YES completion:NULL];
+
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

@@ -40,9 +40,9 @@ Course *course;
     NSLog(@"%@", course_name);
 }
 
-//戻るボタンのアクション
-- (IBAction)dismissSelf:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:NULL];
+///戻るボタンのアクション
+- (IBAction)myNavigationBuckButtonAction:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

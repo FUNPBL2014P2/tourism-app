@@ -18,6 +18,7 @@
     BOOL isSeaChecked;
 }
 
+- (IBAction)myNavigationBuckButtonAction:(id)sender;
 @property (weak, nonatomic) IBOutlet UITableView *myTableView;
 
 //カテゴリ画面にチェックマークがついているか、ついていないか判別するフラグ

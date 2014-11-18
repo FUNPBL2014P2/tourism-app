@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="inH-XH-9fV">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -23,7 +23,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ePf-2z-ZI6" kind="modal" id="FGM-Kt-MGe"/>
+                                    <segue destination="ePf-2z-ZI6" kind="push" id="FGM-Kt-MGe"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ox2-Eo-nUL">
@@ -32,15 +32,17 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="oIO-Kj-QD2" kind="modal" id="RFD-59-7ef"/>
+                                    <segue destination="oIO-Kj-QD2" kind="push" id="RFD-59-7ef"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="q1a-al-dbY"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="951" y="136"/>
         </scene>
         <!--Course Table View Controller-->
         <scene sceneID="dcO-M6-y45">
@@ -67,7 +69,7 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="カテゴリ" id="7Le-B6-PaM">
                                             <connections>
-                                                <segue destination="Hif-Ol-KyY" kind="modal" identifier="tableTocategory" id="Swc-vL-Qtl"/>
+                                                <segue destination="Hif-Ol-KyY" kind="push" identifier="tableTocategory" id="Swc-vL-Qtl"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -109,13 +111,13 @@
                     <connections>
                         <outlet property="mySegmentedControl" destination="oqQ-OB-S9O" id="ghs-Gs-IZd"/>
                         <outlet property="myTableView" destination="xr9-G1-tOx" id="syU-cR-RrR"/>
-                        <segue destination="MWC-Uy-Y2q" kind="modal" identifier="detail" id="NHc-ck-j4F"/>
+                        <segue destination="MWC-Uy-Y2q" kind="push" identifier="detail" id="NHc-ck-j4F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IQS-RR-aez" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="wNS-Ig-mJY" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1006" y="-284"/>
+            <point key="canvasLocation" x="1834" y="136"/>
         </scene>
         <!--Course Map View Controller-->
         <scene sceneID="52g-tb-xjO">
@@ -136,7 +138,7 @@
                                     <navigationItem id="AtC-Qr-o31">
                                         <barButtonItem key="leftBarButtonItem" title="戻る" id="PQf-cm-xpY">
                                             <connections>
-                                                <action selector="dismissSelf:" destination="ePf-2z-ZI6" id="Yp7-U8-zCB"/>
+                                                <action selector="myNavigationBuckButtonAction:" destination="ePf-2z-ZI6" id="whs-uV-lfb"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -170,7 +172,7 @@
                     <connections>
                         <outlet property="myMapView" destination="wGW-Gd-HRX" id="bYf-o8-E4T"/>
                         <outlet property="myToolBar" destination="56g-jY-6or" id="WPN-vq-WhI"/>
-                        <segue destination="MWC-Uy-Y2q" kind="modal" identifier="MapToDetail" id="vi7-3m-iwG"/>
+                        <segue destination="MWC-Uy-Y2q" kind="push" identifier="MapToDetail" id="vi7-3m-iwG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a1g-10-z8r" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -196,7 +198,7 @@
                                     <navigationItem title="Title" id="Ngp-ca-33i">
                                         <barButtonItem key="leftBarButtonItem" title="戻る" id="gLi-6P-GDh">
                                             <connections>
-                                                <action selector="dismissSelf:" destination="W4b-i2-zI2" id="Evi-hG-hno"/>
+                                                <action selector="myNavigatioBuckButtonAction:" destination="W4b-i2-zI2" id="fal-o3-bzs"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -232,12 +234,13 @@
                             <constraint firstItem="eQH-Qf-60Y" firstAttribute="top" secondItem="YAw-BZ-JKT" secondAttribute="bottom" id="zwX-PR-tYv"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="LT1-ef-HBZ"/>
                     <connections>
                         <outlet property="myMapView" destination="eQH-Qf-60Y" id="SqM-tg-9Ge"/>
                         <outlet property="myNavigationItem" destination="Ngp-ca-33i" id="U7e-zY-FyO"/>
                         <outlet property="myToolBar" destination="Gzo-L1-ODY" id="LDG-A6-Fr2"/>
-                        <segue destination="wcf-DD-ijF" kind="modal" identifier="MapToSpot" id="RRe-8e-6rn"/>
-                        <segue destination="wpK-Ri-VO3" kind="modal" identifier="MapToHealth" id="VYS-yA-MRz"/>
+                        <segue destination="wcf-DD-ijF" kind="push" identifier="MapToSpot" id="RRe-8e-6rn"/>
+                        <segue destination="wpK-Ri-VO3" kind="push" identifier="MapToHealth" id="VYS-yA-MRz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QFo-us-QyW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -263,7 +266,7 @@
                                     <navigationItem title="Title" id="3LA-Gz-Pvb">
                                         <barButtonItem key="leftBarButtonItem" title="戻る" id="pdO-S4-VDA">
                                             <connections>
-                                                <action selector="dismissSelf:" destination="wcf-DD-ijF" id="xvD-BV-FT1"/>
+                                                <action selector="myNavigationBuckButtonAction:" destination="wcf-DD-ijF" id="TQ8-YR-Ke1"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -290,6 +293,7 @@
                             <constraint firstItem="d94-aI-Yw7" firstAttribute="top" secondItem="ujr-2s-c3P" secondAttribute="bottom" id="ix8-IF-tNl"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Oth-QT-RhL"/>
                     <connections>
                         <outlet property="myImageView" destination="fBn-1V-qH9" id="N2I-it-hoY"/>
                         <outlet property="myNavigationItem" destination="3LA-Gz-Pvb" id="rgm-Ev-zbq"/>
@@ -319,7 +323,7 @@
                                     <navigationItem id="BCj-q1-oCn">
                                         <barButtonItem key="leftBarButtonItem" title="戻る" id="8zJ-ZK-0wj">
                                             <connections>
-                                                <action selector="dismissSelf:" destination="wpK-Ri-VO3" id="96K-b3-Ytg"/>
+                                                <action selector="myNavigationBuckButtonAction:" destination="wpK-Ri-VO3" id="E0d-nX-m4V"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -370,7 +374,7 @@
                                     <navigationItem title="Title" id="hye-yR-fNN">
                                         <barButtonItem key="leftBarButtonItem" title="戻る" id="l3l-Jm-kHR">
                                             <connections>
-                                                <action selector="dismissSelf:" destination="MWC-Uy-Y2q" id="lPX-RU-tD1"/>
+                                                <action selector="myNavigationBuckButtonAction:" destination="MWC-Uy-Y2q" id="COq-Vx-cKg"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -397,12 +401,13 @@
                             <constraint firstItem="paO-Dl-hWg" firstAttribute="leading" secondItem="iYJ-ET-edE" secondAttribute="leadingMargin" constant="-16" id="yJj-iv-Bmj"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="QyI-kc-nOt"/>
                     <connections>
                         <outlet property="myImageView" destination="njf-lZ-pbP" id="wf6-vn-smR"/>
                         <outlet property="myNavigationItem" destination="hye-yR-fNN" id="OGu-Og-myq"/>
                         <outlet property="myTableView" destination="2Gw-RD-lml" id="BME-c4-Bq4"/>
-                        <segue destination="W4b-i2-zI2" kind="modal" identifier="detailmap" id="hwF-Yj-bvm"/>
-                        <segue destination="wpK-Ri-VO3" kind="modal" identifier="walkingmap" id="m2A-yz-i2n"/>
+                        <segue destination="W4b-i2-zI2" kind="push" identifier="detailmap" id="hwF-Yj-bvm"/>
+                        <segue destination="wpK-Ri-VO3" kind="push" identifier="walkingmap" id="m2A-yz-i2n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6T0-yn-QZt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -428,12 +433,12 @@
                                     <navigationItem title="カテゴリ" id="gpq-1l-Cc5">
                                         <barButtonItem key="leftBarButtonItem" title="戻る" id="bcM-6P-BHT">
                                             <connections>
-                                                <action selector="dismissSelf:" destination="Hif-Ol-KyY" id="tIR-uJ-KBX"/>
+                                                <action selector="myNavigationBuckButtonAction:" destination="Hif-Ol-KyY" id="pMg-mw-9Wk"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="完了" id="3xJ-V9-CVn">
                                             <connections>
-                                                <segue destination="oIO-Kj-QD2" kind="modal" identifier="categoryTotable" id="eNN-Id-veV"/>
+                                                <segue destination="oIO-Kj-QD2" kind="push" identifier="categoryTotable" id="eNN-Id-veV"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -456,18 +461,37 @@
                             <constraint firstItem="bTJ-ba-1qr" firstAttribute="leading" secondItem="fvF-2A-DWg" secondAttribute="leadingMargin" constant="-16" id="ngv-Yx-idl"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="eo9-ZR-qyE"/>
                     <connections>
                         <outlet property="myTableView" destination="Eg6-Gv-TZe" id="mz6-FU-AcU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4mi-CW-OYn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1985" y="150"/>
+            <point key="canvasLocation" x="2797" y="150"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7gV-Ek-NWy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="inH-XH-9fV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uAj-t4-pcq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="1pC-X5-2kL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rSL-4R-Dro" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="81" y="136"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="NHc-ck-j4F"/>
+        <segue reference="vi7-3m-iwG"/>
+        <segue reference="VYS-yA-MRz"/>
         <segue reference="eNN-Id-veV"/>
-        <segue reference="m2A-yz-i2n"/>
     </inferredMetricsTieBreakers>
 </document>

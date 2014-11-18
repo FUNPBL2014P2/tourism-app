@@ -15,6 +15,7 @@
     NSString *spot_name;
 }
 
+- (IBAction)myNavigationBuckButtonAction:(id)sender;
 @property (weak, nonatomic) IBOutlet UINavigationItem *myNavigationItem;
 @property (weak, nonatomic) IBOutlet UITableView *myTableView;
 @property (weak, nonatomic) IBOutlet UIImageView *myImageView;

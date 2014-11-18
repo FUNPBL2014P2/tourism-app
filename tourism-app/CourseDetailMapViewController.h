@@ -17,6 +17,7 @@
     NSString *spot_name; //スポット詳細画面に受け渡すコース名
 }
 
+- (IBAction)myNavigatioBuckButtonAction:(id)sender;
 @property (weak, nonatomic) IBOutlet MKMapView *myMapView;
 @property (weak, nonatomic) IBOutlet UIToolbar *myToolBar;
 @property (weak, nonatomic) IBOutlet UINavigationItem *myNavigationItem;

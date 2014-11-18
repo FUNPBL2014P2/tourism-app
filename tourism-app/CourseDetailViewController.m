@@ -233,8 +233,8 @@ Course *course;
 }
 
 ///戻るボタンのアクション
-- (IBAction)dismissSelf:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:NULL];
+- (IBAction)myNavigationBuckButtonAction:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 /**
