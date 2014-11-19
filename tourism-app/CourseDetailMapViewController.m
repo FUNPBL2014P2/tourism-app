@@ -246,8 +246,8 @@
  
  @return オーバーレイの色や太さなどの詳細設定
  */
-- (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id<MKOverlay>)overlay {
-    MKPolylineView *lineView = [[MKPolylineView alloc] initWithOverlay:overlay];
+- (MKOverlayRenderer *)mapView:(MKMapView *)mapView viewForOverlay:(id<MKOverlay>)overlay {
+    MKPolylineRenderer *lineView = [[MKPolylineRenderer alloc] initWithOverlay:overlay];
     lineView.strokeColor = [UIColor redColor];
     lineView.lineWidth = 5.0;
     

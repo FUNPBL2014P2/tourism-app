@@ -23,6 +23,7 @@
 @property (nonatomic, retain) CLLocationManager *locationManager;
 @property (nonatomic)NSString *course_name;
 @property CourseModel *course_map_model;
+@property int selectid;//どのアノテーションが選択されているかを示すid
 
 - (void)stopLocationService;
 

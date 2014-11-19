@@ -23,6 +23,7 @@
 @synthesize myMapView;
 @synthesize myToolBar;
 @synthesize locationManager;
+@synthesize selectid;
 
 #pragma mark - UIViewController lifecicle event methods
 
@@ -55,6 +56,8 @@
     
     //getStartAnnotationメソッドはスタート位置のCustomAnnotationがはいった配列を返すメソッド
     NSMutableArray *pins = [[course_map_model getStartAnnotation] mutableCopy];
+    //どのアノテーションも選択されてないときのidを設定
+    selectid = -1;
     
     for (int i = 0; i < [pins count]; i++) {
         [myMapView addAnnotation:[pins objectAtIndex:i]];
@@ -151,15 +154,71 @@
 }
 
 /**
+ アノテーションが選択されたときに呼出されるメソッド
+ */
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
+    //コースラインを一旦すべて消す処理
+    //特定のコースラインを消して再描画する処理は技術的にむずかしいため、すべてを再描画しなおす
+    for(id<MKOverlay> overlay in [mapView overlays]) {
+        [mapView removeOverlay:overlay];
+    }
+    
+    //選択されたアノテーションを特定する処理
+    for(int i = 0; i < [course_map_model->course_table_data count]; i++){
+        Course *course = [course_map_model->course_table_data objectAtIndex:i];
+        if ([course.course_name isEqualToString:view.annotation.title]) {
+            selectid = i;
+        }
+    }
+    
+    //再描画
+    NSMutableArray *lines = [[course_map_model getAllCourseLine] mutableCopy];
+    
+    for(int i = 0; i < [lines count]; i++) {
+        [myMapView addOverlay:[lines objectAtIndex:i]];
+    }
+    
+}
+
+/**
+ アノテーションが選択が外れたときに呼出されるメソッド
+ */
+- (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view {
+    for(id<MKOverlay> overlay in [mapView overlays]) {
+        [mapView removeOverlay:overlay];
+    }
+    
+    //どのアノテーションも選択されてないときのidを設定
+    selectid = -1;
+    
+    NSMutableArray *lines = [[course_map_model getAllCourseLine] mutableCopy];
+    
+    for(int i = 0; i < [lines count]; i++) {
+        [myMapView addOverlay:[lines objectAtIndex:i]];
+    }
+}
+
+/**
  オーバーレイが追加されるときに呼出されるメソッド
  オーバーレイの詳細設定はここで行う
  
  @return オーバーレイの色や太さなどの詳細設定
  */
-- (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id<MKOverlay>)overlay {
-    MKPolylineView *lineView = [[MKPolylineView alloc] initWithOverlay:overlay];
-    lineView.strokeColor = [UIColor redColor];
-    lineView.lineWidth = 5.0;
+- (MKOverlayRenderer *)mapView:(MKMapView *)mapView viewForOverlay:(id<MKOverlay>)overlay {
+    MKPolylineRenderer *lineView = [[MKPolylineRenderer alloc] initWithOverlay:overlay];
+    
+    //選択されたアノテーションとコースラインを結びつける
+    //結びついたコースラインの色を変える処理
+    int index = (int)[mapView.overlays indexOfObject:overlay];
+    
+    if (index == selectid){
+        lineView.strokeColor=[UIColor blueColor];
+        lineView.lineWidth = 7.0;
+    }else{
+        
+        lineView.strokeColor = [UIColor redColor];
+        lineView.lineWidth = 3.0;
+    }
     
     return lineView;
 }
