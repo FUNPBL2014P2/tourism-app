@@ -23,7 +23,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ePf-2z-ZI6" kind="push" id="FGM-Kt-MGe"/>
+                                    <segue destination="ePf-2z-ZI6" kind="show" id="FGM-Kt-MGe"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ox2-Eo-nUL">
@@ -32,7 +32,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="oIO-Kj-QD2" kind="push" id="RFD-59-7ef"/>
+                                    <segue destination="oIO-Kj-QD2" kind="show" id="RFD-59-7ef"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -69,7 +69,7 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="カテゴリ" id="7Le-B6-PaM">
                                             <connections>
-                                                <segue destination="Hif-Ol-KyY" kind="push" identifier="tableTocategory" id="Swc-vL-Qtl"/>
+                                                <segue destination="Hif-Ol-KyY" kind="show" identifier="tableTocategory" id="Swc-vL-Qtl"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -111,7 +111,7 @@
                     <connections>
                         <outlet property="mySegmentedControl" destination="oqQ-OB-S9O" id="ghs-Gs-IZd"/>
                         <outlet property="myTableView" destination="xr9-G1-tOx" id="syU-cR-RrR"/>
-                        <segue destination="MWC-Uy-Y2q" kind="push" identifier="detail" id="NHc-ck-j4F"/>
+                        <segue destination="MWC-Uy-Y2q" kind="show" identifier="detail" id="NHc-ck-j4F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IQS-RR-aez" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -172,7 +172,7 @@
                     <connections>
                         <outlet property="myMapView" destination="wGW-Gd-HRX" id="bYf-o8-E4T"/>
                         <outlet property="myToolBar" destination="56g-jY-6or" id="WPN-vq-WhI"/>
-                        <segue destination="MWC-Uy-Y2q" kind="push" identifier="MapToDetail" id="vi7-3m-iwG"/>
+                        <segue destination="MWC-Uy-Y2q" kind="show" identifier="MapToDetail" id="vi7-3m-iwG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a1g-10-z8r" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -239,8 +239,8 @@
                         <outlet property="myMapView" destination="eQH-Qf-60Y" id="SqM-tg-9Ge"/>
                         <outlet property="myNavigationItem" destination="Ngp-ca-33i" id="U7e-zY-FyO"/>
                         <outlet property="myToolBar" destination="Gzo-L1-ODY" id="LDG-A6-Fr2"/>
-                        <segue destination="wcf-DD-ijF" kind="push" identifier="MapToSpot" id="RRe-8e-6rn"/>
-                        <segue destination="wpK-Ri-VO3" kind="push" identifier="MapToHealth" id="VYS-yA-MRz"/>
+                        <segue destination="wcf-DD-ijF" kind="show" identifier="MapToSpot" id="RRe-8e-6rn"/>
+                        <segue destination="wpK-Ri-VO3" kind="show" identifier="MapToHealth" id="VYS-yA-MRz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QFo-us-QyW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -406,8 +406,8 @@
                         <outlet property="myImageView" destination="njf-lZ-pbP" id="wf6-vn-smR"/>
                         <outlet property="myNavigationItem" destination="hye-yR-fNN" id="OGu-Og-myq"/>
                         <outlet property="myTableView" destination="2Gw-RD-lml" id="BME-c4-Bq4"/>
-                        <segue destination="W4b-i2-zI2" kind="push" identifier="detailmap" id="hwF-Yj-bvm"/>
-                        <segue destination="wpK-Ri-VO3" kind="push" identifier="walkingmap" id="m2A-yz-i2n"/>
+                        <segue destination="W4b-i2-zI2" kind="show" identifier="detailmap" id="hwF-Yj-bvm"/>
+                        <segue destination="wpK-Ri-VO3" kind="show" identifier="walkingmap" id="m2A-yz-i2n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6T0-yn-QZt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -438,7 +438,7 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="完了" id="3xJ-V9-CVn">
                                             <connections>
-                                                <segue destination="oIO-Kj-QD2" kind="push" identifier="categoryTotable" id="eNN-Id-veV"/>
+                                                <segue destination="oIO-Kj-QD2" kind="show" identifier="categoryTotable" id="eNN-Id-veV"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -490,8 +490,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="vi7-3m-iwG"/>
-        <segue reference="VYS-yA-MRz"/>
+        <segue reference="NHc-ck-j4F"/>
         <segue reference="eNN-Id-veV"/>
+        <segue reference="VYS-yA-MRz"/>
     </inferredMetricsTieBreakers>
 </document>
