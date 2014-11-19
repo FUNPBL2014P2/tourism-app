@@ -16,6 +16,7 @@
     NSString *course_name; //コース詳細画面に受け渡すコース名
 }
 
+- (IBAction)myNavigationBuckButtonAction:(id)sender;
 @property (weak, nonatomic) IBOutlet MKMapView *myMapView;
 @property (weak, nonatomic) IBOutlet UIToolbar *myToolBar;
 

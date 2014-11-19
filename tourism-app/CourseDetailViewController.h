@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UINavigationItem *myNavigationItem;
 @property (weak, nonatomic) IBOutlet UIImageView *myImageView;
 @property (weak, nonatomic) IBOutlet UITableView *myTableView;
+- (IBAction)myNavigationBuckButtonAction:(id)sender;
 
 @property (nonatomic)NSString *course_name; //コース一覧画面から受け取ったコース名
 

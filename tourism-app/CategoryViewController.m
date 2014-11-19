@@ -186,9 +186,9 @@ NSArray *category_images;
     }
 }
 
-//戻るボタンのアクション
-- (IBAction)dismissSelf:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:NULL];
+///戻るボタンのアクション
+- (IBAction)myNavigationBuckButtonAction:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 /**

@@ -357,13 +357,14 @@
     NSLog(@"%@", spot_name);
 }
 
-//戻るボタンのアクション
-- (IBAction)dismissSelf:(id)sender {
+///戻るボタンのアクション
+- (IBAction)myNavigatioBuckButtonAction:(id)sender {
     // locationManager(CLLocationManagerのインスタンス）のGPS計測を停止させる
     [self.locationManager stopUpdatingLocation];
     // MapViewの現在位置表示機能を停止させる。コレを忘れるとMapViewを開放してもGPSが使用しっぱなしになる
     [myMapView setShowsUserLocation:NO];
-    [self dismissViewControllerAnimated:YES completion:NULL];
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end
