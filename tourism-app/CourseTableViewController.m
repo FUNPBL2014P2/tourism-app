@@ -130,7 +130,7 @@ NSString *sortedType;
     }else if([sortedType isEqualToString:@"time"]){
         [course_table_model getSortedbyTimeMutableArray:course_table_model->course_table_data];
     }
-
+    
     //カテゴリ画面でチェックマークがついている項目に対応するコースを検索
     [self getSearchedbyCategoryMutableArray:course_table_model->course_table_data];
     
@@ -234,9 +234,17 @@ NSString *sortedType;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     //コース名をCellのViewに追加する
-    UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake(cell.textLabel.frame.origin.x + 130, cell.textLabel.frame.origin.y - 40, cell.frame.size.width - 160, 120)];
-    textLabel.text = course.course_name;
-    [cell.contentView addSubview:textLabel];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
+        NSLog(@"iPhoneの処理");
+        UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake(cell.textLabel.frame.origin.x + 130, cell.textLabel.frame.origin.y - 40, cell.frame.size.width - 170, 120)];
+        textLabel.text = course.course_name;
+        [cell.contentView addSubview:textLabel];
+    }else{
+        NSLog(@"iPadの処理");
+        UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake(cell.textLabel.frame.origin.x + 130, cell.textLabel.frame.origin.y - 40, cell.frame.size.width, 120)];
+        textLabel.text = course.course_name;
+        [cell.contentView addSubview:textLabel];
+    }
     
     //コース詳細の1行目をCellのViewに追加する
     UILabel *detailTextLabel = [[UILabel alloc] initWithFrame:CGRectMake(130, -25, cell.frame.size.width, 130)];
