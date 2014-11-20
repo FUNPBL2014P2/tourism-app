@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="inH-XH-9fV">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -16,33 +17,17 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xgZ-KK-DSZ">
-                                <rect key="frame" x="277" y="178" width="45" height="30"/>
-                                <state key="normal" title="マップ">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="ePf-2z-ZI6" kind="show" id="FGM-Kt-MGe"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ox2-Eo-nUL">
-                                <rect key="frame" x="263" y="285" width="75" height="30"/>
-                                <state key="normal" title="コース一覧">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="oIO-Kj-QD2" kind="show" id="RFD-59-7ef"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="q1a-al-dbY"/>
+                    <connections>
+                        <segue destination="oIO-Kj-QD2" kind="show" identifier="course_table" id="AbC-7Q-Lza"/>
+                        <segue destination="ePf-2z-ZI6" kind="show" identifier="course_map" id="hPI-dC-kUh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="951" y="136"/>
+            <point key="canvasLocation" x="951" y="145"/>
         </scene>
         <!--Course Table View Controller-->
         <scene sceneID="dcO-M6-y45">
@@ -491,7 +476,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="NHc-ck-j4F"/>
-        <segue reference="eNN-Id-veV"/>
+        <segue reference="AbC-7Q-Lza"/>
         <segue reference="VYS-yA-MRz"/>
     </inferredMetricsTieBreakers>
 </document>
