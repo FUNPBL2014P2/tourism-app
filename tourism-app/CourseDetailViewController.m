@@ -177,11 +177,18 @@ Course *course;
     
     for(int i = 0;i < [course.spot_name count];i++){
         if(indexPath.row == 7 + i){
-            //cell.textLabel.text = [course.spot_name objectAtIndex:i];
             //コース名をCellのViewに追加する
-            UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake(cell.textLabel.frame.origin.x + 130, cell.textLabel.frame.origin.y - 20, cell.frame.size.width - 160, 120)];
-            textLabel.text = [course.spot_name objectAtIndex:i];
-            [cell.contentView addSubview:textLabel];
+            if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
+                NSLog(@"iPhoneの処理");
+                UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake(cell.textLabel.frame.origin.x + 130, cell.textLabel.frame.origin.y - 20, cell.frame.size.width - 50, 120)];
+                textLabel.text = [course.spot_name objectAtIndex:i];
+                [cell.contentView addSubview:textLabel];
+            }else{
+                NSLog(@"iPadの処理");
+                UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake(cell.textLabel.frame.origin.x + 130, cell.textLabel.frame.origin.y - 20, cell.frame.size.width + 100, 120)];
+                textLabel.text = [course.spot_name objectAtIndex:i];
+                [cell.contentView addSubview:textLabel];
+            }
             
             //スポットの画像をCellのViewに追加する
             UIImage *image = [UIImage imageNamed:[course.spot_image_name objectAtIndex:i]];
