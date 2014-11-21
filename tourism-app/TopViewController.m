@@ -43,6 +43,10 @@
             UIButton *tableButton = [[UIButton alloc] initWithFrame:CGRectMake(bounds.origin.x + (bounds.size.width / 2), bounds.size.height - ((bounds.size.width / 2) / 288 * 104), bounds.size.width / 2, (bounds.size.width / 2) / 288 * 104)];
             [mapButton setImage:[UIImage imageNamed:@"map_btn_3to2.png"] forState:UIControlStateNormal];
             [tableButton setImage:[UIImage imageNamed:@"course_btn_3to2.png"] forState:UIControlStateNormal];
+            
+            mapButton.exclusiveTouch = YES;
+            tableButton.exclusiveTouch = YES;
+            
             [self.view addSubview:mapButton];
             [self.view addSubview:tableButton];
             
@@ -61,6 +65,10 @@
             UIButton *tableButton = [[UIButton alloc] initWithFrame:CGRectMake(bounds.origin.x + (bounds.size.width / 2), bounds.size.height - ((bounds.size.width / 2) / 356 * 198), bounds.size.width / 2, (bounds.size.width / 2) / 356 * 198)];
             [mapButton setImage:[UIImage imageNamed:@"map_btn_16to9.png"] forState:UIControlStateNormal];
             [tableButton setImage:[UIImage imageNamed:@"course_btn_16to9.png"] forState:UIControlStateNormal];
+            
+            mapButton.exclusiveTouch = YES;
+            tableButton.exclusiveTouch = YES;
+            
             [self.view addSubview:mapButton];
             [self.view addSubview:tableButton];
             
@@ -78,6 +86,10 @@
         UIButton *tableButton = [[UIButton alloc] initWithFrame:CGRectMake(bounds.origin.x + (bounds.size.width / 2), bounds.size.height - ((bounds.size.width / 2) / 486 * 197), bounds.size.width / 2, (bounds.size.width / 2) / 486 * 197)];
         [mapButton setImage:[UIImage imageNamed:@"map_btn_4to3.png"] forState:UIControlStateNormal];
         [tableButton setImage:[UIImage imageNamed:@"course_btn_4to3.png"] forState:UIControlStateNormal];
+        
+        mapButton.exclusiveTouch = YES;
+        tableButton.exclusiveTouch = YES;
+        
         [self.view addSubview:mapButton];
         [self.view addSubview:tableButton];
         
