@@ -15,6 +15,7 @@
 @implementation CourseDetailViewController
 
 @synthesize course_name;
+@synthesize spot_name;
 
 CourseModel *course_model;
 Course *course;
@@ -183,18 +184,23 @@ Course *course;
             }
         }
     }else if(indexPath.section == 2){
+        //display size
+        CGRect bounds = [[UIScreen mainScreen] bounds];
+        
         for(int i = 0;i < [course.spot_name count];i++){
             if(indexPath.row == i){
-                //コース名をCellのViewに追加する
+                //スポット名をCellのViewに追加する
                 if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
                     NSLog(@"iPhoneの処理");
-                    UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake(cell.textLabel.frame.origin.x + 130, cell.textLabel.frame.origin.y - 20, cell.frame.size.width - 50, 120)];
+                    UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake(cell.textLabel.frame.origin.x + 130, cell.textLabel.frame.origin.y - 20, bounds.size.width - 190, 120)];
                     textLabel.text = [course.spot_name objectAtIndex:i];
+                    textLabel.numberOfLines = 0;
                     [cell.contentView addSubview:textLabel];
                 }else{
                     NSLog(@"iPadの処理");
-                    UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake(cell.textLabel.frame.origin.x + 130, cell.textLabel.frame.origin.y - 20, cell.frame.size.width + 100, 120)];
+                    UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake(cell.textLabel.frame.origin.x + 130, cell.textLabel.frame.origin.y - 20, bounds.size.width, 120)];
                     textLabel.text = [course.spot_name objectAtIndex:i];
+                    textLabel.numberOfLines = 0;
                     [cell.contentView addSubview:textLabel];
                 }
                 
@@ -203,6 +209,10 @@ Course *course;
                 UIImageView *imageView = [[UIImageView alloc]initWithImage:image];
                 imageView.frame = CGRectMake(10, 0, 110.0f, 79.0f);
                 [cell.contentView addSubview:imageView];
+                
+                //Cellの設定
+                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+                cell.selectionStyle = UITableViewCellSelectionStyleDefault;
             }
         }
     }else if(indexPath.section == 3){
@@ -241,6 +251,13 @@ Course *course;
         }else if(indexPath.row == 1){
             [self performSegueWithIdentifier:@"walkingmap" sender:self];
         }
+    }else if(indexPath.section == 2){
+        for(int i = 0;i < [course.spot_name count];i++){
+            if(indexPath.row == i){
+                spot_name = [course.spot_name objectAtIndex:i];
+            }
+        }
+        [self performSegueWithIdentifier:@"spot_detail" sender:self];
     }else if(indexPath.section == 4){
         if(indexPath.row == 0){
             NSURL *url = [NSURL URLWithString:@"http://www.city.hakodate.hokkaido.jp/docs/2014012700900/"];
@@ -257,6 +274,9 @@ Course *course;
     
     if ([[segue identifier] isEqualToString:@"walkingmap"]||[[segue identifier] isEqualToString:@"detailmap"]){
         nextViewController.course_name = course_name;
+    }else if([[segue identifier] isEqualToString:@"spot_detail"]){
+        nextViewController.course_name = course_name;
+        nextViewController.spot_name = spot_name;
     }
 }
 

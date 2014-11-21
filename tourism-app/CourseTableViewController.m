@@ -233,15 +233,18 @@ NSString *sortedType;
     Course *course = [course_table_model->course_table_data objectAtIndex:indexPath.row];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
+    //display size
+    CGRect bounds = [[UIScreen mainScreen] bounds];
+    
     //コース名をCellのViewに追加する
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
         NSLog(@"iPhoneの処理");
-        UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake(cell.textLabel.frame.origin.x + 130, cell.textLabel.frame.origin.y - 40, cell.frame.size.width - 170, 120)];
+        UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake(cell.textLabel.frame.origin.x + 130, cell.textLabel.frame.origin.y - 40, bounds.size.width - 170, 120)];
         textLabel.text = course.course_name;
         [cell.contentView addSubview:textLabel];
     }else{
         NSLog(@"iPadの処理");
-        UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake(cell.textLabel.frame.origin.x + 130, cell.textLabel.frame.origin.y - 40, cell.frame.size.width, 120)];
+        UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake(cell.textLabel.frame.origin.x + 130, cell.textLabel.frame.origin.y - 40, bounds.size.width, 120)];
         textLabel.text = course.course_name;
         [cell.contentView addSubview:textLabel];
     }
