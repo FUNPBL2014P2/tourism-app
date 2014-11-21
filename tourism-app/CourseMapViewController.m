@@ -212,11 +212,17 @@
     int index = (int)[mapView.overlays indexOfObject:overlay];
     
     if (index == selectid){
+        
         lineView.strokeColor=[UIColor blueColor];
         lineView.lineWidth = 7.0;
-    }else{
+    }else if (selectid == -1){
         
         lineView.strokeColor = [UIColor redColor];
+        lineView.lineWidth = 3.0;
+    }else{
+        
+        UIColor *color = [UIColor redColor];
+        lineView.strokeColor = [color colorWithAlphaComponent:0.3];
         lineView.lineWidth = 3.0;
     }
     
