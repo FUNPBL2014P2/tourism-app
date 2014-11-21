@@ -235,13 +235,17 @@ Course *course;
     //ハイライトを外す
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    if(indexPath.row == 0){
-        [self performSegueWithIdentifier:@"detailmap" sender:self];
-    }else if(indexPath.row == 1){
-        [self performSegueWithIdentifier:@"walkingmap" sender:self];
-    }else if(indexPath.row == 7 + [course.spot_name count]){
-        NSURL *url = [NSURL URLWithString:@"http://www.city.hakodate.hokkaido.jp/docs/2014012700900/"];
-        [[UIApplication sharedApplication] openURL:url];
+    if(indexPath.section == 0){
+        if(indexPath.row == 0){
+            [self performSegueWithIdentifier:@"detailmap" sender:self];
+        }else if(indexPath.row == 1){
+            [self performSegueWithIdentifier:@"walkingmap" sender:self];
+        }
+    }else if(indexPath.section == 4){
+        if(indexPath.row == 0){
+            NSURL *url = [NSURL URLWithString:@"http://www.city.hakodate.hokkaido.jp/docs/2014012700900/"];
+            [[UIApplication sharedApplication] openURL:url];
+        }
     }
 }
 
