@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="inH-XH-9fV">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -393,6 +392,7 @@
                         <outlet property="myTableView" destination="2Gw-RD-lml" id="BME-c4-Bq4"/>
                         <segue destination="W4b-i2-zI2" kind="show" identifier="detailmap" id="hwF-Yj-bvm"/>
                         <segue destination="wpK-Ri-VO3" kind="show" identifier="walkingmap" id="m2A-yz-i2n"/>
+                        <segue destination="wcf-DD-ijF" kind="show" identifier="spot_detail" id="dzt-A5-KlY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6T0-yn-QZt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -475,8 +475,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="NHc-ck-j4F"/>
         <segue reference="AbC-7Q-Lza"/>
-        <segue reference="VYS-yA-MRz"/>
+        <segue reference="NHc-ck-j4F"/>
+        <segue reference="m2A-yz-i2n"/>
+        <segue reference="dzt-A5-KlY"/>
     </inferredMetricsTieBreakers>
 </document>

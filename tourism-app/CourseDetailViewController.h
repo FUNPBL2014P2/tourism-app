@@ -12,6 +12,7 @@
 
 @interface CourseDetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     NSString *course_name; //コース一覧画面から受け取ったコース名
+    NSString *spot_name; //スポット詳細画面に受け渡すスポット名
 }
 
 @property (weak, nonatomic) IBOutlet UINavigationItem *myNavigationItem;
@@ -20,5 +21,6 @@
 - (IBAction)myNavigationBuckButtonAction:(id)sender;
 
 @property (nonatomic)NSString *course_name; //コース一覧画面から受け取ったコース名
+@property (nonatomic)NSString *spot_name; //スポット詳細画面に受け渡すスポット名
 
 @end
