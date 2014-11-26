@@ -78,6 +78,13 @@ Course *course;
 }
 
 /**
+ @return セクションのヘッダーの高さ
+ */
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 75;
+}
+
+/**
  @return セクションのタイトル
  */
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
