@@ -172,8 +172,6 @@
 		4A7A6BF51A1F1BA600ECDF98 /* buss.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A7A6BF41A1F1BA600ECDF98 /* buss.png */; };
 		4A8596941A025EE50097379A /* CourseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8596931A025EE50097379A /* CourseModel.m */; };
 		4A8596951A025EE50097379A /* CourseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8596931A025EE50097379A /* CourseModel.m */; };
-		4A8596991A0318D90097379A /* see_walkingmap.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A8596971A0318D90097379A /* see_walkingmap.png */; };
-		4A85969A1A0318D90097379A /* walk_course.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A8596981A0318D90097379A /* walk_course.png */; };
 		4ADE376019FA109200FE524F /* TopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE375F19FA109200FE524F /* TopViewController.m */; };
 		4ADE376319FA1A5A00FE524F /* CourseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE376219FA1A5A00FE524F /* CourseTableViewController.m */; };
 		4ADE376619FA1B7900FE524F /* CourseMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE376519FA1B7900FE524F /* CourseMapViewController.m */; };
@@ -192,6 +190,7 @@
 		4ADE378C19FA72CD00FE524F /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ADE378B19FA72CD00FE524F /* libsqlite3.0.dylib */; };
 		4ADE37A819FBD36300FE524F /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE37A419FBD36300FE524F /* Course.m */; };
 		4AFA60B51A22F4DB004C4009 /* walking_map.db in Resources */ = {isa = PBXBuildFile; fileRef = 4AFA60B41A22F4DB004C4009 /* walking_map.db */; };
+		4AFA60BB1A25BE74004C4009 /* walkingmap_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AFA60BA1A25BE74004C4009 /* walkingmap_button.png */; };
 		9C08ABBC1A1463DC0096A6D6 /* CourseDetailMapView+Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C08ABBB1A1463DC0096A6D6 /* CourseDetailMapView+Alert.m */; };
 		9C08AC111A15ED490096A6D6 /* start_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08AC101A15ED490096A6D6 /* start_pin.png */; };
 		9C08AC131A15EF920096A6D6 /* summer.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08AC121A15EF920096A6D6 /* summer.png */; };
@@ -390,8 +389,6 @@
 		4A7A6BF41A1F1BA600ECDF98 /* buss.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buss.png; sourceTree = "<group>"; };
 		4A8596921A025EE50097379A /* CourseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseModel.h; sourceTree = "<group>"; };
 		4A8596931A025EE50097379A /* CourseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseModel.m; sourceTree = "<group>"; };
-		4A8596971A0318D90097379A /* see_walkingmap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = see_walkingmap.png; sourceTree = "<group>"; };
-		4A8596981A0318D90097379A /* walk_course.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = walk_course.png; sourceTree = "<group>"; };
 		4ADE375E19FA109200FE524F /* TopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopViewController.h; sourceTree = "<group>"; };
 		4ADE375F19FA109200FE524F /* TopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopViewController.m; sourceTree = "<group>"; };
 		4ADE376119FA1A5A00FE524F /* CourseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseTableViewController.h; sourceTree = "<group>"; };
@@ -425,6 +422,7 @@
 		4ADE37A419FBD36300FE524F /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
 		4ADE37A519FBD36300FE524F /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
 		4AFA60B41A22F4DB004C4009 /* walking_map.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = walking_map.db; sourceTree = "<group>"; };
+		4AFA60BA1A25BE74004C4009 /* walkingmap_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = walkingmap_button.png; sourceTree = "<group>"; };
 		9C08ABBA1A1463DC0096A6D6 /* CourseDetailMapView+Alert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CourseDetailMapView+Alert.h"; sourceTree = "<group>"; };
 		9C08ABBB1A1463DC0096A6D6 /* CourseDetailMapView+Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CourseDetailMapView+Alert.m"; sourceTree = "<group>"; };
 		9C08AC101A15ED490096A6D6 /* start_pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = start_pin.png; sourceTree = "<group>"; };
@@ -1160,8 +1158,7 @@
 		4A8596961A0318D90097379A /* button_images */ = {
 			isa = PBXGroup;
 			children = (
-				4A8596971A0318D90097379A /* see_walkingmap.png */,
-				4A8596981A0318D90097379A /* walk_course.png */,
+				4AFA60BA1A25BE74004C4009 /* walkingmap_button.png */,
 				9C1D31A71A0A164A0098053D /* boolbaritem.png */,
 				9C1D31A91A0A16520098053D /* background.png */,
 				9C1D31AB1A0A165D0098053D /* follow_icon.png */,
@@ -1339,7 +1336,6 @@
 				4A25B93D1A160B920021CA03 /* aoyagichoukaikan.png in Resources */,
 				4A25B90A1A160B920021CA03 /* sasanagaredamu.png in Resources */,
 				4A25B8F41A160B920021CA03 /* higashisyougakkou.png in Resources */,
-				4A85969A1A0318D90097379A /* walk_course.png in Resources */,
 				4A25B9221A160B920021CA03 /* hinanbasyo.png in Resources */,
 				4A25B8F71A160B920021CA03 /* hiyoshichokaikan.png in Resources */,
 				4A25B9241A160B920021CA03 /* hondorikouen.png in Resources */,
@@ -1392,7 +1388,6 @@
 				9C1D31AA1A0A16520098053D /* background.png in Resources */,
 				4A25B8E61A160B920021CA03 /* koukuryokuchishinoritatehureaihiroba.png in Resources */,
 				4A25B93A1A160B920021CA03 /* kouryuji.png in Resources */,
-				4A8596991A0318D90097379A /* see_walkingmap.png in Resources */,
 				4A25B8C31A160B920021CA03 /* tayayoujikouen.png in Resources */,
 				4A25B9411A160B920021CA03 /* hokaidokyouikudaigakuhakdatekou.png in Resources */,
 				4A25B8BD1A160B920021CA03 /* hakodatehachimangu.png in Resources */,
@@ -1422,6 +1417,7 @@
 				4A25B9151A160B920021CA03 /* goryoukakueki.png in Resources */,
 				4A25B9361A160B920021CA03 /* osatsubedouro.png in Resources */,
 				9C08AC1D1A15EFB40096A6D6 /* sea.png in Resources */,
+				4AFA60BB1A25BE74004C4009 /* walkingmap_button.png in Resources */,
 				4A25B9271A160B920021CA03 /* houdourichuoukaikan.png in Resources */,
 				4A7A6BEC1A1D933800ECDF98 /* course_btn_3to2.png in Resources */,
 				4A25B8C71A160B920021CA03 /* hokaidoukaihatukyokuhakodatekaihatukensetubu.png in Resources */,
