@@ -262,9 +262,9 @@
  */
 - (void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)views {
     
-    for (int i = 0; i < [myMapView.annotations count]; i++) {
-        if([((CustomAnnotation*)[myMapView.annotations objectAtIndex:i]).frag isEqualToString:@"start"])
-            [myMapView selectAnnotation:[myMapView.annotations objectAtIndex:i] animated:YES];
+    for (int i = 0; i < [mapView.annotations count]; i++) {
+        if([((CustomAnnotation*)[mapView.annotations objectAtIndex:i]).frag isEqualToString:@"start"])
+            [mapView selectAnnotation:[mapView.annotations objectAtIndex:i] animated:YES];
     }
 }
 
