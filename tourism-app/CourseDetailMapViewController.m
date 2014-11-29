@@ -260,7 +260,7 @@
  マップの表示が終わったときに呼出されるメソッド
  スタートピンのコールアウトを最初から出すのに使う
  */
-- (void)mapView:(MKMapView *)aMapView didAddAnnotationViews:(NSArray *)views {
+- (void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)views {
     
     for (int i = 0; i < [myMapView.annotations count]; i++) {
         if([((CustomAnnotation*)[myMapView.annotations objectAtIndex:i]).frag isEqualToString:@"start"])
