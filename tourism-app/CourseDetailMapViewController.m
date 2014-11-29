@@ -67,6 +67,12 @@
         [myMapView addAnnotation:[start_pins objectAtIndex:i]];
     }
     
+    //起動したら最初からスタートピンのコール合うとだけ表示する
+    for (int i = 0; i < [myMapView.annotations count]; i++) {
+        if([((CustomAnnotation*)[myMapView.annotations objectAtIndex:i]).frag isEqualToString:@"start"])
+            [myMapView selectAnnotation:[myMapView.annotations objectAtIndex:i] animated:YES];
+    }
+    
     
     //getSpotWithNameメソッドはスポット位置のCustomAnnotationがはいった配列を返すメソッド
     NSMutableArray *spot_pins = [[course_map_model getSpotWithName:course_name] mutableCopy];
@@ -254,18 +260,6 @@
     lineView.lineWidth = 5.0;
     
     return lineView;
-}
-
-/**
- マップの表示が終わったときに呼出されるメソッド
- スタートピンのコールアウトを最初から出すのに使う
- */
-- (void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)views {
-    
-    for (int i = 0; i < [mapView.annotations count]; i++) {
-        if([((CustomAnnotation*)[mapView.annotations objectAtIndex:i]).frag isEqualToString:@"start"])
-            [mapView selectAnnotation:[mapView.annotations objectAtIndex:i] animated:YES];
-    }
 }
 
 #pragma mark - event
