@@ -58,6 +58,16 @@
     //ここからviewとmodelをつなぐ処理
     course_map_model = [[CourseModel alloc] init];
     
+    
+    //getStartAnnotationWithNameメソッドはコースのスタートのCustomAnnotationがはいった配列を返すメソッド
+    NSMutableArray *start_pins =  [[course_map_model getStartAnnotationWithName:course_name] mutableCopy];
+    
+    for (int i = 0; i < [start_pins count]; i++) {
+        ((CustomAnnotation*)[start_pins objectAtIndex:i]).title = @"スタート";
+        [myMapView addAnnotation:[start_pins objectAtIndex:i]];
+    }
+    
+    
     //getSpotWithNameメソッドはスポット位置のCustomAnnotationがはいった配列を返すメソッド
     NSMutableArray *spot_pins = [[course_map_model getSpotWithName:course_name] mutableCopy];
     
@@ -65,18 +75,10 @@
         [myMapView addAnnotation:[spot_pins objectAtIndex:i]];
     }
     
-    //getStartAnnotationWithNameメソッドはコースのスタートのCustomAnnotationがはいった配列を返すメソッド
-    NSMutableArray *start_pins =  [[course_map_model getStartAnnotationWithName:course_name] mutableCopy];
-    
-    for (int i = 0; i < [start_pins count]; i++) {
-        NSLog(@"%@",[start_pins objectAtIndex:i]);
-        [myMapView addAnnotation:[start_pins objectAtIndex:i]];
-    }
-    
-    //getCourseLineWithNameメソッドはスポット位置のCustomAnnotationがはいった配列を返すメソッド
+    //getCourseLineWithNameメソッドはコース名を引数に、そのコースのMKPolylineインスタンスを返すメソッド
     [myMapView addOverlay:[course_map_model getCourseLineWithName:course_name]];
     
-    //spotpinを立てる処理
+    //最寄り駅のピンを立てる処理
     CLLocationCoordinate2D stop_point = CLLocationCoordinate2DMake([course_map_model getDataWithName:course_name].nearest_stop_latitude,
                                                                    [course_map_model getDataWithName:course_name].nearest_stop_longitude);
     CustomAnnotation *spotAnnotation = [[CustomAnnotation alloc] initWithCoordinate:stop_point];
@@ -93,7 +95,7 @@
     }
     spotAnnotation.frag = @"stop";
     [myMapView addAnnotation:spotAnnotation];
-
+    
     CLLocationCoordinate2D center;
     center.latitude = ((CustomAnnotation *)[start_pins objectAtIndex:0]).coordinate.latitude; // 経度
     center.longitude = ((CustomAnnotation *)[start_pins objectAtIndex:0]).coordinate.longitude; // 緯度
@@ -222,11 +224,11 @@
             annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
         }
         if([[course_map_model getDataWithName:course_name].nearest_stop_type isEqualToString:@"buss"]){
-             annotationView.image = [UIImage imageNamed:@"buss.png"];
+            annotationView.image = [UIImage imageNamed:@"buss.png"];
         }else if ([[course_map_model getDataWithName:course_name].nearest_stop_type isEqualToString:@"shiden"]){
-             annotationView.image = [UIImage imageNamed:@"shiden.png"];
+            annotationView.image = [UIImage imageNamed:@"shiden.png"];
         }else{
-             annotationView.image = [UIImage imageNamed:@"train.png"];
+            annotationView.image = [UIImage imageNamed:@"train.png"];
         }
         
         
@@ -252,6 +254,18 @@
     lineView.lineWidth = 5.0;
     
     return lineView;
+}
+
+/**
+ マップの表示が終わったときに呼出されるメソッド
+ スタートピンのコールアウトを最初から出すのに使う
+ */
+- (void)mapView:(MKMapView *)aMapView didAddAnnotationViews:(NSArray *)views {
+    
+    for (int i = 0; i < [myMapView.annotations count]; i++) {
+        if([((CustomAnnotation*)[myMapView.annotations objectAtIndex:i]).frag isEqualToString:@"start"])
+            [myMapView selectAnnotation:[myMapView.annotations objectAtIndex:i] animated:YES];
+    }
 }
 
 #pragma mark - event
