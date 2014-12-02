@@ -40,6 +40,11 @@ Course *course;
     NSLog(@"%@", course_name);
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    //ローディング表示を止める処理
+    [SVProgressHUD dismiss];
+}
+
 ///戻るボタンのアクション
 - (IBAction)myNavigationBuckButtonAction:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];

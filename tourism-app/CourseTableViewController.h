@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CourseModel.h"
+#import "SVProgressHUD.h"
 
 @interface CourseTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     CourseModel *course_table_model;

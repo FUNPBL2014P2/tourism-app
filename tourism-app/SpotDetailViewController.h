@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CourseModel.h"
 #import "Course.h"
+#import "SVProgressHUD.h"
 
 @interface SpotDetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     NSString *course_name;

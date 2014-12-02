@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SVProgressHUD.h"
 
 @interface CategoryViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     //カテゴリ画面にチェックマークがついているか、ついていないか判別するフラグ

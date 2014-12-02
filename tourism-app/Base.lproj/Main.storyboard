@@ -475,8 +475,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="AbC-7Q-Lza"/>
         <segue reference="NHc-ck-j4F"/>
+        <segue reference="eNN-Id-veV"/>
         <segue reference="m2A-yz-i2n"/>
         <segue reference="dzt-A5-KlY"/>
     </inferredMetricsTieBreakers>

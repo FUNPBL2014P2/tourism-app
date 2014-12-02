@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CourseModel.h"
 #import "Course.h"
+#import "SVProgressHUD.h"
 
 @interface HealthWalkingMapDetailViewController : UIViewController {
     NSString *course_name;

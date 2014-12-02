@@ -41,6 +41,11 @@ Course *course;
     NSLog(@"%@", course_name);
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    //ローディング表示を止める処理
+    [SVProgressHUD dismiss];
+}
+
 /**
  @return Cellの高さ
  */
@@ -254,8 +259,14 @@ Course *course;
     
     if(indexPath.section == 0){
         if(indexPath.row == 0){
+            //ローディング表示処理
+            [SVProgressHUD showWithStatus:@"読み込み中"];
+
             [self performSegueWithIdentifier:@"detailmap" sender:self];
         }else if(indexPath.row == 1){
+            //ローディング表示処理
+            [SVProgressHUD showWithStatus:@"読み込み中"];
+            
             [self performSegueWithIdentifier:@"walkingmap" sender:self];
         }
     }else if(indexPath.section == 2){
