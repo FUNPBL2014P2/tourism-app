@@ -10,6 +10,7 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import "CourseModel.h"
+#import "SVProgressHUD.h"
 
 @interface CourseMapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate> {
     CourseModel *course_map_model;

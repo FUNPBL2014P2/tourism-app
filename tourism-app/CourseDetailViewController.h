@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Course.h"
 #import "CourseModel.h"
+#import "SVProgressHUD.h"
 
 @interface CourseDetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     NSString *course_name; //コース一覧画面から受け取ったコース名

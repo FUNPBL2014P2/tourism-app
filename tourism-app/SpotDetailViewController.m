@@ -39,6 +39,11 @@ NSString *spot_detail;
     self.myImageView.image = [UIImage imageNamed:spot_image];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    //ローディング表示を止める処理
+    [SVProgressHUD dismiss];
+}
+
 /**
  ロード時に呼び出される
  

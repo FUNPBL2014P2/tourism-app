@@ -116,6 +116,9 @@ NSString *sortedType;
  タブ等の切り替え等により、画面に表示されるたびに呼び出される
  */
 - (void)viewWillAppear:(BOOL)animated {
+    //ローディング表示を止める処理
+    [SVProgressHUD dismiss];
+    
     course_table_model = [[CourseModel alloc]init];
     
     //SegmentedContrlの初期状態が「距離順」なので、距離を降順でソート
@@ -307,6 +310,9 @@ NSString *sortedType;
  セルタップ時に呼び出される
  */
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    //ローディング表示処理
+    [SVProgressHUD showWithStatus:@"読み込み中"];
+    
     //ハイライトを外す
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     

@@ -115,6 +115,11 @@
     [myMapView setRegion:region animated:NO];
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    //ローディング表示を止める処理
+    [SVProgressHUD dismiss];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -333,6 +338,9 @@
  healthBarItemを押したときに呼ばれるメソッド
  */
 - (void)onTapTest:(id)inSender {
+    //ローディング表示処理
+    [SVProgressHUD showWithStatus:@"読み込み中"];
+    
     [self performSegueWithIdentifier:@"MapToHealth" sender:self];
 }
 
@@ -340,6 +348,9 @@
  　アノテーションボタンが押されたとき呼ばれるメソッド
  */
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
+    //ローディング表示処理
+    [SVProgressHUD showWithStatus:@"読み込み中"];
+    
     // locationManager(CLLocationManagerのインスタンス）のGPS計測を停止させる
     [self.locationManager stopUpdatingLocation];
     // MapViewの現在位置表示機能を停止させる。コレを忘れるとMapViewを開放してもGPSが使用しっぱなしになる
