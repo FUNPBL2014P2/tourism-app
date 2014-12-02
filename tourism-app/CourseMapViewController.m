@@ -71,6 +71,11 @@
     }
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    //ローディング表示を止める処理
+    [SVProgressHUD dismiss];
+}
+
 /**
  メモリ不足時に呼び出される
  */
@@ -300,7 +305,9 @@
  　アノテーションボタンが押されたとき呼ばれるメソッド
  */
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
-    
+    //ローディング表示処理
+    [SVProgressHUD showWithStatus:@"読み込み中"];
+
     [self stopLocationService];
     // MapViewの現在位置表示機能を停止させる。コレを忘れるとMapViewを開放してもGPSが使用しっぱなしになる
     [myMapView setShowsUserLocation:NO];
