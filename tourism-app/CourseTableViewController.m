@@ -23,6 +23,7 @@
 @synthesize isSeaChecked;
 
 NSString *sortedType;
+int numberOfIndexPath_row; //タップされたセルのindexを記録
 
 /**
  Courseクラスのインスタンスが格納された配列を引数に、カテゴリ画面でチェックマークがついている項目に対応するコースを検索する
@@ -109,6 +110,8 @@ NSString *sortedType;
     
     self.myTableView.dataSource = self;
     self.myTableView.delegate = self;
+    
+    course_table_model = [[CourseModel alloc]init];
 }
 
 /**
@@ -118,9 +121,7 @@ NSString *sortedType;
 - (void)viewWillAppear:(BOOL)animated {
     //ローディング表示を止める処理
     [SVProgressHUD dismiss];
-    
-    course_table_model = [[CourseModel alloc]init];
-    
+        
     //SegmentedContrlの初期状態が「距離順」なので、距離を降順でソート
     [course_table_model getSortedbyDistanceMutableArray:course_table_model->course_table_data];
     
@@ -346,14 +347,24 @@ NSString *sortedType;
     //ハイライトを外す
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    //セルがタップされたときに呼ばれるアクションの設定
+    numberOfIndexPath_row = (int)indexPath.row;
+    [self performSelector:@selector(modalImagePicker) withObject:nil afterDelay:0.1];
+}
+
+/**
+ セルがタップされたときに呼ばれるアクションメソッド
+ */
+-(void)modalImagePicker{
     for(int i = 0;i < [course_table_model->course_table_data count];i++){
-        if(indexPath.row == i){
+        if(numberOfIndexPath_row == i){
             Course *course = [course_table_model->course_table_data objectAtIndex:i];
             course_name = course.course_name;
             [self performSegueWithIdentifier:@"detail" sender:self];
         }
     }
 }
+
 
 /**
  Segueが実行されると、実行直前に自動的に呼び出される

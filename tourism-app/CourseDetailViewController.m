@@ -19,6 +19,7 @@
 
 CourseModel *course_model;
 Course *course;
+int numberOfIndexPath_row; //タップされたセルのindexを記録
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -286,18 +287,20 @@ Course *course;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     //ハイライトを外す
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    numberOfIndexPath_row = (int)indexPath.row;
+
     
     if(indexPath.section == 0){
         if(indexPath.row == 0){
             //ローディング表示処理
             [SVProgressHUD showWithStatus:@"読み込み中"];
-
-            [self performSegueWithIdentifier:@"detailmap" sender:self];
+            
+            [self performSelector:@selector(detailmap_segue) withObject:nil afterDelay:0.1];
         }else if(indexPath.row == 1){
             //ローディング表示処理
             [SVProgressHUD showWithStatus:@"読み込み中"];
             
-            [self performSegueWithIdentifier:@"walkingmap" sender:self];
+            [self performSelector:@selector(walkingmap_segue) withObject:nil afterDelay:0.1];
         }
     }else if(indexPath.section == 2){
         for(int i = 0;i < [course.spot_name count];i++){
@@ -305,6 +308,7 @@ Course *course;
                 spot_name = [course.spot_name objectAtIndex:i];
             }
         }
+        
         [self performSegueWithIdentifier:@"spot_detail" sender:self];
     }else if(indexPath.section == 4){
         if(indexPath.row == 0){
@@ -312,6 +316,20 @@ Course *course;
             [[UIApplication sharedApplication] openURL:url];
         }
     }
+}
+
+/**
+ 「このコースを歩く」がタップされたときに呼ばれるアクションメソッド
+ */
+- (void)detailmap_segue {
+    [self performSegueWithIdentifier:@"detailmap" sender:self];
+}
+
+/**
+ 「健康ウォーキングマップを見る」がタップされたときに呼ばれるアクションメソッド
+ */
+- (void)walkingmap_segue {
+    [self performSegueWithIdentifier:@"walkingmap" sender:self];
 }
 
 /**
