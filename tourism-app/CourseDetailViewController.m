@@ -19,7 +19,7 @@
 
 CourseModel *course_model;
 Course *course;
-int numberOfIndexPath_row;
+int numberOfIndexPath_row; //タップされたセルのindexを記録
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -284,46 +284,9 @@ int numberOfIndexPath_row;
 /**
  セルタップ時に呼び出される
  */
-/*
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     //ハイライトを外す
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    if(indexPath.section == 0){
-        if(indexPath.row == 0){
-            //ローディング表示処理
-            [SVProgressHUD showWithStatus:@"読み込み中"];
-
-            [self performSegueWithIdentifier:@"detailmap" sender:self];
-        }else if(indexPath.row == 1){
-            //ローディング表示処理
-            [SVProgressHUD showWithStatus:@"読み込み中"];
-            
-            [self performSegueWithIdentifier:@"walkingmap" sender:self];
-        }
-    }else if(indexPath.section == 2){
-        for(int i = 0;i < [course.spot_name count];i++){
-            if(indexPath.row == i){
-                spot_name = [course.spot_name objectAtIndex:i];
-            }
-        }
-        [self performSegueWithIdentifier:@"spot_detail" sender:self];
-    }else if(indexPath.section == 4){
-        if(indexPath.row == 0){
-            NSURL *url = [NSURL URLWithString:@"http://www.city.hakodate.hokkaido.jp/docs/2014012700900/"];
-            [[UIApplication sharedApplication] openURL:url];
-        }
-    }
-}
- */
-
-/**
- セルタップ時に呼び出される
- */
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    //ハイライトを外す
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    //セルがタップされたときに呼ばれるアクションの設定
     numberOfIndexPath_row = (int)indexPath.row;
 
     
@@ -355,10 +318,16 @@ int numberOfIndexPath_row;
     }
 }
 
+/**
+ 「このコースを歩く」がタップされたときに呼ばれるアクションメソッド
+ */
 - (void)detailmap_segue {
     [self performSegueWithIdentifier:@"detailmap" sender:self];
 }
 
+/**
+ 「健康ウォーキングマップを見る」がタップされたときに呼ばれるアクションメソッド
+ */
 - (void)walkingmap_segue {
     [self performSegueWithIdentifier:@"walkingmap" sender:self];
 }
