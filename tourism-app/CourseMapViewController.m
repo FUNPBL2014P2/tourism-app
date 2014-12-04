@@ -25,6 +25,8 @@
 @synthesize locationManager;
 @synthesize selectid;
 
+MKAnnotationView *select_annotationView; //タップされたannotationviewを記録
+
 #pragma mark - UIViewController lifecicle event methods
 
 /**
@@ -311,9 +313,22 @@
     [self stopLocationService];
     // MapViewの現在位置表示機能を停止させる。コレを忘れるとMapViewを開放してもGPSが使用しっぱなしになる
     [myMapView setShowsUserLocation:NO];
-    course_name = view.annotation.title;
+    
+    //ローディングの表示が遅れるのを防ぐため、重い処理は別メソッドで処理する
+    select_annotationView = view;
+    [self performSelector:@selector(selectAnnotationtoName) withObject:nil afterDelay:0.1];
+
+}
+
+/**
+ アノテーションボタンが押されたときに呼ばれるメソッドの中の重い処理をするメソッド
+ 重い処理を分けないとローディングの表示タイミングがずれるため重い処理をこのメソッドで行っている
+  */
+- (void)selectAnnotationtoName{
+    course_name = select_annotationView.annotation.title;
     [self performSegueWithIdentifier:@"MapToDetail" sender:self];
 }
+
 
 /**
  Segueが実行されると、実行直前に自動的に呼び出される
