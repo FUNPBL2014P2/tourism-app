@@ -110,6 +110,8 @@ int numberOfIndexPath_row; //タップされたセルのindexを記録
     
     self.myTableView.dataSource = self;
     self.myTableView.delegate = self;
+    
+    course_table_model = [[CourseModel alloc]init];
 }
 
 /**
@@ -119,9 +121,7 @@ int numberOfIndexPath_row; //タップされたセルのindexを記録
 - (void)viewWillAppear:(BOOL)animated {
     //ローディング表示を止める処理
     [SVProgressHUD dismiss];
-    
-    course_table_model = [[CourseModel alloc]init];
-    
+        
     //SegmentedContrlの初期状態が「距離順」なので、距離を降順でソート
     [course_table_model getSortedbyDistanceMutableArray:course_table_model->course_table_data];
     
