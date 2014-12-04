@@ -205,26 +205,49 @@ NSString *sortedType;
     UIImageView *spring_tag = [[UIImageView alloc]initWithImage:spring_image];
     spring_tag.frame = CGRectMake(131, 62, 15, 15);
     
+    UIImage *spring_on_image = [UIImage imageNamed:@"spring_on.png"];
+    UIImageView *spring_on_tag = [[UIImageView alloc]initWithImage:spring_on_image];
+    spring_on_tag.frame = CGRectMake(131, 62, 15, 15);
+    
     UIImage *summer_image = [UIImage imageNamed:@"summer.png"];
     UIImageView *summer_tag = [[UIImageView alloc]initWithImage:summer_image];
     summer_tag.frame = CGRectMake(151, 62, 15, 15);
+    
+    UIImage *summer_on_image = [UIImage imageNamed:@"summer_on.png"];
+    UIImageView *summer_on_tag = [[UIImageView alloc]initWithImage:summer_on_image];
+    summer_on_tag.frame = CGRectMake(151, 62, 15, 15);
     
     UIImage *autumn_image = [UIImage imageNamed:@"autumn.png"];
     UIImageView *autumn_tag = [[UIImageView alloc]initWithImage:autumn_image];
     autumn_tag.frame = CGRectMake(171, 62, 15, 15);
     
+    UIImage *autumn_on_image = [UIImage imageNamed:@"autumn_on.png"];
+    UIImageView *autumn_on_tag = [[UIImageView alloc]initWithImage:autumn_on_image];
+    autumn_on_tag.frame = CGRectMake(171, 62, 15, 15);
+    
     UIImage *winter_image = [UIImage imageNamed:@"winter.png"];
     UIImageView *winter_tag = [[UIImageView alloc]initWithImage:winter_image];
     winter_tag.frame = CGRectMake(191, 62, 15, 15);
+    
+    UIImage *winter_on_image = [UIImage imageNamed:@"winter_on.png"];
+    UIImageView *winter_on_tag = [[UIImageView alloc]initWithImage:winter_on_image];
+    winter_on_tag.frame = CGRectMake(191, 62, 15, 15);
     
     UIImage *park_image = [UIImage imageNamed:@"park.png"];
     UIImageView *park_tag = [[UIImageView alloc]initWithImage:park_image];
     park_tag.frame = CGRectMake(211, 62, 15, 15);
     
+    UIImage *park_on_image = [UIImage imageNamed:@"park_on.png"];
+    UIImageView *park_on_tag = [[UIImageView alloc]initWithImage:park_on_image];
+    park_on_tag.frame = CGRectMake(211, 62, 15, 15);
+    
     UIImage *sea_image = [UIImage imageNamed:@"sea.png"];
     UIImageView *sea_tag = [[UIImageView alloc]initWithImage:sea_image];
     sea_tag.frame = CGRectMake(231, 62, 15, 15);
     
+    UIImage *sea_on_image = [UIImage imageNamed:@"sea_on.png"];
+    UIImageView *sea_on_tag = [[UIImageView alloc]initWithImage:sea_on_image];
+    sea_on_tag.frame = CGRectMake(231, 62, 15, 15);
     
     //UITableViewのCellの値がスクロールするごとに重なったり壊れる,UITableViewでCell再描画時に文字が重なる
     //などの問題を防ぐために、CellのsubViewを消去する
@@ -274,31 +297,38 @@ NSString *sortedType;
     //タグアイコンの表示
     for(int i = 0;i < [course_table_model->course_table_data count];i++){
         Course *tag_course = [course_table_model->course_table_data objectAtIndex:i];
-        [cell.contentView addSubview:spring_tag];
-        [cell.contentView addSubview:summer_tag];
-        [cell.contentView addSubview:autumn_tag];
-        [cell.contentView addSubview:winter_tag];
-        [cell.contentView addSubview:park_tag];
-        [cell.contentView addSubview:sea_tag];
         
         if(indexPath.row == i){
             if(![tag_course.tag_name containsObject:@"春"]){
-                spring_tag.alpha = 0.2;
+                [cell.contentView addSubview:spring_tag];
+            }else{
+                [cell.contentView addSubview:spring_on_tag];
             }
             if(![tag_course.tag_name containsObject:@"夏"]){
-                summer_tag.alpha = 0.2;
+                [summer_on_tag removeFromSuperview];
+                [cell.contentView addSubview:summer_tag];
+            }else{
+                [cell.contentView addSubview:summer_on_tag];
             }
             if(![tag_course.tag_name containsObject:@"秋"]){
-                autumn_tag.alpha = 0.2;
+                [cell.contentView addSubview:autumn_tag];
+            }else{
+                [cell.contentView addSubview:autumn_on_tag];
             }
             if(![tag_course.tag_name containsObject:@"冬"]){
-                winter_tag.alpha = 0.2;
+                [cell.contentView addSubview:winter_tag];
+            }else{
+                [cell.contentView addSubview:winter_on_tag];
             }
             if(![tag_course.tag_name containsObject:@"公園"]){
-                park_tag.alpha = 0.2;
+                [cell.contentView addSubview:park_tag];
+            }else{
+                [cell.contentView addSubview:park_on_tag];
             }
             if(![tag_course.tag_name containsObject:@"海"]){
-                sea_tag.alpha = 0.2;
+                [cell.contentView addSubview:sea_tag];
+            }else{
+                [cell.contentView addSubview:sea_on_tag];
             }
         }
     }
