@@ -19,6 +19,7 @@
 
 CourseModel *course_model;
 Course *course;
+int numberOfIndexPath_row;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -283,6 +284,7 @@ Course *course;
 /**
  セルタップ時に呼び出される
  */
+/*
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     //ハイライトを外す
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -312,6 +314,53 @@ Course *course;
             [[UIApplication sharedApplication] openURL:url];
         }
     }
+}
+ */
+
+/**
+ セルタップ時に呼び出される
+ */
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    //ハイライトを外す
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    //セルがタップされたときに呼ばれるアクションの設定
+    numberOfIndexPath_row = (int)indexPath.row;
+
+    
+    if(indexPath.section == 0){
+        if(indexPath.row == 0){
+            //ローディング表示処理
+            [SVProgressHUD showWithStatus:@"読み込み中"];
+            
+            [self performSelector:@selector(detailmap_segue) withObject:nil afterDelay:0.1];
+        }else if(indexPath.row == 1){
+            //ローディング表示処理
+            [SVProgressHUD showWithStatus:@"読み込み中"];
+            
+            [self performSelector:@selector(walkingmap_segue) withObject:nil afterDelay:0.1];
+        }
+    }else if(indexPath.section == 2){
+        for(int i = 0;i < [course.spot_name count];i++){
+            if(indexPath.row == i){
+                spot_name = [course.spot_name objectAtIndex:i];
+            }
+        }
+        
+        [self performSegueWithIdentifier:@"spot_detail" sender:self];
+    }else if(indexPath.section == 4){
+        if(indexPath.row == 0){
+            NSURL *url = [NSURL URLWithString:@"http://www.city.hakodate.hokkaido.jp/docs/2014012700900/"];
+            [[UIApplication sharedApplication] openURL:url];
+        }
+    }
+}
+
+- (void)detailmap_segue {
+    [self performSegueWithIdentifier:@"detailmap" sender:self];
+}
+
+- (void)walkingmap_segue {
+    [self performSegueWithIdentifier:@"walkingmap" sender:self];
 }
 
 /**
