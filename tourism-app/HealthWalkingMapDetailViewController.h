@@ -11,7 +11,7 @@
 #import "Course.h"
 #import "SVProgressHUD.h"
 
-@interface HealthWalkingMapDetailViewController : UIViewController {
+@interface HealthWalkingMapDetailViewController : UIViewController <UIWebViewDelegate> {
     NSString *course_name;
 }
 
