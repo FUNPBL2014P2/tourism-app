@@ -32,7 +32,7 @@ NSArray *category_images;
     self.myTableView.delegate = self;
     
     categories = [NSArray arrayWithObjects:@"春のおすすめ", @"夏のおすすめ", @"秋のおすすめ", @"冬のおすすめ", @"公園", @"海", nil];
-    category_images = [NSArray arrayWithObjects:@"spring.png", @"summer.png", @"autumn.png", @"winter.png", @"park.png", @"sea.png", nil];
+    category_images = [NSArray arrayWithObjects:@"spring_category.png", @"summer_category.png", @"autumn_category.png", @"winter_category.png", @"park_category.png", @"sea_category.png", nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
