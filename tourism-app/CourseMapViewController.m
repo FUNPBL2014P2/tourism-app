@@ -22,6 +22,7 @@
 @synthesize course_map_model;
 @synthesize myMapView;
 @synthesize myToolBar;
+@synthesize myNaviItem;
 @synthesize locationManager;
 @synthesize selectid;
 
@@ -39,6 +40,15 @@
     
     myMapView.delegate = self;
     self.locationManager.delegate = self;
+    
+    UIImage *titleImage = [UIImage imageNamed:@"pin_touch.png"];
+    UIImageView *titleImageView = [[UIImageView alloc] initWithImage:titleImage];
+    titleImageView.frame = CGRectMake(0, 0, titleImage.size.width * 0.01, titleImage.size.height * 0.01);//適当にサイズ調整
+    
+    UIView *titleView = [[UIView alloc]initWithFrame:CGRectMake(-titleImage.size.width*0.5, 0, titleImageView.frame.size.width , titleImageView.frame.size.height)];
+    [titleView addSubview:titleImageView];
+    self.myNaviItem.titleView = titleView;
+    self.myNaviItem.title = @"(フラッグ)をタッチしてコースを選択してください";
     
     myMapView.showsUserLocation = YES;
     [myMapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
