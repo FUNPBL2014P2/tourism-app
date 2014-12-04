@@ -341,6 +341,11 @@
     //ローディング表示処理
     [SVProgressHUD showWithStatus:@"読み込み中"];
     
+    //[self performSegueWithIdentifier:@"MapToHealth" sender:self];
+    [self performSelector:@selector(MapToHealthSegue) withObject:nil afterDelay:0.1];
+}
+
+- (void)MapToHealthSegue {
     [self performSegueWithIdentifier:@"MapToHealth" sender:self];
 }
 
