@@ -20,7 +20,9 @@
 }
 
 - (IBAction)myNavigationBuckButtonAction:(id)sender;
+- (IBAction)myNavigationFinishAction:(id)sender;
 @property (weak, nonatomic) IBOutlet UITableView *myTableView;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *myNavigationFinishItem;
 
 //カテゴリ画面にチェックマークがついているか、ついていないか判別するフラグ
 @property (nonatomic)BOOL isSpringChecked;

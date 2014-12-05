@@ -31,14 +31,19 @@ NSArray *category_images;
     self.myTableView.dataSource = self;
     self.myTableView.delegate = self;
     
+    self.myNavigationFinishItem.target = self;
+    self.myNavigationFinishItem.action = @selector(myNavigationFinishAction:);
+    
     categories = [NSArray arrayWithObjects:@"春のおすすめ", @"夏のおすすめ", @"秋のおすすめ", @"冬のおすすめ", @"公園", @"海", nil];
     category_images = [NSArray arrayWithObjects:@"spring_category.png", @"summer_category.png", @"autumn_category.png", @"winter_category.png", @"park_category.png", @"sea_category.png", nil];
 }
 
+/*
 - (void)viewWillDisappear:(BOOL)animated{
     //ローディング表示処理
     [SVProgressHUD showWithStatus:@"読み込み中"];
 }
+ */
 
 /**
  @return Cellの高さ
@@ -194,6 +199,17 @@ NSArray *category_images;
 ///戻るボタンのアクション
 - (IBAction)myNavigationBuckButtonAction:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)myNavigationFinishAction:(id)sender {
+    NSLog(@"aaa");
+    [SVProgressHUD showWithStatus:@"読み込み中"];
+    
+    [self performSelector:@selector(segueAction) withObject:nil afterDelay:0.1];
+}
+
+- (void)segueAction {
+    [self performSegueWithIdentifier:@"categoryTotable" sender:self];
 }
 
 /**
