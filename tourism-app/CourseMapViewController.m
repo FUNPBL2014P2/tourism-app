@@ -41,14 +41,14 @@
     myMapView.delegate = self;
     self.locationManager.delegate = self;
     
+    //ツールバーに画像を配置する処理
     UIImage *titleImage = [UIImage imageNamed:@"pin_touch.png"];
     UIImageView *titleImageView = [[UIImageView alloc] initWithImage:titleImage];
-    titleImageView.frame = CGRectMake(0, 0, titleImage.size.width * 0.01, titleImage.size.height * 0.01);//適当にサイズ調整
+    titleImageView.frame = CGRectMake(0, 0, titleImage.size.width * 0.03, titleImage.size.height * 0.03);//適当にサイズ調整
     
     UIView *titleView = [[UIView alloc]initWithFrame:CGRectMake(-titleImage.size.width*0.5, 0, titleImageView.frame.size.width , titleImageView.frame.size.height)];
     [titleView addSubview:titleImageView];
     self.myNaviItem.titleView = titleView;
-    self.myNaviItem.title = @"(フラッグ)をタッチしてコースを選択してください";
     
     myMapView.showsUserLocation = YES;
     [myMapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
