@@ -588,6 +588,7 @@ Copyright(c) Future University Hakodate. All Rights Reserved.</string>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="完了" id="3xJ-V9-CVn">
                                             <connections>
+                                                <action selector="myNavigationFinishButtonAction:" destination="Hif-Ol-KyY" id="DvC-sU-Y0S"/>
                                                 <segue destination="oIO-Kj-QD2" kind="show" identifier="categoryTotable" id="eNN-Id-veV"/>
                                             </connections>
                                         </barButtonItem>
@@ -613,6 +614,7 @@ Copyright(c) Future University Hakodate. All Rights Reserved.</string>
                     </view>
                     <navigationItem key="navigationItem" id="eo9-ZR-qyE"/>
                     <connections>
+                        <outlet property="myNavigationFinishButton" destination="3xJ-V9-CVn" id="edA-pp-5m5"/>
                         <outlet property="myTableView" destination="Eg6-Gv-TZe" id="mz6-FU-AcU"/>
                     </connections>
                 </viewController>
@@ -641,8 +643,8 @@ Copyright(c) Future University Hakodate. All Rights Reserved.</string>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="vi7-3m-iwG"/>
-        <segue reference="AbC-7Q-Lza"/>
-        <segue reference="m2A-yz-i2n"/>
         <segue reference="dzt-A5-KlY"/>
+        <segue reference="m2A-yz-i2n"/>
+        <segue reference="eNN-Id-veV"/>
     </inferredMetricsTieBreakers>
 </document>
