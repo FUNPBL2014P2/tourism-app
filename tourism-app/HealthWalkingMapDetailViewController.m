@@ -35,6 +35,7 @@ Course *course;
     [self.myWebView loadRequest:myRequest];
     
     self.myWebView.scalesPageToFit = YES;
+    self.myWebView.delegate = self;
     
     //コース一覧画面で選択されたコース名
     NSLog(@"%@", course_name);
@@ -42,7 +43,24 @@ Course *course;
 
 - (void)viewWillAppear:(BOOL)animated{
     //ローディング表示を止める処理
+    //[SVProgressHUD dismiss];
+}
+
+/**
+ * Webページのロード時にインジケータを動かす
+ */
+- (void)webViewDidStartLoad:(UIWebView*)webView {
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+}
+
+/**
+ * Webページのロード完了時にインジケータを非表示にする
+ */
+- (void)webViewDidFinishLoad:(UIWebView*)webView {
+    //ローディング表示を止める処理
     [SVProgressHUD dismiss];
+
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
 ///戻るボタンのアクション

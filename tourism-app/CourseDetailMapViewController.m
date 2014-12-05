@@ -341,6 +341,11 @@
     //ローディング表示処理
     [SVProgressHUD showWithStatus:@"読み込み中"];
     
+    //ローディングボタンの表示が遅れる防ぐため、重い処理は別メソッドで処理する
+    [self performSelector:@selector(selectAnnotation) withObject:nil afterDelay:0.1];
+}
+
+- (void)selectAnnotation {
     [self performSegueWithIdentifier:@"MapToHealth" sender:self];
 }
 
@@ -348,8 +353,6 @@
  　アノテーションボタンが押されたとき呼ばれるメソッド
  */
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
-    //ローディング表示処理
-    [SVProgressHUD showWithStatus:@"読み込み中"];
     
     // locationManager(CLLocationManagerのインスタンス）のGPS計測を停止させる
     [self.locationManager stopUpdatingLocation];
