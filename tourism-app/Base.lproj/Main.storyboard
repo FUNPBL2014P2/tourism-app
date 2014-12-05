@@ -279,19 +279,6 @@ Copyright(c) Future University Hakodate. All Rights Reserved.</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gc6-w4-drZ">
-                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
-                                <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <items>
-                                    <navigationItem id="AtC-Qr-o31">
-                                        <barButtonItem key="leftBarButtonItem" title="戻る" id="PQf-cm-xpY">
-                                            <connections>
-                                                <action selector="myNavigationBuckButtonAction:" destination="ePf-2z-ZI6" id="whs-uV-lfb"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="56g-jY-6or">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items/>
@@ -299,6 +286,19 @@ Copyright(c) Future University Hakodate. All Rights Reserved.</string>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wGW-Gd-HRX">
                                 <rect key="frame" x="0.0" y="64" width="600" height="492"/>
                             </mapView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gc6-w4-drZ">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <navigationItem title="Title" id="gCs-cd-MsZ">
+                                        <barButtonItem key="leftBarButtonItem" title="戻る" id="hwz-Sr-DW4">
+                                            <connections>
+                                                <action selector="myNavigationBuckButtonAction:" destination="ePf-2z-ZI6" id="d0P-WV-EAC"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -319,6 +319,7 @@ Copyright(c) Future University Hakodate. All Rights Reserved.</string>
                     <navigationItem key="navigationItem" id="K5D-Ch-izU"/>
                     <connections>
                         <outlet property="myMapView" destination="wGW-Gd-HRX" id="bYf-o8-E4T"/>
+                        <outlet property="myNaviItem" destination="gCs-cd-MsZ" id="qpk-YE-Dd4"/>
                         <outlet property="myToolBar" destination="56g-jY-6or" id="WPN-vq-WhI"/>
                         <segue destination="MWC-Uy-Y2q" kind="show" identifier="MapToDetail" id="vi7-3m-iwG"/>
                     </connections>
@@ -639,9 +640,9 @@ Copyright(c) Future University Hakodate. All Rights Reserved.</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="m2A-yz-i2n"/>
-        <segue reference="NHc-ck-j4F"/>
+        <segue reference="vi7-3m-iwG"/>
         <segue reference="AbC-7Q-Lza"/>
+        <segue reference="m2A-yz-i2n"/>
         <segue reference="dzt-A5-KlY"/>
     </inferredMetricsTieBreakers>
 </document>

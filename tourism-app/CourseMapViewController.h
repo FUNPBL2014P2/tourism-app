@@ -12,7 +12,8 @@
 #import "CourseModel.h"
 #import "SVProgressHUD.h"
 
-@interface CourseMapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate> {
+@interface CourseMapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
+{
     CourseModel *course_map_model;
     NSString *course_name; //コース詳細画面に受け渡すコース名
 }
@@ -20,6 +21,7 @@
 - (IBAction)myNavigationBuckButtonAction:(id)sender;
 @property (weak, nonatomic) IBOutlet MKMapView *myMapView;
 @property (weak, nonatomic) IBOutlet UIToolbar *myToolBar;
+@property (weak, nonatomic) IBOutlet UINavigationItem *myNaviItem;
 
 @property (nonatomic, retain) CLLocationManager *locationManager;
 @property (nonatomic)NSString *course_name;

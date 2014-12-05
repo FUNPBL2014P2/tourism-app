@@ -22,6 +22,7 @@
 @synthesize course_map_model;
 @synthesize myMapView;
 @synthesize myToolBar;
+@synthesize myNaviItem;
 @synthesize locationManager;
 @synthesize selectid;
 
@@ -41,6 +42,15 @@ MKAnnotationView *select_annotationView; //タップされたannotationviewを�
     
     myMapView.delegate = self;
     self.locationManager.delegate = self;
+    
+    //ツールバーに画像を配置する処理
+    UIImage *titleImage = [UIImage imageNamed:@"pin_touch.png"];
+    UIImageView *titleImageView = [[UIImageView alloc] initWithImage:titleImage];
+    titleImageView.frame = CGRectMake(0, 0, titleImage.size.width * 0.35, titleImage.size.height * 0.35);//適当にサイズ調整
+    
+    UIView *titleView = [[UIView alloc]initWithFrame:CGRectMake(-titleImage.size.width*0.5, 0, titleImageView.frame.size.width , titleImageView.frame.size.height)];
+    [titleView addSubview:titleImageView];
+    self.myNaviItem.titleView = titleView;
     
     myMapView.showsUserLocation = YES;
     [myMapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
