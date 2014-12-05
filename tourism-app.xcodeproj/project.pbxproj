@@ -219,7 +219,7 @@
 		9C1D31AE1A0A16640098053D /* followheading_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C1D31AD1A0A16640098053D /* followheading_icon.png */; };
 		9C1D31B01A0A166B0098053D /* none_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C1D31AF1A0A166B0098053D /* none_icon.png */; };
 		9C1D31B31A0A30820098053D /* CustomAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1D31B21A0A30820098053D /* CustomAnnotation.m */; };
-		9C521FAD1A30C6D200FAE5A3 /* pin_touch.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C521FAC1A30C6D200FAE5A3 /* pin_touch.png */; };
+		9C521FB71A3159CA00FAE5A3 /* pin_touch.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C521FB61A3159CA00FAE5A3 /* pin_touch.png */; };
 		9CB20ADA1A131F8900A5F1A8 /* CourseMapView+Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB20AD91A131F8900A5F1A8 /* CourseMapView+Alert.m */; };
 /* End PBXBuildFile section */
 
@@ -471,7 +471,7 @@
 		9C1D31AF1A0A166B0098053D /* none_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = none_icon.png; sourceTree = "<group>"; };
 		9C1D31B11A0A30820098053D /* CustomAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAnnotation.h; sourceTree = "<group>"; };
 		9C1D31B21A0A30820098053D /* CustomAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAnnotation.m; sourceTree = "<group>"; };
-		9C521FAC1A30C6D200FAE5A3 /* pin_touch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin_touch.png; sourceTree = "<group>"; };
+		9C521FB61A3159CA00FAE5A3 /* pin_touch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin_touch.png; sourceTree = "<group>"; };
 		9CB20AD81A131F8900A5F1A8 /* CourseMapView+Alert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CourseMapView+Alert.h"; sourceTree = "<group>"; };
 		9CB20AD91A131F8900A5F1A8 /* CourseMapView+Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CourseMapView+Alert.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1054,7 +1054,7 @@
 				4A8596961A0318D90097379A /* button_images */,
 				4ADE377A19FA728200FE524F /* fmdb */,
 				4A74F31B19F6690D00DA5C82 /* Main.storyboard */,
-				9C521FAC1A30C6D200FAE5A3 /* pin_touch.png */,
+				9C521FB61A3159CA00FAE5A3 /* pin_touch.png */,
 				4A74F31519F6690D00DA5C82 /* AppDelegate.h */,
 				4A74F31619F6690D00DA5C82 /* AppDelegate.m */,
 				4ADE375E19FA109200FE524F /* TopViewController.h */,
@@ -1371,7 +1371,7 @@
 				4A86DFC31A2DCE0400ABBD4C /* course_btn_3to2.png in Resources */,
 				4A25B8E21A160B920021CA03 /* asahiokachugakkou.png in Resources */,
 				4A25B9111A160B920021CA03 /* kikyoueki.png in Resources */,
-				9C521FAD1A30C6D200FAE5A3 /* pin_touch.png in Resources */,
+				9C521FB71A3159CA00FAE5A3 /* pin_touch.png in Resources */,
 				4AFA60B51A22F4DB004C4009 /* walking_map.db in Resources */,
 				4A25B8C41A160B920021CA03 /* kashiwanosyougakkou.png in Resources */,
 				4A25B8EF1A160B920021CA03 /* shiomibashi.png in Resources */,
