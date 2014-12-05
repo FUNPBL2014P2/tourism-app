@@ -31,13 +31,12 @@ NSArray *category_images;
     self.myTableView.dataSource = self;
     self.myTableView.delegate = self;
     
+    //完了ボタンが押された時のアクションメソッドの設定
+    self.myNavigationFinishButton.target = self;
+    self.myNavigationFinishButton.action = @selector(myNavigationFinishAction:);
+    
     categories = [NSArray arrayWithObjects:@"春のおすすめ", @"夏のおすすめ", @"秋のおすすめ", @"冬のおすすめ", @"公園", @"海", nil];
     category_images = [NSArray arrayWithObjects:@"spring_category.png", @"summer_category.png", @"autumn_category.png", @"winter_category.png", @"park_category.png", @"sea_category.png", nil];
-}
-
-- (void)viewWillDisappear:(BOOL)animated{
-    //ローディング表示処理
-    [SVProgressHUD showWithStatus:@"読み込み中"];
 }
 
 /**
@@ -176,6 +175,23 @@ NSArray *category_images;
 }
 
 /**
+ 完了が押された時のアクション
+ */
+- (IBAction)myNavigationFinishAction:(id)sender {
+
+    [SVProgressHUD showWithStatus:@"読み込み中"];
+    
+    [self performSelector:@selector(segueAction) withObject:nil afterDelay:0.1];
+}
+
+/**
+ 完了が押された時のアクションで設定されたアクション
+ */
+- (void)segueAction {
+    [self performSegueWithIdentifier:@"categoryTotable" sender:self];
+}
+
+/**
  Segueが実行されると、実行直前に自動的に呼び出される
  */
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -212,4 +228,6 @@ NSArray *category_images;
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)myNavigationFinishButtonAction:(id)sender {
+}
 @end
