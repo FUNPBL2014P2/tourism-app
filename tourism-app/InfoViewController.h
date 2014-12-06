@@ -12,5 +12,6 @@
 @interface InfoViewController : UIViewController
 
 - (IBAction)myNavigationBuckButtonAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextView *myTextView;
 
 @end

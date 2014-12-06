@@ -15,6 +15,17 @@
     [SVProgressHUD dismiss];
 }
 
+/**
+ Viewの表示が完了後に呼び出される
+ 画面に表示されるたびに呼び出される
+ */
+- (void)viewDidAppear:(BOOL)animated {
+    //スクロールバーの点滅
+    [self.myTextView flashScrollIndicators];
+    //表示後の処理
+    [super viewDidAppear:animated];
+}
+
 ///戻るボタンのアクション
 - (IBAction)myNavigationBuckButtonAction:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
