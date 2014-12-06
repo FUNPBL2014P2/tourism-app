@@ -591,7 +591,6 @@ Copyright(c) Future University Hakodate. All Rights Reserved.</string>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="完了" id="3xJ-V9-CVn">
                                             <connections>
-                                                <action selector="myNavigationFinishButtonAction:" destination="Hif-Ol-KyY" id="DvC-sU-Y0S"/>
                                                 <segue destination="oIO-Kj-QD2" kind="show" identifier="categoryTotable" id="eNN-Id-veV"/>
                                             </connections>
                                         </barButtonItem>
