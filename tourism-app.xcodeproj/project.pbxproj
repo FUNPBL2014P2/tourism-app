@@ -208,7 +208,7 @@
 		4ADE378A19FA728200FE524F /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE378519FA728200FE524F /* FMResultSet.m */; };
 		4ADE378C19FA72CD00FE524F /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ADE378B19FA72CD00FE524F /* libsqlite3.0.dylib */; };
 		4ADE37A819FBD36300FE524F /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE37A419FBD36300FE524F /* Course.m */; };
-		4AFA60B51A22F4DB004C4009 /* walking_map.db in Resources */ = {isa = PBXBuildFile; fileRef = 4AFA60B41A22F4DB004C4009 /* walking_map.db */; };
+		4AE2A1631A32E4320045A042 /* walking_map.db in Resources */ = {isa = PBXBuildFile; fileRef = 4AE2A1621A32E4320045A042 /* walking_map.db */; };
 		4AFA60BE1A25E29D004C4009 /* map_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AFA60BC1A25E29D004C4009 /* map_button.png */; };
 		4AFA60BF1A25E29D004C4009 /* walkingmap_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AFA60BD1A25E29D004C4009 /* walkingmap_button.png */; };
 		9C08ABBC1A1463DC0096A6D6 /* CourseDetailMapView+Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C08ABBB1A1463DC0096A6D6 /* CourseDetailMapView+Alert.m */; };
@@ -458,7 +458,7 @@
 		4ADE378B19FA72CD00FE524F /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		4ADE37A419FBD36300FE524F /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
 		4ADE37A519FBD36300FE524F /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
-		4AFA60B41A22F4DB004C4009 /* walking_map.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = walking_map.db; sourceTree = "<group>"; };
+		4AE2A1621A32E4320045A042 /* walking_map.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = walking_map.db; sourceTree = "<group>"; };
 		4AFA60BC1A25E29D004C4009 /* map_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_button.png; sourceTree = "<group>"; };
 		4AFA60BD1A25E29D004C4009 /* walkingmap_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = walkingmap_button.png; sourceTree = "<group>"; };
 		9C08ABBA1A1463DC0096A6D6 /* CourseDetailMapView+Alert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CourseDetailMapView+Alert.h"; sourceTree = "<group>"; };
@@ -1045,7 +1045,6 @@
 		4A74F31019F6690D00DA5C82 /* tourism-app */ = {
 			isa = PBXGroup;
 			children = (
-				4AFA60B41A22F4DB004C4009 /* walking_map.db */,
 				4A86DFA61A2A1F9A00ABBD4C /* SVProgressHUD */,
 				4A7A6BD31A1D0A6D00ECDF98 /* top_images */,
 				4A8CE0351A300381008DA9A5 /* tagicon */,
@@ -1053,6 +1052,7 @@
 				9C08AC071A15EB640096A6D6 /* pin_image */,
 				4A8596961A0318D90097379A /* button_images */,
 				4ADE377A19FA728200FE524F /* fmdb */,
+				4AE2A1621A32E4320045A042 /* walking_map.db */,
 				4A74F31B19F6690D00DA5C82 /* Main.storyboard */,
 				9C521FBE1A319F8A00FAE5A3 /* pin_touch.png */,
 				4A74F31519F6690D00DA5C82 /* AppDelegate.h */,
@@ -1372,7 +1372,6 @@
 				4A25B8E21A160B920021CA03 /* asahiokachugakkou.png in Resources */,
 				4A25B9111A160B920021CA03 /* kikyoueki.png in Resources */,
 				9C521FBF1A319F8A00FAE5A3 /* pin_touch.png in Resources */,
-				4AFA60B51A22F4DB004C4009 /* walking_map.db in Resources */,
 				4A25B8C41A160B920021CA03 /* kashiwanosyougakkou.png in Resources */,
 				4A25B8EF1A160B920021CA03 /* shiomibashi.png in Resources */,
 				4A25B8D51A160B920021CA03 /* ichirituhakodatebyouin.png in Resources */,
@@ -1509,6 +1508,7 @@
 				4A25B8CE1A160B920021CA03 /* kametdakawakasenshiki.png in Resources */,
 				4A86DFC61A2DCE0400ABBD4C /* course_btn_4to3.png in Resources */,
 				4A25B92D1A160B920021CA03 /* ichiritsuhakodateesanbyouin.png in Resources */,
+				4AE2A1631A32E4320045A042 /* walking_map.db in Resources */,
 				4A86DFC41A2DCE0400ABBD4C /* info_btn_3to2.png in Resources */,
 				4A25B8D91A160B920021CA03 /* tokiwagawa.png in Resources */,
 				4A8CE04A1A300381008DA9A5 /* summer.png in Resources */,
