@@ -348,6 +348,17 @@ int numberOfIndexPath_row; //タップされたセルのindexを記録
 
 ///戻るボタンのアクション
 - (IBAction)myNavigationBuckButtonAction:(id)sender {
+    //ローディング表示処理
+    [SVProgressHUD showWithStatus:@"読み込み中"];
+
+    //戻るボタンがタップされたときのアクションメソッドの設定
+    [self performSelector:@selector(buckButtonSegue) withObject:nil afterDelay:0.1];
+}
+
+/**
+ 戻るボタンがタップされた時のアクションメソッド
+ */
+- (void)buckButtonSegue {
     [self.navigationController popViewControllerAnimated:YES];
 }
 
