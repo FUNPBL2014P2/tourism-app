@@ -24,6 +24,17 @@
 NSArray *categories;
 NSArray *category_images;
 
+/**
+ Viewの表示が完了後に呼び出される
+ 画面に表示されるたびに呼び出される
+ */
+- (void)viewDidAppear:(BOOL)animated {
+    //スクロールバーの点滅
+    [self.myTableView flashScrollIndicators];
+    //表示後の処理
+    [super viewDidAppear:animated];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -70,7 +81,7 @@ NSArray *category_images;
     
     //cellイメージの大きさを画像ではなくコードで調整できるようにした処理
     UIImage *cellImage = [UIImage imageNamed:[category_images objectAtIndex:indexPath.row]];
-
+    
     CGSize thumb = CGSizeMake(60, 60);
     UIGraphicsBeginImageContextWithOptions(thumb, NO, 0.0);
     [cellImage drawInRect:CGRectMake(0, 0, thumb.width, thumb.height)];
@@ -178,7 +189,7 @@ NSArray *category_images;
  完了が押された時のアクション
  */
 - (IBAction)myNavigationFinishAction:(id)sender {
-
+    
     [SVProgressHUD showWithStatus:@"読み込み中"];
     
     [self performSelector:@selector(segueAction) withObject:nil afterDelay:0.1];
@@ -209,18 +220,18 @@ NSArray *category_images;
 
 ///戻るボタンのアクション
 - (IBAction)myNavigationBuckButtonAction:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
+    //ローディング表示処理
+    [SVProgressHUD showWithStatus:@"読み込み中"];
+    
+    //戻るボタンがタップされたときに呼ばれるアクションメソッドの設定
+    [self performSelector:@selector(buckButtonSegue) withObject:nil afterDelay:0.1];
 }
 
 /**
- Viewの表示が完了後に呼び出される
- 画面に表示されるたびに呼び出される
+ 戻るボタンがタップされた時のアクションメソッド
  */
-- (void)viewDidAppear:(BOOL)animated {
-    //スクロールバーの点滅
-    [self.myTableView flashScrollIndicators];
-    //表示後の処理
-    [super viewDidAppear:animated];
+- (void)buckButtonSegue {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -228,6 +239,4 @@ NSArray *category_images;
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)myNavigationFinishButtonAction:(id)sender {
-}
 @end
