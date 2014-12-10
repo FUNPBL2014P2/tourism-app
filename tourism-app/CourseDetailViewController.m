@@ -264,7 +264,7 @@ int numberOfIndexPath_row; //タップされたセルのindexを記録
         }else if(indexPath.row == 1){
             cell.textLabel.text = [NSString stringWithFormat:@"移動距離:%.1fkm", course.distance];
         }else if(indexPath.row == 2){
-            cell.textLabel.text = [NSString stringWithFormat:@"男性消費カロリー:%dkcal\n女性消費カロリー:%dkcal", course.male_calories, course.female_calories];
+            cell.textLabel.text = [NSString stringWithFormat:@"男性消費カロリーの目安:%dkcal\n女性消費カロリーの目安:%dkcal", course.male_calories, course.female_calories];
             cell.textLabel.numberOfLines = 0; //改行可
         }else if(indexPath.row == 3){
             cell.textLabel.text = [NSString stringWithFormat:@"歩数:%d歩", course.steps];

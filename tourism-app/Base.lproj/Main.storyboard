@@ -57,24 +57,24 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYx-Nh-hBD">
                                 <rect key="frame" x="11" y="64" width="578" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">[はこウォークとは]
-はこウォークは、函館の景観を楽しみながらヘルスケアを行えるウォーキングアプリです。函館市が提供している「健康ウォーキングマップ」のデータを利用しています。47のウォーキングコースを収録しており、函館市内を網羅しています。各コースでは、魅力的なスポットの紹介をしています。一味違った函館の観光を楽しみたい方にもぴったりのアプリです。
+                                <mutableString key="text">[はこウォークとは]
+はこウォークは、函館の景観を楽しみながら歩くことでヘルスケアも行えるウォーキングアプリです。函館市が提供している「健康ウォーキングマップ」のデータを利用しています。47のウォーキングコースを収録しており、函館市内を網羅しています。各コースでは、魅力的なスポットの紹介をしています。一味違った函館の観光を楽しみたい方にもぴったりのアプリです。
 
 [はこウォークの主な機能]
 ・地図からコースを探すことができます
 ・一覧からコースを探すことができます
 ・季節毎のおすすめコース、近くに公園があるコース、近くに海があるコースを検索できます
-・47のコースを移動距離、カロリー、所用時間のそれぞれ、少ない順に並び替えることができます
+・コースの一覧を移動距離、カロリー、所用時間のそれぞれ、少ない順に並び替えることができます
 ・函館市が提供している「健康ウォーキングマップ」を見ることができます
 
 [推奨環境]
 はこウォークはGPSを利用するため、GPSを搭載したデバイスでのご利用をお勧めします。
 
 [協力サイト]
-健康ウォーキングマップ :  http://www.city.hakodate.hokkaido.jp/docs/2014012700900/
+健康ウォーキングマップ : http://www.city.hakodate.hokkaido.jp/docs/2014012700900/
 
 [サポートサイト]
-はこウォーク Facebookページ :  https://www.facebook.com/hakowalk
+はこウォーク Facebookページ : https://www.facebook.com/hakowalk
 
 [使い方]
 1. 地図からコースを選んで歩く
@@ -155,6 +155,9 @@ TOP画面
 赤いピンをタップし、吹き出しをタップします。
 
 
+※はこウォークに掲載している消費カロリーは以下の計算式によって算出しています。体重は成人男女(20歳~64歳)の平均体重を利用しています。METsは3と設定しています。
+消費カロリー(kcal)＝1.05×METs×時間×体重(kg)
+
 ※マップに表示されるマーカー、線、アイコンについて
 青いマーカー : 現在地を示しています
 赤い線 : 各コースのルートを示しています
@@ -167,7 +170,7 @@ JRアイコン : 最寄りのJRを示しています
 矢印アイコン : 1度タップすると現在地を示します。2度タップすると進む方向を示します。
 
 
-Copyright(c) Future University Hakodate. All Rights Reserved.</string>
+Copyright(c) Future University Hakodate. All Rights Reserved.</mutableString>
                                 <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
