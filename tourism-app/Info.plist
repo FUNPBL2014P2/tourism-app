@@ -23,11 +23,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>&apos;&apos;はこウォーク&apos;&apos;は現在の位置情報を利用します。よろしいですか？</string>
+	<string>''はこウォーク''は現在の位置情報を利用します。よろしいですか？</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>&apos;&apos;はこウォーク&apos;&apos;は現在の位置情報を利用します。よろしいですか？</string>
-	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
+	<string>''はこウォーク''は現在の位置情報を利用します。よろしいですか？</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
