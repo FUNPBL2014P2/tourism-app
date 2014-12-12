@@ -298,7 +298,6 @@ AppDelegate *appDelegate;
     
     for(int i = 0;i < [course_table_data count];i++) {
         Course *course = [course_table_data objectAtIndex:i];
-        NSLog(@"%lu", (unsigned long)[course_table_data count]);
         if([course.course_name isEqual:name]) {
             for (int j = 0; j < [course.spot_name count]; j++) {
                 CLLocationCoordinate2D pin_point = CLLocationCoordinate2DMake([[course.spot_latitude objectAtIndex:j] doubleValue],
@@ -306,7 +305,6 @@ AppDelegate *appDelegate;
                 spotAnnotation = [[CustomAnnotation alloc] initWithCoordinate:pin_point];
                 spotAnnotation.title = [course.spot_name objectAtIndex:j];
                 spotAnnotation.frag = @"spot";
-                
                 [pins addObject:spotAnnotation];
             }
         }
@@ -326,7 +324,6 @@ AppDelegate *appDelegate;
     
     for(int i = 0;i < [course_table_data count];i++) {
         Course *course = [course_table_data objectAtIndex:i];
-        NSLog(@"%lu", (unsigned long)[course_table_data count]);
         if([course.course_name isEqual:name]) {
             CLLocationCoordinate2D route_points[[course.routeid count]];
             for(int j = 0;j < [course.routeid count]; j++){

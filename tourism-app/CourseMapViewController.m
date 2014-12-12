@@ -11,7 +11,7 @@
 
 @interface CourseMapViewController ()
 
-///ツールバーのボタン
+///下部ツールバーのボタン
 @property UIButton *myButton;
 
 @end
@@ -25,8 +25,6 @@
 @synthesize myNaviItem;
 @synthesize locationManager;
 @synthesize selectid;
-
-MKAnnotationView *select_annotationView; //タップされたannotationviewを記録
 
 #pragma mark - UIViewController lifecicle event methods
 
@@ -343,8 +341,7 @@ MKAnnotationView *select_annotationView; //タップされたannotationviewを�
     [myMapView setShowsUserLocation:NO];
     
     //ローディングの表示が遅れるのを防ぐため、重い処理は別メソッドで処理する
-    select_annotationView = view;
-    [self performSelector:@selector(selectAnnotationtoName) withObject:nil afterDelay:0.1];
+    [self performSelector:@selector(selectAnnotationtoName:) withObject:view afterDelay:0.1];
 
 }
 
@@ -352,8 +349,8 @@ MKAnnotationView *select_annotationView; //タップされたannotationviewを�
  アノテーションボタンが押されたときに呼ばれるメソッドの中の重い処理をするメソッド
  重い処理を分けないとローディングの表示タイミングがずれるため重い処理をこのメソッドで行っている
   */
-- (void)selectAnnotationtoName{
-    course_name = select_annotationView.annotation.title;
+- (void)selectAnnotationtoName:(MKAnnotationView *)view {
+    course_name = view.annotation.title;
     [self performSegueWithIdentifier:@"MapToDetail" sender:self];
 }
 

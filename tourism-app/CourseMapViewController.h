@@ -21,13 +21,14 @@
 - (IBAction)myNavigationBuckButtonAction:(id)sender;
 @property (weak, nonatomic) IBOutlet MKMapView *myMapView;
 @property (weak, nonatomic) IBOutlet UIToolbar *myToolBar;
-@property (weak, nonatomic) IBOutlet UINavigationItem *myNaviItem;
+@property (weak, nonatomic) IBOutlet UINavigationItem *myNaviItem;//ナビゲーションバーに画像を表示するためのオブジェクト
 
 @property (nonatomic, retain) CLLocationManager *locationManager;
 @property (nonatomic)NSString *course_name;
 @property CourseModel *course_map_model;
 @property int selectid;//どのアノテーションが選択されているかを示すid
 
+//カテゴリでも参照可能なようにヘッダファイルに書いたメソッド
 - (void)stopLocationService;
 - (void)updateUserTrackingModeBtn:(MKUserTrackingMode)mode;
 
