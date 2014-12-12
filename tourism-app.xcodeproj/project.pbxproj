@@ -14,9 +14,9 @@
 		4A25B8C11A160B920021CA03 /* hokaidouhakodatemougakou.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B8091A160B920021CA03 /* hokaidouhakodatemougakou.png */; };
 		4A25B8C21A160B920021CA03 /* tayakomyunitisenta.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B80A1A160B920021CA03 /* tayakomyunitisenta.png */; };
 		4A25B8C31A160B920021CA03 /* tayayoujikouen.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B80B1A160B920021CA03 /* tayayoujikouen.png */; };
-		4A25B8C41A160B920021CA03 /* kashiwanosyougakkou.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B80D1A160B920021CA03 /* kashiwanosyougakkou.png */; };
+		4A25B8C41A160B920021CA03 /* kashiwanosyougakkou11.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B80D1A160B920021CA03 /* kashiwanosyougakkou11.png */; };
 		4A25B8C51A160B920021CA03 /* midorimachidori.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B80E1A160B920021CA03 /* midorimachidori.png */; };
-		4A25B8C61A160B920021CA03 /* sakuragaokadori.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B80F1A160B920021CA03 /* sakuragaokadori.png */; };
+		4A25B8C61A160B920021CA03 /* sakuragaokadori11.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B80F1A160B920021CA03 /* sakuragaokadori11.png */; };
 		4A25B8C71A160B920021CA03 /* hokaidoukaihatukyokuhakodatekaihatukensetubu.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B8111A160B920021CA03 /* hokaidoukaihatukyokuhakodatekaihatukensetubu.png */; };
 		4A25B8C81A160B920021CA03 /* okawachoukaikan.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B8121A160B920021CA03 /* okawachoukaikan.png */; };
 		4A25B8C91A160B920021CA03 /* taiyakouen.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B8131A160B920021CA03 /* taiyakouen.png */; };
@@ -28,8 +28,8 @@
 		4A25B8CF1A160B920021CA03 /* takamorisyougakkou.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B81B1A160B920021CA03 /* takamorisyougakkou.png */; };
 		4A25B8D01A160B920021CA03 /* hakodatetankidaigakuhuzokuyouchien.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B81D1A160B920021CA03 /* hakodatetankidaigakuhuzokuyouchien.png */; };
 		4A25B8D11A160B920021CA03 /* kashiwagichoukaikan.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B81E1A160B920021CA03 /* kashiwagichoukaikan.png */; };
-		4A25B8D21A160B920021CA03 /* kashiwanosyougakkou.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B81F1A160B920021CA03 /* kashiwanosyougakkou.png */; };
-		4A25B8D31A160B920021CA03 /* sakuragaokadori.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B8201A160B920021CA03 /* sakuragaokadori.png */; };
+		4A25B8D21A160B920021CA03 /* kashiwanosyougakkou15.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B81F1A160B920021CA03 /* kashiwanosyougakkou15.png */; };
+		4A25B8D31A160B920021CA03 /* sakuragaokadori15.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B8201A160B920021CA03 /* sakuragaokadori15.png */; };
 		4A25B8D41A160B920021CA03 /* hokaidoudaigakusuisangakubu.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B8221A160B920021CA03 /* hokaidoudaigakusuisangakubu.png */; };
 		4A25B8D51A160B920021CA03 /* ichirituhakodatebyouin.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B8231A160B920021CA03 /* ichirituhakodatebyouin.png */; };
 		4A25B8D61A160B920021CA03 /* minatochoukaikan.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B8241A160B920021CA03 /* minatochoukaikan.png */; };
@@ -51,14 +51,14 @@
 		4A25B8E61A160B920021CA03 /* koukuryokuchishinoritatehureaihiroba.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B83A1A160B920021CA03 /* koukuryokuchishinoritatehureaihiroba.png */; };
 		4A25B8E71A160B920021CA03 /* shisekishinoritateato.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B83B1A160B920021CA03 /* shisekishinoritateato.png */; };
 		4A25B8E81A160B920021CA03 /* hanazonochoukaikan.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B83D1A160B920021CA03 /* hanazonochoukaikan.png */; };
-		4A25B8E91A160B920021CA03 /* ryokuendouri.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B83E1A160B920021CA03 /* ryokuendouri.png */; };
+		4A25B8E91A160B920021CA03 /* ryokuendouri22.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B83E1A160B920021CA03 /* ryokuendouri22.png */; };
 		4A25B8EA1A160B920021CA03 /* shieihanazonodanchi.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B83F1A160B920021CA03 /* shieihanazonodanchi.png */; };
 		4A25B8EB1A160B920021CA03 /* kokurituhakodateshiryokusyougaisenta.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B8411A160B920021CA03 /* kokurituhakodateshiryokusyougaisenta.png */; };
 		4A25B8EC1A160B920021CA03 /* samegawa.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B8421A160B920021CA03 /* samegawa.png */; };
 		4A25B8ED1A160B920021CA03 /* onaribashi.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B8441A160B920021CA03 /* onaribashi.png */; };
 		4A25B8EE1A160B920021CA03 /* sakurabashi.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B8451A160B920021CA03 /* sakurabashi.png */; };
 		4A25B8EF1A160B920021CA03 /* shiomibashi.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B8461A160B920021CA03 /* shiomibashi.png */; };
-		4A25B8F01A160B920021CA03 /* ryokuendouri.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B8481A160B920021CA03 /* ryokuendouri.png */; };
+		4A25B8F01A160B920021CA03 /* ryokuendouri25.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B8481A160B920021CA03 /* ryokuendouri25.png */; };
 		4A25B8F11A160B920021CA03 /* yukurajinja.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B8491A160B920021CA03 /* yukurajinja.png */; };
 		4A25B8F21A160B920021CA03 /* yunokawashisyo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B84A1A160B920021CA03 /* yunokawashisyo.png */; };
 		4A25B8F31A160B920021CA03 /* bouyoudanchijichikaikan.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B84C1A160B920021CA03 /* bouyoudanchijichikaikan.png */; };
@@ -68,7 +68,7 @@
 		4A25B8F71A160B920021CA03 /* hiyoshichokaikan.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B8511A160B920021CA03 /* hiyoshichokaikan.png */; };
 		4A25B8F81A160B920021CA03 /* hiyoshigaokasyogakkou.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B8521A160B920021CA03 /* hiyoshigaokasyogakkou.png */; };
 		4A25B8F91A160B920021CA03 /* takokouen.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B8531A160B920021CA03 /* takokouen.png */; };
-		4A25B8FA1A160B920021CA03 /* esanwonozomu.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B8551A160B920021CA03 /* esanwonozomu.png */; };
+		4A25B8FA1A160B920021CA03 /* esanwonozomu28.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B8551A160B920021CA03 /* esanwonozomu28.png */; };
 		4A25B8FB1A160B920021CA03 /* ishizakihachimanjinja.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B8561A160B920021CA03 /* ishizakihachimanjinja.png */; };
 		4A25B8FC1A160B920021CA03 /* ishizakisyogakkou.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B8571A160B920021CA03 /* ishizakisyogakkou.png */; };
 		4A25B8FD1A160B920021CA03 /* bokujogamieruhukei.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B8591A160B920021CA03 /* bokujogamieruhukei.png */; };
@@ -118,7 +118,7 @@
 		4A25B9291A160B920021CA03 /* hondouridaiyonkouen.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B8941A160B920021CA03 /* hondouridaiyonkouen.png */; };
 		4A25B92A1A160B920021CA03 /* yamanoteyouzikouen.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B8951A160B920021CA03 /* yamanoteyouzikouen.png */; };
 		4A25B92B1A160B920021CA03 /* yamanotezyusangaikukouen.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B8961A160B920021CA03 /* yamanotezyusangaikukouen.png */; };
-		4A25B92C1A160B920021CA03 /* esanwonozomu.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B8981A160B920021CA03 /* esanwonozomu.png */; };
+		4A25B92C1A160B920021CA03 /* esanwonozomu43.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B8981A160B920021CA03 /* esanwonozomu43.png */; };
 		4A25B92D1A160B920021CA03 /* ichiritsuhakodateesanbyouin.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B8991A160B920021CA03 /* ichiritsuhakodateesanbyouin.png */; };
 		4A25B92E1A160B920021CA03 /* natowaesan.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B89A1A160B920021CA03 /* natowaesan.png */; };
 		4A25B92F1A160B920021CA03 /* todohokechugakkou.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A25B89C1A160B920021CA03 /* todohokechugakkou.png */; };
@@ -191,6 +191,7 @@
 		4ACC07B31A39BE8B00032FFE /* top_16to9.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ACC07A71A39BE8B00032FFE /* top_16to9.png */; };
 		4ACC07B41A39BE8B00032FFE /* top_3to2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ACC07A81A39BE8B00032FFE /* top_3to2.png */; };
 		4ACC07B51A39BE8B00032FFE /* top_4to3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ACC07A91A39BE8B00032FFE /* top_4to3.png */; };
+		4ACC07BD1A3A807900032FFE /* walking_map.db in Resources */ = {isa = PBXBuildFile; fileRef = 4ACC07BC1A3A807900032FFE /* walking_map.db */; };
 		4ADE376019FA109200FE524F /* TopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE375F19FA109200FE524F /* TopViewController.m */; };
 		4ADE376319FA1A5A00FE524F /* CourseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE376219FA1A5A00FE524F /* CourseTableViewController.m */; };
 		4ADE376619FA1B7900FE524F /* CourseMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE376519FA1B7900FE524F /* CourseMapViewController.m */; };
@@ -210,7 +211,6 @@
 		4ADE37A819FBD36300FE524F /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE37A419FBD36300FE524F /* Course.m */; };
 		4AE2A15F1A32D0230045A042 /* map_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AE2A15E1A32D0230045A042 /* map_button.png */; };
 		4AE2A1611A32D0290045A042 /* walkingmap_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AE2A1601A32D0290045A042 /* walkingmap_button.png */; };
-		4AFA60B51A22F4DB004C4009 /* walking_map.db in Resources */ = {isa = PBXBuildFile; fileRef = 4AFA60B41A22F4DB004C4009 /* walking_map.db */; };
 		9C08ABBC1A1463DC0096A6D6 /* CourseDetailMapView+Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C08ABBB1A1463DC0096A6D6 /* CourseDetailMapView+Alert.m */; };
 		9C08AC111A15ED490096A6D6 /* start_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C08AC101A15ED490096A6D6 /* start_pin.png */; };
 		9C1D31A81A0A164A0098053D /* boolbaritem.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C1D31A71A0A164A0098053D /* boolbaritem.png */; };
@@ -241,9 +241,9 @@
 		4A25B8091A160B920021CA03 /* hokaidouhakodatemougakou.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hokaidouhakodatemougakou.png; sourceTree = "<group>"; };
 		4A25B80A1A160B920021CA03 /* tayakomyunitisenta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tayakomyunitisenta.png; sourceTree = "<group>"; };
 		4A25B80B1A160B920021CA03 /* tayayoujikouen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tayayoujikouen.png; sourceTree = "<group>"; };
-		4A25B80D1A160B920021CA03 /* kashiwanosyougakkou.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kashiwanosyougakkou.png; sourceTree = "<group>"; };
+		4A25B80D1A160B920021CA03 /* kashiwanosyougakkou11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kashiwanosyougakkou11.png; sourceTree = "<group>"; };
 		4A25B80E1A160B920021CA03 /* midorimachidori.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = midorimachidori.png; sourceTree = "<group>"; };
-		4A25B80F1A160B920021CA03 /* sakuragaokadori.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sakuragaokadori.png; sourceTree = "<group>"; };
+		4A25B80F1A160B920021CA03 /* sakuragaokadori11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sakuragaokadori11.png; sourceTree = "<group>"; };
 		4A25B8111A160B920021CA03 /* hokaidoukaihatukyokuhakodatekaihatukensetubu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hokaidoukaihatukyokuhakodatekaihatukensetubu.png; sourceTree = "<group>"; };
 		4A25B8121A160B920021CA03 /* okawachoukaikan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = okawachoukaikan.png; sourceTree = "<group>"; };
 		4A25B8131A160B920021CA03 /* taiyakouen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = taiyakouen.png; sourceTree = "<group>"; };
@@ -255,8 +255,8 @@
 		4A25B81B1A160B920021CA03 /* takamorisyougakkou.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = takamorisyougakkou.png; sourceTree = "<group>"; };
 		4A25B81D1A160B920021CA03 /* hakodatetankidaigakuhuzokuyouchien.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hakodatetankidaigakuhuzokuyouchien.png; sourceTree = "<group>"; };
 		4A25B81E1A160B920021CA03 /* kashiwagichoukaikan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kashiwagichoukaikan.png; sourceTree = "<group>"; };
-		4A25B81F1A160B920021CA03 /* kashiwanosyougakkou.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kashiwanosyougakkou.png; sourceTree = "<group>"; };
-		4A25B8201A160B920021CA03 /* sakuragaokadori.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sakuragaokadori.png; sourceTree = "<group>"; };
+		4A25B81F1A160B920021CA03 /* kashiwanosyougakkou15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kashiwanosyougakkou15.png; sourceTree = "<group>"; };
+		4A25B8201A160B920021CA03 /* sakuragaokadori15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sakuragaokadori15.png; sourceTree = "<group>"; };
 		4A25B8221A160B920021CA03 /* hokaidoudaigakusuisangakubu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hokaidoudaigakusuisangakubu.png; sourceTree = "<group>"; };
 		4A25B8231A160B920021CA03 /* ichirituhakodatebyouin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ichirituhakodatebyouin.png; sourceTree = "<group>"; };
 		4A25B8241A160B920021CA03 /* minatochoukaikan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minatochoukaikan.png; sourceTree = "<group>"; };
@@ -278,14 +278,14 @@
 		4A25B83A1A160B920021CA03 /* koukuryokuchishinoritatehureaihiroba.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = koukuryokuchishinoritatehureaihiroba.png; sourceTree = "<group>"; };
 		4A25B83B1A160B920021CA03 /* shisekishinoritateato.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shisekishinoritateato.png; sourceTree = "<group>"; };
 		4A25B83D1A160B920021CA03 /* hanazonochoukaikan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hanazonochoukaikan.png; sourceTree = "<group>"; };
-		4A25B83E1A160B920021CA03 /* ryokuendouri.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ryokuendouri.png; sourceTree = "<group>"; };
+		4A25B83E1A160B920021CA03 /* ryokuendouri22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ryokuendouri22.png; sourceTree = "<group>"; };
 		4A25B83F1A160B920021CA03 /* shieihanazonodanchi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shieihanazonodanchi.png; sourceTree = "<group>"; };
 		4A25B8411A160B920021CA03 /* kokurituhakodateshiryokusyougaisenta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kokurituhakodateshiryokusyougaisenta.png; sourceTree = "<group>"; };
 		4A25B8421A160B920021CA03 /* samegawa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = samegawa.png; sourceTree = "<group>"; };
 		4A25B8441A160B920021CA03 /* onaribashi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onaribashi.png; sourceTree = "<group>"; };
 		4A25B8451A160B920021CA03 /* sakurabashi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sakurabashi.png; sourceTree = "<group>"; };
 		4A25B8461A160B920021CA03 /* shiomibashi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shiomibashi.png; sourceTree = "<group>"; };
-		4A25B8481A160B920021CA03 /* ryokuendouri.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ryokuendouri.png; sourceTree = "<group>"; };
+		4A25B8481A160B920021CA03 /* ryokuendouri25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ryokuendouri25.png; sourceTree = "<group>"; };
 		4A25B8491A160B920021CA03 /* yukurajinja.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yukurajinja.png; sourceTree = "<group>"; };
 		4A25B84A1A160B920021CA03 /* yunokawashisyo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yunokawashisyo.png; sourceTree = "<group>"; };
 		4A25B84C1A160B920021CA03 /* bouyoudanchijichikaikan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bouyoudanchijichikaikan.png; sourceTree = "<group>"; };
@@ -295,7 +295,7 @@
 		4A25B8511A160B920021CA03 /* hiyoshichokaikan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hiyoshichokaikan.png; sourceTree = "<group>"; };
 		4A25B8521A160B920021CA03 /* hiyoshigaokasyogakkou.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hiyoshigaokasyogakkou.png; sourceTree = "<group>"; };
 		4A25B8531A160B920021CA03 /* takokouen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = takokouen.png; sourceTree = "<group>"; };
-		4A25B8551A160B920021CA03 /* esanwonozomu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = esanwonozomu.png; sourceTree = "<group>"; };
+		4A25B8551A160B920021CA03 /* esanwonozomu28.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = esanwonozomu28.png; sourceTree = "<group>"; };
 		4A25B8561A160B920021CA03 /* ishizakihachimanjinja.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ishizakihachimanjinja.png; sourceTree = "<group>"; };
 		4A25B8571A160B920021CA03 /* ishizakisyogakkou.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ishizakisyogakkou.png; sourceTree = "<group>"; };
 		4A25B8591A160B920021CA03 /* bokujogamieruhukei.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bokujogamieruhukei.png; sourceTree = "<group>"; };
@@ -345,7 +345,7 @@
 		4A25B8941A160B920021CA03 /* hondouridaiyonkouen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hondouridaiyonkouen.png; sourceTree = "<group>"; };
 		4A25B8951A160B920021CA03 /* yamanoteyouzikouen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yamanoteyouzikouen.png; sourceTree = "<group>"; };
 		4A25B8961A160B920021CA03 /* yamanotezyusangaikukouen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yamanotezyusangaikukouen.png; sourceTree = "<group>"; };
-		4A25B8981A160B920021CA03 /* esanwonozomu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = esanwonozomu.png; sourceTree = "<group>"; };
+		4A25B8981A160B920021CA03 /* esanwonozomu43.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = esanwonozomu43.png; sourceTree = "<group>"; };
 		4A25B8991A160B920021CA03 /* ichiritsuhakodateesanbyouin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ichiritsuhakodateesanbyouin.png; sourceTree = "<group>"; };
 		4A25B89A1A160B920021CA03 /* natowaesan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = natowaesan.png; sourceTree = "<group>"; };
 		4A25B89C1A160B920021CA03 /* todohokechugakkou.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = todohokechugakkou.png; sourceTree = "<group>"; };
@@ -426,6 +426,7 @@
 		4ACC07A71A39BE8B00032FFE /* top_16to9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = top_16to9.png; sourceTree = "<group>"; };
 		4ACC07A81A39BE8B00032FFE /* top_3to2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = top_3to2.png; sourceTree = "<group>"; };
 		4ACC07A91A39BE8B00032FFE /* top_4to3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = top_4to3.png; sourceTree = "<group>"; };
+		4ACC07BC1A3A807900032FFE /* walking_map.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = walking_map.db; sourceTree = "<group>"; };
 		4ADE375E19FA109200FE524F /* TopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopViewController.h; sourceTree = "<group>"; };
 		4ADE375F19FA109200FE524F /* TopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopViewController.m; sourceTree = "<group>"; };
 		4ADE376119FA1A5A00FE524F /* CourseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseTableViewController.h; sourceTree = "<group>"; };
@@ -460,7 +461,6 @@
 		4ADE37A519FBD36300FE524F /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
 		4AE2A15E1A32D0230045A042 /* map_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_button.png; sourceTree = "<group>"; };
 		4AE2A1601A32D0290045A042 /* walkingmap_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = walkingmap_button.png; sourceTree = "<group>"; };
-		4AFA60B41A22F4DB004C4009 /* walking_map.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = walking_map.db; sourceTree = "<group>"; };
 		9C08ABBA1A1463DC0096A6D6 /* CourseDetailMapView+Alert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CourseDetailMapView+Alert.h"; sourceTree = "<group>"; };
 		9C08ABBB1A1463DC0096A6D6 /* CourseDetailMapView+Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CourseDetailMapView+Alert.m"; sourceTree = "<group>"; };
 		9C08AC101A15ED490096A6D6 /* start_pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = start_pin.png; sourceTree = "<group>"; };
@@ -576,9 +576,9 @@
 		4A25B80C1A160B920021CA03 /* 11 */ = {
 			isa = PBXGroup;
 			children = (
-				4A25B80D1A160B920021CA03 /* kashiwanosyougakkou.png */,
+				4A25B80D1A160B920021CA03 /* kashiwanosyougakkou11.png */,
 				4A25B80E1A160B920021CA03 /* midorimachidori.png */,
-				4A25B80F1A160B920021CA03 /* sakuragaokadori.png */,
+				4A25B80F1A160B920021CA03 /* sakuragaokadori11.png */,
 			);
 			path = 11;
 			sourceTree = "<group>";
@@ -618,8 +618,8 @@
 			children = (
 				4A25B81D1A160B920021CA03 /* hakodatetankidaigakuhuzokuyouchien.png */,
 				4A25B81E1A160B920021CA03 /* kashiwagichoukaikan.png */,
-				4A25B81F1A160B920021CA03 /* kashiwanosyougakkou.png */,
-				4A25B8201A160B920021CA03 /* sakuragaokadori.png */,
+				4A25B81F1A160B920021CA03 /* kashiwanosyougakkou15.png */,
+				4A25B8201A160B920021CA03 /* sakuragaokadori15.png */,
 			);
 			path = 15;
 			sourceTree = "<group>";
@@ -697,7 +697,7 @@
 			isa = PBXGroup;
 			children = (
 				4A25B83D1A160B920021CA03 /* hanazonochoukaikan.png */,
-				4A25B83E1A160B920021CA03 /* ryokuendouri.png */,
+				4A25B83E1A160B920021CA03 /* ryokuendouri22.png */,
 				4A25B83F1A160B920021CA03 /* shieihanazonodanchi.png */,
 			);
 			path = 22;
@@ -725,7 +725,7 @@
 		4A25B8471A160B920021CA03 /* 25 */ = {
 			isa = PBXGroup;
 			children = (
-				4A25B8481A160B920021CA03 /* ryokuendouri.png */,
+				4A25B8481A160B920021CA03 /* ryokuendouri25.png */,
 				4A25B8491A160B920021CA03 /* yukurajinja.png */,
 				4A25B84A1A160B920021CA03 /* yunokawashisyo.png */,
 			);
@@ -756,7 +756,7 @@
 		4A25B8541A160B920021CA03 /* 28 */ = {
 			isa = PBXGroup;
 			children = (
-				4A25B8551A160B920021CA03 /* esanwonozomu.png */,
+				4A25B8551A160B920021CA03 /* esanwonozomu28.png */,
 				4A25B8561A160B920021CA03 /* ishizakihachimanjinja.png */,
 				4A25B8571A160B920021CA03 /* ishizakisyogakkou.png */,
 			);
@@ -925,7 +925,7 @@
 		4A25B8971A160B920021CA03 /* 43 */ = {
 			isa = PBXGroup;
 			children = (
-				4A25B8981A160B920021CA03 /* esanwonozomu.png */,
+				4A25B8981A160B920021CA03 /* esanwonozomu43.png */,
 				4A25B8991A160B920021CA03 /* ichiritsuhakodateesanbyouin.png */,
 				4A25B89A1A160B920021CA03 /* natowaesan.png */,
 			);
@@ -1045,7 +1045,7 @@
 		4A74F31019F6690D00DA5C82 /* tourism-app */ = {
 			isa = PBXGroup;
 			children = (
-				4AFA60B41A22F4DB004C4009 /* walking_map.db */,
+				4ACC07BC1A3A807900032FFE /* walking_map.db */,
 				4A86DFA61A2A1F9A00ABBD4C /* SVProgressHUD */,
 				4ACC07981A39BE8B00032FFE /* top_images */,
 				4A8CE0351A300381008DA9A5 /* tagicon */,
@@ -1340,7 +1340,7 @@
 				4A25B9081A160B920021CA03 /* kouritsuhakodatemiraidaigaku.png in Resources */,
 				4A25B9301A160B920021CA03 /* todohokesougousenta.png in Resources */,
 				4A25B9461A160B920021CA03 /* goryoukakukouen.png in Resources */,
-				4A25B8F01A160B920021CA03 /* ryokuendouri.png in Resources */,
+				4A25B8F01A160B920021CA03 /* ryokuendouri25.png in Resources */,
 				4A25B8BE1A160B920021CA03 /* kouyaji.png in Resources */,
 				4ACC07AB1A39BE8B00032FFE /* info_btn_16to9.png in Resources */,
 				4A25B8F61A160B920021CA03 /* hakodaterasarugakuen.png in Resources */,
@@ -1372,19 +1372,18 @@
 				4A25B8E21A160B920021CA03 /* asahiokachugakkou.png in Resources */,
 				4A25B9111A160B920021CA03 /* kikyoueki.png in Resources */,
 				9C521FBF1A319F8A00FAE5A3 /* pin_touch.png in Resources */,
-				4AFA60B51A22F4DB004C4009 /* walking_map.db in Resources */,
-				4A25B8C41A160B920021CA03 /* kashiwanosyougakkou.png in Resources */,
+				4A25B8C41A160B920021CA03 /* kashiwanosyougakkou11.png in Resources */,
 				4ACC07B31A39BE8B00032FFE /* top_16to9.png in Resources */,
 				4A25B8EF1A160B920021CA03 /* shiomibashi.png in Resources */,
 				4A25B8D51A160B920021CA03 /* ichirituhakodatebyouin.png in Resources */,
 				4A25B9421A160B920021CA03 /* kamedahachimangu.png in Resources */,
 				4A7A6BF21A1F1B9F00ECDF98 /* shiden.png in Resources */,
 				4A25B90D1A160B920021CA03 /* tanshinsyougakkou.png in Resources */,
-				4A25B8D31A160B920021CA03 /* sakuragaokadori.png in Resources */,
+				4A25B8D31A160B920021CA03 /* sakuragaokadori15.png in Resources */,
 				4A25B9121A160B920021CA03 /* hokaidouhakodatetoukatsudenryokusenta.png in Resources */,
 				4A8CE0461A300381008DA9A5 /* sea.png in Resources */,
 				4A86DFAB1A2A1F9A00ABBD4C /* SVProgressHUD.bundle in Resources */,
-				4A25B8FA1A160B920021CA03 /* esanwonozomu.png in Resources */,
+				4A25B8FA1A160B920021CA03 /* esanwonozomu28.png in Resources */,
 				4A25B9311A160B920021CA03 /* tyoudhibiti.png in Resources */,
 				4A8CE0551A3016F5008DA9A5 /* spring_on.png in Resources */,
 				4A25B8CA1A160B920021CA03 /* matobachoukaikan.png in Resources */,
@@ -1411,7 +1410,7 @@
 				4A25B8E41A160B920021CA03 /* asahiokasyogakkou.png in Resources */,
 				4A25B8C01A160B920021CA03 /* yachigashirachoukaikan.png in Resources */,
 				4A25B8E31A160B920021CA03 /* asahiokakouen.png in Resources */,
-				4A25B8D21A160B920021CA03 /* kashiwanosyougakkou.png in Resources */,
+				4A25B8D21A160B920021CA03 /* kashiwanosyougakkou15.png in Resources */,
 				4A25B8DA1A160B920021CA03 /* kitahamachoukaikan.png in Resources */,
 				4A25B8FB1A160B920021CA03 /* ishizakihachimanjinja.png in Resources */,
 				4A25B8E71A160B920021CA03 /* shisekishinoritateato.png in Resources */,
@@ -1423,7 +1422,7 @@
 				4A25B8E51A160B920021CA03 /* hakodateshigyosonsenta.png in Resources */,
 				4A25B9171A160B920021CA03 /* kamedaseisyounensenta.png in Resources */,
 				4ACC07AE1A39BE8B00032FFE /* info_btn_3to2.png in Resources */,
-				4A25B8E91A160B920021CA03 /* ryokuendouri.png in Resources */,
+				4A25B8E91A160B920021CA03 /* ryokuendouri22.png in Resources */,
 				9C1D31A81A0A164A0098053D /* boolbaritem.png in Resources */,
 				4A25B92F1A160B920021CA03 /* todohokechugakkou.png in Resources */,
 				4A25B93F1A160B920021CA03 /* hakodatekouen.png in Resources */,
@@ -1462,7 +1461,7 @@
 				4A74F31F19F6690D00DA5C82 /* Images.xcassets in Resources */,
 				4A25B8CD1A160B920021CA03 /* ishikawatakubokusyoukouen.png in Resources */,
 				4A25B9291A160B920021CA03 /* hondouridaiyonkouen.png in Resources */,
-				4A25B92C1A160B920021CA03 /* esanwonozomu.png in Resources */,
+				4A25B92C1A160B920021CA03 /* esanwonozomu43.png in Resources */,
 				4A25B93E1A160B920021CA03 /* gokokujinja.png in Resources */,
 				4A25B8D01A160B920021CA03 /* hakodatetankidaigakuhuzokuyouchien.png in Resources */,
 				4A8CE0631A301885008DA9A5 /* winter_category.png in Resources */,
@@ -1509,6 +1508,7 @@
 				9C08AC111A15ED490096A6D6 /* start_pin.png in Resources */,
 				4A25B8F51A160B920021CA03 /* kadan.png in Resources */,
 				4A25B91E1A160B920021CA03 /* hakodateshirituhakodateyouchienheienkinenhi.png in Resources */,
+				4ACC07BD1A3A807900032FFE /* walking_map.db in Resources */,
 				4A25B8CE1A160B920021CA03 /* kametdakawakasenshiki.png in Resources */,
 				4A25B92D1A160B920021CA03 /* ichiritsuhakodateesanbyouin.png in Resources */,
 				4A25B8D91A160B920021CA03 /* tokiwagawa.png in Resources */,
@@ -1516,7 +1516,7 @@
 				4A25B92A1A160B920021CA03 /* yamanoteyouzikouen.png in Resources */,
 				4A8CE05B1A301832008DA9A5 /* park_category.png in Resources */,
 				4A25B9441A160B920021CA03 /* hakodatekeirinjou.png in Resources */,
-				4A25B8C61A160B920021CA03 /* sakuragaokadori.png in Resources */,
+				4A25B8C61A160B920021CA03 /* sakuragaokadori11.png in Resources */,
 				4A25B9281A160B920021CA03 /* hinbarigaokachokaisyukaizyo.png in Resources */,
 				4A25B9091A160B920021CA03 /* oumitei.png in Resources */,
 				4ACC07B51A39BE8B00032FFE /* top_4to3.png in Resources */,
