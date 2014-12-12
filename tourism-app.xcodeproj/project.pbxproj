@@ -191,7 +191,7 @@
 		4ACC07B31A39BE8B00032FFE /* top_16to9.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ACC07A71A39BE8B00032FFE /* top_16to9.png */; };
 		4ACC07B41A39BE8B00032FFE /* top_3to2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ACC07A81A39BE8B00032FFE /* top_3to2.png */; };
 		4ACC07B51A39BE8B00032FFE /* top_4to3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ACC07A91A39BE8B00032FFE /* top_4to3.png */; };
-		4ACC07BB1A39DDA100032FFE /* walking_map.db in Resources */ = {isa = PBXBuildFile; fileRef = 4ACC07BA1A39DDA100032FFE /* walking_map.db */; };
+		4ACC07BD1A3A807900032FFE /* walking_map.db in Resources */ = {isa = PBXBuildFile; fileRef = 4ACC07BC1A3A807900032FFE /* walking_map.db */; };
 		4ADE376019FA109200FE524F /* TopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE375F19FA109200FE524F /* TopViewController.m */; };
 		4ADE376319FA1A5A00FE524F /* CourseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE376219FA1A5A00FE524F /* CourseTableViewController.m */; };
 		4ADE376619FA1B7900FE524F /* CourseMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE376519FA1B7900FE524F /* CourseMapViewController.m */; };
@@ -426,7 +426,7 @@
 		4ACC07A71A39BE8B00032FFE /* top_16to9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = top_16to9.png; sourceTree = "<group>"; };
 		4ACC07A81A39BE8B00032FFE /* top_3to2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = top_3to2.png; sourceTree = "<group>"; };
 		4ACC07A91A39BE8B00032FFE /* top_4to3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = top_4to3.png; sourceTree = "<group>"; };
-		4ACC07BA1A39DDA100032FFE /* walking_map.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = walking_map.db; sourceTree = "<group>"; };
+		4ACC07BC1A3A807900032FFE /* walking_map.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = walking_map.db; sourceTree = "<group>"; };
 		4ADE375E19FA109200FE524F /* TopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopViewController.h; sourceTree = "<group>"; };
 		4ADE375F19FA109200FE524F /* TopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopViewController.m; sourceTree = "<group>"; };
 		4ADE376119FA1A5A00FE524F /* CourseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseTableViewController.h; sourceTree = "<group>"; };
@@ -1045,7 +1045,7 @@
 		4A74F31019F6690D00DA5C82 /* tourism-app */ = {
 			isa = PBXGroup;
 			children = (
-				4ACC07BA1A39DDA100032FFE /* walking_map.db */,
+				4ACC07BC1A3A807900032FFE /* walking_map.db */,
 				4A86DFA61A2A1F9A00ABBD4C /* SVProgressHUD */,
 				4ACC07981A39BE8B00032FFE /* top_images */,
 				4A8CE0351A300381008DA9A5 /* tagicon */,
@@ -1508,7 +1508,7 @@
 				9C08AC111A15ED490096A6D6 /* start_pin.png in Resources */,
 				4A25B8F51A160B920021CA03 /* kadan.png in Resources */,
 				4A25B91E1A160B920021CA03 /* hakodateshirituhakodateyouchienheienkinenhi.png in Resources */,
-				4ACC07BB1A39DDA100032FFE /* walking_map.db in Resources */,
+				4ACC07BD1A3A807900032FFE /* walking_map.db in Resources */,
 				4A25B8CE1A160B920021CA03 /* kametdakawakasenshiki.png in Resources */,
 				4A25B92D1A160B920021CA03 /* ichiritsuhakodateesanbyouin.png in Resources */,
 				4A25B8D91A160B920021CA03 /* tokiwagawa.png in Resources */,
