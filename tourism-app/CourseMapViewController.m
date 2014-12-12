@@ -43,7 +43,7 @@ MKAnnotationView *select_annotationView; //タップされたannotationviewを�
     myMapView.delegate = self;
     self.locationManager.delegate = self;
     
-    //ツールバーに画像を配置する処理
+    //上部ツールバーに画像を配置する処理
     UIImage *titleImage = [UIImage imageNamed:@"pin_touch.png"];
     UIImageView *titleImageView = [[UIImageView alloc] initWithImage:titleImage];
     titleImageView.frame = CGRectMake(0, 0, titleImage.size.width * 0.35, titleImage.size.height * 0.35);//適当にサイズ調整
@@ -52,16 +52,31 @@ MKAnnotationView *select_annotationView; //タップされたannotationviewを�
     [titleView addSubview:titleImageView];
     self.myNaviItem.titleView = titleView;
     
-    myMapView.showsUserLocation = YES;
-    [myMapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
-    
-    //iOS8以上とiOS7未満では位置情報の取得方法が変更された
-    //ここではiOS7未満での位置情報の取得開始
-    [self.locationManager startUpdatingLocation];
-    
     //ツールバーの詳細設定はtoolBarCustomメソッドで記述
     [self toolBarCustom];
     [self.myButton addTarget:self action:@selector(myButtonTapped) forControlEvents:UIControlEventTouchUpInside];
+    [self updateUserTrackingModeBtn:MKUserTrackingModeNone];
+    [self.myMapView setUserTrackingMode:MKUserTrackingModeNone];
+    
+    
+    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+        // iOS バージョンが 8 以上で、requestWhenInUseAuthorization メソッドが
+        // 利用できる場合
+        
+        // 位置情報測位の許可を求めるメッセージを表示する
+        [self.locationManager requestWhenInUseAuthorization];
+    } else {
+        // iOS バージョンが 8 未満で、requestAlwaysAuthorization メソッドが
+        // 利用できない場合
+        
+        // 測位を開始する
+        [self.locationManager startUpdatingLocation];
+        if([CLLocationManager locationServicesEnabled]){
+            [self updateUserTrackingModeBtn:MKUserTrackingModeFollow];
+            [self.myMapView setUserTrackingMode:MKUserTrackingModeFollow];
+        }
+    }
+
     
     //ここからviewとmodelをつなぐ処理
     course_map_model = [[CourseModel alloc] init];
@@ -118,7 +133,6 @@ MKAnnotationView *select_annotationView; //タップされたannotationviewを�
     UIBarButtonItem *customBarItem = [[UIBarButtonItem alloc]initWithCustomView:self.myButton];
     NSArray *barButtons = [NSArray arrayWithObjects:customBarItem, nil];
     [myToolBar setItems:barButtons];
-    [self updateUserTrackingModeBtn:MKUserTrackingModeFollow];
 }
 
 /**
@@ -282,8 +296,12 @@ MKAnnotationView *select_annotationView; //タップされたannotationviewを�
     self.myButton.imageView.transform = CGAffineTransformMakeScale(0.23, 0.23);
     [UIView commitAnimations];
     
-    [self updateUserTrackingModeBtn:mode];
-    [myMapView setUserTrackingMode:mode animated:YES];
+    
+    
+        [self updateUserTrackingModeBtn:mode];
+         [myMapView setUserTrackingMode:mode animated:YES];
+
+    
 }
 
 /**

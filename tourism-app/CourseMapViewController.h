@@ -29,5 +29,6 @@
 @property int selectid;//どのアノテーションが選択されているかを示すid
 
 - (void)stopLocationService;
+- (void)updateUserTrackingModeBtn:(MKUserTrackingMode)mode;
 
 @end
