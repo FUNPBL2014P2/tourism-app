@@ -22,25 +22,22 @@
  */
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
     
-    if (status == kCLAuthorizationStatusNotDetermined) {
-        
-        //iOS８での位置情報取得開始
-        if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
-            
-            [self.locationManager requestWhenInUseAuthorization];
-        }
-    } else if (status == kCLAuthorizationStatusAuthorizedAlways || status == kCLAuthorizationStatusAuthorizedWhenInUse) {
+    
+    
+    if (status == kCLAuthorizationStatusAuthorizedAlways || status == kCLAuthorizationStatusAuthorizedWhenInUse) {
         
         // 位置情報測位の許可状態が「常に許可」または「使用中のみ」の場合、
         // 測位を開始する（iOS バージョンが 8 以上の場合のみ該当する）
         // ※iOS8 以上の場合、位置情報測位が許可されていない状態で
         // startUpdatingLocation メソッドを呼び出しても、何も行われない。
         [self.locationManager startUpdatingLocation];
+        
     } else if (status == kCLAuthorizationStatusRestricted) {
         
+        [self.myMapView setUserTrackingMode:MKUserTrackingModeNone];
+        [self updateUserTrackingModeBtn:MKUserTrackingModeNone];
+        
         if (![UIAlertController class]) {
-            
-            [self stopLocationService];
             
             UIAlertView *alertView = [[UIAlertView alloc]
                                       initWithTitle:@"エラー"
@@ -52,7 +49,8 @@
         }
     } else if (status == kCLAuthorizationStatusDenied){
         
-        [self stopLocationService];
+        [self.myMapView setUserTrackingMode:MKUserTrackingModeNone];
+        [self updateUserTrackingModeBtn:MKUserTrackingModeNone];
         
         //iOS8とそれ以前ではアラートに使うクラスが違うため、条件分岐を用いている
         if ([UIAlertController class]) {
@@ -92,7 +90,8 @@
         }
     } else {
         
-        [self stopLocationService];
+        [self.myMapView setUserTrackingMode:MKUserTrackingModeNone];
+        [self updateUserTrackingModeBtn:MKUserTrackingModeNone];
         
         if ([UIAlertController class]) {
             
@@ -149,6 +148,10 @@
  */
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
     if (error) {
+        
+        [self.myMapView setUserTrackingMode:MKUserTrackingModeNone];
+        [self updateUserTrackingModeBtn:MKUserTrackingModeNone];
+        
         if ([error code] != kCLErrorDenied){
             
             if ([UIAlertController class]) {
@@ -171,7 +174,7 @@
                 UIAlertView *alertView =
                 [[UIAlertView alloc] initWithTitle:@"位置情報の取得に失敗しました。"
                                            message:nil
-                                          delegate:self
+                                          delegate:nil
                                  cancelButtonTitle:@"OK"
                                  otherButtonTitles:nil];
                 [alertView show];
