@@ -17,6 +17,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    // ここでスレッドを止める
+    [NSThread sleepForTimeInterval:1.2];
+    //sleep(1);
+    
     return YES;
 }
 
