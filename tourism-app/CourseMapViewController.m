@@ -92,6 +92,19 @@
     for(int i = 0; i < [lines count]; i++) {
         [myMapView addOverlay:[lines objectAtIndex:i]];
     }
+    
+    CLLocationCoordinate2D center;
+    center.latitude = 41.804357; // 経度
+    center.longitude = 140.751422;// 緯度
+    [myMapView setCenterCoordinate:center animated:NO];
+    
+    // 縮尺を指定
+    MKCoordinateRegion region = myMapView.region;
+    region.center = center;
+    region.span.latitudeDelta = 0.095;
+    region.span.longitudeDelta = 0.095;
+    [myMapView setRegion:region animated:NO];
+
 }
 
 /**
