@@ -29,5 +29,6 @@
 @property CourseModel *course_map_model;
 
 - (void)stopLocationService;
+- (void)updateUserTrackingModeBtn:(MKUserTrackingMode)mode;
 
 @end

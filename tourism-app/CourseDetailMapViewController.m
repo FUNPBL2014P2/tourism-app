@@ -43,15 +43,26 @@
     self.locationManager.delegate = self;
     
     myMapView.showsUserLocation = YES;
-    [myMapView setUserTrackingMode:MKUserTrackingModeNone animated:YES];
-    
-    //iOS8以上とiOS7未満では位置情報の取得方法が変更された
-    //ここではiOS7未満での位置情報の取得開始
-    [self.locationManager startUpdatingLocation];
     
     //ツールバーの詳細設定はtoolBarCustomメソッドで記述
     [self toolBarCustom];
     [self.myButton addTarget:self action:@selector(myButtonTapped) forControlEvents:UIControlEventTouchUpInside];
+    
+    //現在地追跡モードの初期化
+    [self updateUserTrackingModeBtn:MKUserTrackingModeNone];
+    [self.myMapView setUserTrackingMode:MKUserTrackingModeNone];
+    
+    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+        // iOS バージョンが 8 以上で、requestWhenInUseAuthorization メソッドが利用できる場合
+        // 位置情報測位の許可を求めるメッセージを表示する
+        [self.locationManager requestWhenInUseAuthorization];
+    } else {
+        // iOS バージョンが 8 未満で、requestAlwaysAuthorization メソッドが利用できない場合
+        // 測位を開始する
+        [self.locationManager startUpdatingLocation];
+        
+    }
+
     
     myNavigationItem.title = course_name;
     
@@ -242,7 +253,6 @@
             annotationView.image = [UIImage imageNamed:@"train.png"];
         }
         
-        
         annotationView.canShowCallout = YES;
         annotationView.bounds = CGRectMake(0, 0, 50, 50);
         annotationView.centerOffset = CGPointMake(18, -25); // アイコンの中心を設定する
@@ -273,38 +283,78 @@
  myButtonが押されたときに呼出されるメソッド
  */
 - (void)myButtonTapped{
-    //アニメーションの設定
-    [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDuration:0.4];
-    [UIView setAnimationDelay:0];
-    [UIView setAnimationRepeatCount:1.0];
-    [UIView setAnimationCurve:UIViewAnimationCurveLinear];
-    
-    MKUserTrackingMode mode;
-    
-    //transformに小さいサイズから大きいサイズを設定することで
-    //アニメーションによりボタンに動きを与える
-    //またスイッチ文で、MKUserTrackingModeを切り替え
-    switch (myMapView.userTrackingMode) {
-        case MKUserTrackingModeNone:
-        default:
-            mode = MKUserTrackingModeFollow;
-            break;
-        case MKUserTrackingModeFollow:
-            mode = MKUserTrackingModeFollowWithHeading;
-            self.myButton.imageView.transform = CGAffineTransformMakeScale(0.001, 0.001);
-            break;
-        case MKUserTrackingModeFollowWithHeading:
-            mode = MKUserTrackingModeNone;
-            self.myButton.imageView.transform = CGAffineTransformMakeScale(0.001, 0.001);
-            break;
+    if([CLLocationManager locationServicesEnabled]){
+        //アニメーションの設定
+        [UIView beginAnimations:nil context:nil];
+        [UIView setAnimationDuration:0.4];
+        [UIView setAnimationDelay:0];
+        [UIView setAnimationRepeatCount:1.0];
+        [UIView setAnimationCurve:UIViewAnimationCurveLinear];
+        
+        MKUserTrackingMode mode;
+        
+        //transformに小さいサイズから大きいサイズを設定することで
+        //アニメーションによりボタンに動きを与える
+        //またスイッチ文で、MKUserTrackingModeを切り替え
+        switch (myMapView.userTrackingMode) {
+            case MKUserTrackingModeNone:
+            default:
+                mode = MKUserTrackingModeFollow;
+                break;
+            case MKUserTrackingModeFollow:
+                mode = MKUserTrackingModeFollowWithHeading;
+                self.myButton.imageView.transform = CGAffineTransformMakeScale(0.001, 0.001);
+                break;
+            case MKUserTrackingModeFollowWithHeading:
+                mode = MKUserTrackingModeNone;
+                self.myButton.imageView.transform = CGAffineTransformMakeScale(0.001, 0.001);
+                break;
+        }
+        
+        self.myButton.imageView.transform = CGAffineTransformMakeScale(0.23, 0.23);
+        [UIView commitAnimations];
+        
+        [self updateUserTrackingModeBtn:mode];
+        [myMapView setUserTrackingMode:mode animated:YES];
+    } else {
+        //iOS8とそれ以前ではアラートに使うクラスが違うため、条件分岐を用いている
+        if ([UIAlertController class]) {
+            
+            UIAlertController *alertController =
+            [UIAlertController alertControllerWithTitle:@"はこウォークで位置情報を取得するには位置情報サービスをオンにしてください。"
+                                                message:nil
+                                         preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction *setAction =
+            [UIAlertAction actionWithTitle:@"設定"
+                                     style:UIAlertActionStyleDefault
+                                   handler:^(UIAlertAction *action){
+                                       
+                                       NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+                                       [[UIApplication sharedApplication] openURL:url];
+                                   }];
+            
+            UIAlertAction *cancelAction =
+            [UIAlertAction actionWithTitle:@"キャンセル"
+                                     style:UIAlertActionStyleCancel
+                                   handler:nil];
+            [alertController addAction:setAction];
+            [alertController addAction:cancelAction];
+            
+            [self presentViewController:alertController animated:YES completion:nil];
+            
+        } else {
+            
+            UIAlertView *alertView = [[UIAlertView alloc]
+                                      initWithTitle:@"位置情報の取得に失敗しました。"
+                                      message:nil
+                                      delegate:self
+                                      cancelButtonTitle:@"OK"
+                                      otherButtonTitles:nil];
+            [alertView show];
+        }
+        
     }
-    
-    self.myButton.imageView.transform = CGAffineTransformMakeScale(0.23, 0.23);
-    [UIView commitAnimations];
-    
-    [self updateUserTrackingModeBtn:mode];
-    [myMapView setUserTrackingMode:mode animated:YES];
 }
 
 /**
@@ -375,8 +425,6 @@
         nextViewController.spot_name = spot_name;
     }
     
-    NSLog(@"%@", course_name);
-    NSLog(@"%@", spot_name);
 }
 
 ///戻るボタンのアクション
